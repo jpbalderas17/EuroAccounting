@@ -30,7 +30,7 @@ Partial Class MainMenu
         Me.panelMain.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.panelMain.Location = New System.Drawing.Point(0, 0)
+        Me.panelMain.Location = New System.Drawing.Point(0, 2)
         Me.panelMain.Name = "panelMain"
         Me.panelMain.Size = New System.Drawing.Size(846, 396)
         Me.panelMain.TabIndex = 0
