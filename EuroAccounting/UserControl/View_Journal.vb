@@ -22,16 +22,17 @@
         'End Try
     End Sub
 
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+    Private Sub btnAdd_Click_1(sender As Object, e As EventArgs) Handles btnAdd.Click
         showUSC(uscAddJournal)
     End Sub
 
-    Private Sub btn_Close_Click(sender As Object, e As EventArgs) Handles btn_Close.Click
-
-
+    Private Sub btn_Close_Click_1(sender As Object, e As EventArgs) Handles btn_Close.Click
+        showUSC(uscMainMenu)
     End Sub
 
-    Private Sub pnl_Journal_Paint(sender As Object, e As PaintEventArgs) Handles pnl_Journal.Paint
-
+    Private Sub cmbPost_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPost.SelectedIndexChanged
+        If cmbPost.Text = "Trial Balance" Then
+            showUSC(uscTrialBalance)
+        End If
     End Sub
 End Class
