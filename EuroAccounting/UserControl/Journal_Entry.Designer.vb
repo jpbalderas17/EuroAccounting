@@ -23,14 +23,14 @@ Partial Class Journal_Entry
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_journal_date = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -49,6 +49,25 @@ Partial Class Journal_Entry
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(901, 197)
         Me.Panel1.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(78, 31)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(61, 13)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "Journal No."
+        '
+        'Label3
+        '
+        Me.Label3.AccessibleRole = System.Windows.Forms.AccessibleRole.WhiteSpace
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(8, 31)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(64, 13)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "Journal No.:"
         '
         'DataGridView1
         '
@@ -105,25 +124,6 @@ Partial Class Journal_Entry
         Me.Label1.Size = New System.Drawing.Size(33, 13)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Date:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(78, 31)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 13)
-        Me.Label2.TabIndex = 10
-        Me.Label2.Text = "Journal No."
-        '
-        'Label3
-        '
-        Me.Label3.AccessibleRole = System.Windows.Forms.AccessibleRole.WhiteSpace
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(8, 31)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(64, 13)
-        Me.Label3.TabIndex = 9
-        Me.Label3.Text = "Journal No.:"
         '
         'Journal_Entry
         '

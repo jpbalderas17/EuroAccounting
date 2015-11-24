@@ -57,3 +57,7 @@ C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccountin
 C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.Users.resources
 C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.View_Journal.resources
 C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.vbproj.GenerateResource.Cache
+C:\Users\jonathan\Source\Repos\EuroAccounting\EuroAccounting\bin\Debug\EuroAccounting.exe.config
+C:\Users\jonathan\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.exe
+C:\Users\jonathan\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.xml
+C:\Users\jonathan\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.pdb
