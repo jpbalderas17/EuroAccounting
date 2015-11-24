@@ -77,13 +77,6 @@
     <Compile Include="Forms\LogIn.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainMenu23.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MainMenu2.Designer.vb">
-      <DependentUpon>MainMenu23.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\MainMenu.Designer.vb">
       <DependentUpon>MainMenu.vb</DependentUpon>
     </Compile>
@@ -105,6 +98,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UserControl\AddEntry.Designer.vb">
+      <DependentUpon>AddEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\AddEntry.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControl\Journal_Entry.Designer.vb">
       <DependentUpon>Journal_Entry.vb</DependentUpon>
     </Compile>
@@ -115,6 +114,12 @@
       <DependentUpon>MainMenu2.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControl\MainMenu2.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Users.Designer.vb">
+      <DependentUpon>Users.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Users.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControl\View_Journal.Designer.vb">
@@ -128,9 +133,6 @@
     <EmbeddedResource Include="Forms\LogIn.resx">
       <DependentUpon>LogIn.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainMenu2.resx">
-      <DependentUpon>MainMenu23.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.vb</DependentUpon>
     </EmbeddedResource>
@@ -140,11 +142,17 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\AddEntry.resx">
+      <DependentUpon>AddEntry.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Journal_Entry.resx">
       <DependentUpon>Journal_Entry.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\MainMenu2.resx">
       <DependentUpon>MainMenu2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Users.resx">
+      <DependentUpon>Users.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\View_Journal.resx">
       <DependentUpon>View_Journal.vb</DependentUpon>

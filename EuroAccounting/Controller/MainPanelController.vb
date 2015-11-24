@@ -2,6 +2,8 @@
     'Public uscEntry As New Journal_Entry
     Public uscMainMenu As New MainMenu2
     Public uscViewJournal As New View_Journal
+    Public uscAddJournal As New AddEntry
+    Public uscUsers As New Users
 
 
     Public currentUSC As Control

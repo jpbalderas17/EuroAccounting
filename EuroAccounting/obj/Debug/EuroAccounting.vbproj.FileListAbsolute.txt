@@ -25,3 +25,35 @@ C:\Users\Spark Global\Desktop\EuroAccounting\EuroAccounting\obj\Debug\EuroAccoun
 C:\Users\Spark Global\Desktop\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.View_Journal.resources
 C:\Users\Spark Global\Desktop\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.vbproj.GenerateResource.Cache
 C:\Users\Spark Global\Desktop\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.MainMenu23.resources
+C:\Users\asus\Desktop\EuroAccounting\EuroAccounting\bin\Debug\EuroAccounting.exe.config
+C:\Users\asus\Desktop\EuroAccounting\EuroAccounting\bin\Debug\EuroAccounting.exe
+C:\Users\asus\Desktop\EuroAccounting\EuroAccounting\bin\Debug\EuroAccounting.pdb
+C:\Users\asus\Desktop\EuroAccounting\EuroAccounting\bin\Debug\EuroAccounting.xml
+C:\Users\asus\Desktop\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.LogIn.resources
+C:\Users\asus\Desktop\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.MainMenu.resources
+C:\Users\asus\Desktop\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.Resources.resources
+C:\Users\asus\Desktop\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.Journal_Entry.resources
+C:\Users\asus\Desktop\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.MainMenu2.resources
+C:\Users\asus\Desktop\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.View_Journal.resources
+C:\Users\asus\Desktop\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.vbproj.GenerateResource.Cache
+C:\Users\asus\Desktop\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.exe
+C:\Users\asus\Desktop\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.xml
+C:\Users\asus\Desktop\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.pdb
+C:\Users\asus\Desktop\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.AddEntry.resources
+C:\Users\asus\Desktop\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.Users.resources
+C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\bin\Debug\EuroAccounting.exe.config
+C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.exe
+C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.xml
+C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.pdb
+C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\bin\Debug\EuroAccounting.exe
+C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\bin\Debug\EuroAccounting.pdb
+C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\bin\Debug\EuroAccounting.xml
+C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.LogIn.resources
+C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.MainMenu.resources
+C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.Resources.resources
+C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.AddEntry.resources
+C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.Journal_Entry.resources
+C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.MainMenu2.resources
+C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.Users.resources
+C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.View_Journal.resources
+C:\Users\asus\Source\Repos\EuroAccounting\EuroAccounting\obj\Debug\EuroAccounting.vbproj.GenerateResource.Cache
