@@ -4,6 +4,7 @@
     Public uscViewJournal As New View_Journal
     Public uscAddJournal As New AddEntry
     Public uscUsers As New Users
+    Public uscTrialBalance As New tbalance
 
 
     Public currentUSC As Control
