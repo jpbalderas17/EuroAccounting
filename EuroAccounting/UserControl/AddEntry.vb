@@ -1,18 +1,12 @@
 ﻿
 Public Class AddEntry
-
-    Private Sub Save_Click(sender As Object, e As EventArgs)
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         'Dim j_entry = New Journal_Entry
         'j_entry.Width = pnl_Journal.Width
         'pnl_Journal.Controls.Add(j_entry)
     End Sub
 
-    Private Sub Cancel_Click(sender As Object, e As EventArgs)
-        Me.Hide()
-
-    End Sub
-
-    Private Sub Cancel_Click_1(sender As Object, e As EventArgs) Handles Cancel.Click
+    Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
         showUSC(uscViewJournal)
     End Sub
 End Class

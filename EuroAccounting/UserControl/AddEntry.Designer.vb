@@ -23,15 +23,12 @@ Partial Class AddEntry
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Cancel = New System.Windows.Forms.Button()
-        Me.Save = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ListView2 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -40,9 +37,9 @@ Partial Class AddEntry
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.acc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.amt = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
@@ -54,48 +51,34 @@ Partial Class AddEntry
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.btn_Cancel = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.TextBox2)
         Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.Cancel)
-        Me.Panel1.Controls.Add(Me.Save)
         Me.Panel1.Controls.Add(Me.GroupBox2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.DateTimePicker1)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(48, 20)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(825, 504)
+        Me.Panel1.Size = New System.Drawing.Size(900, 555)
         Me.Panel1.TabIndex = 20
-        '
-        'Label11
-        '
-        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(70, 23)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(257, 29)
-        Me.Label11.TabIndex = 40
-        Me.Label11.Text = "Add New Journal Entry"
         '
         'TextBox2
         '
         Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.TextBox2.Location = New System.Drawing.Point(141, 402)
+        Me.TextBox2.Location = New System.Drawing.Point(179, 422)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(617, 20)
         Me.TextBox2.TabIndex = 37
@@ -104,36 +87,16 @@ Partial Class AddEntry
         '
         Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(71, 410)
+        Me.Label7.Location = New System.Drawing.Point(109, 430)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(63, 13)
         Me.Label7.TabIndex = 36
         Me.Label7.Text = "Description:"
         '
-        'Cancel
-        '
-        Me.Cancel.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Cancel.Location = New System.Drawing.Point(675, 431)
-        Me.Cancel.Name = "Cancel"
-        Me.Cancel.Size = New System.Drawing.Size(83, 33)
-        Me.Cancel.TabIndex = 39
-        Me.Cancel.Text = "Cancel"
-        Me.Cancel.UseVisualStyleBackColor = True
-        '
-        'Save
-        '
-        Me.Save.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Save.Location = New System.Drawing.Point(586, 431)
-        Me.Save.Name = "Save"
-        Me.Save.Size = New System.Drawing.Size(83, 33)
-        Me.Save.TabIndex = 38
-        Me.Save.Text = "Save"
-        Me.Save.UseVisualStyleBackColor = True
-        '
         'GroupBox2
         '
         Me.GroupBox2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.GroupBox2.Controls.Add(Me.DataGridView2)
+        Me.GroupBox2.Controls.Add(Me.ListView2)
         Me.GroupBox2.Controls.Add(Me.ComboBox4)
         Me.GroupBox2.Controls.Add(Me.Button3)
         Me.GroupBox2.Controls.Add(Me.Label10)
@@ -141,44 +104,46 @@ Partial Class AddEntry
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.ComboBox3)
         Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Location = New System.Drawing.Point(422, 130)
+        Me.GroupBox2.Location = New System.Drawing.Point(460, 150)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(336, 259)
         Me.GroupBox2.TabIndex = 35
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Credit"
         '
-        'DataGridView2
+        'ListView2
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2})
-        Me.DataGridView2.Location = New System.Drawing.Point(25, 105)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(279, 138)
-        Me.DataGridView2.TabIndex = 15
+        Me.ListView2.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3, Me.ColumnHeader4})
+        Me.ListView2.FullRowSelect = True
+        Me.ListView2.GridLines = True
+        Me.ListView2.Location = New System.Drawing.Point(25, 118)
+        Me.ListView2.Name = "ListView2"
+        Me.ListView2.Size = New System.Drawing.Size(291, 125)
+        Me.ListView2.TabIndex = 15
+        Me.ListView2.UseCompatibleStateImageBehavior = False
+        Me.ListView2.View = System.Windows.Forms.View.Details
         '
-        'DataGridViewTextBoxColumn1
+        'ColumnHeader3
         '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Accounts"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Width = 160
+        Me.ColumnHeader3.Text = "Accounts"
+        Me.ColumnHeader3.Width = 180
         '
-        'DataGridViewTextBoxColumn2
+        'ColumnHeader4
         '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Amount"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.ColumnHeader4.Text = "Amount"
+        Me.ColumnHeader4.Width = 100
         '
         'ComboBox4
         '
         Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(90, 23)
+        Me.ComboBox4.Location = New System.Drawing.Point(90, 22)
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(214, 21)
         Me.ComboBox4.TabIndex = 10
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(223, 78)
+        Me.Button3.Location = New System.Drawing.Point(223, 77)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(81, 23)
         Me.Button3.TabIndex = 14
@@ -188,7 +153,7 @@ Partial Class AddEntry
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(22, 23)
+        Me.Label10.Location = New System.Drawing.Point(22, 22)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(61, 13)
         Me.Label10.TabIndex = 8
@@ -196,7 +161,7 @@ Partial Class AddEntry
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(90, 79)
+        Me.TextBox3.Location = New System.Drawing.Point(90, 78)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(126, 20)
         Me.TextBox3.TabIndex = 13
@@ -204,7 +169,7 @@ Partial Class AddEntry
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(22, 79)
+        Me.Label9.Location = New System.Drawing.Point(22, 78)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(46, 13)
         Me.Label9.TabIndex = 9
@@ -213,7 +178,8 @@ Partial Class AddEntry
         'ComboBox3
         '
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(90, 50)
+        Me.ComboBox3.Items.AddRange(New Object() {"Revenue (Main)", "Revunue (Side)", "Contra (Revenue)", "Cost of Goods Sold", "Expenses", "Assets (Non-current)", "Assets (Current)", "Contra (Current Assets)", "Contra (Non-current Assets)", "Liabilities (Non-current)", "Liabilitites (Current)", "Owner's Equity (Capital)", "Owner's Equity (Drawings)"})
+        Me.ComboBox3.Location = New System.Drawing.Point(90, 49)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(214, 21)
         Me.ComboBox3.TabIndex = 12
@@ -221,7 +187,7 @@ Partial Class AddEntry
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(22, 50)
+        Me.Label8.Location = New System.Drawing.Point(22, 49)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(45, 13)
         Me.Label8.TabIndex = 11
@@ -230,7 +196,7 @@ Partial Class AddEntry
         'GroupBox1
         '
         Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.ListView1)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.ComboBox2)
@@ -238,32 +204,34 @@ Partial Class AddEntry
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Location = New System.Drawing.Point(71, 130)
+        Me.GroupBox1.Location = New System.Drawing.Point(109, 150)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(336, 259)
         Me.GroupBox1.TabIndex = 34
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Debit"
         '
-        'DataGridView1
+        'ListView1
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.acc, Me.amt})
-        Me.DataGridView1.Location = New System.Drawing.Point(21, 107)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(279, 138)
-        Me.DataGridView1.TabIndex = 7
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
+        Me.ListView1.FullRowSelect = True
+        Me.ListView1.GridLines = True
+        Me.ListView1.Location = New System.Drawing.Point(21, 118)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(292, 125)
+        Me.ListView1.TabIndex = 7
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
         '
-        'acc
+        'ColumnHeader1
         '
-        Me.acc.HeaderText = "Accounts"
-        Me.acc.Name = "acc"
-        Me.acc.Width = 160
+        Me.ColumnHeader1.Text = "Accounts"
+        Me.ColumnHeader1.Width = 180
         '
-        'amt
+        'ColumnHeader2
         '
-        Me.amt.HeaderText = "Amount"
-        Me.amt.Name = "amt"
+        Me.ColumnHeader2.Text = "Amount"
+        Me.ColumnHeader2.Width = 100
         '
         'Button1
         '
@@ -284,6 +252,7 @@ Partial Class AddEntry
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"Revenue (Main)", "Revunue (Side)", "Contra (Revenue)", "Cost of Goods Sold", "Expenses", "Assets (Non-current)", "Assets (Current)", "Contra (Current Assets)", "Contra (Non-current Assets)", "Liabilities (Non-current)", "Liabilitites (Current)", "Owner's Equity (Capital)", "Owner's Equity (Drawings)"})
         Me.ComboBox2.Location = New System.Drawing.Point(86, 52)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(214, 21)
@@ -328,7 +297,7 @@ Partial Class AddEntry
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(521, 84)
+        Me.Label3.Location = New System.Drawing.Point(559, 104)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(37, 13)
         Me.Label3.TabIndex = 33
@@ -338,7 +307,7 @@ Partial Class AddEntry
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(451, 84)
+        Me.Label2.Location = New System.Drawing.Point(489, 104)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(64, 13)
         Me.Label2.TabIndex = 32
@@ -347,7 +316,7 @@ Partial Class AddEntry
         'DateTimePicker1
         '
         Me.DateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.DateTimePicker1.Location = New System.Drawing.Point(130, 84)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(168, 104)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(241, 20)
         Me.DateTimePicker1.TabIndex = 31
@@ -356,39 +325,79 @@ Partial Class AddEntry
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(91, 87)
+        Me.Label1.Location = New System.Drawing.Point(129, 107)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(33, 13)
         Me.Label1.TabIndex = 30
         Me.Label1.Text = "Date:"
         '
+        'btnSave
+        '
+        Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSave.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSave.FlatAppearance.BorderSize = 0
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.ForeColor = System.Drawing.Color.Gold
+        Me.btnSave.Location = New System.Drawing.Point(665, 58)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(115, 34)
+        Me.btnSave.TabIndex = 47
+        Me.btnSave.Text = "Save"
+        Me.btnSave.UseVisualStyleBackColor = False
+        '
+        'btn_Cancel
+        '
+        Me.btn_Cancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_Cancel.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btn_Cancel.FlatAppearance.BorderSize = 0
+        Me.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Cancel.ForeColor = System.Drawing.Color.Gold
+        Me.btn_Cancel.Location = New System.Drawing.Point(786, 58)
+        Me.btn_Cancel.Name = "btn_Cancel"
+        Me.btn_Cancel.Size = New System.Drawing.Size(115, 34)
+        Me.btn_Cancel.TabIndex = 46
+        Me.btn_Cancel.Text = "Cancel"
+        Me.btn_Cancel.UseVisualStyleBackColor = False
+        '
+        'Label12
+        '
+        Me.Label12.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label12.BackColor = System.Drawing.Color.MidnightBlue
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Gold
+        Me.Label12.Location = New System.Drawing.Point(0, 58)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(898, 34)
+        Me.Label12.TabIndex = 45
+        Me.Label12.Text = "    Add New Journal Entry"
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'AddEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.btn_Cancel)
+        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "AddEntry"
-        Me.Size = New System.Drawing.Size(893, 555)
+        Me.Size = New System.Drawing.Size(900, 555)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Cancel As System.Windows.Forms.Button
-    Friend WithEvents Save As System.Windows.Forms.Button
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Label10 As System.Windows.Forms.Label
@@ -397,9 +406,6 @@ Partial Class AddEntry
     Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents acc As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents amt As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
@@ -411,6 +417,14 @@ Partial Class AddEntry
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents ListView1 As System.Windows.Forms.ListView
+    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ListView2 As System.Windows.Forms.ListView
+    Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents btnSave As System.Windows.Forms.Button
+    Friend WithEvents btn_Cancel As System.Windows.Forms.Button
+    Friend WithEvents Label12 As System.Windows.Forms.Label
 
 End Class
