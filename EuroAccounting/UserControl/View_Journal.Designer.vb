@@ -45,11 +45,12 @@ Partial Class View_Journal
         'cmbPost
         '
         Me.cmbPost.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmbPost.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbPost.FormattingEnabled = True
         Me.cmbPost.Items.AddRange(New Object() {"Ledger (3 Column Ledger)", "Trial Balance", "Income Statement", "Balance Sheet"})
-        Me.cmbPost.Location = New System.Drawing.Point(524, 65)
+        Me.cmbPost.Location = New System.Drawing.Point(524, 64)
         Me.cmbPost.Name = "cmbPost"
-        Me.cmbPost.Size = New System.Drawing.Size(170, 21)
+        Me.cmbPost.Size = New System.Drawing.Size(170, 25)
         Me.cmbPost.TabIndex = 10
         '
         'Label5
@@ -57,10 +58,11 @@ Partial Class View_Journal
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.MidnightBlue
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Gold
-        Me.Label5.Location = New System.Drawing.Point(480, 70)
+        Me.Label5.Location = New System.Drawing.Point(476, 68)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(43, 13)
+        Me.Label5.Size = New System.Drawing.Size(52, 16)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Post to:"
         '
@@ -69,7 +71,7 @@ Partial Class View_Journal
         Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.BackColor = System.Drawing.Color.MidnightBlue
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Gold
         Me.Label2.Location = New System.Drawing.Point(0, 59)
         Me.Label2.Name = "Label2"
@@ -84,7 +86,7 @@ Partial Class View_Journal
         Me.btn_Close.BackColor = System.Drawing.Color.MidnightBlue
         Me.btn_Close.FlatAppearance.BorderSize = 0
         Me.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_Close.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Close.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Close.ForeColor = System.Drawing.Color.Gold
         Me.btn_Close.Location = New System.Drawing.Point(823, 59)
         Me.btn_Close.Name = "btn_Close"
@@ -99,7 +101,7 @@ Partial Class View_Journal
         Me.btnAdd.BackColor = System.Drawing.Color.MidnightBlue
         Me.btnAdd.FlatAppearance.BorderSize = 0
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.Gold
         Me.btnAdd.Location = New System.Drawing.Point(702, 59)
         Me.btnAdd.Name = "btnAdd"

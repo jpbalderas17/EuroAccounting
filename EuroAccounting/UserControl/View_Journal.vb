@@ -33,6 +33,15 @@
     Private Sub cmbPost_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPost.SelectedIndexChanged
         If cmbPost.Text = "Trial Balance" Then
             showUSC(uscTrialBalance)
+        ElseIf cmbPost.Text = "Ledger (3 Column Ledger)" Then
+            showUSC(uscLedger)
+        ElseIf cmbPost.Text = "Income Statement" Then
+            showUSC(uscIncomeStatement)
+        ElseIf cmbPost.Text = "Balance Sheet" Then
+            showUSC(uscBalanceSheet)
         End If
+
+
+
     End Sub
 End Class
