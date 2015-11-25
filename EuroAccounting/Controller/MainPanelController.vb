@@ -5,7 +5,9 @@
     Public uscAddJournal As New AddEntry
     Public uscUsers As New Users
     Public uscTrialBalance As New tbalance
-
+    Public uscLedger As New Ledger
+    Public uscIncomeStatement As New Income_Statement
+    Public uscBalanceSheet As New Balance_Sheet
 
     Public currentUSC As Control
     Sub clearMainPanel()
