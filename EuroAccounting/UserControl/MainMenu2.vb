@@ -13,11 +13,16 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.Hide()
+
         LogIn.Show()
+        MainMenu.Hide()
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Application.Exit()
+    End Sub
+
+    Private Sub btn_Manage_user_Click(sender As Object, e As EventArgs) Handles btn_payments.Click
+
     End Sub
 End Class
