@@ -20,16 +20,16 @@ Public Class DBHelper
     End Sub
 
     Private Function BuildCommand(ByRef cmd As SqlCommand, params As Dictionary(Of String, Object)) As SqlClient.SqlCommand
-        'Try
-        con = New SqlClient.SqlConnection(Connectionstring)
-        cmd.Connection = con
-        AddParameters(cmd, params)
-        con.Open()
-        Connected = True
-        'Catch ex As Exception
-        '    Connected = False
-        '    MsgBox("Unable to connect to the database", MsgBoxStyle.Critical)
-        'End Try
+        Try
+            con = New SqlClient.SqlConnection(Connectionstring)
+            cmd.Connection = con
+            AddParameters(cmd, params)
+            con.Open()
+            Connected = True
+        Catch ex As Exception
+            Connected = False
+            MsgBox("Unable to connect to the database", MsgBoxStyle.Critical)
+        End Try
 
         Return cmd
 
@@ -44,6 +44,7 @@ Public Class DBHelper
     End Sub
 
     Public Function ExecuteReader(commandText As String, Optional params As Dictionary(Of String, Object) = Nothing) As SqlDataReader
+        cmd.Parameters.Clear()
         cmd.CommandText = commandText
         Using cmd
             BuildCommand(cmd, params)
@@ -54,6 +55,7 @@ Public Class DBHelper
     End Function
 
     Public Function ExecuteNonQuery(commandText As String, Optional params As Dictionary(Of String, Object) = Nothing) As Long
+        cmd.Parameters.Clear()
         cmd.CommandText = commandText
         Using cmd
             BuildCommand(cmd, params)
@@ -62,12 +64,14 @@ Public Class DBHelper
     End Function
 
     Public Function ExecuteScalar(commandText As String, Optional params As Dictionary(Of String, Object) = Nothing) As Long
+        cmd.Parameters.Clear()
         cmd.CommandText = commandText
         Using cmd
             BuildCommand(cmd, params)
             Return cmd.ExecuteScalar
         End Using
     End Function
+
 
 #Region "IDisposable Support"
     Private disposedValue As Boolean ' To detect redundant calls
