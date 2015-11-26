@@ -8,6 +8,7 @@
     Public uscLedger As New Ledger
     Public uscIncomeStatement As New Income_Statement
     Public uscBalanceSheet As New Balance_Sheet
+    Public uscServiceSupplyEntry As New service_supplies_entry
 
     Public currentUSC As Control
     Sub clearMainPanel()
