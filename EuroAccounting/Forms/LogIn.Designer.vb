@@ -22,25 +22,26 @@ Partial Class LogIn
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnLogin = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.lbl_utype = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Button1
+        'btnLogin
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.MidnightBlue
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.Color.Gold
-        Me.Button1.Location = New System.Drawing.Point(139, 138)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(111, 35)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Log in"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnLogin.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnLogin.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnLogin.FlatAppearance.BorderSize = 0
+        Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogin.ForeColor = System.Drawing.Color.Gold
+        Me.btnLogin.Location = New System.Drawing.Point(139, 138)
+        Me.btnLogin.Name = "btnLogin"
+        Me.btnLogin.Size = New System.Drawing.Size(111, 35)
+        Me.btnLogin.TabIndex = 0
+        Me.btnLogin.Text = "Log in"
+        Me.btnLogin.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -54,22 +55,31 @@ Partial Class LogIn
         Me.Label1.Text = "Euro Shop" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Job Accounting System V.1"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'TextBox1
+        'txtPassword
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(63, 106)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.TextBox1.Size = New System.Drawing.Size(258, 26)
-        Me.TextBox1.TabIndex = 185
+        Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.Location = New System.Drawing.Point(63, 106)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.txtPassword.Size = New System.Drawing.Size(258, 26)
+        Me.txtPassword.TabIndex = 185
         '
-        'TextBox2
+        'txtUsername
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(63, 74)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(258, 26)
-        Me.TextBox2.TabIndex = 184
+        Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsername.Location = New System.Drawing.Point(63, 74)
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(258, 26)
+        Me.txtUsername.TabIndex = 184
+        '
+        'lbl_utype
+        '
+        Me.lbl_utype.AutoSize = True
+        Me.lbl_utype.Location = New System.Drawing.Point(12, 160)
+        Me.lbl_utype.Name = "lbl_utype"
+        Me.lbl_utype.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_utype.TabIndex = 187
+        Me.lbl_utype.Visible = False
         '
         'LogIn
         '
@@ -77,10 +87,11 @@ Partial Class LogIn
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(380, 182)
+        Me.Controls.Add(Me.lbl_utype)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.txtPassword)
+        Me.Controls.Add(Me.txtUsername)
+        Me.Controls.Add(Me.btnLogin)
         Me.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
@@ -92,8 +103,9 @@ Partial Class LogIn
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnLogin As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents txtPassword As System.Windows.Forms.TextBox
+    Friend WithEvents txtUsername As System.Windows.Forms.TextBox
+    Friend WithEvents lbl_utype As System.Windows.Forms.Label
 End Class
