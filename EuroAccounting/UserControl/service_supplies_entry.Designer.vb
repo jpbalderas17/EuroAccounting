@@ -66,7 +66,7 @@ Partial Class service_supplies_entry
         '
         Me.lbl_journal_id.AutoSize = True
         Me.lbl_journal_id.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_journal_id.Location = New System.Drawing.Point(49, 77)
+        Me.lbl_journal_id.Location = New System.Drawing.Point(49, 76)
         Me.lbl_journal_id.Name = "lbl_journal_id"
         Me.lbl_journal_id.Size = New System.Drawing.Size(72, 17)
         Me.lbl_journal_id.TabIndex = 61
