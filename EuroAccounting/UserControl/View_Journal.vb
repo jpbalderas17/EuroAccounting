@@ -38,7 +38,7 @@
         ElseIf cmbPost.Text = "Income Statement" Then
             showUSC(uscIncomeStatement)
         ElseIf cmbPost.Text = "Balance Sheet" Then
-            showUSC(uscBalanceSheet)
+            'showUSC(uscBalanceSheet)
         End If
 
 
