@@ -1,7 +1,36 @@
-﻿Public Class Users
+﻿Imports System.Data.SqlClient
+Imports System.Runtime.InteropServices
+Imports System.Drawing.Imaging
+Imports System.IO
+Imports System.Security.Cryptography
+Imports System.Text
+Public Class Users
     Dim db As New DBHelper(My.Settings.connectionString)
     Dim dr As SqlClient.SqlDataReader
     Dim cmd As SqlClient.SqlCommand
+
+    Private Shared DES As New TripleDESCryptoServiceProvider
+    Private Shared MD5 As New MD5CryptoServiceProvider
+
+    Public Shared Function MD5Hash(ByVal value As String) As Byte()
+        Return MD5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(value))
+    End Function
+
+    Public Shared Function Encrypt(ByVal stringToEncrypt As String, ByVal key As String) As String
+        DES.Key = Users.MD5Hash(key)
+        DES.Mode = CipherMode.ECB
+        Dim Buffer As Byte() = ASCIIEncoding.ASCII.GetBytes(stringToEncrypt)
+        Return Convert.ToBase64String(DES.CreateEncryptor().TransformFinalBlock(Buffer, 0, Buffer.Length))
+    End Function
+
+    Public Shared Function Decrypt(ByVal encryptedString As String, ByVal key As String) As String
+
+        DES.Key = Users.MD5Hash(key)
+        DES.Mode = CipherMode.ECB
+
+        Dim Buffer As Byte() = Convert.FromBase64String(encryptedString)
+        Return ASCIIEncoding.ASCII.GetString(DES.CreateDecryptor().TransformFinalBlock(Buffer, 0, Buffer.Length))
+    End Function
     Private Sub clearUserGroup()
 
         For Each Control In gbxAddEdit.Controls
@@ -75,6 +104,8 @@
             'Dim pwd As String
 
             Try
+                Dim encryptPass = Encrypt(txtpwd.Text, "Keys")
+                'Dim encryptPass2 = Encrypt(txtconfirmpwd.Text, "Keys")
                 data.Add("full_name", txtfullname.Text)
                 data.Add("username", txtuname.Text)
                 If cmbUtype.Text = "Super Administrator" Then 'in process
@@ -83,13 +114,13 @@
                     data.Add("user_type", "1")
                 End If
                 If txtpwd.Text = txtconfirmpwd.Text Then
-                    data.Add("password", txtpwd.Text)
+                    data.Add("password", encryptPass)
                 Else
                     MessageBox.Show("Password do not match!", "Alert Message", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
                     Exit Sub
                 End If
 
-                rec = db.ExecuteNonQuery("INSERT INTO users values(NULL,@full_name,@username,@password,@user_type)", data)
+                rec = db.ExecuteNonQuery("INSERT INTO users values(@full_name,@username,@password,@user_type)", data)
 
                 If Not rec < 1 Then
                     MessageBox.Show("Record saved!", "Important Message", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
@@ -110,6 +141,7 @@
             Dim data As New Dictionary(Of String, Object)
 
             Try
+                Dim encryptPass = Encrypt(txtpwd.Text, "Keys")
                 data.Add("full_name", txtfullname.Text)
                 data.Add("username", txtuname.Text)
                 If cmbUtype.Text = "Super Administrator" Then 'in process
@@ -118,7 +150,7 @@
                     data.Add("user_type", "1")
                 End If
                 If txtpwd.Text = txtconfirmpwd.Text Then
-                    data.Add("password", txtpwd.Text)
+                    data.Add("password", encryptPass)
                 Else
                     MessageBox.Show("Password do not match!", "Alert Message", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
                     Exit Sub
@@ -158,8 +190,11 @@
                 dr = db.ExecuteReader("select * from users WHERE id=" & lvlUsers.FocusedItem.Text)
                 pnl_user.Visible = True
                 If dr.HasRows Then
-                    'txtUid.Text = dr.Item("id")
-                    'txtfullname.Text = dr.Item("full_name")
+                    Dim pass = lvlUsers.SelectedItems(0).SubItems(4).Text
+                    Dim decryptPass = Decrypt(pass, "Keys")
+                    txtpwd.Text = decryptPass
+                    txtconfirmpwd.Text = decryptPass
+
                     txtfullname.Text = lvlUsers.SelectedItems(0).SubItems(1).Text
                     txtuname.Text = lvlUsers.SelectedItems(0).SubItems(2).Text
                     cmbUtype.Text = lvlUsers.SelectedItems(0).SubItems(3).Text
