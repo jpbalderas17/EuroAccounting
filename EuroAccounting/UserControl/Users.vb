@@ -181,6 +181,9 @@ Public Class Users
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         EditItemInListView()
     End Sub
+    Sub ShowMsg(txt As String)
+        uscMainMenu.lblHeader.ForeColor = Color.Goldenrod
+    End Sub
     Private Sub EditItemInListView()
         clearUserGroup()
         If lvlUsers.SelectedItems.Count > 0 Then 'make sure there is a selected item to modify
