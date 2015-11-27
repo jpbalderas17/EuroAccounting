@@ -69,39 +69,39 @@
                 MsgBox("Please fill in the blank fields.", MsgBoxStyle.Exclamation, "Fill in the fields.")
                 Exit Sub
             End If
-        '==ADD USERS INFO
-        Dim rec As Integer
-        Dim data As New Dictionary(Of String, Object)
-        'Dim pwd As String
+            '==ADD USERS INFO
+            Dim rec As Integer
+            Dim data As New Dictionary(Of String, Object)
+            'Dim pwd As String
 
-        Try
-            data.Add("full_name", txtfullname.Text)
-            data.Add("username", txtuname.Text)
+            Try
+                data.Add("full_name", txtfullname.Text)
+                data.Add("username", txtuname.Text)
                 If cmbUtype.Text = "Super Administrator" Then 'in process
                     data.Add("user_type", "0")
                 ElseIf cmbUtype.Text = "Administrator" Then
                     data.Add("user_type", "1")
                 End If
-            If txtpwd.Text = txtconfirmpwd.Text Then
-                data.Add("password", txtpwd.Text)
-            Else
-                MessageBox.Show("Password do not match!", "Alert Message", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-                Exit Sub
-            End If
+                If txtpwd.Text = txtconfirmpwd.Text Then
+                    data.Add("password", txtpwd.Text)
+                Else
+                    MessageBox.Show("Password do not match!", "Alert Message", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                    Exit Sub
+                End If
 
-            rec = db.ExecuteNonQuery("INSERT INTO users values(NULL,@full_name,@username,@password,@user_type)", data)
+                rec = db.ExecuteNonQuery("INSERT INTO users values(NULL,@full_name,@username,@password,@user_type)", data)
 
-            If Not rec < 1 Then
-                MessageBox.Show("Record saved!", "Important Message", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-                pnl_user.Visible = False
-                clearUserGroup()
-                lvLoadListview()
-            End If
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        Finally
-            db.Dispose() '<--------CHECK THIS!
-        End Try
+                If Not rec < 1 Then
+                    MessageBox.Show("Record saved!", "Important Message", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                    pnl_user.Visible = False
+                    clearUserGroup()
+                    lvLoadListview()
+                End If
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+            Finally
+                db.Dispose() '<--------CHECK THIS!
+            End Try
 
 
             'UPDATING USERS DATA
