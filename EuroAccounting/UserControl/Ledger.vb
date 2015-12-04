@@ -1,8 +1,9 @@
 ﻿
 Public Class Ledger
     Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
-        showUSC(uscViewJournal)
-        uscViewJournal.cmbPost.Text = ""
+        'showUSC(uscViewJournal)
+        'uscViewJournal.cmbPost.Text = ""
+        showUSC(uscMainMenu)
     End Sub
 
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
