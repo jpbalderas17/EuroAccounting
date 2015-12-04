@@ -1,8 +1,9 @@
 ﻿
 Public Class Income_Statement
     Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
-        showUSC(uscViewJournal)
-        uscViewJournal.cmbPost.Text = ""
+        'showUSC(uscViewJournal)
+        'uscViewJournal.cmbPost.Text = ""
+        showUSC(uscMainMenu)
     End Sub
 
     Private Sub Income_Statement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
