@@ -72,6 +72,18 @@
   <ItemGroup>
     <Compile Include="Controller\DBHelper.vb" />
     <Compile Include="Controller\MainPanelController.vb" />
+    <Compile Include="Forms\AddJournalEntry.Designer.vb">
+      <DependentUpon>AddJournalEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddJournalEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_accounts.Designer.vb">
+      <DependentUpon>frm_accounts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_accounts.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\LogIn.Designer.vb">
       <DependentUpon>LogIn.vb</DependentUpon>
     </Compile>
@@ -82,6 +94,19 @@
       <DependentUpon>MainMenu.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MyCombo.vb" />
+    <Compile Include="Forms\selectDate.Designer.vb">
+      <DependentUpon>selectDate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\selectDate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\selectPeriod.Designer.vb">
+      <DependentUpon>selectPeriod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\selectPeriod.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -99,10 +124,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UserControl\Accounts.Designer.vb">
+      <DependentUpon>Accounts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Accounts.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControl\AddEntry.Designer.vb">
       <DependentUpon>AddEntry.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControl\AddEntry.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Balance_Sheet.Designer.vb">
+      <DependentUpon>Balance_Sheet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Balance_Sheet.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Income_Statement.Designer.vb">
+      <DependentUpon>Income_Statement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Income_Statement.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControl\Journal_Entry.Designer.vb">
@@ -111,10 +154,34 @@
     <Compile Include="UserControl\Journal_Entry.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControl\Ledger.Designer.vb">
+      <DependentUpon>Ledger.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Ledger.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Ledger_views.Designer.vb">
+      <DependentUpon>Ledger_views.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Ledger_views.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControl\MainMenu2.Designer.vb">
       <DependentUpon>MainMenu2.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControl\MainMenu2.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\service_supplies_entry.Designer.vb">
+      <DependentUpon>service_supplies_entry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\service_supplies_entry.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\tbalance.Designer.vb">
+      <DependentUpon>tbalance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\tbalance.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControl\Users.Designer.vb">
@@ -131,11 +198,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\AddJournalEntry.resx">
+      <DependentUpon>AddJournalEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_accounts.resx">
+      <DependentUpon>frm_accounts.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogIn.resx">
       <DependentUpon>LogIn.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\selectDate.resx">
+      <DependentUpon>selectDate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\selectPeriod.resx">
+      <DependentUpon>selectPeriod.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -143,14 +222,32 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Accounts.resx">
+      <DependentUpon>Accounts.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\AddEntry.resx">
       <DependentUpon>AddEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Balance_Sheet.resx">
+      <DependentUpon>Balance_Sheet.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Journal_Entry.resx">
       <DependentUpon>Journal_Entry.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Ledger.resx">
+      <DependentUpon>Ledger.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Ledger_views.resx">
+      <DependentUpon>Ledger_views.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\MainMenu2.resx">
       <DependentUpon>MainMenu2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\service_supplies_entry.resx">
+      <DependentUpon>service_supplies_entry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\tbalance.resx">
+      <DependentUpon>tbalance.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Users.resx">
       <DependentUpon>Users.vb</DependentUpon>

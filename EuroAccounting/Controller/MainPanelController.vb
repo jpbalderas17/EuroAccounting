@@ -9,7 +9,7 @@
     Public uscIncomeStatement As New Income_Statement
     Public uscBalanceSheet As New Balance_Sheet
     Public uscServiceSupplyEntry As New service_supplies_entry
-
+    Public uscAccounts As New Accounts
     Public currentUSC As Control
     Sub clearMainPanel()
         MainMenu.panelMain.Controls.Clear()
