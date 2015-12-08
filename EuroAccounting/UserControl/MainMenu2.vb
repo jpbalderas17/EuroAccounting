@@ -3,7 +3,8 @@
 
     End Sub
     Private Sub btn_View_Journal_Click(sender As Object, e As EventArgs) Handles btn_View_Journal.Click
-        showUSC(uscViewJournal)
+        'showUSC(uscViewJournal)
+        showUSC(uscLedgers)
     End Sub
 
     Private Sub btn_Users_Click(sender As Object, e As EventArgs) Handles btn_Users.Click
@@ -11,7 +12,7 @@
     End Sub
 
     Private Sub btn_Manage_Acc_Click(sender As Object, e As EventArgs) Handles btn_Manage_Acct.Click
-
+        showUSC(uscAccounts)
     End Sub
 
     'Private Sub btn_Services_Click(sender As Object, e As EventArgs) Handles btn_Services.Click
