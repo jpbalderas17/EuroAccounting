@@ -22,25 +22,19 @@ Partial Class View_Journal
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.pnl_Journal = New System.Windows.Forms.FlowLayoutPanel()
         Me.cmbPost = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btn_Close = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
+        Me.pnl_Journal = New System.Windows.Forms.Panel()
+        Me.lvljournal = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chAccounts = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chDebit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chCredit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.pnl_Journal.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'pnl_Journal
-        '
-        Me.pnl_Journal.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pnl_Journal.AutoScroll = True
-        Me.pnl_Journal.BackColor = System.Drawing.SystemColors.Control
-        Me.pnl_Journal.Location = New System.Drawing.Point(6, 111)
-        Me.pnl_Journal.Name = "pnl_Journal"
-        Me.pnl_Journal.Size = New System.Drawing.Size(926, 339)
-        Me.pnl_Journal.TabIndex = 1
         '
         'cmbPost
         '
@@ -103,12 +97,59 @@ Partial Class View_Journal
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdd.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.Gold
-        Me.btnAdd.Location = New System.Drawing.Point(702, 59)
+        Me.btnAdd.Location = New System.Drawing.Point(721, 59)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(115, 34)
-        Me.btnAdd.TabIndex = 13
+        Me.btnAdd.TabIndex = 14
         Me.btnAdd.Text = "Add New Entry"
         Me.btnAdd.UseVisualStyleBackColor = False
+        '
+        'pnl_Journal
+        '
+        Me.pnl_Journal.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnl_Journal.Controls.Add(Me.lvljournal)
+        Me.pnl_Journal.Location = New System.Drawing.Point(0, -46)
+        Me.pnl_Journal.Name = "pnl_Journal"
+        Me.pnl_Journal.Size = New System.Drawing.Size(938, 555)
+        Me.pnl_Journal.TabIndex = 21
+        '
+        'lvljournal
+        '
+        Me.lvljournal.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lvljournal.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lvljournal.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.chAccounts, Me.chDebit, Me.chCredit})
+        Me.lvljournal.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvljournal.GridLines = True
+        Me.lvljournal.Location = New System.Drawing.Point(3, 191)
+        Me.lvljournal.Name = "lvljournal"
+        Me.lvljournal.Size = New System.Drawing.Size(932, 298)
+        Me.lvljournal.TabIndex = 211
+        Me.lvljournal.UseCompatibleStateImageBehavior = False
+        Me.lvljournal.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = ""
+        Me.ColumnHeader1.Width = 206
+        '
+        'chAccounts
+        '
+        Me.chAccounts.Text = ""
+        Me.chAccounts.Width = 664
+        '
+        'chDebit
+        '
+        Me.chDebit.Text = ""
+        Me.chDebit.Width = 300
+        '
+        'chCredit
+        '
+        Me.chCredit.Text = ""
+        Me.chCredit.Width = 300
         '
         'View_Journal
         '
@@ -119,19 +160,25 @@ Partial Class View_Journal
         Me.Controls.Add(Me.btn_Close)
         Me.Controls.Add(Me.cmbPost)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.pnl_Journal)
         Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.pnl_Journal)
         Me.Name = "View_Journal"
         Me.Size = New System.Drawing.Size(938, 463)
+        Me.pnl_Journal.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents pnl_Journal As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents cmbPost As System.Windows.Forms.ComboBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents btn_Close As System.Windows.Forms.Button
     Friend WithEvents btnAdd As System.Windows.Forms.Button
+    Friend WithEvents pnl_Journal As System.Windows.Forms.Panel
+    Friend WithEvents lvljournal As System.Windows.Forms.ListView
+    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents chAccounts As System.Windows.Forms.ColumnHeader
+    Friend WithEvents chDebit As System.Windows.Forms.ColumnHeader
+    Friend WithEvents chCredit As System.Windows.Forms.ColumnHeader
 
 End Class
