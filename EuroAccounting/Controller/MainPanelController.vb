@@ -10,6 +10,9 @@
     Public uscBalanceSheet As New Balance_Sheet
     Public uscServiceSupplyEntry As New service_supplies_entry
     Public uscAccounts As New Accounts
+    Public uscLedgers As New Ledgers
+    Public uscJournalEntry As New Journal_Entry
+
     Public currentUSC As Control
     Sub clearMainPanel()
         MainMenu.panelMain.Controls.Clear()
