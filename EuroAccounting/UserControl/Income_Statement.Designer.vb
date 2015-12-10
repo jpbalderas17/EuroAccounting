@@ -23,22 +23,24 @@ Partial Class Income_Statement
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.dt_to = New System.Windows.Forms.DateTimePicker()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lvIncomeStatement = New System.Windows.Forms.ListView()
+        Me.chAccounts = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chDebit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chCredit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.dt_from = New System.Windows.Forms.DateTimePicker()
         Me.lbltitle2 = New System.Windows.Forms.Label()
+        Me.cmbDate = New System.Windows.Forms.ComboBox()
         Me.lbltitle1 = New System.Windows.Forms.Label()
-        Me.txtmisc = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.lblDate = New System.Windows.Forms.Label()
-        Me.txtname = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.lvCarBrands = New System.Windows.Forms.ListView()
-        Me.chAccounts = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chDebit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chCredit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btn_filter = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -47,14 +49,17 @@ Partial Class Income_Statement
         Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.Controls.Add(Me.lvCarBrands)
+        Me.Panel1.Controls.Add(Me.btn_filter)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.dt_to)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.lvIncomeStatement)
+        Me.Panel1.Controls.Add(Me.dt_from)
         Me.Panel1.Controls.Add(Me.lbltitle2)
+        Me.Panel1.Controls.Add(Me.cmbDate)
         Me.Panel1.Controls.Add(Me.lbltitle1)
-        Me.Panel1.Controls.Add(Me.txtmisc)
+        Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.lblDate)
-        Me.Panel1.Controls.Add(Me.txtname)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.btnPrint)
         Me.Panel1.Controls.Add(Me.btn_Cancel)
@@ -64,79 +69,131 @@ Partial Class Income_Statement
         Me.Panel1.Size = New System.Drawing.Size(809, 555)
         Me.Panel1.TabIndex = 20
         '
+        'Label7
+        '
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(283, 111)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(73, 13)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "Select Period:"
+        '
+        'dt_to
+        '
+        Me.dt_to.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dt_to.Location = New System.Drawing.Point(597, 131)
+        Me.dt_to.Name = "dt_to"
+        Me.dt_to.Size = New System.Drawing.Size(195, 20)
+        Me.dt_to.TabIndex = 5
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(538, 135)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(53, 13)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "End date:"
+        '
+        'lvIncomeStatement
+        '
+        Me.lvIncomeStatement.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lvIncomeStatement.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lvIncomeStatement.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chAccounts, Me.chDebit, Me.chCredit})
+        Me.lvIncomeStatement.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvIncomeStatement.GridLines = True
+        Me.lvIncomeStatement.Location = New System.Drawing.Point(13, 244)
+        Me.lvIncomeStatement.Name = "lvIncomeStatement"
+        Me.lvIncomeStatement.Size = New System.Drawing.Size(786, 296)
+        Me.lvIncomeStatement.TabIndex = 227
+        Me.lvIncomeStatement.UseCompatibleStateImageBehavior = False
+        Me.lvIncomeStatement.View = System.Windows.Forms.View.Details
+        '
+        'chAccounts
+        '
+        Me.chAccounts.Text = ""
+        Me.chAccounts.Width = 500
+        '
+        'chDebit
+        '
+        Me.chDebit.Text = ""
+        Me.chDebit.Width = 300
+        '
+        'chCredit
+        '
+        Me.chCredit.Text = ""
+        Me.chCredit.Width = 300
+        '
+        'dt_from
+        '
+        Me.dt_from.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dt_from.Location = New System.Drawing.Point(597, 104)
+        Me.dt_from.Name = "dt_from"
+        Me.dt_from.Size = New System.Drawing.Size(195, 20)
+        Me.dt_from.TabIndex = 3
+        '
         'lbltitle2
         '
         Me.lbltitle2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lbltitle2.AutoSize = True
         Me.lbltitle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltitle2.Location = New System.Drawing.Point(430, 209)
+        Me.lbltitle2.Location = New System.Drawing.Point(409, 221)
         Me.lbltitle2.Name = "lbltitle2"
         Me.lbltitle2.Size = New System.Drawing.Size(38, 20)
         Me.lbltitle2.TabIndex = 226
         Me.lbltitle2.Text = "Title"
+        '
+        'cmbDate
+        '
+        Me.cmbDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmbDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbDate.FormattingEnabled = True
+        Me.cmbDate.Items.AddRange(New Object() {"Select Period", "Today", "This Month", "Last Month", "This Quarter", "Last Quarter", "This Year", "Last Year"})
+        Me.cmbDate.Location = New System.Drawing.Point(362, 104)
+        Me.cmbDate.Name = "cmbDate"
+        Me.cmbDate.Size = New System.Drawing.Size(160, 21)
+        Me.cmbDate.TabIndex = 2
         '
         'lbltitle1
         '
         Me.lbltitle1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lbltitle1.AutoSize = True
         Me.lbltitle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltitle1.Location = New System.Drawing.Point(424, 185)
+        Me.lbltitle1.Location = New System.Drawing.Point(332, 197)
         Me.lbltitle1.Name = "lbltitle1"
-        Me.lbltitle1.Size = New System.Drawing.Size(50, 24)
+        Me.lbltitle1.Size = New System.Drawing.Size(223, 24)
         Me.lbltitle1.TabIndex = 225
-        Me.lbltitle1.Text = "Title"
+        Me.lbltitle1.Text = "INCOME STATEMENT"
         '
-        'txtmisc
+        'Label6
         '
-        Me.txtmisc.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtmisc.Location = New System.Drawing.Point(73, 157)
-        Me.txtmisc.Name = "txtmisc"
-        Me.txtmisc.Size = New System.Drawing.Size(241, 26)
-        Me.txtmisc.TabIndex = 224
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(535, 108)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(56, 13)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Start date:"
         '
         'lblDate
         '
         Me.lblDate.AutoSize = True
         Me.lblDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDate.Location = New System.Drawing.Point(74, 100)
+        Me.lblDate.Location = New System.Drawing.Point(79, 107)
         Me.lblDate.Name = "lblDate"
         Me.lblDate.Size = New System.Drawing.Size(79, 20)
         Me.lblDate.TabIndex = 223
         Me.lblDate.Text = "Date Now"
         '
-        'txtname
-        '
-        Me.txtname.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtname.Location = New System.Drawing.Point(73, 127)
-        Me.txtname.Name = "txtname"
-        Me.txtname.Size = New System.Drawing.Size(241, 26)
-        Me.txtname.TabIndex = 222
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(25, 159)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(41, 20)
-        Me.Label4.TabIndex = 221
-        Me.Label4.Text = "Misc"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(25, 130)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(51, 20)
-        Me.Label3.TabIndex = 220
-        Me.Label3.Text = "Name"
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(25, 101)
+        Me.Label1.Location = New System.Drawing.Point(30, 108)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(48, 20)
         Me.Label1.TabIndex = 219
@@ -186,41 +243,17 @@ Partial Class Income_Statement
         Me.Label2.Text = "    Income Statement Report"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'lvCarBrands
+        'btn_filter
         '
-        Me.lvCarBrands.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lvCarBrands.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvCarBrands.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chAccounts, Me.chDebit, Me.chCredit, Me.ColumnHeader1})
-        Me.lvCarBrands.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lvCarBrands.GridLines = True
-        Me.lvCarBrands.Location = New System.Drawing.Point(5, 232)
-        Me.lvCarBrands.Name = "lvCarBrands"
-        Me.lvCarBrands.Size = New System.Drawing.Size(801, 298)
-        Me.lvCarBrands.TabIndex = 227
-        Me.lvCarBrands.UseCompatibleStateImageBehavior = False
-        Me.lvCarBrands.View = System.Windows.Forms.View.Details
-        '
-        'chAccounts
-        '
-        Me.chAccounts.Text = ""
-        Me.chAccounts.Width = 500
-        '
-        'chDebit
-        '
-        Me.chDebit.Text = ""
-        Me.chDebit.Width = 300
-        '
-        'chCredit
-        '
-        Me.chCredit.Text = ""
-        Me.chCredit.Width = 300
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = ""
-        Me.ColumnHeader1.Width = 300
+        Me.btn_filter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_filter.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btn_filter.ForeColor = System.Drawing.Color.Gold
+        Me.btn_filter.Location = New System.Drawing.Point(723, 157)
+        Me.btn_filter.Name = "btn_filter"
+        Me.btn_filter.Size = New System.Drawing.Size(69, 33)
+        Me.btn_filter.TabIndex = 245
+        Me.btn_filter.Text = "Filter"
+        Me.btn_filter.UseVisualStyleBackColor = False
         '
         'Income_Statement
         '
@@ -240,16 +273,18 @@ Partial Class Income_Statement
     Friend WithEvents btn_Cancel As System.Windows.Forms.Button
     Friend WithEvents lbltitle2 As System.Windows.Forms.Label
     Friend WithEvents lbltitle1 As System.Windows.Forms.Label
-    Friend WithEvents txtmisc As System.Windows.Forms.TextBox
     Friend WithEvents lblDate As System.Windows.Forms.Label
-    Friend WithEvents txtname As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents lvCarBrands As System.Windows.Forms.ListView
+    Friend WithEvents lvIncomeStatement As System.Windows.Forms.ListView
     Friend WithEvents chAccounts As System.Windows.Forms.ColumnHeader
     Friend WithEvents chDebit As System.Windows.Forms.ColumnHeader
     Friend WithEvents chCredit As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents dt_to As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents dt_from As System.Windows.Forms.DateTimePicker
+    Friend WithEvents cmbDate As System.Windows.Forms.ComboBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents btn_filter As System.Windows.Forms.Button
 
 End Class

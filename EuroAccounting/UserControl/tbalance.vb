@@ -1,18 +1,33 @@
 ﻿
 Public Class tbalance
     Dim ledger_id As Integer
+    Dim ledger_name, ledger_description As String
     Dim dr As SqlClient.SqlDataReader
-    Dim cdm As SqlClient.SqlCommand
+    Dim cmd As SqlClient.SqlCommand
     Dim db As New DBHelper(My.Settings.connectionString)
-    Private Sub load_tbalance()
+
+    Private Sub load_tbalance(Optional dt_from = "", Optional dt_to = "")
         '#get journals
         Dim journals(0) As String
         Dim journal_id_sql As String
         Dim counter As Integer
         Dim dbl_total_debit, dbl_total_credit, debit, credit As New Double
         Dim Item As ListViewItem
+        lvtbalance.Items.Clear()
+        If dt_from <> "" And dt_to = "" Then
+            MsgBox("Please select End Date.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "INVALID FILTER")
+            Exit Sub
+        ElseIf dt_to <> "" And dt_from = "" Then
+            MsgBox("Please select Start Date.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "INVALID FILTER")
+            Exit Sub
+        End If
 
-        dr = db.ExecuteReader("SELECT id FROM journals WHERE ledger_id=" & Me.ledger_id)
+        If dt_from <> "" And dt_to <> "" Then
+
+            dr = db.ExecuteReader("SELECT id FROM journals WHERE ledger_id=" & Me.ledger_id & "AND journal_date BETWEEN " & dt_from & " AND " & dt_to)
+        Else
+            dr = db.ExecuteReader("SELECT id FROM journals WHERE ledger_id=" & Me.ledger_id)
+        End If
         counter = 0
         If dr.HasRows Then
             Try
@@ -23,7 +38,9 @@ Public Class tbalance
                 Loop
                 journal_id_sql = String.Join(",", journals)
 
+
                 dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1 and account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id)as credit FROM accounts a WHERE a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
+
                 If dr.HasRows Then
                     Do While dr.Read
 
@@ -38,13 +55,13 @@ Public Class tbalance
                             credit = CDbl(dr.Item("credit"))
                         End If
 
+
                         Item = Me.lvtbalance.Items.Add(dr.Item("name").ToString)
 
                         With Item
                             If debit > credit Then
                                 .SubItems.Add(FormatNumber(debit - credit, 2))
                                 .SubItems.Add("")
-
                                 dbl_total_debit += debit - credit
                             Else
                                 .SubItems.Add("")
@@ -54,6 +71,13 @@ Public Class tbalance
 
                         End With
                     Loop
+                    Item = Me.lvtbalance.Items.Add("")
+
+                    With Item
+                        .SubItems.Add("")
+                        .SubItems.Add("")
+                    End With
+
                     Item = Me.lvtbalance.Items.Add("Total")
                     Item.SubItems.Add(FormatNumber(dbl_total_debit, 2))
                     Item.SubItems.Add(FormatNumber(dbl_total_credit, 2))
@@ -62,7 +86,15 @@ Public Class tbalance
                 MsgBox(ex.Message)
             End Try
         Else
-            MsgBox("No journal entry found in the selected ledger", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "NO JOURNAL ENTRY FOUND")
+            If dt_from <> "" And dt_to = "" Then
+                MsgBox("No journal entry found within the selected dates", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "NO JOURNAL ENTRY FOUND")
+
+                Exit Sub
+            ElseIf dt_to <> "" And dt_from = "" Then
+                MsgBox("No journal entry found in the selected ledger", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "NO JOURNAL ENTRY FOUND")
+
+                Exit Sub
+            End If
         End If
 
     End Sub
@@ -70,19 +102,43 @@ Public Class tbalance
         'showUSC(uscViewJournal)
         'uscViewJournal.cmbPost.Text = ""
         showUSC(uscMainMenu)
+        uscTrialBalance = New tbalance
     End Sub
+    Private Sub get_ledger_details()
 
+        dr = db.ExecuteReader("SELECT id,name,description FROM ledgers WHERE id=" & Me.ledger_id)
+        If dr.HasRows Then
+            dr.Read()
+            If IsDBNull(dr.Item("description")) = True Then
+                Me.ledger_description = ""
+            Else
+                Me.ledger_description = dr.Item("description")
+            End If
+            If IsDBNull(dr.Item("name")) = True Then
+                Me.ledger_name = ""
+            Else
+                Me.ledger_name = dr.Item("name")
+            End If
+        End If
+    End Sub
     Private Sub tbalance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblDate.Text = Date.Now.ToString("MM/dd/yyyy")
         Me.ledger_id = select_ledger.cbo_ledger.SelectedValue
         load_tbalance()
+        'get_ledger_details()
+
     End Sub
 
-    Private Sub txtname_TextChanged(sender As Object, e As EventArgs) Handles txtname.TextChanged
-        lbltitle1.Text = txtname.Text
+    Private Sub txtname_TextChanged(sender As Object, e As EventArgs)
+        'lbl_ledger_name.Text = txtname.Text
     End Sub
 
-    Private Sub txtmisc_TextChanged(sender As Object, e As EventArgs) Handles txtmisc.TextChanged
-        lbltitle2.Text = txtmisc.Text
+    Private Sub txtmisc_TextChanged(sender As Object, e As EventArgs)
+        'lbl_ledger_description.Text = txtmisc.Text
     End Sub
+
+    Private Sub btn_filter_Click(sender As Object, e As EventArgs) Handles btn_filter.Click
+        load_tbalance(DateToStr(dt_from.Text), DateToStr(dt_to.Text))
+    End Sub
+
 End Class
