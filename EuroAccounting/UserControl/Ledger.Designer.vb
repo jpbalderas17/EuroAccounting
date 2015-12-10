@@ -23,13 +23,24 @@ Partial Class Ledger
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblDate = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.pnl_Journal = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btn_filter = New System.Windows.Forms.Button()
+        Me.dt_to = New System.Windows.Forms.DateTimePicker()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.dt_from = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lvw_ledger = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lblDate = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -37,9 +48,14 @@ Partial Class Ledger
         Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.Controls.Add(Me.btn_filter)
+        Me.Panel1.Controls.Add(Me.dt_to)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.dt_from)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.lblDate)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.pnl_Journal)
         Me.Panel1.Controls.Add(Me.btnPrint)
         Me.Panel1.Controls.Add(Me.btn_Cancel)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -47,38 +63,6 @@ Partial Class Ledger
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(809, 555)
         Me.Panel1.TabIndex = 20
-        '
-        'lblDate
-        '
-        Me.lblDate.AutoSize = True
-        Me.lblDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDate.Location = New System.Drawing.Point(81, 102)
-        Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(79, 20)
-        Me.lblDate.TabIndex = 225
-        Me.lblDate.Text = "Date Now"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(27, 102)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(48, 20)
-        Me.Label1.TabIndex = 224
-        Me.Label1.Text = "Date:"
-        '
-        'pnl_Journal
-        '
-        Me.pnl_Journal.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pnl_Journal.AutoScroll = True
-        Me.pnl_Journal.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.pnl_Journal.Location = New System.Drawing.Point(5, 142)
-        Me.pnl_Journal.Name = "pnl_Journal"
-        Me.pnl_Journal.Size = New System.Drawing.Size(801, 283)
-        Me.pnl_Journal.TabIndex = 45
         '
         'btnPrint
         '
@@ -124,6 +108,127 @@ Partial Class Ledger
         Me.Label2.Text = "    Ledger Report"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'btn_filter
+        '
+        Me.btn_filter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_filter.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btn_filter.ForeColor = System.Drawing.Color.Gold
+        Me.btn_filter.Location = New System.Drawing.Point(717, 111)
+        Me.btn_filter.Name = "btn_filter"
+        Me.btn_filter.Size = New System.Drawing.Size(69, 33)
+        Me.btn_filter.TabIndex = 240
+        Me.btn_filter.Text = "Filter"
+        Me.btn_filter.UseVisualStyleBackColor = False
+        '
+        'dt_to
+        '
+        Me.dt_to.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dt_to.Location = New System.Drawing.Point(530, 117)
+        Me.dt_to.Name = "dt_to"
+        Me.dt_to.Size = New System.Drawing.Size(181, 20)
+        Me.dt_to.TabIndex = 239
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(503, 117)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(31, 20)
+        Me.Label4.TabIndex = 238
+        Me.Label4.Text = "To:"
+        '
+        'dt_from
+        '
+        Me.dt_from.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dt_from.Location = New System.Drawing.Point(303, 117)
+        Me.dt_from.Name = "dt_from"
+        Me.dt_from.Size = New System.Drawing.Size(181, 20)
+        Me.dt_from.TabIndex = 237
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(247, 117)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(50, 20)
+        Me.Label3.TabIndex = 236
+        Me.Label3.Text = "From:"
+        '
+        'Panel2
+        '
+        Me.Panel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.Controls.Add(Me.lvw_ledger)
+        Me.Panel2.Location = New System.Drawing.Point(8, 150)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(792, 384)
+        Me.Panel2.TabIndex = 235
+        '
+        'lvw_ledger
+        '
+        Me.lvw_ledger.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lvw_ledger.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lvw_ledger.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
+        Me.lvw_ledger.FullRowSelect = True
+        Me.lvw_ledger.GridLines = True
+        Me.lvw_ledger.HideSelection = False
+        Me.lvw_ledger.Location = New System.Drawing.Point(3, 4)
+        Me.lvw_ledger.Name = "lvw_ledger"
+        Me.lvw_ledger.Size = New System.Drawing.Size(786, 377)
+        Me.lvw_ledger.TabIndex = 226
+        Me.lvw_ledger.UseCompatibleStateImageBehavior = False
+        Me.lvw_ledger.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Date"
+        Me.ColumnHeader1.Width = 323
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Debit"
+        Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader2.Width = 140
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Credit"
+        Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader3.Width = 140
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Balance"
+        Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader4.Width = 140
+        '
+        'lblDate
+        '
+        Me.lblDate.AutoSize = True
+        Me.lblDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDate.Location = New System.Drawing.Point(81, 117)
+        Me.lblDate.Name = "lblDate"
+        Me.lblDate.Size = New System.Drawing.Size(79, 20)
+        Me.lblDate.TabIndex = 234
+        Me.lblDate.Text = "Date Now"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(27, 117)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(48, 20)
+        Me.Label1.TabIndex = 233
+        Me.Label1.Text = "Date:"
+        '
         'Ledger
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -133,6 +238,7 @@ Partial Class Ledger
         Me.Size = New System.Drawing.Size(812, 555)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -140,7 +246,17 @@ Partial Class Ledger
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents btnPrint As System.Windows.Forms.Button
     Friend WithEvents btn_Cancel As System.Windows.Forms.Button
-    Friend WithEvents pnl_Journal As System.Windows.Forms.FlowLayoutPanel
+    Friend WithEvents btn_filter As System.Windows.Forms.Button
+    Friend WithEvents dt_to As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents dt_from As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents lvw_ledger As System.Windows.Forms.ListView
+    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
     Friend WithEvents lblDate As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
 
