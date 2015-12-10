@@ -12,6 +12,7 @@
     Public uscAccounts As New Accounts
     Public uscLedgers As New Ledgers
     Public uscJournalEntry As New Journal_Entry
+    Public uscArchives As New Archives
 
     Public currentUSC As Control
     Sub clearMainPanel()
