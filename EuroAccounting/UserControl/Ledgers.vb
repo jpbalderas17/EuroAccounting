@@ -84,6 +84,7 @@ Public Class Ledgers
         End If
     End Sub
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
-        viewJournal()
+        showUSC(uscViewJournal)
+        uscViewJournal.loadJournal()
     End Sub
 End Class
