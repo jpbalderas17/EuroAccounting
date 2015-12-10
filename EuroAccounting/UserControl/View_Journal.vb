@@ -146,10 +146,11 @@ Public Class View_Journal
                         .SubItems.Add("Credit")
                     End With
                     Item.Group = group
-                    j_entry_dr = db.ExecuteReader("SELECT * FROM journal_details WHERE journal_id=" & dr.Item("id"))
+                    j_entry_dr = db.ExecuteReader("SELECT * FROM journal_details jd JOIN accounts a ON jd.account_id=a.id AND jd.journal_id=" & dr.Item("id"))
+                    'j_entry_dr = db.ExecuteReader("SELECT * FROM journal_details WHERE journal_id=" & dr.Item("id"))
                     If j_entry_dr.HasRows Then
                         Do While j_entry_dr.Read
-                            Item = lvljournal.Items.Add(j_entry_dr.Item("account_name"))
+                            Item = lvljournal.Items.Add(j_entry_dr.Item("name"))
                             With Item
                                 Dim db_cr = j_entry_dr.Item("is_debit")
                                 '.SubItems.Add(j_entry_dr.Item("amount"))
