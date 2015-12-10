@@ -53,6 +53,8 @@ Partial Class AddJournalEntry
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.cmeneCred = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.tsCredRemover = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.gbxCredit.SuspendLayout()
         Me.cmenuDeb.SuspendLayout()
         Me.gbxDebit.SuspendLayout()
@@ -95,7 +97,7 @@ Partial Class AddJournalEntry
         '
         'lvCredit
         '
-        Me.lvCredit.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3, Me.ColumnHeader4})
+        Me.lvCredit.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader6})
         Me.lvCredit.ContextMenuStrip = Me.cmeneCred
         Me.lvCredit.FullRowSelect = True
         Me.lvCredit.GridLines = True
@@ -188,7 +190,7 @@ Partial Class AddJournalEntry
         '
         'lvDebit
         '
-        Me.lvDebit.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
+        Me.lvDebit.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader5})
         Me.lvDebit.ContextMenuStrip = Me.cmenuDeb
         Me.lvDebit.FullRowSelect = True
         Me.lvDebit.GridLines = True
@@ -323,6 +325,16 @@ Partial Class AddJournalEntry
         Me.tsCredRemover.Size = New System.Drawing.Size(117, 22)
         Me.tsCredRemover.Text = "Remove"
         '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "id"
+        Me.ColumnHeader5.Width = 0
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "id"
+        Me.ColumnHeader6.Width = 0
+        '
         'AddJournalEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -384,4 +396,6 @@ Partial Class AddJournalEntry
     Friend WithEvents tsDebRemover As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents cmeneCred As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents tsCredRemover As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
 End Class

@@ -18,11 +18,17 @@
         dAccount.Items.Clear()
         crAccount.Items.Clear()
         'get all accounts
-        dr = db.ExecuteReader("SELECT name, type from accounts")
-        Do While dr.Read
-            dAccount.Items.Add(dr.Item("name").ToString)
-            crAccount.Items.Add(dr.Item("name").ToString)
-        Loop
+        Try
+            dr = db.ExecuteReader("SELECT name, type from accounts")
+            Do While dr.Read
+                dAccount.Items.Add(dr.Item("name").ToString)
+                crAccount.Items.Add(dr.Item("name").ToString)
+            Loop
+        Catch ex As Exception
+            MsgBox(ex.ToString, MsgBoxStyle.Critical)
+        Finally
+            db.Dispose()
+        End Try
     End Sub
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
@@ -33,50 +39,72 @@
         If Trim(dAccount.Text) = "" Then
             MsgBox("Debit entry is empty please add account", vbExclamation + vbOKOnly, "Field is empty")
             Exit Sub
-        ElseIf dAmount.Text = "" Then
+        ElseIf Trim(dAmount.Text) = "" Then
             MsgBox("Amount is empty", vbExclamation + vbOKOnly, "No amount input")
             Exit Sub
         End If
+        Try
+            dr = db.ExecuteReader("SELECT name, id from accounts where name = '" & Trim(dAccount.Text) & "'")
+            If Not dr.HasRows Then
+                Select Case MsgBox("The account doesn't exist do you want to add the account?", MsgBoxStyle.Information + vbYesNo, "Add account?")
+                    Case vbYes
+                        frm_accounts.txt_account_name.Text = dAccount.Text
+                        frm_accounts.ShowDialog()
+                        Exit Sub
+                    Case vbNo
+                        Exit Sub
+                End Select
 
-        dr = db.ExecuteReader("SELECT name from accounts where name = '" & dAccount.Text & "'")
-        If Not dr.HasRows Then
-            Select Case MsgBox("The account doesn't exist do you want to add the account?", MsgBoxStyle.Information + vbYesNo, "Add account?")
-                Case vbYes
+            End If
 
-                    frm_accounts.ShowDialog()
-                    'codes 
-            End Select
-
-        End If
-
-
-        'lagay sa listview
-        Dim itm = lvDebit.Items.Add(dAccount.Text)
-        itm.SubItems.Add(dAmount.Text)
-
+            'lagay sa listview
+            dr.Read()
+            Dim itm = lvDebit.Items.Add(dAccount.Text)
+            itm.SubItems.Add(dAmount.Text)
+            itm.SubItems.Add(dr.Item("id").ToString)
+            dAccount.Text = ""
+            dAmount.Text = ""
+        Catch ex As Exception
+            MsgBox(ex.ToString, MsgBoxStyle.Critical)
+        Finally
+            db.Dispose()
+        End Try
     End Sub
 
     Private Sub crAdd_Click(sender As Object, e As EventArgs) Handles crAdd.Click
         If Trim(crAccount.Text) = "" Then
             MsgBox("Credit entry is empty please add account", vbExclamation + vbOKOnly, "Field is empty")
             Exit Sub
-        ElseIf crAmount.Text = "" Then
+        ElseIf Trim(crAmount.Text) = "" Then
             MsgBox("Amount is empty", vbExclamation + vbOKOnly, "No amount input")
             Exit Sub
         End If
+        Try
+            dr = db.ExecuteReader("SELECT name,id from accounts where name = '" & Trim(crAccount.Text) & "'")
+            If Not dr.HasRows Then
+                Select Case MsgBox("The account doesn't exist do you want to add the account?", MsgBoxStyle.Information + vbYesNo, "Add account?")
+                    Case vbYes
 
-        dr = db.ExecuteReader("SELECT name from accounts where name = '" & crAccount.Text & "'")
-        If Not dr.HasRows Then
-            Select Case MsgBox("The account doesn't exist do you want to add the account?", MsgBoxStyle.Information + vbYesNo, "Add account?")
-                Case vbYes
 
-                    frm_accounts.ShowDialog()
-                    'codes 
-            End Select
-        End If
-        'lagay sa listview
-        Dim itm = lvCredit.Items.Add(crAccount.Text)
-        itm.SubItems.Add(crAmount.Text)
+                        frm_accounts.txt_account_name.Text = crAccount.Text
+                        frm_accounts.ShowDialog()
+                        Exit Sub
+                    Case vbNo
+                        Exit Sub
+                End Select
+            End If
+            'lagay sa listview
+            dr.Read()
+            Dim itm = lvCredit.Items.Add(Trim(crAccount.Text))
+            itm.SubItems.Add(crAmount.Text)
+            itm.SubItems.Add(dr.Item("id").ToString)
+            crAccount.Text = ""
+            crAmount.Text = ""
+        Catch ex As Exception
+            MsgBox(ex.ToString, MsgBoxStyle.Critical)
+        Finally
+            db.Dispose()
+        End Try
     End Sub
    
 
@@ -139,7 +167,7 @@
             MsgBox("No accounts", vbExclamation + vbOKOnly, "Empty list")
         Else
             saveEntries()
-            MsgBox("Entries saved!" + vbInformation + vbOKOnly, "New entry saved!")
+            MsgBox("Entries saved!", vbInformation + vbOKOnly, "New entry saved!")
             uscViewJournal.loadJournal()
         End If
 
@@ -151,7 +179,7 @@
         lastState = "COMMIT "
         Dim data As New Dictionary(Of String, Object)
         data.Add("journal_date", DateToStr(dtAddJourn.Value))
-        data.Add("description", txtDescription.Text)
+        data.Add("description", "'" & txtDescription.Text & "'")
         data.Add("ledger_id", uscLedgers.lvljournal.FocusedItem.Text)
         query = "INSERT INTO journals (journal_date, description, ledger_id) VALUES (@journal_date, @description, @ledger_id)" & vbCrLf &
         " DECLARE @j_id INT " & vbCrLf &
@@ -166,13 +194,14 @@
         'loop of entries
         
         For x = 1 To lvDebit.Items.Count Step 1
-            query += "INSERT INTO journal_details (journal_id, amount, is_debit, account_name) " & _
-                "VALUES (@j_id , " & lvDebit.Items(x - 1).SubItems(1).Text & ",1 , '" & lvDebit.Items(x - 1).Text & "')" & vbCrLf
+
+            query += "INSERT INTO journal_details (journal_id, amount, is_debit, account_id) " & _
+                "VALUES (@j_id , " & lvDebit.Items(x - 1).SubItems(1).Text & ",1 , '" & lvDebit.Items(x - 1).SubItems(2).Text & "')" & vbCrLf ' number na ito!
 
         Next
         For x = 1 To lvCredit.Items.Count Step 1
-            query += "INSERT INTO journal_details (journal_id, amount, is_debit, account_name) " & _
-                "VALUES (@j_id, " & lvCredit.Items(x - 1).SubItems(1).Text & ",0 , '" & lvCredit.Items(x - 1).Text & "')" & vbCrLf
+            query += "INSERT INTO journal_details (journal_id, amount, is_debit, account_id) " & _
+                "VALUES (@j_id, " & lvCredit.Items(x - 1).SubItems(1).Text & ",0 , '" & lvCredit.Items(x - 1).SubItems(2).Text & "')" & vbCrLf ' number na ito!
         Next
         MsgBox(firstState & vbCrLf & query & vbCrLf & lastState)
         Dim rec = db.ExecuteNonQuery(firstState & vbCrLf & query & vbCrLf & lastState, data)
