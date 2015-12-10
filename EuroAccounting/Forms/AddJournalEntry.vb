@@ -203,7 +203,7 @@
             query += "INSERT INTO journal_details (journal_id, amount, is_debit, account_id) " & _
                 "VALUES (@j_id, " & lvCredit.Items(x - 1).SubItems(1).Text & ",0 , '" & lvCredit.Items(x - 1).SubItems(2).Text & "')" & vbCrLf ' number na ito!
         Next
-        MsgBox(firstState & vbCrLf & query & vbCrLf & lastState)
+        'MsgBox(firstState & vbCrLf & query & vbCrLf & lastState)
         Dim rec = db.ExecuteNonQuery(firstState & vbCrLf & query & vbCrLf & lastState, data)
         data.Clear()
 
