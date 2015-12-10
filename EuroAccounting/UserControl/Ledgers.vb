@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿
 
 Public Class Ledgers
     Dim db As New DBHelper(My.Settings.connectionString)
@@ -9,7 +9,10 @@ Public Class Ledgers
         'uscViewJournal.cmbPost.Text = ""
         showUSC(uscMainMenu)
     End Sub
-
+    Private Sub showAddEditLedger(mode As Boolean)
+        pnl.Visible = mode
+        pnlMain.Enabled = Not mode
+    End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -32,7 +35,7 @@ Public Class Ledgers
         'parameters.Add("keyword", "%" & txtSearch.Text & "%")
 
         Try
-            dr = db.ExecuteReader("SELECT id, name, description FROM ledgers", parameters)
+            dr = db.ExecuteReader("SELECT id, name, description FROM ledgers WHERE is_archive = 0", parameters)
             If dr.HasRows Then
                 Do While dr.Read
                     'Dim utype = (CInt(dr.Item("user_type")))
@@ -90,5 +93,110 @@ Public Class Ledgers
         End If
         showUSC(uscViewJournal)
         uscViewJournal.loadJournal()
+    End Sub
+
+    Private Sub pnlMain_Paint(sender As Object, e As PaintEventArgs) Handles pnlMain.Paint
+
+    End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        lblAddEdit.Text = "Add new ledger"
+        showAddEditLedger(True)
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        showAddEditLedger(False)
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+
+        If Trim(txtNameofLedger.Text) = "" Then
+            MsgBox("Ledger must have a name", vbExclamation + vbOKOnly, "No name")
+            Exit Sub
+        End If
+        If lblAddEdit.Text = "Add new ledger" Then
+            save_Ledger()
+            showAddEditLedger(False)
+        Else
+            update_Ledger()
+            showAddEditLedger(False)
+        End If
+
+    End Sub
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+
+        If lvljournal.SelectedItems.Count = 0 Then
+            MsgBox("Please select a ledger", vbExclamation + vbOKOnly, "Choose a ledger")
+            Exit Sub
+        End If
+        lblAddEdit.Text = "Edit ledger"
+        showAddEditLedger(True)
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        ' next 
+        If lvljournal.SelectedItems.Count = 0 Then
+            MsgBox("Please select a ledger", vbExclamation + vbOKOnly, "Choose a ledger")
+            Exit Sub
+        End If
+        Select Case MsgBox("Are you sure you want to delete this ledger?" & vbCrLf & "- " & lvljournal.FocusedItem.SubItems(1).Text, _
+                       vbQuestion + vbYesNo, "Delete?")
+
+            Case vbYes
+                delete_Ledger()
+        End Select
+
+    End Sub
+    ''' METHODS
+    Private Sub save_Ledger()
+        Dim data As New Dictionary(Of String, Object)
+        Try
+            data.Add("name", txtNameofLedger.Text)
+            data.Add("description", Trim(txtDesc.Text))
+            data.Add("is_archive", 0)
+            Dim rec = db.ExecuteNonQuery("INSERT INTO ledgers (name , description,is_archive) VALUES " & _
+                                     "(@name, @description, @is_archive)", data)
+            data.Clear()
+            MsgBox("New ledger was created successfully.", vbInformation + vbOKOnly, "Ledger was added.")
+            lvLoadListview()
+        Catch ex As Exception
+            MsgBox(ex.ToString, vbCritical)
+        Finally
+            db.Dispose()
+        End Try
+    End Sub
+
+    Private Sub update_Ledger()
+        Dim data As New Dictionary(Of String, Object)
+        Try
+            data.Add("name", txtNameofLedger.Text)
+            data.Add("description", Trim(txtDesc.Text))
+            Dim rec = db.ExecuteNonQuery("UPDATE ledgers SET name = @name,  description = @description WHERE id =  " & lvljournal.FocusedItem.Text, data)
+            data.Clear()
+
+            MsgBox("New ledger was updated successfully.", vbInformation + vbOKOnly, "Ledger was edited.")
+            lvLoadListview()
+        Catch ex As Exception
+            MsgBox(ex.ToString, vbCritical)
+        Finally
+            db.Dispose()
+        End Try
+    End Sub
+
+    Private Sub delete_Ledger()
+        'fake deletion
+        Dim data As New Dictionary(Of String, Object)
+        Try
+            data.Add("is_archive", 1)
+            Dim rec = db.ExecuteNonQuery("UPDATE ledgers SET is_archive = @is_archive WHERE id =  " & lvljournal.FocusedItem.Text, data)
+            data.Clear()
+
+            MsgBox("Ledger was deleted.", vbInformation + vbOKOnly, "Deleted")
+            lvLoadListview()
+        Catch ex As Exception
+            MsgBox(ex.ToString, vbCritical)
+        Finally
+            db.Dispose()
+        End Try
     End Sub
 End Class
