@@ -9,7 +9,8 @@ Public Class frm_accounts
     End Sub
     Private Sub frm_accounts_Load(sender As Object, e As EventArgs) Handles Me.Load
         cbo_account_type_load()
-        reset_form()
+
+
         If (uscAccounts.lvw_accounts.SelectedItems.Count = 1) Then
             With uscAccounts.lvw_accounts.SelectedItems.Item(0)
                 Edit_this(CInt(.Text), CStr(.SubItems(1).Text), CStr(.SubItems(2).Text))
@@ -40,7 +41,7 @@ Public Class frm_accounts
     End Sub
     Private Sub save_account_type()
         Dim input As New Dictionary(Of String, Object)
-        input.Add("name", txt_account_name.Text)
+        input.Add("name", Trim(txt_account_name.Text))
         input.Add("type", cbo_account_type.SelectedValue)
         Try
 
@@ -101,6 +102,7 @@ Public Class frm_accounts
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         If validate_account() = True Then
             save_account_type()
+            reset_form()
         End If
     End Sub
 
