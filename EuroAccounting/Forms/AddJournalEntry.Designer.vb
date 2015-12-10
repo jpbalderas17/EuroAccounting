@@ -96,7 +96,7 @@ Partial Class AddJournalEntry
         'lvCredit
         '
         Me.lvCredit.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3, Me.ColumnHeader4})
-        Me.lvCredit.ContextMenuStrip = Me.cmenuDeb
+        Me.lvCredit.ContextMenuStrip = Me.cmeneCred
         Me.lvCredit.FullRowSelect = True
         Me.lvCredit.GridLines = True
         Me.lvCredit.Location = New System.Drawing.Point(25, 86)
@@ -260,6 +260,7 @@ Partial Class AddJournalEntry
         Me.Label3.Size = New System.Drawing.Size(43, 16)
         Me.Label3.TabIndex = 41
         Me.Label3.Text = "00000"
+        Me.Label3.Visible = False
         '
         'Label2
         '
@@ -270,6 +271,7 @@ Partial Class AddJournalEntry
         Me.Label2.Size = New System.Drawing.Size(79, 16)
         Me.Label2.TabIndex = 40
         Me.Label2.Text = "Journal No.:"
+        Me.Label2.Visible = False
         '
         'dtAddJourn
         '

@@ -62,6 +62,7 @@
             Exit Sub
         ElseIf crAmount.Text = "" Then
             MsgBox("Amount is empty", vbExclamation + vbOKOnly, "No amount input")
+            Exit Sub
         End If
 
         dr = db.ExecuteReader("SELECT name from accounts where name = '" & crAccount.Text & "'")
@@ -109,7 +110,14 @@
     End Sub
 
     Private Sub tsCredRemover_Click(sender As Object, e As EventArgs) Handles tsCredRemover.Click
-
+        If lvCredit.SelectedItems.Count > 0 Then
+            Select Case MsgBox("Are you sure you want to remove this account?", vbExclamation + vbYesNo, "Removing account")
+                Case vbYes
+                    lvCredit.FocusedItem.Remove()
+            End Select
+        Else
+            MsgBox("No account selected", vbExclamation + vbOKOnly, "Please select")
+        End If
     End Sub
 
     '''methods
@@ -130,19 +138,45 @@
         ElseIf debitVal = 0 And creditVal = 0 Then
             MsgBox("No accounts", vbExclamation + vbOKOnly, "Empty list")
         Else
-            MsgBox("tuloy")
+            saveEntries()
+            MsgBox("Entries saved!" + vbInformation + vbOKOnly, "New entry saved!")
+            uscViewJournal.loadJournal()
         End If
 
     End Sub
     Private Sub saveEntries()
         'una sa journal kuhain ang ledger_id
+        Dim query, firstState, lastState As String
+        firstState = "BEGIN TRANSACTION "
+        lastState = "COMMIT "
         Dim data As New Dictionary(Of String, Object)
         data.Add("journal_date", DateToStr(dtAddJourn.Value))
         data.Add("description", txtDescription.Text)
         data.Add("ledger_id", uscLedgers.lvljournal.FocusedItem.Text)
-        Dim rec = db.ExecuteNonQuery("BEGIN trans " & _
-        "INSERT FROM journals (journal_date, description, ledger_id) VALUES (@journal_date, @description, @ledger_id)" & _
-        "COMMIT", data) 'transactions multiple insert"
+        query = "INSERT INTO journals (journal_date, description, ledger_id) VALUES (@journal_date, @description, @ledger_id)" & vbCrLf &
+        " DECLARE @j_id INT " & vbCrLf &
+        " SET @j_id = SCOPE_IDENTITY()" & vbCrLf
+
+        'Dim rec = db.ExecuteScalar("INSERT INTO journals (journal_date, description, ledger_id) VALUES (@journal_date, @description, @ledger_id)" & _
+        '                           "; SET @j_id = SELECT SCOPE_IDENTITY()", data)
+        'Dim j_ID As Integer
+        'j_ID = rec
+
+
+        'loop of entries
+        
+        For x = 1 To lvDebit.Items.Count Step 1
+            query += "INSERT INTO journal_details (journal_id, amount, is_debit, account_name) " & _
+                "VALUES (@j_id , " & lvDebit.Items(x - 1).SubItems(1).Text & ",1 , '" & lvDebit.Items(x - 1).Text & "')" & vbCrLf
+
+        Next
+        For x = 1 To lvCredit.Items.Count Step 1
+            query += "INSERT INTO journal_details (journal_id, amount, is_debit, account_name) " & _
+                "VALUES (@j_id, " & lvCredit.Items(x - 1).SubItems(1).Text & ",0 , '" & lvCredit.Items(x - 1).Text & "')" & vbCrLf
+        Next
+        MsgBox(firstState & vbCrLf & query & vbCrLf & lastState)
+        Dim rec = db.ExecuteNonQuery(firstState & vbCrLf & query & vbCrLf & lastState, data)
+        data.Clear()
 
     End Sub
 End Class
