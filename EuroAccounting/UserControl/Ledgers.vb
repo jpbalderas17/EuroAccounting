@@ -84,6 +84,10 @@ Public Class Ledgers
         End If
     End Sub
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
+        If lvljournal.SelectedItems.Count = 0 Then
+            MsgBox("Please select ledger ", vbExclamation + vbOKOnly, "No ledger")
+            Exit Sub
+        End If
         showUSC(uscViewJournal)
         uscViewJournal.loadJournal()
     End Sub
