@@ -146,7 +146,7 @@ Public Class View_Journal
                         .SubItems.Add("Credit")
                     End With
                     Item.Group = group
-                    j_entry_dr = db.ExecuteReader("SELECT * FROM journal_details jd JOIN accounts a ON jd.account_id=a.id AND jd.journal_id=" & dr.Item("id"))
+                    j_entry_dr = db.ExecuteReader("SELECT * FROM journal_details jd JOIN accounts a ON jd.account_id=a.id AND jd.journal_id=" & dr.Item("id").ToString & "ORDER by is_debit ASC")
                     'j_entry_dr = db.ExecuteReader("SELECT * FROM journal_details WHERE journal_id=" & dr.Item("id"))
                     If j_entry_dr.HasRows Then
                         Do While j_entry_dr.Read
@@ -225,7 +225,5 @@ Public Class View_Journal
         AddJournalEntry.ShowDialog()
     End Sub
 
-    Private Sub pnl_Journal_Paint(sender As Object, e As PaintEventArgs) Handles pnl_Journal.Paint
 
-    End Sub
 End Class
