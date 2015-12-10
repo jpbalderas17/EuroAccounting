@@ -6,10 +6,8 @@
 
     Private Sub frm_MainMenu_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         Try
-            panelMain.Width = Me.Width
-            panelMain.Height = Me.Height
-            currentUSC.Width = Me.Width
-
+            currentUSC.Width = panelMain.Width
+            currentUSC.Height = panelMain.Height
         Catch ex As Exception
 
         End Try
