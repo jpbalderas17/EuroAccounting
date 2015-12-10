@@ -37,7 +37,7 @@ Public Class tbalance
                         Else
                             credit = CDbl(dr.Item("credit"))
                         End If
-                        
+
                         Item = Me.lvtbalance.Items.Add(dr.Item("name").ToString)
 
                         With Item
