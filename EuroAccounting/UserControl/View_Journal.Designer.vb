@@ -29,7 +29,6 @@ Partial Class View_Journal
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.pnl_Journal = New System.Windows.Forms.Panel()
         Me.lvljournal = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chAccounts = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chDebit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chCredit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -121,35 +120,31 @@ Partial Class View_Journal
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lvljournal.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvljournal.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.chAccounts, Me.chDebit, Me.chCredit})
+        Me.lvljournal.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chAccounts, Me.chDebit, Me.chCredit})
         Me.lvljournal.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvljournal.FullRowSelect = True
         Me.lvljournal.GridLines = True
-        Me.lvljournal.Location = New System.Drawing.Point(3, 191)
+        Me.lvljournal.Location = New System.Drawing.Point(0, 168)
         Me.lvljournal.Name = "lvljournal"
         Me.lvljournal.Size = New System.Drawing.Size(932, 298)
         Me.lvljournal.TabIndex = 211
         Me.lvljournal.UseCompatibleStateImageBehavior = False
         Me.lvljournal.View = System.Windows.Forms.View.Details
         '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = ""
-        Me.ColumnHeader1.Width = 206
-        '
         'chAccounts
         '
-        Me.chAccounts.Text = ""
-        Me.chAccounts.Width = 664
+        Me.chAccounts.Text = "    "
+        Me.chAccounts.Width = 500
         '
         'chDebit
         '
         Me.chDebit.Text = ""
-        Me.chDebit.Width = 300
+        Me.chDebit.Width = 150
         '
         'chCredit
         '
         Me.chCredit.Text = ""
-        Me.chCredit.Width = 300
+        Me.chCredit.Width = 150
         '
         'View_Journal
         '
@@ -176,7 +171,6 @@ Partial Class View_Journal
     Friend WithEvents btnAdd As System.Windows.Forms.Button
     Friend WithEvents pnl_Journal As System.Windows.Forms.Panel
     Friend WithEvents lvljournal As System.Windows.Forms.ListView
-    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
     Friend WithEvents chAccounts As System.Windows.Forms.ColumnHeader
     Friend WithEvents chDebit As System.Windows.Forms.ColumnHeader
     Friend WithEvents chCredit As System.Windows.Forms.ColumnHeader

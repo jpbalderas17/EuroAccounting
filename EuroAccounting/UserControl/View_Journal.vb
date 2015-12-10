@@ -4,7 +4,7 @@ Public Class View_Journal
     Dim dr As SqlClient.SqlDataReader
     Dim cmd As SqlClient.SqlCommand
     Private Sub View_Journal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        loadJournal()
+        'loadJournal()
 
         'pnl_Journal.Width -= 10
         'Dim parameters As New Dictionary(Of String, Object)
@@ -62,7 +62,7 @@ Public Class View_Journal
     End Sub
 
     Private Sub btn_Close_Click_1(sender As Object, e As EventArgs) Handles btn_Close.Click
-        showUSC(uscMainMenu)
+        showUSC(uscLedgers)
     End Sub
 
     Private Sub cmbPost_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPost.SelectedIndexChanged
@@ -84,7 +84,7 @@ Public Class View_Journal
     End Function
 
     Private Sub pnl_Journal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        loadJournal()
+
         'load_lvw()
         'Exit Sub
         'Dim parameters As New Dictionary(Of String, Object)
@@ -122,7 +122,7 @@ Public Class View_Journal
         '    db.Dispose()
         'End Try
     End Sub
-    Private Sub loadJournal()
+    Public Sub loadJournal()
         Dim parameters As New Dictionary(Of String, Object)
         Dim j_entry_dr As SqlDataReader
         lvljournal.Items.Clear()
@@ -131,7 +131,7 @@ Public Class View_Journal
         'parameters.Add("keyword", "%" & txtSearch.Text & "%")
 
         Try
-            dr = db.ExecuteReader("SELECT id,  journal_date, description FROM journals ")
+            dr = db.ExecuteReader("SELECT id,  journal_date, description FROM journals where ledger_id = " & uscLedgers.lvljournal.FocusedItem.Text)
 
             If dr.HasRows Then
                 Do While dr.Read
@@ -219,4 +219,12 @@ Public Class View_Journal
     '        db.Dispose()
     '    End Try
     'End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        AddJournalEntry.ShowDialog()
+    End Sub
+
+    Private Sub pnl_Journal_Paint(sender As Object, e As PaintEventArgs) Handles pnl_Journal.Paint
+
+    End Sub
 End Class
