@@ -22,12 +22,15 @@ Partial Class AddJournalEntry
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.components = New System.ComponentModel.Container()
+        Me.txtDescription = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.gbxCredit = New System.Windows.Forms.GroupBox()
         Me.lvCredit = New System.Windows.Forms.ListView()
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.cmenuDeb = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.tsDebRemover = New System.Windows.Forms.ToolStripMenuItem()
         Me.crAccount = New System.Windows.Forms.ComboBox()
         Me.crAdd = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -48,23 +51,27 @@ Partial Class AddJournalEntry
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAddEntry = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
+        Me.cmeneCred = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.tsCredRemover = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbxCredit.SuspendLayout()
+        Me.cmenuDeb.SuspendLayout()
         Me.gbxDebit.SuspendLayout()
+        Me.cmeneCred.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TextBox2
+        'txtDescription
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(105, 392)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(600, 22)
-        Me.TextBox2.TabIndex = 45
+        Me.txtDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescription.Location = New System.Drawing.Point(91, 375)
+        Me.txtDescription.Name = "txtDescription"
+        Me.txtDescription.Size = New System.Drawing.Size(614, 22)
+        Me.txtDescription.TabIndex = 45
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(14, 395)
+        Me.Label7.Location = New System.Drawing.Point(14, 378)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(79, 16)
         Me.Label7.TabIndex = 44
@@ -89,6 +96,7 @@ Partial Class AddJournalEntry
         'lvCredit
         '
         Me.lvCredit.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3, Me.ColumnHeader4})
+        Me.lvCredit.ContextMenuStrip = Me.cmenuDeb
         Me.lvCredit.FullRowSelect = True
         Me.lvCredit.GridLines = True
         Me.lvCredit.Location = New System.Drawing.Point(25, 86)
@@ -107,6 +115,18 @@ Partial Class AddJournalEntry
         '
         Me.ColumnHeader4.Text = "Amount"
         Me.ColumnHeader4.Width = 100
+        '
+        'cmenuDeb
+        '
+        Me.cmenuDeb.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsDebRemover})
+        Me.cmenuDeb.Name = "cmenuDeb"
+        Me.cmenuDeb.Size = New System.Drawing.Size(118, 26)
+        '
+        'tsDebRemover
+        '
+        Me.tsDebRemover.Name = "tsDebRemover"
+        Me.tsDebRemover.Size = New System.Drawing.Size(117, 22)
+        Me.tsDebRemover.Text = "Remove"
         '
         'crAccount
         '
@@ -169,6 +189,7 @@ Partial Class AddJournalEntry
         'lvDebit
         '
         Me.lvDebit.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
+        Me.lvDebit.ContextMenuStrip = Me.cmenuDeb
         Me.lvDebit.FullRowSelect = True
         Me.lvDebit.GridLines = True
         Me.lvDebit.Location = New System.Drawing.Point(21, 86)
@@ -271,7 +292,7 @@ Partial Class AddJournalEntry
         'btnAddEntry
         '
         Me.btnAddEntry.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddEntry.Location = New System.Drawing.Point(537, 420)
+        Me.btnAddEntry.Location = New System.Drawing.Point(537, 403)
         Me.btnAddEntry.Name = "btnAddEntry"
         Me.btnAddEntry.Size = New System.Drawing.Size(81, 26)
         Me.btnAddEntry.TabIndex = 46
@@ -281,21 +302,33 @@ Partial Class AddJournalEntry
         'btnCancel
         '
         Me.btnCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.Location = New System.Drawing.Point(624, 420)
+        Me.btnCancel.Location = New System.Drawing.Point(624, 403)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(81, 26)
         Me.btnCancel.TabIndex = 47
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
+        'cmeneCred
+        '
+        Me.cmeneCred.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsCredRemover})
+        Me.cmeneCred.Name = "ContextMenuStrip1"
+        Me.cmeneCred.Size = New System.Drawing.Size(118, 26)
+        '
+        'tsCredRemover
+        '
+        Me.tsCredRemover.Name = "tsCredRemover"
+        Me.tsCredRemover.Size = New System.Drawing.Size(117, 22)
+        Me.tsCredRemover.Text = "Remove"
+        '
         'AddJournalEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(733, 461)
+        Me.ClientSize = New System.Drawing.Size(733, 453)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnAddEntry)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtDescription)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.gbxCredit)
         Me.Controls.Add(Me.gbxDebit)
@@ -311,13 +344,15 @@ Partial Class AddJournalEntry
         Me.Text = "Add entry"
         Me.gbxCredit.ResumeLayout(False)
         Me.gbxCredit.PerformLayout()
+        Me.cmenuDeb.ResumeLayout(False)
         Me.gbxDebit.ResumeLayout(False)
         Me.gbxDebit.PerformLayout()
+        Me.cmeneCred.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents txtDescription As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents gbxCredit As System.Windows.Forms.GroupBox
     Friend WithEvents lvCredit As System.Windows.Forms.ListView
@@ -343,4 +378,8 @@ Partial Class AddJournalEntry
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnAddEntry As System.Windows.Forms.Button
     Friend WithEvents btnCancel As System.Windows.Forms.Button
+    Friend WithEvents cmenuDeb As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents tsDebRemover As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents cmeneCred As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents tsCredRemover As System.Windows.Forms.ToolStripMenuItem
 End Class
