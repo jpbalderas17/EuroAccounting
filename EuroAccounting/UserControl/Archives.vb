@@ -92,4 +92,8 @@
     Private Sub btn_Close_Click(sender As Object, e As EventArgs) Handles btn_Close.Click
         showUSC(uscMainMenu)
     End Sub
+
+    Private Sub pnlMain_Paint(sender As Object, e As PaintEventArgs) Handles pnlMain.Paint
+
+    End Sub
 End Class

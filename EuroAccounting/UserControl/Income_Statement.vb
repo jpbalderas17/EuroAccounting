@@ -236,6 +236,6 @@ Public Class Income_Statement
 
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         'Me.Hide()
-        tbalance_journal.ShowDialog()
+        'tbalance_journal.ShowDialog()
     End Sub
 End Class

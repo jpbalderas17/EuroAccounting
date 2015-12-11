@@ -23,6 +23,7 @@ Partial Class Income_Statement
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblNet = New System.Windows.Forms.Label()
         Me.lbltitle2 = New System.Windows.Forms.Label()
         Me.lbltitle1 = New System.Windows.Forms.Label()
         Me.btn_filter = New System.Windows.Forms.Button()
@@ -41,7 +42,6 @@ Partial Class Income_Statement
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.lblNet = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -68,15 +68,26 @@ Partial Class Income_Statement
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(809, 555)
+        Me.Panel1.Size = New System.Drawing.Size(812, 555)
         Me.Panel1.TabIndex = 20
+        '
+        'lblNet
+        '
+        Me.lblNet.AutoSize = True
+        Me.lblNet.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNet.Location = New System.Drawing.Point(31, 18)
+        Me.lblNet.Name = "lblNet"
+        Me.lblNet.Size = New System.Drawing.Size(37, 20)
+        Me.lblNet.TabIndex = 246
+        Me.lblNet.Text = "Net"
+        Me.lblNet.Visible = False
         '
         'lbltitle2
         '
         Me.lbltitle2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lbltitle2.AutoSize = True
         Me.lbltitle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltitle2.Location = New System.Drawing.Point(368, 221)
+        Me.lbltitle2.Location = New System.Drawing.Point(370, 221)
         Me.lbltitle2.Name = "lbltitle2"
         Me.lbltitle2.Size = New System.Drawing.Size(38, 20)
         Me.lbltitle2.TabIndex = 226
@@ -87,7 +98,7 @@ Partial Class Income_Statement
         Me.lbltitle1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lbltitle1.AutoSize = True
         Me.lbltitle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltitle1.Location = New System.Drawing.Point(368, 197)
+        Me.lbltitle1.Location = New System.Drawing.Point(370, 197)
         Me.lbltitle1.Name = "lbltitle1"
         Me.lbltitle1.Size = New System.Drawing.Size(223, 24)
         Me.lbltitle1.TabIndex = 225
@@ -98,7 +109,7 @@ Partial Class Income_Statement
         Me.btn_filter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_filter.BackColor = System.Drawing.Color.MidnightBlue
         Me.btn_filter.ForeColor = System.Drawing.Color.Gold
-        Me.btn_filter.Location = New System.Drawing.Point(723, 157)
+        Me.btn_filter.Location = New System.Drawing.Point(726, 157)
         Me.btn_filter.Name = "btn_filter"
         Me.btn_filter.Size = New System.Drawing.Size(69, 33)
         Me.btn_filter.TabIndex = 245
@@ -109,7 +120,7 @@ Partial Class Income_Statement
         '
         Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(283, 111)
+        Me.Label7.Location = New System.Drawing.Point(286, 111)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(73, 13)
         Me.Label7.TabIndex = 6
@@ -118,7 +129,7 @@ Partial Class Income_Statement
         'dt_to
         '
         Me.dt_to.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dt_to.Location = New System.Drawing.Point(597, 131)
+        Me.dt_to.Location = New System.Drawing.Point(600, 131)
         Me.dt_to.Name = "dt_to"
         Me.dt_to.Size = New System.Drawing.Size(195, 20)
         Me.dt_to.TabIndex = 5
@@ -127,7 +138,7 @@ Partial Class Income_Statement
         '
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(538, 135)
+        Me.Label5.Location = New System.Drawing.Point(541, 135)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 13)
         Me.Label5.TabIndex = 4
@@ -144,7 +155,7 @@ Partial Class Income_Statement
         Me.lvIncomeStatement.GridLines = True
         Me.lvIncomeStatement.Location = New System.Drawing.Point(13, 244)
         Me.lvIncomeStatement.Name = "lvIncomeStatement"
-        Me.lvIncomeStatement.Size = New System.Drawing.Size(786, 296)
+        Me.lvIncomeStatement.Size = New System.Drawing.Size(789, 296)
         Me.lvIncomeStatement.TabIndex = 227
         Me.lvIncomeStatement.UseCompatibleStateImageBehavior = False
         Me.lvIncomeStatement.View = System.Windows.Forms.View.Details
@@ -167,7 +178,7 @@ Partial Class Income_Statement
         'dt_from
         '
         Me.dt_from.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dt_from.Location = New System.Drawing.Point(597, 104)
+        Me.dt_from.Location = New System.Drawing.Point(600, 104)
         Me.dt_from.Name = "dt_from"
         Me.dt_from.Size = New System.Drawing.Size(195, 20)
         Me.dt_from.TabIndex = 3
@@ -178,7 +189,7 @@ Partial Class Income_Statement
         Me.cmbDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbDate.FormattingEnabled = True
         Me.cmbDate.Items.AddRange(New Object() {"Select Period", "Today", "This Month", "Last Month", "This Quarter", "Last Quarter", "This Year", "Last Year"})
-        Me.cmbDate.Location = New System.Drawing.Point(362, 104)
+        Me.cmbDate.Location = New System.Drawing.Point(365, 104)
         Me.cmbDate.Name = "cmbDate"
         Me.cmbDate.Size = New System.Drawing.Size(160, 21)
         Me.cmbDate.TabIndex = 2
@@ -187,7 +198,7 @@ Partial Class Income_Statement
         '
         Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(535, 108)
+        Me.Label6.Location = New System.Drawing.Point(538, 108)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(56, 13)
         Me.Label6.TabIndex = 1
@@ -221,7 +232,7 @@ Partial Class Income_Statement
         Me.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPrint.ForeColor = System.Drawing.Color.Gold
-        Me.btnPrint.Location = New System.Drawing.Point(573, 58)
+        Me.btnPrint.Location = New System.Drawing.Point(576, 58)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(115, 34)
         Me.btnPrint.TabIndex = 44
@@ -236,7 +247,7 @@ Partial Class Income_Statement
         Me.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Cancel.ForeColor = System.Drawing.Color.Gold
-        Me.btn_Cancel.Location = New System.Drawing.Point(694, 58)
+        Me.btn_Cancel.Location = New System.Drawing.Point(697, 58)
         Me.btn_Cancel.Name = "btn_Cancel"
         Me.btn_Cancel.Size = New System.Drawing.Size(115, 34)
         Me.btn_Cancel.TabIndex = 43
@@ -252,21 +263,10 @@ Partial Class Income_Statement
         Me.Label2.ForeColor = System.Drawing.Color.Gold
         Me.Label2.Location = New System.Drawing.Point(0, 58)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(806, 34)
+        Me.Label2.Size = New System.Drawing.Size(809, 34)
         Me.Label2.TabIndex = 42
         Me.Label2.Text = "    Income Statement Report"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lblNet
-        '
-        Me.lblNet.AutoSize = True
-        Me.lblNet.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNet.Location = New System.Drawing.Point(31, 18)
-        Me.lblNet.Name = "lblNet"
-        Me.lblNet.Size = New System.Drawing.Size(37, 20)
-        Me.lblNet.TabIndex = 246
-        Me.lblNet.Text = "Net"
-        Me.lblNet.Visible = False
         '
         'Income_Statement
         '

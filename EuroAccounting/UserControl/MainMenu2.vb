@@ -4,6 +4,7 @@
     End Sub
     Private Sub btn_View_Journal_Click(sender As Object, e As EventArgs) Handles btn_View_Journal.Click
         'showUSC(uscViewJournal)
+        uscLedgers.lvLoadListview()
         showUSC(uscLedgers)
     End Sub
 
@@ -72,6 +73,7 @@
     End Sub
 
     Private Sub btn_archives_Click(sender As Object, e As EventArgs) Handles btn_archives.Click
+        uscArchives.lvLoadListview()
         showUSC(uscArchives)
     End Sub
 End Class
