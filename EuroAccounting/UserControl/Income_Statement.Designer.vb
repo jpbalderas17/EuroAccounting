@@ -23,6 +23,9 @@ Partial Class Income_Statement
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lbltitle2 = New System.Windows.Forms.Label()
+        Me.lbltitle1 = New System.Windows.Forms.Label()
+        Me.btn_filter = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.dt_to = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -31,16 +34,14 @@ Partial Class Income_Statement
         Me.chDebit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chCredit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.dt_from = New System.Windows.Forms.DateTimePicker()
-        Me.lbltitle2 = New System.Windows.Forms.Label()
         Me.cmbDate = New System.Windows.Forms.ComboBox()
-        Me.lbltitle1 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.lblDate = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btn_filter = New System.Windows.Forms.Button()
+        Me.lblNet = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,15 +50,16 @@ Partial Class Income_Statement
         Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.Controls.Add(Me.lblNet)
+        Me.Panel1.Controls.Add(Me.lbltitle2)
+        Me.Panel1.Controls.Add(Me.lbltitle1)
         Me.Panel1.Controls.Add(Me.btn_filter)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.dt_to)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.lvIncomeStatement)
         Me.Panel1.Controls.Add(Me.dt_from)
-        Me.Panel1.Controls.Add(Me.lbltitle2)
         Me.Panel1.Controls.Add(Me.cmbDate)
-        Me.Panel1.Controls.Add(Me.lbltitle1)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.lblDate)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -68,6 +70,40 @@ Partial Class Income_Statement
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(809, 555)
         Me.Panel1.TabIndex = 20
+        '
+        'lbltitle2
+        '
+        Me.lbltitle2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lbltitle2.AutoSize = True
+        Me.lbltitle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltitle2.Location = New System.Drawing.Point(368, 221)
+        Me.lbltitle2.Name = "lbltitle2"
+        Me.lbltitle2.Size = New System.Drawing.Size(38, 20)
+        Me.lbltitle2.TabIndex = 226
+        Me.lbltitle2.Text = "Title"
+        '
+        'lbltitle1
+        '
+        Me.lbltitle1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lbltitle1.AutoSize = True
+        Me.lbltitle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltitle1.Location = New System.Drawing.Point(368, 197)
+        Me.lbltitle1.Name = "lbltitle1"
+        Me.lbltitle1.Size = New System.Drawing.Size(223, 24)
+        Me.lbltitle1.TabIndex = 225
+        Me.lbltitle1.Text = "INCOME STATEMENT"
+        '
+        'btn_filter
+        '
+        Me.btn_filter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_filter.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btn_filter.ForeColor = System.Drawing.Color.Gold
+        Me.btn_filter.Location = New System.Drawing.Point(723, 157)
+        Me.btn_filter.Name = "btn_filter"
+        Me.btn_filter.Size = New System.Drawing.Size(69, 33)
+        Me.btn_filter.TabIndex = 245
+        Me.btn_filter.Text = "Filter"
+        Me.btn_filter.UseVisualStyleBackColor = False
         '
         'Label7
         '
@@ -136,17 +172,6 @@ Partial Class Income_Statement
         Me.dt_from.Size = New System.Drawing.Size(195, 20)
         Me.dt_from.TabIndex = 3
         '
-        'lbltitle2
-        '
-        Me.lbltitle2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lbltitle2.AutoSize = True
-        Me.lbltitle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltitle2.Location = New System.Drawing.Point(409, 221)
-        Me.lbltitle2.Name = "lbltitle2"
-        Me.lbltitle2.Size = New System.Drawing.Size(38, 20)
-        Me.lbltitle2.TabIndex = 226
-        Me.lbltitle2.Text = "Title"
-        '
         'cmbDate
         '
         Me.cmbDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -157,17 +182,6 @@ Partial Class Income_Statement
         Me.cmbDate.Name = "cmbDate"
         Me.cmbDate.Size = New System.Drawing.Size(160, 21)
         Me.cmbDate.TabIndex = 2
-        '
-        'lbltitle1
-        '
-        Me.lbltitle1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lbltitle1.AutoSize = True
-        Me.lbltitle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltitle1.Location = New System.Drawing.Point(332, 197)
-        Me.lbltitle1.Name = "lbltitle1"
-        Me.lbltitle1.Size = New System.Drawing.Size(223, 24)
-        Me.lbltitle1.TabIndex = 225
-        Me.lbltitle1.Text = "INCOME STATEMENT"
         '
         'Label6
         '
@@ -243,17 +257,16 @@ Partial Class Income_Statement
         Me.Label2.Text = "    Income Statement Report"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'btn_filter
+        'lblNet
         '
-        Me.btn_filter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_filter.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btn_filter.ForeColor = System.Drawing.Color.Gold
-        Me.btn_filter.Location = New System.Drawing.Point(723, 157)
-        Me.btn_filter.Name = "btn_filter"
-        Me.btn_filter.Size = New System.Drawing.Size(69, 33)
-        Me.btn_filter.TabIndex = 245
-        Me.btn_filter.Text = "Filter"
-        Me.btn_filter.UseVisualStyleBackColor = False
+        Me.lblNet.AutoSize = True
+        Me.lblNet.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNet.Location = New System.Drawing.Point(31, 18)
+        Me.lblNet.Name = "lblNet"
+        Me.lblNet.Size = New System.Drawing.Size(37, 20)
+        Me.lblNet.TabIndex = 246
+        Me.lblNet.Text = "Net"
+        Me.lblNet.Visible = False
         '
         'Income_Statement
         '
@@ -286,5 +299,6 @@ Partial Class Income_Statement
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents btn_filter As System.Windows.Forms.Button
+    Friend WithEvents lblNet As System.Windows.Forms.Label
 
 End Class
