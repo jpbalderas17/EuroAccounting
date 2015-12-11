@@ -23,19 +23,19 @@ Partial Class Balance_Sheet
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btn_filter = New System.Windows.Forms.Button()
+        Me.dtpDate = New System.Windows.Forms.DateTimePicker()
+        Me.cmbDate = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.lbltitle2 = New System.Windows.Forms.Label()
         Me.lbltitle1 = New System.Windows.Forms.Label()
-        Me.txtmisc = New System.Windows.Forms.TextBox()
         Me.lblDate = New System.Windows.Forms.Label()
-        Me.txtname = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.lvCarBrands = New System.Windows.Forms.ListView()
-        Me.chAccounts = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chDebit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chCredit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lvbalance_sheet = New System.Windows.Forms.ListView()
+        Me.chid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chaccounts = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chamount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -47,15 +47,16 @@ Partial Class Balance_Sheet
         Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.Controls.Add(Me.btn_filter)
+        Me.Panel1.Controls.Add(Me.dtpDate)
+        Me.Panel1.Controls.Add(Me.cmbDate)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.lbltitle2)
         Me.Panel1.Controls.Add(Me.lbltitle1)
-        Me.Panel1.Controls.Add(Me.txtmisc)
         Me.Panel1.Controls.Add(Me.lblDate)
-        Me.Panel1.Controls.Add(Me.txtname)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.lvCarBrands)
+        Me.Panel1.Controls.Add(Me.lvbalance_sheet)
         Me.Panel1.Controls.Add(Me.btnPrint)
         Me.Panel1.Controls.Add(Me.btn_Cancel)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -64,12 +65,63 @@ Partial Class Balance_Sheet
         Me.Panel1.Size = New System.Drawing.Size(812, 555)
         Me.Panel1.TabIndex = 20
         '
+        'btn_filter
+        '
+        Me.btn_filter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_filter.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btn_filter.ForeColor = System.Drawing.Color.Gold
+        Me.btn_filter.Location = New System.Drawing.Point(728, 158)
+        Me.btn_filter.Name = "btn_filter"
+        Me.btn_filter.Size = New System.Drawing.Size(69, 33)
+        Me.btn_filter.TabIndex = 246
+        Me.btn_filter.Text = "Filter"
+        Me.btn_filter.UseVisualStyleBackColor = False
+        '
+        'dtpDate
+        '
+        Me.dtpDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtpDate.Location = New System.Drawing.Point(602, 132)
+        Me.dtpDate.Name = "dtpDate"
+        Me.dtpDate.Size = New System.Drawing.Size(195, 20)
+        Me.dtpDate.TabIndex = 230
+        '
+        'cmbDate
+        '
+        Me.cmbDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmbDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbDate.FormattingEnabled = True
+        Me.cmbDate.Items.AddRange(New Object() {"Select", "Today", "Yesterday", "End of Last Month", "End of Last Year"})
+        Me.cmbDate.Location = New System.Drawing.Point(602, 104)
+        Me.cmbDate.Name = "cmbDate"
+        Me.cmbDate.Size = New System.Drawing.Size(195, 21)
+        Me.cmbDate.TabIndex = 229
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(513, 131)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(33, 13)
+        Me.Label5.TabIndex = 228
+        Me.Label5.Text = "Date:"
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(513, 104)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(66, 13)
+        Me.Label6.TabIndex = 227
+        Me.Label6.Text = "Select Date:"
+        '
         'lbltitle2
         '
         Me.lbltitle2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lbltitle2.AutoSize = True
         Me.lbltitle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltitle2.Location = New System.Drawing.Point(433, 210)
+        Me.lbltitle2.Location = New System.Drawing.Point(306, 210)
         Me.lbltitle2.Name = "lbltitle2"
         Me.lbltitle2.Size = New System.Drawing.Size(38, 20)
         Me.lbltitle2.TabIndex = 226
@@ -80,19 +132,11 @@ Partial Class Balance_Sheet
         Me.lbltitle1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lbltitle1.AutoSize = True
         Me.lbltitle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltitle1.Location = New System.Drawing.Point(427, 186)
+        Me.lbltitle1.Location = New System.Drawing.Point(306, 186)
         Me.lbltitle1.Name = "lbltitle1"
-        Me.lbltitle1.Size = New System.Drawing.Size(50, 24)
+        Me.lbltitle1.Size = New System.Drawing.Size(180, 24)
         Me.lbltitle1.TabIndex = 225
-        Me.lbltitle1.Text = "Title"
-        '
-        'txtmisc
-        '
-        Me.txtmisc.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtmisc.Location = New System.Drawing.Point(74, 158)
-        Me.txtmisc.Name = "txtmisc"
-        Me.txtmisc.Size = New System.Drawing.Size(241, 26)
-        Me.txtmisc.TabIndex = 224
+        Me.lbltitle1.Text = "BALANCE SHEET"
         '
         'lblDate
         '
@@ -104,34 +148,6 @@ Partial Class Balance_Sheet
         Me.lblDate.TabIndex = 223
         Me.lblDate.Text = "Date Now"
         '
-        'txtname
-        '
-        Me.txtname.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtname.Location = New System.Drawing.Point(74, 128)
-        Me.txtname.Name = "txtname"
-        Me.txtname.Size = New System.Drawing.Size(241, 26)
-        Me.txtname.TabIndex = 222
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(26, 160)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(41, 20)
-        Me.Label4.TabIndex = 221
-        Me.Label4.Text = "Misc"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(26, 131)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(51, 20)
-        Me.Label3.TabIndex = 220
-        Me.Label3.Text = "Name"
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -142,41 +158,36 @@ Partial Class Balance_Sheet
         Me.Label1.TabIndex = 219
         Me.Label1.Text = "Date:"
         '
-        'lvCarBrands
+        'lvbalance_sheet
         '
-        Me.lvCarBrands.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.lvbalance_sheet.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lvCarBrands.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvCarBrands.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chAccounts, Me.chDebit, Me.chCredit, Me.ColumnHeader1})
-        Me.lvCarBrands.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lvCarBrands.GridLines = True
-        Me.lvCarBrands.Location = New System.Drawing.Point(5, 233)
-        Me.lvCarBrands.Name = "lvCarBrands"
-        Me.lvCarBrands.Size = New System.Drawing.Size(804, 298)
-        Me.lvCarBrands.TabIndex = 211
-        Me.lvCarBrands.UseCompatibleStateImageBehavior = False
-        Me.lvCarBrands.View = System.Windows.Forms.View.Details
+        Me.lvbalance_sheet.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lvbalance_sheet.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chid, Me.chaccounts, Me.chamount})
+        Me.lvbalance_sheet.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvbalance_sheet.GridLines = True
+        Me.lvbalance_sheet.Location = New System.Drawing.Point(5, 233)
+        Me.lvbalance_sheet.Name = "lvbalance_sheet"
+        Me.lvbalance_sheet.Size = New System.Drawing.Size(804, 298)
+        Me.lvbalance_sheet.TabIndex = 211
+        Me.lvbalance_sheet.UseCompatibleStateImageBehavior = False
+        Me.lvbalance_sheet.View = System.Windows.Forms.View.Details
         '
-        'chAccounts
+        'chid
         '
-        Me.chAccounts.Text = ""
-        Me.chAccounts.Width = 500
+        Me.chid.Text = ""
+        Me.chid.Width = 300
         '
-        'chDebit
+        'chaccounts
         '
-        Me.chDebit.Text = ""
-        Me.chDebit.Width = 300
+        Me.chaccounts.Text = ""
+        Me.chaccounts.Width = 314
         '
-        'chCredit
+        'chamount
         '
-        Me.chCredit.Text = ""
-        Me.chCredit.Width = 300
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = ""
-        Me.ColumnHeader1.Width = 300
+        Me.chamount.Text = ""
+        Me.chamount.Width = 300
         '
         'btnPrint
         '
@@ -238,18 +249,18 @@ Partial Class Balance_Sheet
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents btnPrint As System.Windows.Forms.Button
     Friend WithEvents btn_Cancel As System.Windows.Forms.Button
-    Friend WithEvents lvCarBrands As System.Windows.Forms.ListView
-    Friend WithEvents chAccounts As System.Windows.Forms.ColumnHeader
-    Friend WithEvents chDebit As System.Windows.Forms.ColumnHeader
-    Friend WithEvents chCredit As System.Windows.Forms.ColumnHeader
+    Friend WithEvents lvbalance_sheet As System.Windows.Forms.ListView
+    Friend WithEvents chid As System.Windows.Forms.ColumnHeader
+    Friend WithEvents chaccounts As System.Windows.Forms.ColumnHeader
+    Friend WithEvents chamount As System.Windows.Forms.ColumnHeader
     Friend WithEvents lbltitle2 As System.Windows.Forms.Label
     Friend WithEvents lbltitle1 As System.Windows.Forms.Label
-    Friend WithEvents txtmisc As System.Windows.Forms.TextBox
     Friend WithEvents lblDate As System.Windows.Forms.Label
-    Friend WithEvents txtname As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents dtpDate As System.Windows.Forms.DateTimePicker
+    Friend WithEvents cmbDate As System.Windows.Forms.ComboBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents btn_filter As System.Windows.Forms.Button
 
 End Class
