@@ -4,7 +4,7 @@
     Dim cmd As SqlClient.SqlCommand
 
     Private Sub btn_Close_Click(sender As Object, e As EventArgs) Handles btn_Close.Click
-        Me.Dispose()
+        'Me.Dispose()
         showUSC(uscMainMenu)
     End Sub
     Private Sub lvw_accounts_load()
