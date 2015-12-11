@@ -40,6 +40,7 @@ Partial Class MainMenu2
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btn_Income_Statement = New System.Windows.Forms.Button()
         Me.btn_Trial_Balance = New System.Windows.Forms.Button()
+        Me.btn_archives = New System.Windows.Forms.Button()
         Me.gbx_Choices.SuspendLayout()
         Me.pnl_mains.SuspendLayout()
         Me.SuspendLayout()
@@ -116,7 +117,7 @@ Partial Class MainMenu2
         Me.lblHeader.ForeColor = System.Drawing.Color.Gold
         Me.lblHeader.Location = New System.Drawing.Point(0, 30)
         Me.lblHeader.Name = "lblHeader"
-        Me.lblHeader.Size = New System.Drawing.Size(875, 34)
+        Me.lblHeader.Size = New System.Drawing.Size(1024, 34)
         Me.lblHeader.TabIndex = 5
         Me.lblHeader.Text = "       Welcome! user123"
         Me.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -130,7 +131,7 @@ Partial Class MainMenu2
         Me.btnLogout.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogout.ForeColor = System.Drawing.Color.Gold
         Me.btnLogout.Image = CType(resources.GetObject("btnLogout.Image"), System.Drawing.Image)
-        Me.btnLogout.Location = New System.Drawing.Point(727, 30)
+        Me.btnLogout.Location = New System.Drawing.Point(876, 30)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Size = New System.Drawing.Size(53, 34)
         Me.btnLogout.TabIndex = 6
@@ -228,6 +229,7 @@ Partial Class MainMenu2
         Me.pnl_mains.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnl_mains.Controls.Add(Me.btn_archives)
         Me.pnl_mains.Controls.Add(Me.btnExit)
         Me.pnl_mains.Controls.Add(Me.btnLogout)
         Me.pnl_mains.Controls.Add(Me.btn_Income_Statement)
@@ -242,7 +244,7 @@ Partial Class MainMenu2
         Me.pnl_mains.Controls.Add(Me.lblHeader)
         Me.pnl_mains.Location = New System.Drawing.Point(0, 14)
         Me.pnl_mains.Name = "pnl_mains"
-        Me.pnl_mains.Size = New System.Drawing.Size(875, 529)
+        Me.pnl_mains.Size = New System.Drawing.Size(1024, 529)
         Me.pnl_mains.TabIndex = 14
         '
         'btnExit
@@ -254,7 +256,7 @@ Partial Class MainMenu2
         Me.btnExit.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExit.ForeColor = System.Drawing.Color.Gold
         Me.btnExit.Image = CType(resources.GetObject("btnExit.Image"), System.Drawing.Image)
-        Me.btnExit.Location = New System.Drawing.Point(777, 30)
+        Me.btnExit.Location = New System.Drawing.Point(926, 30)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(53, 34)
         Me.btnExit.TabIndex = 15
@@ -290,16 +292,31 @@ Partial Class MainMenu2
         Me.btn_Trial_Balance.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_Trial_Balance.UseVisualStyleBackColor = False
         '
+        'btn_archives
+        '
+        Me.btn_archives.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btn_archives.FlatAppearance.BorderSize = 0
+        Me.btn_archives.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_archives.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_archives.ForeColor = System.Drawing.Color.Gold
+        Me.btn_archives.Location = New System.Drawing.Point(744, 381)
+        Me.btn_archives.Name = "btn_archives"
+        Me.btn_archives.Size = New System.Drawing.Size(231, 129)
+        Me.btn_archives.TabIndex = 16
+        Me.btn_archives.Text = "Archives"
+        Me.btn_archives.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_archives.UseVisualStyleBackColor = False
+        '
         'MainMenu2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Silver
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.Controls.Add(Me.pnl_mains)
         Me.Controls.Add(Me.gbx_Choices)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "MainMenu2"
-        Me.Size = New System.Drawing.Size(875, 555)
+        Me.Size = New System.Drawing.Size(1024, 555)
         Me.gbx_Choices.ResumeLayout(False)
         Me.gbx_Choices.PerformLayout()
         Me.pnl_mains.ResumeLayout(False)
@@ -323,5 +340,6 @@ Partial Class MainMenu2
     Friend WithEvents btn_Income_Statement As System.Windows.Forms.Button
     Friend WithEvents btn_Trial_Balance As System.Windows.Forms.Button
     Friend WithEvents btnExit As System.Windows.Forms.Button
+    Friend WithEvents btn_archives As System.Windows.Forms.Button
 
 End Class

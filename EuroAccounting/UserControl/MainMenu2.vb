@@ -70,4 +70,8 @@
         LogIn.Show()
         MainMenu.Hide()
     End Sub
+
+    Private Sub btn_archives_Click(sender As Object, e As EventArgs) Handles btn_archives.Click
+        showUSC(uscArchives)
+    End Sub
 End Class
