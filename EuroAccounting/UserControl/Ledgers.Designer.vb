@@ -22,6 +22,7 @@ Partial Class Ledgers
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ledgers))
         Me.pnlMain = New System.Windows.Forms.Panel()
         Me.lvljournal = New System.Windows.Forms.ListView()
         Me.chID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -43,6 +44,9 @@ Partial Class Ledgers
         Me.lblAddEdit = New System.Windows.Forms.Label()
         Me.txtNameofLedger = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtSearchLedger = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnSearchLedger = New System.Windows.Forms.Button()
         Me.pnlMain.SuspendLayout()
         Me.pnl.SuspendLayout()
         Me.SuspendLayout()
@@ -52,6 +56,9 @@ Partial Class Ledgers
         Me.pnlMain.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlMain.Controls.Add(Me.btnSearchLedger)
+        Me.pnlMain.Controls.Add(Me.txtSearchLedger)
+        Me.pnlMain.Controls.Add(Me.Label4)
         Me.pnlMain.Controls.Add(Me.lvljournal)
         Me.pnlMain.Controls.Add(Me.btnView)
         Me.pnlMain.Controls.Add(Me.btnDelete)
@@ -177,21 +184,23 @@ Partial Class Ledgers
         '
         Me.lblDate.AutoSize = True
         Me.lblDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDate.Location = New System.Drawing.Point(81, 102)
+        Me.lblDate.Location = New System.Drawing.Point(889, 106)
         Me.lblDate.Name = "lblDate"
         Me.lblDate.Size = New System.Drawing.Size(79, 20)
         Me.lblDate.TabIndex = 225
         Me.lblDate.Text = "Date Now"
+        Me.lblDate.Visible = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(27, 102)
+        Me.Label1.Location = New System.Drawing.Point(835, 106)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(48, 20)
         Me.Label1.TabIndex = 224
         Me.Label1.Text = "Date:"
+        Me.Label1.Visible = False
         '
         'Label2
         '
@@ -304,12 +313,47 @@ Partial Class Ledgers
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Name of ledger"
         '
+        'txtSearchLedger
+        '
+        Me.txtSearchLedger.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearchLedger.Location = New System.Drawing.Point(89, 106)
+        Me.txtSearchLedger.Name = "txtSearchLedger"
+        Me.txtSearchLedger.Size = New System.Drawing.Size(210, 22)
+        Me.txtSearchLedger.TabIndex = 234
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(32, 109)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(51, 16)
+        Me.Label4.TabIndex = 235
+        Me.Label4.Text = "Search"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'btnSearchLedger
+        '
+        Me.btnSearchLedger.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSearchLedger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSearchLedger.FlatAppearance.BorderSize = 0
+        Me.btnSearchLedger.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchLedger.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchLedger.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnSearchLedger.Image = CType(resources.GetObject("btnSearchLedger.Image"), System.Drawing.Image)
+        Me.btnSearchLedger.Location = New System.Drawing.Point(299, 106)
+        Me.btnSearchLedger.Name = "btnSearchLedger"
+        Me.btnSearchLedger.Size = New System.Drawing.Size(26, 22)
+        Me.btnSearchLedger.TabIndex = 236
+        Me.btnSearchLedger.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSearchLedger.UseVisualStyleBackColor = False
+        '
         'Ledgers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.pnl)
         Me.Controls.Add(Me.pnlMain)
+        Me.Controls.Add(Me.pnl)
         Me.Name = "Ledgers"
         Me.Size = New System.Drawing.Size(1001, 470)
         Me.pnlMain.ResumeLayout(False)
@@ -340,5 +384,8 @@ Partial Class Ledgers
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents lblAddEdit As System.Windows.Forms.Label
     Friend WithEvents txtNameofLedger As System.Windows.Forms.TextBox
+    Friend WithEvents txtSearchLedger As System.Windows.Forms.TextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents btnSearchLedger As System.Windows.Forms.Button
 
 End Class

@@ -199,4 +199,32 @@ Public Class Ledgers
             db.Dispose()
         End Try
     End Sub
+
+    Private Sub btnSearchLedger_Click(sender As Object, e As EventArgs) Handles btnSearchLedger.Click
+        If txtSearchLedger.Text.Contains("'") Then
+            MsgBox("Invalid text search, please remove single qoute", vbExclamation + vbOKOnly, "Invalid")
+            Exit Sub
+        End If
+        Try
+            dr = db.ExecuteReader("SELECT id,name, description FROM (SELECT * FROM ledgers where is_archive= 0) as tbl_ledgers where name like '%" & txtSearchLedger.Text & "%' OR" & _
+                              " description like '%" & txtSearchLedger.Text & "%'")
+            lvljournal.Items.Clear()
+            If dr.HasRows Then
+                Do While dr.Read
+                    Dim itm As ListViewItem = lvljournal.Items.Add(dr.Item("id").ToString)
+                    itm.SubItems.Add(dr.Item("name").ToString)
+                    itm.SubItems.Add(dr.Item("description").ToString)
+
+                Loop
+            Else
+                MsgBox("No results found", vbExclamation + vbOKOnly, "No ledger")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString, vbCritical)
+        Finally
+            db.Dispose()
+        End Try
+        
+        
+    End Sub
 End Class

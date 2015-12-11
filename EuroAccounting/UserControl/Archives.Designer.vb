@@ -22,15 +22,18 @@ Partial Class Archives
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Archives))
         Me.pnlMain = New System.Windows.Forms.Panel()
         Me.lvljournal = New System.Windows.Forms.ListView()
         Me.chID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chDesc = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnRestore = New System.Windows.Forms.Button()
         Me.btn_Close = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnSearchLedger = New System.Windows.Forms.Button()
+        Me.txtSearchLedger = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.pnlMain.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -39,8 +42,10 @@ Partial Class Archives
         Me.pnlMain.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlMain.Controls.Add(Me.btnSearchLedger)
+        Me.pnlMain.Controls.Add(Me.txtSearchLedger)
+        Me.pnlMain.Controls.Add(Me.Label4)
         Me.pnlMain.Controls.Add(Me.lvljournal)
-        Me.pnlMain.Controls.Add(Me.btnDelete)
         Me.pnlMain.Controls.Add(Me.btnRestore)
         Me.pnlMain.Controls.Add(Me.btn_Close)
         Me.pnlMain.Controls.Add(Me.Label2)
@@ -81,21 +86,6 @@ Partial Class Archives
         Me.chDesc.Text = "Description"
         Me.chDesc.Width = 505
         '
-        'btnDelete
-        '
-        Me.btnDelete.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnDelete.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnDelete.FlatAppearance.BorderSize = 0
-        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.ForeColor = System.Drawing.Color.Gold
-        Me.btnDelete.Location = New System.Drawing.Point(835, 58)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(93, 34)
-        Me.btnDelete.TabIndex = 230
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.UseVisualStyleBackColor = False
-        '
         'btnRestore
         '
         Me.btnRestore.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -104,7 +94,7 @@ Partial Class Archives
         Me.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRestore.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRestore.ForeColor = System.Drawing.Color.Gold
-        Me.btnRestore.Location = New System.Drawing.Point(736, 58)
+        Me.btnRestore.Location = New System.Drawing.Point(838, 58)
         Me.btnRestore.Name = "btnRestore"
         Me.btnRestore.Size = New System.Drawing.Size(93, 34)
         Me.btnRestore.TabIndex = 229
@@ -140,6 +130,41 @@ Partial Class Archives
         Me.Label2.Text = "    Archives of Ledgers"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'btnSearchLedger
+        '
+        Me.btnSearchLedger.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSearchLedger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSearchLedger.FlatAppearance.BorderSize = 0
+        Me.btnSearchLedger.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchLedger.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchLedger.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnSearchLedger.Image = CType(resources.GetObject("btnSearchLedger.Image"), System.Drawing.Image)
+        Me.btnSearchLedger.Location = New System.Drawing.Point(294, 109)
+        Me.btnSearchLedger.Name = "btnSearchLedger"
+        Me.btnSearchLedger.Size = New System.Drawing.Size(26, 22)
+        Me.btnSearchLedger.TabIndex = 239
+        Me.btnSearchLedger.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSearchLedger.UseVisualStyleBackColor = False
+        '
+        'txtSearchLedger
+        '
+        Me.txtSearchLedger.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearchLedger.Location = New System.Drawing.Point(84, 109)
+        Me.txtSearchLedger.Name = "txtSearchLedger"
+        Me.txtSearchLedger.Size = New System.Drawing.Size(210, 22)
+        Me.txtSearchLedger.TabIndex = 237
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(27, 112)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(51, 16)
+        Me.Label4.TabIndex = 238
+        Me.Label4.Text = "Search"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
         'Archives
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -148,6 +173,7 @@ Partial Class Archives
         Me.Name = "Archives"
         Me.Size = New System.Drawing.Size(1030, 550)
         Me.pnlMain.ResumeLayout(False)
+        Me.pnlMain.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -156,9 +182,11 @@ Partial Class Archives
     Friend WithEvents chID As System.Windows.Forms.ColumnHeader
     Friend WithEvents chName As System.Windows.Forms.ColumnHeader
     Friend WithEvents chDesc As System.Windows.Forms.ColumnHeader
-    Friend WithEvents btnDelete As System.Windows.Forms.Button
     Friend WithEvents btnRestore As System.Windows.Forms.Button
     Friend WithEvents btn_Close As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents btnSearchLedger As System.Windows.Forms.Button
+    Friend WithEvents txtSearchLedger As System.Windows.Forms.TextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 
 End Class
