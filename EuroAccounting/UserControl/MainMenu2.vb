@@ -42,8 +42,9 @@
         select_ledger.Show(uscLedger)
     End Sub
     Private Sub btn_Balance_Sheet_Click(sender As Object, e As EventArgs) Handles btn_Balance_Sheet.Click
-        selectDate.lblview.Text = "Balance Sheet"
-        selectDate.Show()
+        'selectDate.lblview.Text = "Balance Sheet"
+        'selectDate.Show()
+        select_ledger.Show(uscBalanceSheet)
     End Sub
 
     Private Sub btn_Cash_Flow_Click(sender As Object, e As EventArgs) Handles btn_Cash_Flow.Click
