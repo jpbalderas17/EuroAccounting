@@ -52,6 +52,8 @@ Public Class Income_Statement
                 'dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1 AND type=1 AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id and a.type=3)as credit FROM accounts a WHERE a.type=1 AND a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
                 dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1  AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id )as credit FROM accounts a WHERE a.type=1 AND a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
                 Item = Me.lvIncomeStatement.Items.Add("Revenue")
+                Item.SubItems.Add("")
+                Item.SubItems.Add("")
                 If dr.HasRows Then
                     Do While dr.Read
 
@@ -93,6 +95,8 @@ Public Class Income_Statement
                 'dr = db.ExecuteReader("SELECT DISTINCT(a.id),a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1 and account_id=a.id) as debit FROM journal_details jd JOIN accounts a ON jd.account_id=a.id where a.type=3")
                 'dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1 AND type=3 AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id and a.type=3)as credit FROM accounts a WHERE a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
                 Item = Me.lvIncomeStatement.Items.Add("Expenses")
+                Item.SubItems.Add("")
+                Item.SubItems.Add("")
                 If dr.HasRows Then
                     Do While dr.Read
                         Item = Me.lvIncomeStatement.Items.Add("          " & dr.Item("name").ToString)
@@ -127,6 +131,8 @@ Public Class Income_Statement
 
                 Dim net_income = dbl_total_revenue - dbl_total_expense
                 Item = Me.lvIncomeStatement.Items.Add("")
+                Item.SubItems.Add("")
+                Item.SubItems.Add("")
                 Item = lvIncomeStatement.Items.Add("NET INCOME")
                 Item.SubItems.Add("")
                 Item.SubItems.Add(net_income)
@@ -233,9 +239,58 @@ Public Class Income_Statement
     Private Sub btn_filter_Click(sender As Object, e As EventArgs) Handles btn_filter.Click
         'Income_Statement_Load(DateToStr(dt_from.Text), DateToStr(dt_to.Text))
     End Sub
-
+    Private Sub showINC(mode As Boolean)
+        Panel2.Visible = mode
+        Panel1.Enabled = Not mode
+    End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         'Me.Hide()
         'tbalance_journal.ShowDialog()
+        'codes
+
+        'Try
+        Dim row1 As DataRow = Nothing
+
+        Dim DS As New DataSet
+        Dim rptINC As New IncomeStatement
+        'mag a-add na sa dataset (DS)
+        DS.Tables.Add("IncomeStatement")
+        'lagay tayo ng columns
+        With DS.Tables(0).Columns
+            .Add("Entries")
+            .Add("Debit")
+            .Add("Credit")
+        End With
+        For x = 1 To lvIncomeStatement.Items.Count Step 1
+            row1 = DS.Tables(0).NewRow
+            row1(0) = lvIncomeStatement.Items(x - 1).Text
+            row1(1) = lvIncomeStatement.Items(x - 1).SubItems(1).Text
+            row1(2) = lvIncomeStatement.Items(x - 1).SubItems(2).Text
+            DS.Tables(0).Rows.Add(row1)
+        Next
+
+
+        DS.WriteXml("XML\IncomeStatement.xml")
+
+        Dim dsINC As New DataSet
+        dsINC = New DSreportsAccounting
+        Dim dsINCTemp As New DataSet
+        dsINCTemp = New DataSet()
+        'dsINCTemp = New DSreports
+        dsINCTemp.ReadXml("XML\IncomeStatement.xml")
+        dsINC.Merge(dsINCTemp.Tables(0))
+        'MsgBox(dsINCTemp.Tables(0).Rows(0).Item(0).ToString)
+        rptINC = New IncomeStatement
+        rptINC.SetDataSource(dsINCTemp.Tables(0))
+        Sample_Reports.crvInc.ReportSource = rptINC
+        Sample_Reports.ShowDialog()
+
+        'Catch ex As Exception
+        '    MsgBox(ex.ToString, MsgBoxStyle.Critical)
+
+        'End Try
+
     End Sub
+
+
 End Class

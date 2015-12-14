@@ -42,7 +42,10 @@ Partial Class Income_Statement
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.crvInc = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -66,9 +69,9 @@ Partial Class Income_Statement
         Me.Panel1.Controls.Add(Me.btnPrint)
         Me.Panel1.Controls.Add(Me.btn_Cancel)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Location = New System.Drawing.Point(0, 17)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(812, 555)
+        Me.Panel1.Size = New System.Drawing.Size(812, 536)
         Me.Panel1.TabIndex = 20
         '
         'lblNet
@@ -152,10 +155,11 @@ Partial Class Income_Statement
         Me.lvIncomeStatement.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lvIncomeStatement.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chAccounts, Me.chDebit, Me.chCredit})
         Me.lvIncomeStatement.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvIncomeStatement.FullRowSelect = True
         Me.lvIncomeStatement.GridLines = True
         Me.lvIncomeStatement.Location = New System.Drawing.Point(13, 244)
         Me.lvIncomeStatement.Name = "lvIncomeStatement"
-        Me.lvIncomeStatement.Size = New System.Drawing.Size(789, 296)
+        Me.lvIncomeStatement.Size = New System.Drawing.Size(789, 277)
         Me.lvIncomeStatement.TabIndex = 227
         Me.lvIncomeStatement.UseCompatibleStateImageBehavior = False
         Me.lvIncomeStatement.View = System.Windows.Forms.View.Details
@@ -268,15 +272,43 @@ Partial Class Income_Statement
         Me.Label2.Text = "    Income Statement Report"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'Panel2
+        '
+        Me.Panel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.Controls.Add(Me.crvInc)
+        Me.Panel2.Location = New System.Drawing.Point(13, 9)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(782, 500)
+        Me.Panel2.TabIndex = 21
+        Me.Panel2.Visible = False
+        '
+        'crvInc
+        '
+        Me.crvInc.ActiveViewIndex = -1
+        Me.crvInc.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.crvInc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.crvInc.Cursor = System.Windows.Forms.Cursors.Default
+        Me.crvInc.Location = New System.Drawing.Point(3, 11)
+        Me.crvInc.Name = "crvInc"
+        Me.crvInc.Size = New System.Drawing.Size(776, 486)
+        Me.crvInc.TabIndex = 82
+        Me.crvInc.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
+        '
         'Income_Statement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Income_Statement"
         Me.Size = New System.Drawing.Size(812, 555)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -300,5 +332,7 @@ Partial Class Income_Statement
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents btn_filter As System.Windows.Forms.Button
     Friend WithEvents lblNet As System.Windows.Forms.Label
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents crvInc As CrystalDecisions.Windows.Forms.CrystalReportViewer
 
 End Class
