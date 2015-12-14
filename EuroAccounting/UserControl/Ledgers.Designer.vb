@@ -24,6 +24,9 @@ Partial Class Ledgers
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ledgers))
         Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.btnSearchLedger = New System.Windows.Forms.Button()
+        Me.txtSearchLedger = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.lvljournal = New System.Windows.Forms.ListView()
         Me.chID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -44,9 +47,6 @@ Partial Class Ledgers
         Me.lblAddEdit = New System.Windows.Forms.Label()
         Me.txtNameofLedger = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtSearchLedger = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnSearchLedger = New System.Windows.Forms.Button()
         Me.pnlMain.SuspendLayout()
         Me.pnl.SuspendLayout()
         Me.SuspendLayout()
@@ -72,6 +72,41 @@ Partial Class Ledgers
         Me.pnlMain.Name = "pnlMain"
         Me.pnlMain.Size = New System.Drawing.Size(982, 456)
         Me.pnlMain.TabIndex = 20
+        '
+        'btnSearchLedger
+        '
+        Me.btnSearchLedger.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSearchLedger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSearchLedger.FlatAppearance.BorderSize = 0
+        Me.btnSearchLedger.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchLedger.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchLedger.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnSearchLedger.Image = CType(resources.GetObject("btnSearchLedger.Image"), System.Drawing.Image)
+        Me.btnSearchLedger.Location = New System.Drawing.Point(299, 106)
+        Me.btnSearchLedger.Name = "btnSearchLedger"
+        Me.btnSearchLedger.Size = New System.Drawing.Size(26, 22)
+        Me.btnSearchLedger.TabIndex = 236
+        Me.btnSearchLedger.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSearchLedger.UseVisualStyleBackColor = False
+        '
+        'txtSearchLedger
+        '
+        Me.txtSearchLedger.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearchLedger.Location = New System.Drawing.Point(89, 106)
+        Me.txtSearchLedger.Name = "txtSearchLedger"
+        Me.txtSearchLedger.Size = New System.Drawing.Size(210, 22)
+        Me.txtSearchLedger.TabIndex = 234
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(32, 109)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(51, 16)
+        Me.Label4.TabIndex = 235
+        Me.Label4.Text = "Search"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'lvljournal
         '
@@ -132,7 +167,7 @@ Partial Class Ledgers
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(93, 34)
         Me.btnDelete.TabIndex = 230
-        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Text = "Archive"
         Me.btnDelete.UseVisualStyleBackColor = False
         '
         'btnAdd
@@ -312,41 +347,6 @@ Partial Class Ledgers
         Me.Label3.Size = New System.Drawing.Size(101, 16)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Name of ledger"
-        '
-        'txtSearchLedger
-        '
-        Me.txtSearchLedger.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearchLedger.Location = New System.Drawing.Point(89, 106)
-        Me.txtSearchLedger.Name = "txtSearchLedger"
-        Me.txtSearchLedger.Size = New System.Drawing.Size(210, 22)
-        Me.txtSearchLedger.TabIndex = 234
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(32, 109)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(51, 16)
-        Me.Label4.TabIndex = 235
-        Me.Label4.Text = "Search"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'btnSearchLedger
-        '
-        Me.btnSearchLedger.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnSearchLedger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btnSearchLedger.FlatAppearance.BorderSize = 0
-        Me.btnSearchLedger.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchLedger.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchLedger.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSearchLedger.Image = CType(resources.GetObject("btnSearchLedger.Image"), System.Drawing.Image)
-        Me.btnSearchLedger.Location = New System.Drawing.Point(299, 106)
-        Me.btnSearchLedger.Name = "btnSearchLedger"
-        Me.btnSearchLedger.Size = New System.Drawing.Size(26, 22)
-        Me.btnSearchLedger.TabIndex = 236
-        Me.btnSearchLedger.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnSearchLedger.UseVisualStyleBackColor = False
         '
         'Ledgers
         '

@@ -139,8 +139,8 @@ Public Class Ledgers
             MsgBox("Please select a ledger", vbExclamation + vbOKOnly, "Choose a ledger")
             Exit Sub
         End If
-        Select Case MsgBox("Are you sure you want to delete this ledger?" & vbCrLf & "- " & lvljournal.FocusedItem.SubItems(1).Text, _
-                       vbQuestion + vbYesNo, "Delete?")
+        Select Case MsgBox("Are you sure you want to archive this ledger?" & vbCrLf & "- " & lvljournal.FocusedItem.SubItems(1).Text, _
+                       vbQuestion + vbYesNo, "Archive?")
 
             Case vbYes
                 delete_Ledger()
@@ -191,7 +191,7 @@ Public Class Ledgers
             Dim rec = db.ExecuteNonQuery("UPDATE ledgers SET is_archive = @is_archive WHERE id =  " & lvljournal.FocusedItem.Text, data)
             data.Clear()
 
-            MsgBox("Ledger was deleted.", vbInformation + vbOKOnly, "Deleted")
+            MsgBox("Ledger was in the archive.", vbInformation + vbOKOnly, "Archived")
             lvLoadListview()
         Catch ex As Exception
             MsgBox(ex.ToString, vbCritical)

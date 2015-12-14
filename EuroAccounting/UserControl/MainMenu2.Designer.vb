@@ -29,7 +29,6 @@ Partial Class MainMenu2
         Me.btn_Tools = New System.Windows.Forms.Button()
         Me.lblHeader = New System.Windows.Forms.Label()
         Me.btnLogout = New System.Windows.Forms.Button()
-        Me.btn_Ledger = New System.Windows.Forms.Button()
         Me.btn_Cash_Flow = New System.Windows.Forms.Button()
         Me.btn_Balance_Sheet = New System.Windows.Forms.Button()
         Me.gbx_Choices = New System.Windows.Forms.GroupBox()
@@ -37,11 +36,12 @@ Partial Class MainMenu2
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.pnl_mains = New System.Windows.Forms.Panel()
+        Me.btnDbBackUp = New System.Windows.Forms.Button()
         Me.btn_archives = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btn_Income_Statement = New System.Windows.Forms.Button()
         Me.btn_Trial_Balance = New System.Windows.Forms.Button()
-        Me.btnDbBackUp = New System.Windows.Forms.Button()
+        Me.btn3ColLedger = New System.Windows.Forms.Button()
         Me.gbx_Choices.SuspendLayout()
         Me.pnl_mains.SuspendLayout()
         Me.SuspendLayout()
@@ -138,21 +138,6 @@ Partial Class MainMenu2
         Me.btnLogout.TabIndex = 6
         Me.btnLogout.UseVisualStyleBackColor = False
         '
-        'btn_Ledger
-        '
-        Me.btn_Ledger.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btn_Ledger.FlatAppearance.BorderSize = 0
-        Me.btn_Ledger.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_Ledger.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Ledger.ForeColor = System.Drawing.Color.Gold
-        Me.btn_Ledger.Location = New System.Drawing.Point(270, 382)
-        Me.btn_Ledger.Name = "btn_Ledger"
-        Me.btn_Ledger.Size = New System.Drawing.Size(231, 128)
-        Me.btn_Ledger.TabIndex = 10
-        Me.btn_Ledger.Text = "Ledger"
-        Me.btn_Ledger.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_Ledger.UseVisualStyleBackColor = False
-        '
         'btn_Cash_Flow
         '
         Me.btn_Cash_Flow.BackColor = System.Drawing.Color.MidnightBlue
@@ -230,6 +215,7 @@ Partial Class MainMenu2
         Me.pnl_mains.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnl_mains.Controls.Add(Me.btn3ColLedger)
         Me.pnl_mains.Controls.Add(Me.btnDbBackUp)
         Me.pnl_mains.Controls.Add(Me.btn_archives)
         Me.pnl_mains.Controls.Add(Me.btnExit)
@@ -239,7 +225,6 @@ Partial Class MainMenu2
         Me.pnl_mains.Controls.Add(Me.btn_Balance_Sheet)
         Me.pnl_mains.Controls.Add(Me.btn_View_Journal)
         Me.pnl_mains.Controls.Add(Me.btn_Cash_Flow)
-        Me.pnl_mains.Controls.Add(Me.btn_Ledger)
         Me.pnl_mains.Controls.Add(Me.btn_Manage_Acct)
         Me.pnl_mains.Controls.Add(Me.btn_Users)
         Me.pnl_mains.Controls.Add(Me.btn_Tools)
@@ -249,6 +234,21 @@ Partial Class MainMenu2
         Me.pnl_mains.Size = New System.Drawing.Size(1024, 529)
         Me.pnl_mains.TabIndex = 14
         '
+        'btnDbBackUp
+        '
+        Me.btnDbBackUp.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnDbBackUp.FlatAppearance.BorderSize = 0
+        Me.btnDbBackUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDbBackUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDbBackUp.ForeColor = System.Drawing.Color.Gold
+        Me.btnDbBackUp.Location = New System.Drawing.Point(744, 246)
+        Me.btnDbBackUp.Name = "btnDbBackUp"
+        Me.btnDbBackUp.Size = New System.Drawing.Size(231, 129)
+        Me.btnDbBackUp.TabIndex = 17
+        Me.btnDbBackUp.Text = "Database Back up"
+        Me.btnDbBackUp.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnDbBackUp.UseVisualStyleBackColor = False
+        '
         'btn_archives
         '
         Me.btn_archives.BackColor = System.Drawing.Color.MidnightBlue
@@ -256,7 +256,7 @@ Partial Class MainMenu2
         Me.btn_archives.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_archives.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_archives.ForeColor = System.Drawing.Color.Gold
-        Me.btn_archives.Location = New System.Drawing.Point(744, 246)
+        Me.btn_archives.Location = New System.Drawing.Point(744, 381)
         Me.btn_archives.Name = "btn_archives"
         Me.btn_archives.Size = New System.Drawing.Size(231, 129)
         Me.btn_archives.TabIndex = 16
@@ -309,20 +309,20 @@ Partial Class MainMenu2
         Me.btn_Trial_Balance.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_Trial_Balance.UseVisualStyleBackColor = False
         '
-        'btnDbBackUp
+        'btn3ColLedger
         '
-        Me.btnDbBackUp.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnDbBackUp.FlatAppearance.BorderSize = 0
-        Me.btnDbBackUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDbBackUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDbBackUp.ForeColor = System.Drawing.Color.Gold
-        Me.btnDbBackUp.Location = New System.Drawing.Point(744, 380)
-        Me.btnDbBackUp.Name = "btnDbBackUp"
-        Me.btnDbBackUp.Size = New System.Drawing.Size(231, 129)
-        Me.btnDbBackUp.TabIndex = 17
-        Me.btnDbBackUp.Text = "Database Back up"
-        Me.btnDbBackUp.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnDbBackUp.UseVisualStyleBackColor = False
+        Me.btn3ColLedger.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btn3ColLedger.FlatAppearance.BorderSize = 0
+        Me.btn3ColLedger.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn3ColLedger.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn3ColLedger.ForeColor = System.Drawing.Color.Gold
+        Me.btn3ColLedger.Location = New System.Drawing.Point(270, 382)
+        Me.btn3ColLedger.Name = "btn3ColLedger"
+        Me.btn3ColLedger.Size = New System.Drawing.Size(231, 128)
+        Me.btn3ColLedger.TabIndex = 18
+        Me.btn3ColLedger.Text = "3 Column Ledger"
+        Me.btn3ColLedger.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn3ColLedger.UseVisualStyleBackColor = False
         '
         'MainMenu2
         '
@@ -346,7 +346,6 @@ Partial Class MainMenu2
     Friend WithEvents btn_Tools As System.Windows.Forms.Button
     Friend WithEvents lblHeader As System.Windows.Forms.Label
     Friend WithEvents btnLogout As System.Windows.Forms.Button
-    Friend WithEvents btn_Ledger As System.Windows.Forms.Button
     Friend WithEvents btn_Cash_Flow As System.Windows.Forms.Button
     Friend WithEvents btn_Balance_Sheet As System.Windows.Forms.Button
     Friend WithEvents gbx_Choices As System.Windows.Forms.GroupBox
@@ -359,5 +358,6 @@ Partial Class MainMenu2
     Friend WithEvents btnExit As System.Windows.Forms.Button
     Friend WithEvents btn_archives As System.Windows.Forms.Button
     Friend WithEvents btnDbBackUp As System.Windows.Forms.Button
+    Friend WithEvents btn3ColLedger As System.Windows.Forms.Button
 
 End Class

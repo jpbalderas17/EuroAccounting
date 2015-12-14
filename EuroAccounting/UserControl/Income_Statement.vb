@@ -27,7 +27,6 @@ Public Class Income_Statement
     Private Sub Income_Statement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'lblDate.Text = Date.Now.ToString("MM/dd/yyyy")
         Me.ledger_id = select_ledger.cbo_ledger.SelectedValue
-
        
         SetCueText(txtTitle, "Title")
         SetCueText(txtDescription, "Description")
@@ -39,6 +38,7 @@ Public Class Income_Statement
         Return str 'Format(str, "Short date")
     End Function
     Public Sub lvwIncome_statementinList()
+        lvIncomeStatement.Items.Clear()
         Dim parameters As New Dictionary(Of String, Object)
         'Dim j_entry_dr As SqlDataReader
         Dim dbl_total_expense As Double = 0
@@ -165,6 +165,7 @@ Public Class Income_Statement
         End If
     End Sub
     Public Sub lvwIncome_statementInCBO(Optional dt_from As String = "", Optional dt_to As String = "")
+        lvIncomeStatement.Items.Clear()
         Dim parameters As New Dictionary(Of String, Object)
         'Dim j_entry_dr As SqlDataReader
         Dim dbl_total_expense As Double = 0
