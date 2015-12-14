@@ -62,6 +62,8 @@ Public Class Balance_Sheet
                 dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1  AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id )as credit FROM accounts a WHERE a.type in (4,5) AND a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
                 If dr.HasRows Then
                     Item = Me.lvbalance_sheet.Items.Add("ASSET")
+                    Item.SubItems.Add("")
+                    Item.SubItems.Add("")
                     Do While dr.Read
 
                         If IsDBNull(dr.Item("debit")) Then
@@ -103,7 +105,11 @@ Public Class Balance_Sheet
                 dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1  AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id )as credit FROM accounts a WHERE a.type in (6) AND a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
                 If dr.HasRows Then
                     Item = Me.lvbalance_sheet.Items.Add("")
+                    Item.SubItems.Add("")
+                    Item.SubItems.Add("")
                     Item = Me.lvbalance_sheet.Items.Add("LIABILITIES")
+                    Item.SubItems.Add("")
+                    Item.SubItems.Add("")
                     Do While dr.Read
 
                         If IsDBNull(dr.Item("debit")) Then
@@ -144,7 +150,11 @@ Public Class Balance_Sheet
                 dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1  AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id )as credit FROM accounts a WHERE a.type in (8,9) AND a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
                 If dr.HasRows Then
                     Item = Me.lvbalance_sheet.Items.Add("")
+                    Item.SubItems.Add("")
+                    Item.SubItems.Add("")
                     Item = Me.lvbalance_sheet.Items.Add("OWNER'S EQUITY")
+                    Item.SubItems.Add("")
+                    Item.SubItems.Add("")
                     Do While dr.Read
 
                         If IsDBNull(dr.Item("debit")) Then
@@ -176,6 +186,7 @@ Public Class Balance_Sheet
                     Loop
                     Item = Me.lvbalance_sheet.Items.Add("Retained Earnings")
                     Item.SubItems.Add(FormatNumber(net, 2))
+                    Item.SubItems.Add("")
 
                     Item = Me.lvbalance_sheet.Items.Add("          " & "Total Current Owner's Equity")
                     Item.SubItems.Add("")
@@ -186,6 +197,8 @@ Public Class Balance_Sheet
                 'COMPUTATION
                 Dim total_liabilities_equity As Double = dbl_total_liabilities + total_oe
                 Item = lvbalance_sheet.Items.Add("")
+                Item.SubItems.Add("")
+                Item.SubItems.Add("")
                 Item = lvbalance_sheet.Items.Add("TOTAL LIABILITIES AND OWNER'S EQUITY")
                 Item.SubItems.Add("")
                 Item.SubItems.Add(FormatNumber(total_liabilities_equity, 2))

@@ -28,9 +28,9 @@ Partial Class Balance_Sheet
         Me.lblDate = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lvbalance_sheet = New System.Windows.Forms.ListView()
-        Me.chid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chaccounts = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chamount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chAcct = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chAmount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chTotal = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnPreview = New System.Windows.Forms.Button()
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -101,30 +101,30 @@ Partial Class Balance_Sheet
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lvbalance_sheet.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvbalance_sheet.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chid, Me.chaccounts, Me.chamount})
+        Me.lvbalance_sheet.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chAcct, Me.chAmount, Me.chTotal})
         Me.lvbalance_sheet.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvbalance_sheet.GridLines = True
-        Me.lvbalance_sheet.Location = New System.Drawing.Point(5, 209)
+        Me.lvbalance_sheet.Location = New System.Drawing.Point(5, 200)
         Me.lvbalance_sheet.Name = "lvbalance_sheet"
         Me.lvbalance_sheet.Size = New System.Drawing.Size(804, 282)
         Me.lvbalance_sheet.TabIndex = 211
         Me.lvbalance_sheet.UseCompatibleStateImageBehavior = False
         Me.lvbalance_sheet.View = System.Windows.Forms.View.Details
         '
-        'chid
+        'chAcct
         '
-        Me.chid.Text = ""
-        Me.chid.Width = 300
+        Me.chAcct.Text = ""
+        Me.chAcct.Width = 406
         '
-        'chaccounts
+        'chAmount
         '
-        Me.chaccounts.Text = ""
-        Me.chaccounts.Width = 314
+        Me.chAmount.Text = ""
+        Me.chAmount.Width = 314
         '
-        'chamount
+        'chTotal
         '
-        Me.chamount.Text = ""
-        Me.chamount.Width = 300
+        Me.chTotal.Text = ""
+        Me.chTotal.Width = 300
         '
         'btnPreview
         '
@@ -187,9 +187,9 @@ Partial Class Balance_Sheet
     Friend WithEvents btnPreview As System.Windows.Forms.Button
     Friend WithEvents btn_Cancel As System.Windows.Forms.Button
     Friend WithEvents lvbalance_sheet As System.Windows.Forms.ListView
-    Friend WithEvents chid As System.Windows.Forms.ColumnHeader
-    Friend WithEvents chaccounts As System.Windows.Forms.ColumnHeader
-    Friend WithEvents chamount As System.Windows.Forms.ColumnHeader
+    Friend WithEvents chAcct As System.Windows.Forms.ColumnHeader
+    Friend WithEvents chAmount As System.Windows.Forms.ColumnHeader
+    Friend WithEvents chTotal As System.Windows.Forms.ColumnHeader
     Friend WithEvents lblDate As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtDescription As System.Windows.Forms.TextBox
