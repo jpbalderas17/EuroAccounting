@@ -53,7 +53,7 @@ Partial Class View_Journal
         Me.Label5.BackColor = System.Drawing.Color.MidnightBlue
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Gold
-        Me.Label5.Location = New System.Drawing.Point(476, 68)
+        Me.Label5.Location = New System.Drawing.Point(466, 113)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(52, 16)
         Me.Label5.TabIndex = 9
@@ -66,7 +66,7 @@ Partial Class View_Journal
         Me.Label2.BackColor = System.Drawing.Color.MidnightBlue
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Gold
-        Me.Label2.Location = New System.Drawing.Point(0, 59)
+        Me.Label2.Location = New System.Drawing.Point(0, 103)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(938, 34)
         Me.Label2.TabIndex = 11
@@ -109,7 +109,9 @@ Partial Class View_Journal
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnl_Journal.Controls.Add(Me.lvljournal)
-        Me.pnl_Journal.Location = New System.Drawing.Point(0, -46)
+        Me.pnl_Journal.Controls.Add(Me.Label5)
+        Me.pnl_Journal.Controls.Add(Me.Label2)
+        Me.pnl_Journal.Location = New System.Drawing.Point(0, -44)
         Me.pnl_Journal.Name = "pnl_Journal"
         Me.pnl_Journal.Size = New System.Drawing.Size(938, 555)
         Me.pnl_Journal.TabIndex = 21
@@ -154,14 +156,12 @@ Partial Class View_Journal
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btn_Close)
         Me.Controls.Add(Me.cmbPost)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.pnl_Journal)
         Me.Name = "View_Journal"
         Me.Size = New System.Drawing.Size(938, 463)
         Me.pnl_Journal.ResumeLayout(False)
+        Me.pnl_Journal.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents cmbPost As System.Windows.Forms.ComboBox

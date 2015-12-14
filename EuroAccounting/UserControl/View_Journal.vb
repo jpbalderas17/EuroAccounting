@@ -66,6 +66,14 @@ Public Class View_Journal
     End Sub
 
     Private Sub cmbPost_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPost.SelectedIndexChanged
+        Dim y As Integer
+        y = 1
+
+        If uscIncomeStatement.postTO(y) = True Then
+            uscIncomeStatement.lvwIncome_statementinList()
+        Else
+            uscIncomeStatement.lvwIncome_statementInCBO()
+        End If
         If cmbPost.Text = "Trial Balance" Then
             showUSC(uscTrialBalance)
         ElseIf cmbPost.Text = "Ledger (3 Column Ledger)" Then

@@ -25,17 +25,146 @@ Public Class Income_Statement
     End Sub
 
     Private Sub Income_Statement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lblDate.Text = Date.Now.ToString("MM/dd/yyyy")
+        'lblDate.Text = Date.Now.ToString("MM/dd/yyyy")
         Me.ledger_id = select_ledger.cbo_ledger.SelectedValue
-        lbltitle2.Text = select_ledger.cbo_ledger.Text
-        lvwIncome_statement()
+
+       
+        SetCueText(txtTitle, "Title")
+        SetCueText(txtDescription, "Description")
+
     End Sub
 
     Private Function strToDate(str As String) As Date
         str = str.Substring(4, 2) & "/" & str.Substring(6, 2) & "/" & str.Substring(0, 4)
         Return str 'Format(str, "Short date")
     End Function
-    Private Sub lvwIncome_statement(Optional dt_from As String = "", Optional dt_to As String = "")
+    Public Sub lvwIncome_statementinList()
+        Dim parameters As New Dictionary(Of String, Object)
+        'Dim j_entry_dr As SqlDataReader
+        Dim dbl_total_expense As Double = 0
+        Dim dbl_total_revenue As Double = 0
+        Dim debit, credit As New Double
+        'lvIncomeStatement.Items.Clear()
+        Dim Item As ListViewItem
+        Dim journals(0) As String
+        Dim journal_id_sql As String
+        Dim counter As Integer
+
+
+        dr = db.ExecuteReader("SELECT id FROM journals WHERE ledger_id=" & uscLedgers.lvljournal.FocusedItem.Text)
+        counter = 0
+        If dr.HasRows Then
+            Try
+                Do While dr.Read
+                    ReDim Preserve journals(counter)
+                    journals(counter) = (dr.Item(0))
+                    counter += 1
+                Loop
+                journal_id_sql = String.Join(",", journals)
+
+                'para sa revenue
+                'dr = db.ExecuteReader("SELECT DISTINCT(a.id), a.name, IIF(jd.is_debit=0,jd.amount,0) as debit FROM journal_details jd JOIN accounts a ON jd.account_id=a.id where a.type=1")
+                'dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1 AND type=1 AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id and a.type=3)as credit FROM accounts a WHERE a.type=1 AND a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
+                dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1  AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id )as credit FROM accounts a WHERE a.type=1 AND a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
+                Item = Me.lvIncomeStatement.Items.Add("Revenue")
+                Item.SubItems.Add("")
+                Item.SubItems.Add("")
+                If dr.HasRows Then
+                    Do While dr.Read
+
+                        Item = Me.lvIncomeStatement.Items.Add("          " & dr.Item("name").ToString)
+                        If IsDBNull(dr.Item("debit")) Then
+                            debit = 0
+                        Else
+                            debit = CDbl(dr.Item("debit"))
+                        End If
+                        If IsDBNull(dr.Item("credit")) Then
+                            credit = 0
+                        Else
+                            credit = CDbl(dr.Item("credit"))
+                        End If
+
+                        With Item
+                            If debit > credit Then
+                                .SubItems.Add(FormatNumber(debit - credit, 2))
+                                .SubItems.Add("")
+                                dbl_total_revenue += debit - credit
+                            Else
+                                .SubItems.Add(FormatNumber(credit - debit, 2))
+                                .SubItems.Add("")
+                                dbl_total_revenue += credit - debit
+                            End If
+
+                        End With
+
+                    Loop
+                    Item = Me.lvIncomeStatement.Items.Add("          " & "Total Revenues")
+                    Item.SubItems.Add("")
+                    Item.SubItems.Add(FormatNumber(dbl_total_revenue, 2))
+                End If
+
+
+
+                'para sa expenses
+                dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1  AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id )as credit FROM accounts a WHERE a.type=3 AND a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
+                'dr = db.ExecuteReader("SELECT DISTINCT(a.id),a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1 and account_id=a.id) as debit FROM journal_details jd JOIN accounts a ON jd.account_id=a.id where a.type=3")
+                'dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1 AND type=3 AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id and a.type=3)as credit FROM accounts a WHERE a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
+                Item = Me.lvIncomeStatement.Items.Add("Expenses")
+                Item.SubItems.Add("")
+                Item.SubItems.Add("")
+                If dr.HasRows Then
+                    Do While dr.Read
+                        Item = Me.lvIncomeStatement.Items.Add("          " & dr.Item("name").ToString)
+                        If IsDBNull(dr.Item("debit")) Then
+                            debit = 0
+                        Else
+                            debit = CDbl(dr.Item("debit"))
+                        End If
+                        If IsDBNull(dr.Item("credit")) Then
+                            credit = 0
+                        Else
+                            credit = CDbl(dr.Item("credit"))
+                        End If
+
+                        With Item
+                            If debit > credit Then
+                                .SubItems.Add(FormatNumber(debit - credit, 2))
+                                .SubItems.Add("")
+                                dbl_total_expense += debit - credit
+                            Else
+                                .SubItems.Add(FormatNumber(credit - debit, 2))
+                                .SubItems.Add("")
+                                dbl_total_expense += credit - debit
+                            End If
+
+                        End With
+                    Loop
+                    Item = Me.lvIncomeStatement.Items.Add("          " & "Total Expenses")
+                    Item.SubItems.Add("")
+                    Item.SubItems.Add(FormatNumber(dbl_total_expense, 2))
+                End If
+
+                Dim net_income = dbl_total_revenue - dbl_total_expense
+                Item = Me.lvIncomeStatement.Items.Add("")
+                Item.SubItems.Add("")
+                Item.SubItems.Add("")
+                Item = lvIncomeStatement.Items.Add("NET INCOME")
+                Item.SubItems.Add("")
+                Item.SubItems.Add(net_income)
+                'lblNet.Text = net_income
+                'uscBalanceSheet.lblNet.Text = net_income
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+
+        Else
+            MsgBox("No journal entry found in the selected ledger", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "NO JOURNAL ENTRY FOUND")
+            'select_ledger.Show()
+            'select_ledger.cbo_ledger.SelectedValue = Nothing
+        End If
+    End Sub
+    Public Sub lvwIncome_statementInCBO(Optional dt_from As String = "", Optional dt_to As String = "")
         Dim parameters As New Dictionary(Of String, Object)
         'Dim j_entry_dr As SqlDataReader
         Dim dbl_total_expense As Double = 0
@@ -215,40 +344,40 @@ Public Class Income_Statement
         'End Try
     End Sub
 
-    Private Sub cmbDate_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cmbDate.SelectedIndexChanged
-        Dim selectedIndex As Integer
-        selectedIndex = cmbDate.SelectedIndex
-        If selectedIndex = 1 Then '#####DATE TODAY
-            dt_from.Value = DateTime.Now
-            dt_to.Value = DateTime.Now
+    Private Sub cmbDate_SelectedIndexChanged_1(sender As Object, e As EventArgs)
+        'Dim selectedIndex As Integer
+        'selectedIndex = cmbDate.SelectedIndex
+        'If selectedIndex = 1 Then '#####DATE TODAY
+        '    dt_from.Value = DateTime.Now
+        '    dt_to.Value = DateTime.Now
 
-        ElseIf selectedIndex = 2 Then '#####THIS MONTH
-            Dim firstDay As DateTime = New DateTime(Now.Year, Now.Month, 1)
-            dt_from.Value = firstDay
-            Dim lastDay As DateTime = New DateTime(Now.Year, Now.Month, 1).AddMonths(1).AddDays(-1)
-            dt_to.Value = lastDay
+        'ElseIf selectedIndex = 2 Then '#####THIS MONTH
+        '    Dim firstDay As DateTime = New DateTime(Now.Year, Now.Month, 1)
+        '    dt_from.Value = firstDay
+        '    Dim lastDay As DateTime = New DateTime(Now.Year, Now.Month, 1).AddMonths(1).AddDays(-1)
+        '    dt_to.Value = lastDay
 
-        ElseIf selectedIndex = 3 Then '#####LAST MONTH
-            Dim firstDay As DateTime = New DateTime(Now.Year, Now.Month, 1).AddMonths(-1)
-            dt_from.Value = firstDay
-            Dim lastDay As DateTime = firstDay.AddMonths(1).AddDays(-1)
-            dt_to.Value = lastDay
+        'ElseIf selectedIndex = 3 Then '#####LAST MONTH
+        '    Dim firstDay As DateTime = New DateTime(Now.Year, Now.Month, 1).AddMonths(-1)
+        '    dt_from.Value = firstDay
+        '    Dim lastDay As DateTime = firstDay.AddMonths(1).AddDays(-1)
+        '    dt_to.Value = lastDay
 
-        ElseIf selectedIndex = 4 Then '#####THIS QUARTER
-
-
-        ElseIf selectedIndex = 5 Then '#####LAST QUARTER
+        'ElseIf selectedIndex = 4 Then '#####THIS QUARTER
 
 
-        ElseIf selectedIndex = 6 Then '#####THIS YEAR
+        'ElseIf selectedIndex = 5 Then '#####LAST QUARTER
 
 
-        ElseIf selectedIndex = 7 Then '#####LAST YEAR
+        'ElseIf selectedIndex = 6 Then '#####THIS YEAR
 
-        End If
+
+        'ElseIf selectedIndex = 7 Then '#####LAST YEAR
+
+        'End If
     End Sub
 
-    Private Sub btn_filter_Click(sender As Object, e As EventArgs) Handles btn_filter.Click
+    Private Sub btn_filter_Click(sender As Object, e As EventArgs)
         'Income_Statement_Load(DateToStr(dt_from.Text), DateToStr(dt_to.Text))
     End Sub
     Private Sub showINC(mode As Boolean)
@@ -259,7 +388,10 @@ Public Class Income_Statement
         'Me.Hide()
         'tbalance_journal.ShowDialog()
         'codes
-
+        If Trim(txtTitle.Text = "") Or Trim(txtDescription.Text) = "" Then
+            MsgBox("Please Set the title and the description", vbExclamation + vbOKOnly, "No title and description")
+            Exit Sub
+        End If
         Try
             Dim row1 As DataRow = Nothing
 
@@ -272,12 +404,16 @@ Public Class Income_Statement
                 .Add("Entries")
                 .Add("Debit")
                 .Add("Credit")
+                .Add("Title")
+                .Add("Description")
             End With
             For x = 1 To lvIncomeStatement.Items.Count Step 1
                 row1 = DS.Tables(0).NewRow
                 row1(0) = lvIncomeStatement.Items(x - 1).Text
                 row1(1) = lvIncomeStatement.Items(x - 1).SubItems(1).Text
                 row1(2) = lvIncomeStatement.Items(x - 1).SubItems(2).Text
+                row1(3) = txtTitle.Text
+                row1(4) = txtDescription.Text
                 DS.Tables(0).Rows.Add(row1)
             Next
 
@@ -319,5 +455,12 @@ Public Class Income_Statement
         crvInc.PrintReport()
     End Sub
 
+    Public Function postTO(x As Integer)
+        If x = 1 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
 
 End Class

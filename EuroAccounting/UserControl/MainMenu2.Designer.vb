@@ -37,10 +37,11 @@ Partial Class MainMenu2
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.pnl_mains = New System.Windows.Forms.Panel()
+        Me.btn_archives = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btn_Income_Statement = New System.Windows.Forms.Button()
         Me.btn_Trial_Balance = New System.Windows.Forms.Button()
-        Me.btn_archives = New System.Windows.Forms.Button()
+        Me.btnDbBackUp = New System.Windows.Forms.Button()
         Me.gbx_Choices.SuspendLayout()
         Me.pnl_mains.SuspendLayout()
         Me.SuspendLayout()
@@ -229,6 +230,7 @@ Partial Class MainMenu2
         Me.pnl_mains.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnl_mains.Controls.Add(Me.btnDbBackUp)
         Me.pnl_mains.Controls.Add(Me.btn_archives)
         Me.pnl_mains.Controls.Add(Me.btnExit)
         Me.pnl_mains.Controls.Add(Me.btnLogout)
@@ -246,6 +248,21 @@ Partial Class MainMenu2
         Me.pnl_mains.Name = "pnl_mains"
         Me.pnl_mains.Size = New System.Drawing.Size(1024, 529)
         Me.pnl_mains.TabIndex = 14
+        '
+        'btn_archives
+        '
+        Me.btn_archives.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btn_archives.FlatAppearance.BorderSize = 0
+        Me.btn_archives.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_archives.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_archives.ForeColor = System.Drawing.Color.Gold
+        Me.btn_archives.Location = New System.Drawing.Point(744, 246)
+        Me.btn_archives.Name = "btn_archives"
+        Me.btn_archives.Size = New System.Drawing.Size(231, 129)
+        Me.btn_archives.TabIndex = 16
+        Me.btn_archives.Text = "Archives"
+        Me.btn_archives.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_archives.UseVisualStyleBackColor = False
         '
         'btnExit
         '
@@ -292,20 +309,20 @@ Partial Class MainMenu2
         Me.btn_Trial_Balance.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_Trial_Balance.UseVisualStyleBackColor = False
         '
-        'btn_archives
+        'btnDbBackUp
         '
-        Me.btn_archives.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btn_archives.FlatAppearance.BorderSize = 0
-        Me.btn_archives.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_archives.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_archives.ForeColor = System.Drawing.Color.Gold
-        Me.btn_archives.Location = New System.Drawing.Point(744, 381)
-        Me.btn_archives.Name = "btn_archives"
-        Me.btn_archives.Size = New System.Drawing.Size(231, 129)
-        Me.btn_archives.TabIndex = 16
-        Me.btn_archives.Text = "Archives"
-        Me.btn_archives.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_archives.UseVisualStyleBackColor = False
+        Me.btnDbBackUp.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnDbBackUp.FlatAppearance.BorderSize = 0
+        Me.btnDbBackUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDbBackUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDbBackUp.ForeColor = System.Drawing.Color.Gold
+        Me.btnDbBackUp.Location = New System.Drawing.Point(744, 380)
+        Me.btnDbBackUp.Name = "btnDbBackUp"
+        Me.btnDbBackUp.Size = New System.Drawing.Size(231, 129)
+        Me.btnDbBackUp.TabIndex = 17
+        Me.btnDbBackUp.Text = "Database Back up"
+        Me.btnDbBackUp.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnDbBackUp.UseVisualStyleBackColor = False
         '
         'MainMenu2
         '
@@ -341,5 +358,6 @@ Partial Class MainMenu2
     Friend WithEvents btn_Trial_Balance As System.Windows.Forms.Button
     Friend WithEvents btnExit As System.Windows.Forms.Button
     Friend WithEvents btn_archives As System.Windows.Forms.Button
+    Friend WithEvents btnDbBackUp As System.Windows.Forms.Button
 
 End Class

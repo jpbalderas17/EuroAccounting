@@ -104,6 +104,9 @@ Partial Class select_ledger
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.cbo_ledger)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "select_ledger"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Select Ledger"

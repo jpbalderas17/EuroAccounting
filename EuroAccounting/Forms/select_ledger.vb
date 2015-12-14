@@ -21,17 +21,23 @@ Public Class select_ledger
     Private Sub select_ledger_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_cbo()
     End Sub
-    Public Overloads Sub Show(nextControl As UserControl)
-        Me.Show()
+    Public Overloads Sub Showdialog(nextControl As UserControl)
+
         next_control = nextControl
+        Me.ShowDialog()
+
     End Sub
 
    
     Private Sub btn_select_Click(sender As Object, e As EventArgs) Handles btn_select.Click
 
-        Me.Hide()
+
         showUSC(Me.next_control)
         Me.Close()
 
+    End Sub
+
+    Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
+        Me.Close()
     End Sub
 End Class

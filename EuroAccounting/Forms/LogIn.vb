@@ -45,7 +45,7 @@ Public Class LogIn
                 'parameters.Add("username", txtUsername.Text)
                 'parameters.Add("password", txtPassword.Text)
 
-                dr = db.ExecuteReader("SELECT * FROM users where username like '%" & txtUsername.Text & "%' and password like '%" & Encrypt(txtPassword.Text, "Keys") & "%' ")
+                dr = db.ExecuteReader("SELECT * FROM users where username ='" & txtUsername.Text & "' and password = '" & Encrypt(txtPassword.Text, "Keys") & "' ")
                 If dr.HasRows Then
                     dr.Read()
                     Dim encryptPass = Encrypt(txtPassword.Text, "Keys")
@@ -85,5 +85,8 @@ Public Class LogIn
         txtPassword.Text = ""
         SetCueText(txtUsername, "Username")
         SetCueText(txtPassword, "Password")
+    End Sub
+    Private Sub thisIsOnlyYourAccess()
+        ''
     End Sub
 End Class

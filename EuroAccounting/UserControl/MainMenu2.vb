@@ -61,11 +61,21 @@
     Private Sub btn_Income_Statement_Click(sender As Object, e As EventArgs) Handles btn_Income_Statement.Click
         'selectPeriod.lblview.Text = "Income Statement"
         'selectPeriod.Show()
-        select_ledger.Show(uscIncomeStatement)
+       
+
+        select_ledger.ShowDialog(uscIncomeStatement)
+        Dim y As Integer
+        y = 0
+
+        If uscIncomeStatement.postTO(y) = True Then
+            uscIncomeStatement.lvwIncome_statementinList()
+        Else
+            uscIncomeStatement.lvwIncome_statementInCBO()
+        End If
     End Sub
 
     Private Sub btnExit_Click_1(sender As Object, e As EventArgs) Handles btnExit.Click
-        Application.Exit()
+        LogIn.Close()
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click

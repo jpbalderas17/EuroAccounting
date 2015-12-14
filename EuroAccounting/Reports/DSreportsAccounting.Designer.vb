@@ -289,6 +289,10 @@ Partial Public Class DSreportsAccounting
 
         Private columnCredit As Global.System.Data.DataColumn
 
+        Private columnTitle As Global.System.Data.DataColumn
+
+        Private columnDescription As Global.System.Data.DataColumn
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
@@ -349,6 +353,22 @@ Partial Public Class DSreportsAccounting
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property TitleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTitle
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property DescriptionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDescription
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -385,9 +405,9 @@ Partial Public Class DSreportsAccounting
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddIncomeStatementsRow(ByVal Entries As String, ByVal Debit As String, ByVal Credit As String) As IncomeStatementsRow
+        Public Overloads Function AddIncomeStatementsRow(ByVal Entries As String, ByVal Debit As String, ByVal Credit As String, ByVal Title As String, ByVal Description As String) As IncomeStatementsRow
             Dim rowIncomeStatementsRow As IncomeStatementsRow = CType(Me.NewRow, IncomeStatementsRow)
-            Dim columnValuesArray() As Object = New Object() {Entries, Debit, Credit}
+            Dim columnValuesArray() As Object = New Object() {Entries, Debit, Credit, Title, Description}
             rowIncomeStatementsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowIncomeStatementsRow)
             Return rowIncomeStatementsRow
@@ -413,6 +433,8 @@ Partial Public Class DSreportsAccounting
             Me.columnEntries = MyBase.Columns("Entries")
             Me.columnDebit = MyBase.Columns("Debit")
             Me.columnCredit = MyBase.Columns("Credit")
+            Me.columnTitle = MyBase.Columns("Title")
+            Me.columnDescription = MyBase.Columns("Description")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -424,6 +446,10 @@ Partial Public Class DSreportsAccounting
             MyBase.Columns.Add(Me.columnDebit)
             Me.columnCredit = New Global.System.Data.DataColumn("Credit", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCredit)
+            Me.columnTitle = New Global.System.Data.DataColumn("Title", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTitle)
+            Me.columnDescription = New Global.System.Data.DataColumn("Description", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDescription)
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -615,6 +641,36 @@ Partial Public Class DSreportsAccounting
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Title() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableIncomeStatements.TitleColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Title' in table 'IncomeStatements' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableIncomeStatements.TitleColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Description() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableIncomeStatements.DescriptionColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Description' in table 'IncomeStatements' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableIncomeStatements.DescriptionColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function IsEntriesNull() As Boolean
             Return Me.IsNull(Me.tableIncomeStatements.EntriesColumn)
         End Function
@@ -647,6 +703,30 @@ Partial Public Class DSreportsAccounting
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetCreditNull()
             Me(Me.tableIncomeStatements.CreditColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsTitleNull() As Boolean
+            Return Me.IsNull(Me.tableIncomeStatements.TitleColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetTitleNull()
+            Me(Me.tableIncomeStatements.TitleColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsDescriptionNull() As Boolean
+            Return Me.IsNull(Me.tableIncomeStatements.DescriptionColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetDescriptionNull()
+            Me(Me.tableIncomeStatements.DescriptionColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 
