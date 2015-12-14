@@ -1,5 +1,17 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Text
+Imports System.Runtime.InteropServices
+
 Public Class Income_Statement
+    Private Const EM_SETCUEBANNER As Integer = &H1501
+
+    <DllImport("user32.dll", CharSet:=CharSet.Auto)> _
+    Private Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal msg As Integer, ByVal wParam As Integer, <MarshalAs(UnmanagedType.LPWStr)> ByVal lParam As String) As Int32
+    End Function
+
+    Private Sub SetCueText(ByVal control As Control, ByVal text As String)
+        SendMessage(control.Handle, EM_SETCUEBANNER, 0, text)
+    End Sub
     Dim db As New DBHelper(My.Settings.connectionString)
     Dim dr As SqlClient.SqlDataReader
     Dim cmd As SqlClient.SqlCommand
@@ -240,56 +252,71 @@ Public Class Income_Statement
         'Income_Statement_Load(DateToStr(dt_from.Text), DateToStr(dt_to.Text))
     End Sub
     Private Sub showINC(mode As Boolean)
-        Panel2.Visible = mode
-        Panel1.Enabled = Not mode
+        pnlPrint.Visible = mode
+        pnlIncMain.Enabled = Not mode
     End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         'Me.Hide()
         'tbalance_journal.ShowDialog()
         'codes
 
-        'Try
-        Dim row1 As DataRow = Nothing
+        Try
+            Dim row1 As DataRow = Nothing
 
-        Dim DS As New DataSet
-        Dim rptINC As New IncomeStatement
-        'mag a-add na sa dataset (DS)
-        DS.Tables.Add("IncomeStatement")
-        'lagay tayo ng columns
-        With DS.Tables(0).Columns
-            .Add("Entries")
-            .Add("Debit")
-            .Add("Credit")
-        End With
-        For x = 1 To lvIncomeStatement.Items.Count Step 1
-            row1 = DS.Tables(0).NewRow
-            row1(0) = lvIncomeStatement.Items(x - 1).Text
-            row1(1) = lvIncomeStatement.Items(x - 1).SubItems(1).Text
-            row1(2) = lvIncomeStatement.Items(x - 1).SubItems(2).Text
-            DS.Tables(0).Rows.Add(row1)
-        Next
+            Dim DS As New DataSet
+            Dim rptINC As New IncomeStatement
+            'mag a-add na sa dataset (DS)
+            DS.Tables.Add("IncomeStatement")
+            'lagay tayo ng columns
+            With DS.Tables(0).Columns
+                .Add("Entries")
+                .Add("Debit")
+                .Add("Credit")
+            End With
+            For x = 1 To lvIncomeStatement.Items.Count Step 1
+                row1 = DS.Tables(0).NewRow
+                row1(0) = lvIncomeStatement.Items(x - 1).Text
+                row1(1) = lvIncomeStatement.Items(x - 1).SubItems(1).Text
+                row1(2) = lvIncomeStatement.Items(x - 1).SubItems(2).Text
+                DS.Tables(0).Rows.Add(row1)
+            Next
 
 
-        DS.WriteXml("XML\IncomeStatement.xml")
+            DS.WriteXml("XML\IncomeStatement.xml")
 
-        Dim dsINC As New DataSet
-        dsINC = New DSreportsAccounting
-        Dim dsINCTemp As New DataSet
-        dsINCTemp = New DataSet()
-        'dsINCTemp = New DSreports
-        dsINCTemp.ReadXml("XML\IncomeStatement.xml")
-        dsINC.Merge(dsINCTemp.Tables(0))
-        'MsgBox(dsINCTemp.Tables(0).Rows(0).Item(0).ToString)
-        rptINC = New IncomeStatement
-        rptINC.SetDataSource(dsINCTemp.Tables(0))
-        Sample_Reports.crvInc.ReportSource = rptINC
-        Sample_Reports.ShowDialog()
+            Dim dsINC As New DataSet
+            dsINC = New DSreportsAccounting
+            Dim dsINCTemp As New DataSet
+            dsINCTemp = New DataSet()
+            'dsINCTemp = New DSreports
+            dsINCTemp.ReadXml("XML\IncomeStatement.xml")
+            dsINC.Merge(dsINCTemp.Tables(0))
 
-        'Catch ex As Exception
-        '    MsgBox(ex.ToString, MsgBoxStyle.Critical)
+            'MsgBox(dsINCTemp.Tables(0).Rows(0).Item(0).ToString)
+            rptINC = New IncomeStatement
+            rptINC.SetDataSource(dsINCTemp.Tables(0))
+            crvInc.ReportSource = rptINC
+            showINC(True)
 
-        'End Try
+        Catch ex As Exception
+            MsgBox(ex.ToString, MsgBoxStyle.Critical)
 
+        End Try
+
+    End Sub
+
+    ''METHODS
+    Private Sub showPrintMe(mode As Boolean)
+        pnlPrint.Visible = mode
+        pnlIncMain.Enabled = Not mode
+    End Sub
+
+    Private Sub btnCancelPrintattack_Click(sender As Object, e As EventArgs) Handles btnCancelPrintattack.Click
+        showINC(False)
+    End Sub
+
+    Private Sub btnPrintAttack_Click(sender As Object, e As EventArgs) Handles btnPrintAttack.Click
+        crvInc.PrintReport()
     End Sub
 
 

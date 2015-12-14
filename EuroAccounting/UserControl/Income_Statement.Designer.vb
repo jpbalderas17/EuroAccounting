@@ -22,10 +22,9 @@ Partial Class Income_Statement
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pnlIncMain = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.lblNet = New System.Windows.Forms.Label()
-        Me.lbltitle2 = New System.Windows.Forms.Label()
-        Me.lbltitle1 = New System.Windows.Forms.Label()
         Me.btn_filter = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.dt_to = New System.Windows.Forms.DateTimePicker()
@@ -42,37 +41,49 @@ Partial Class Income_Statement
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.pnlPrint = New System.Windows.Forms.Panel()
+        Me.btnPrintAttack = New System.Windows.Forms.Button()
+        Me.btnCancelPrintattack = New System.Windows.Forms.Button()
         Me.crvInc = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.pnlIncMain.SuspendLayout()
+        Me.pnlPrint.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Panel1
+        'pnlIncMain
         '
-        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.pnlIncMain.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.Controls.Add(Me.lblNet)
-        Me.Panel1.Controls.Add(Me.lbltitle2)
-        Me.Panel1.Controls.Add(Me.lbltitle1)
-        Me.Panel1.Controls.Add(Me.btn_filter)
-        Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.dt_to)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.lvIncomeStatement)
-        Me.Panel1.Controls.Add(Me.dt_from)
-        Me.Panel1.Controls.Add(Me.cmbDate)
-        Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.lblDate)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.btnPrint)
-        Me.Panel1.Controls.Add(Me.btn_Cancel)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Location = New System.Drawing.Point(0, 17)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(812, 536)
-        Me.Panel1.TabIndex = 20
+        Me.pnlIncMain.Controls.Add(Me.TextBox2)
+        Me.pnlIncMain.Controls.Add(Me.TextBox1)
+        Me.pnlIncMain.Controls.Add(Me.lblNet)
+        Me.pnlIncMain.Controls.Add(Me.btn_filter)
+        Me.pnlIncMain.Controls.Add(Me.Label7)
+        Me.pnlIncMain.Controls.Add(Me.dt_to)
+        Me.pnlIncMain.Controls.Add(Me.Label5)
+        Me.pnlIncMain.Controls.Add(Me.lvIncomeStatement)
+        Me.pnlIncMain.Controls.Add(Me.dt_from)
+        Me.pnlIncMain.Controls.Add(Me.cmbDate)
+        Me.pnlIncMain.Controls.Add(Me.Label6)
+        Me.pnlIncMain.Controls.Add(Me.lblDate)
+        Me.pnlIncMain.Controls.Add(Me.Label1)
+        Me.pnlIncMain.Controls.Add(Me.btnPrint)
+        Me.pnlIncMain.Controls.Add(Me.btn_Cancel)
+        Me.pnlIncMain.Controls.Add(Me.Label2)
+        Me.pnlIncMain.Location = New System.Drawing.Point(0, 17)
+        Me.pnlIncMain.Name = "pnlIncMain"
+        Me.pnlIncMain.Size = New System.Drawing.Size(812, 536)
+        Me.pnlIncMain.TabIndex = 20
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TextBox1.Location = New System.Drawing.Point(322, 187)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(203, 20)
+        Me.TextBox1.TabIndex = 247
         '
         'lblNet
         '
@@ -84,28 +95,6 @@ Partial Class Income_Statement
         Me.lblNet.TabIndex = 246
         Me.lblNet.Text = "Net"
         Me.lblNet.Visible = False
-        '
-        'lbltitle2
-        '
-        Me.lbltitle2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lbltitle2.AutoSize = True
-        Me.lbltitle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltitle2.Location = New System.Drawing.Point(370, 221)
-        Me.lbltitle2.Name = "lbltitle2"
-        Me.lbltitle2.Size = New System.Drawing.Size(38, 20)
-        Me.lbltitle2.TabIndex = 226
-        Me.lbltitle2.Text = "Title"
-        '
-        'lbltitle1
-        '
-        Me.lbltitle1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lbltitle1.AutoSize = True
-        Me.lbltitle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltitle1.Location = New System.Drawing.Point(370, 197)
-        Me.lbltitle1.Name = "lbltitle1"
-        Me.lbltitle1.Size = New System.Drawing.Size(223, 24)
-        Me.lbltitle1.TabIndex = 225
-        Me.lbltitle1.Text = "INCOME STATEMENT"
         '
         'btn_filter
         '
@@ -240,7 +229,7 @@ Partial Class Income_Statement
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(115, 34)
         Me.btnPrint.TabIndex = 44
-        Me.btnPrint.Text = "Print"
+        Me.btnPrint.Text = "Print..."
         Me.btnPrint.UseVisualStyleBackColor = False
         '
         'btn_Cancel
@@ -272,17 +261,50 @@ Partial Class Income_Statement
         Me.Label2.Text = "    Income Statement Report"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Panel2
+        'pnlPrint
         '
-        Me.Panel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.pnlPrint.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.Controls.Add(Me.crvInc)
-        Me.Panel2.Location = New System.Drawing.Point(13, 9)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(782, 500)
-        Me.Panel2.TabIndex = 21
-        Me.Panel2.Visible = False
+        Me.pnlPrint.Controls.Add(Me.btnPrintAttack)
+        Me.pnlPrint.Controls.Add(Me.btnCancelPrintattack)
+        Me.pnlPrint.Controls.Add(Me.crvInc)
+        Me.pnlPrint.Controls.Add(Me.Label3)
+        Me.pnlPrint.Location = New System.Drawing.Point(13, 9)
+        Me.pnlPrint.Name = "pnlPrint"
+        Me.pnlPrint.Size = New System.Drawing.Size(782, 500)
+        Me.pnlPrint.TabIndex = 21
+        Me.pnlPrint.Visible = False
+        '
+        'btnPrintAttack
+        '
+        Me.btnPrintAttack.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnPrintAttack.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnPrintAttack.FlatAppearance.BorderSize = 0
+        Me.btnPrintAttack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPrintAttack.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrintAttack.ForeColor = System.Drawing.Color.Gold
+        Me.btnPrintAttack.Location = New System.Drawing.Point(546, 20)
+        Me.btnPrintAttack.Name = "btnPrintAttack"
+        Me.btnPrintAttack.Size = New System.Drawing.Size(115, 34)
+        Me.btnPrintAttack.TabIndex = 84
+        Me.btnPrintAttack.Text = "Print"
+        Me.btnPrintAttack.UseVisualStyleBackColor = False
+        '
+        'btnCancelPrintattack
+        '
+        Me.btnCancelPrintattack.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelPrintattack.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnCancelPrintattack.FlatAppearance.BorderSize = 0
+        Me.btnCancelPrintattack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelPrintattack.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelPrintattack.ForeColor = System.Drawing.Color.Gold
+        Me.btnCancelPrintattack.Location = New System.Drawing.Point(667, 20)
+        Me.btnCancelPrintattack.Name = "btnCancelPrintattack"
+        Me.btnCancelPrintattack.Size = New System.Drawing.Size(115, 34)
+        Me.btnCancelPrintattack.TabIndex = 83
+        Me.btnCancelPrintattack.Text = "Cancel"
+        Me.btnCancelPrintattack.UseVisualStyleBackColor = False
         '
         'crvInc
         '
@@ -292,32 +314,51 @@ Partial Class Income_Statement
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.crvInc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.crvInc.Cursor = System.Windows.Forms.Cursors.Default
-        Me.crvInc.Location = New System.Drawing.Point(3, 11)
+        Me.crvInc.Location = New System.Drawing.Point(3, 66)
         Me.crvInc.Name = "crvInc"
-        Me.crvInc.Size = New System.Drawing.Size(776, 486)
+        Me.crvInc.Size = New System.Drawing.Size(776, 431)
         Me.crvInc.TabIndex = 82
         Me.crvInc.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.BackColor = System.Drawing.Color.MidnightBlue
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Gold
+        Me.Label3.Location = New System.Drawing.Point(-27, 20)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(809, 34)
+        Me.Label3.TabIndex = 85
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TextBox2.Location = New System.Drawing.Point(322, 213)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(203, 20)
+        Me.TextBox2.TabIndex = 248
         '
         'Income_Statement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.pnlIncMain)
+        Me.Controls.Add(Me.pnlPrint)
         Me.Name = "Income_Statement"
         Me.Size = New System.Drawing.Size(812, 555)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
+        Me.pnlIncMain.ResumeLayout(False)
+        Me.pnlIncMain.PerformLayout()
+        Me.pnlPrint.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents pnlIncMain As System.Windows.Forms.Panel
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents btnPrint As System.Windows.Forms.Button
     Friend WithEvents btn_Cancel As System.Windows.Forms.Button
-    Friend WithEvents lbltitle2 As System.Windows.Forms.Label
-    Friend WithEvents lbltitle1 As System.Windows.Forms.Label
     Friend WithEvents lblDate As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents lvIncomeStatement As System.Windows.Forms.ListView
@@ -332,7 +373,12 @@ Partial Class Income_Statement
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents btn_filter As System.Windows.Forms.Button
     Friend WithEvents lblNet As System.Windows.Forms.Label
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents pnlPrint As System.Windows.Forms.Panel
     Friend WithEvents crvInc As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents btnPrintAttack As System.Windows.Forms.Button
+    Friend WithEvents btnCancelPrintattack As System.Windows.Forms.Button
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
 
 End Class
