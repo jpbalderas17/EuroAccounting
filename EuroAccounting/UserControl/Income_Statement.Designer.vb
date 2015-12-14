@@ -175,7 +175,7 @@ Partial Class Income_Statement
         Me.pnlPrint.Controls.Add(Me.Label3)
         Me.pnlPrint.Location = New System.Drawing.Point(13, 9)
         Me.pnlPrint.Name = "pnlPrint"
-        Me.pnlPrint.Size = New System.Drawing.Size(782, 529)
+        Me.pnlPrint.Size = New System.Drawing.Size(782, 500)
         Me.pnlPrint.TabIndex = 21
         Me.pnlPrint.Visible = False
         '
@@ -219,7 +219,7 @@ Partial Class Income_Statement
         Me.crvInc.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvInc.Location = New System.Drawing.Point(3, 66)
         Me.crvInc.Name = "crvInc"
-        Me.crvInc.Size = New System.Drawing.Size(776, 460)
+        Me.crvInc.Size = New System.Drawing.Size(776, 431)
         Me.crvInc.TabIndex = 82
         Me.crvInc.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
@@ -240,8 +240,8 @@ Partial Class Income_Statement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.pnlPrint)
         Me.Controls.Add(Me.pnlIncMain)
+        Me.Controls.Add(Me.pnlPrint)
         Me.Name = "Income_Statement"
         Me.Size = New System.Drawing.Size(812, 555)
         Me.pnlIncMain.ResumeLayout(False)
