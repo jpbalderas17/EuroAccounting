@@ -57,7 +57,8 @@ Public Class select_ledger
             Case "Balance sheet"
                 showUSC(uscBalanceSheet)
             Case "Cash flow"
-                MsgBox("Wala pa!")
+                'MsgBox("Wala pa!")
+                showUSC(uscCashFlow)
             Case "Trial balance"
                 showUSC(uscTrialBalance)
             Case "3 Column ledger"
