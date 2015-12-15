@@ -2,8 +2,8 @@
 Public Class Ledger
     Dim db As New DBHelper(My.Settings.connectionString)
     Dim dr As SqlClient.SqlDataReader
-    Dim ledger_id As Integer
-    Private Sub load_lvw(Optional dt_from As String = "", Optional dt_to As String = "")
+    Public ledger_id As Integer
+    Public Sub load_lvw(Optional dt_from As String = "", Optional dt_to As String = "")
         Dim dr1 As SqlClient.SqlDataReader
         Dim journal_sql As String = ""
         Dim Item As ListViewItem
@@ -105,16 +105,20 @@ Public Class Ledger
     End Sub
 
     Private Sub Ledger_GotFocus(sender As Object, e As EventArgs) Handles Me.GotFocus
-        load_lvw()
+        'load_lvw()
     End Sub
 
     Private Sub Ledger_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.ledger_id = select_ledger.cbo_ledger.SelectedValue
         lblDate.Text = Date.Now.ToString("MM/dd/yyyy")
-        load_lvw()
+        'load_lvw()
     End Sub
 
     Private Sub btn_filter_Click(sender As Object, e As EventArgs) Handles btn_filter.Click
         load_lvw(DateToStr(dt_from.Text), DateToStr(dt_to.Text))
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class

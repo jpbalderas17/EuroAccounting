@@ -29,7 +29,7 @@ Public Class select_ledger
 
    
     Private Sub btn_select_Click(sender As Object, e As EventArgs) Handles btn_select.Click
-       
+
         getReport()
         
         Me.Close()
@@ -45,6 +45,7 @@ Public Class select_ledger
         Select Case uscMainMenu.getter
 
             Case "Income statement"
+                uscIncomeStatement.ledger_id = Me.cbo_ledger.SelectedValue
                 showUSC(uscIncomeStatement)
                 Dim y As Integer
                 y = 0
@@ -60,7 +61,9 @@ Public Class select_ledger
             Case "Trial balance"
                 showUSC(uscTrialBalance)
             Case "3 Column ledger"
+                uscLedger.ledger_id = Me.cbo_ledger.SelectedValue
                 showUSC(uscLedger)
+                uscLedger.load_lvw()
         End Select
 
     End Sub
