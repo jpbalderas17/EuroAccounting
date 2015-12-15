@@ -15,7 +15,7 @@ Public Class Income_Statement
     Dim db As New DBHelper(My.Settings.connectionString)
     Dim dr As SqlClient.SqlDataReader
     Dim cmd As SqlClient.SqlCommand
-    Dim ledger_id As Integer
+    Public ledger_id As Integer
     Dim net As Double
     Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
         'showUSC(uscViewJournal)
@@ -26,7 +26,7 @@ Public Class Income_Statement
 
     Private Sub Income_Statement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'lblDate.Text = Date.Now.ToString("MM/dd/yyyy")
-        Me.ledger_id = select_ledger.cbo_ledger.SelectedValue
+        '
        
         SetCueText(txtTitle, "Title")
         SetCueText(txtDescription, "Description")
