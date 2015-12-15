@@ -1,11 +1,22 @@
-﻿
+﻿Imports System.Data.SqlClient
+Imports System.Text
+Imports System.Runtime.InteropServices
+
 Public Class tbalance
     Dim ledger_id As Integer
     Dim ledger_name, ledger_description As String
     Dim dr As SqlClient.SqlDataReader
     Dim cmd As SqlClient.SqlCommand
     Dim db As New DBHelper(My.Settings.connectionString)
+    Private Const EM_SETCUEBANNER As Integer = &H1501
 
+    <DllImport("user32.dll", CharSet:=CharSet.Auto)> _
+    Private Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal msg As Integer, ByVal wParam As Integer, <MarshalAs(UnmanagedType.LPWStr)> ByVal lParam As String) As Int32
+    End Function
+
+    Private Sub SetCueText(ByVal control As Control, ByVal text As String)
+        SendMessage(control.Handle, EM_SETCUEBANNER, 0, text)
+    End Sub
     Private Sub load_tbalance(Optional dt_from = "", Optional dt_to = "")
         '#get journals
         Dim journals(0) As String
@@ -126,6 +137,8 @@ Public Class tbalance
         Me.ledger_id = select_ledger.cbo_ledger.SelectedValue
         load_tbalance()
         'get_ledger_details()
+        SetCueText(txtTitle, "Enter Title")
+        SetCueText(txtDescription, "Enter Description")
 
     End Sub
 
@@ -141,4 +154,12 @@ Public Class tbalance
         load_tbalance(DateToStr(dt_from.Text), DateToStr(dt_to.Text))
     End Sub
 
+    Private Sub btnPreview_Click(sender As Object, e As EventArgs) Handles btnPreview.Click
+        If Trim(txtTitle.Text = "") Or Trim(txtDescription.Text) = "" Then
+            MsgBox("Please Set the title and the description", vbExclamation + vbOKOnly, "No title and description")
+            Exit Sub
+        Else
+            tbalance_report.ShowDialog()
+        End If
+    End Sub
 End Class

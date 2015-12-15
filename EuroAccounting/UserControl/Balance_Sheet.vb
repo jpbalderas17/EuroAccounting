@@ -1,4 +1,7 @@
-﻿
+﻿Imports System.Data.SqlClient
+Imports System.Text
+Imports System.Runtime.InteropServices
+
 Public Class Balance_Sheet
     Dim ledger_id As Integer
     Dim ledger_name, ledger_description As String
@@ -6,15 +9,28 @@ Public Class Balance_Sheet
     Dim cmd As SqlClient.SqlCommand
     Dim db As New DBHelper(My.Settings.connectionString)
     Dim net, total_oe As Double
+    Private Const EM_SETCUEBANNER As Integer = &H1501
+    <DllImport("user32.dll", CharSet:=CharSet.Auto)> _
+    Private Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal msg As Integer, ByVal wParam As Integer, <MarshalAs(UnmanagedType.LPWStr)> ByVal lParam As String) As Int32
+    End Function
+
+    Private Sub SetCueText(ByVal control As Control, ByVal text As String)
+        SendMessage(control.Handle, EM_SETCUEBANNER, 0, text)
+    End Sub
+
     Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
         showUSC(uscMainMenu)
         uscBalanceSheet = New Balance_Sheet
     End Sub
     Private Sub Balance_Sheet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SetCueText(txtTitle, "Enter Title")
+        SetCueText(txtDescription, "Enter Description")
+
         lblDate.Text = Date.Now.ToString("MM/dd/yyyy")
         Me.ledger_id = select_ledger.cbo_ledger.SelectedValue
         getNet()
         load_balanceSheet()
+
 
     End Sub
     Private Sub load_balanceSheet()
@@ -46,6 +62,8 @@ Public Class Balance_Sheet
                 dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1  AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id )as credit FROM accounts a WHERE a.type in (4,5) AND a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
                 If dr.HasRows Then
                     Item = Me.lvbalance_sheet.Items.Add("ASSET")
+                    Item.SubItems.Add("")
+                    Item.SubItems.Add("")
                     Do While dr.Read
 
                         If IsDBNull(dr.Item("debit")) Then
@@ -87,7 +105,11 @@ Public Class Balance_Sheet
                 dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1  AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id )as credit FROM accounts a WHERE a.type in (6) AND a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
                 If dr.HasRows Then
                     Item = Me.lvbalance_sheet.Items.Add("")
+                    Item.SubItems.Add("")
+                    Item.SubItems.Add("")
                     Item = Me.lvbalance_sheet.Items.Add("LIABILITIES")
+                    Item.SubItems.Add("")
+                    Item.SubItems.Add("")
                     Do While dr.Read
 
                         If IsDBNull(dr.Item("debit")) Then
@@ -128,7 +150,11 @@ Public Class Balance_Sheet
                 dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1  AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id )as credit FROM accounts a WHERE a.type in (8,9) AND a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
                 If dr.HasRows Then
                     Item = Me.lvbalance_sheet.Items.Add("")
+                    Item.SubItems.Add("")
+                    Item.SubItems.Add("")
                     Item = Me.lvbalance_sheet.Items.Add("OWNER'S EQUITY")
+                    Item.SubItems.Add("")
+                    Item.SubItems.Add("")
                     Do While dr.Read
 
                         If IsDBNull(dr.Item("debit")) Then
@@ -160,6 +186,7 @@ Public Class Balance_Sheet
                     Loop
                     Item = Me.lvbalance_sheet.Items.Add("Retained Earnings")
                     Item.SubItems.Add(FormatNumber(net, 2))
+                    Item.SubItems.Add("")
 
                     Item = Me.lvbalance_sheet.Items.Add("          " & "Total Current Owner's Equity")
                     Item.SubItems.Add("")
@@ -170,6 +197,8 @@ Public Class Balance_Sheet
                 'COMPUTATION
                 Dim total_liabilities_equity As Double = dbl_total_liabilities + total_oe
                 Item = lvbalance_sheet.Items.Add("")
+                Item.SubItems.Add("")
+                Item.SubItems.Add("")
                 Item = lvbalance_sheet.Items.Add("TOTAL LIABILITIES AND OWNER'S EQUITY")
                 Item.SubItems.Add("")
                 Item.SubItems.Add(FormatNumber(total_liabilities_equity, 2))
@@ -268,22 +297,35 @@ Public Class Balance_Sheet
 
     End Sub
 
-    Private Sub cmbDate_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbDate.SelectedIndexChanged
-        Dim selectedIndex As Integer
-        selectedIndex = cmbDate.SelectedIndex
-        If selectedIndex = 1 Then '#####TODAY
-            dtpDate.Value = DateTime.Now
+    'Private Sub cmbDate_SelectedIndexChanged(sender As Object, e As EventArgs)
+    '    Dim selectedIndex As Integer
+    '    selectedIndex = cmbDate.SelectedIndex
+    '    If selectedIndex = 1 Then '#####TODAY
+    '        dtpDate.Value = DateTime.Now
 
-        ElseIf selectedIndex = 2 Then '#####YESTERDAY
-            dtpDate.Value = DateTime.Now.AddDays(-1)
+    '    ElseIf selectedIndex = 2 Then '#####YESTERDAY
+    '        dtpDate.Value = DateTime.Now.AddDays(-1)
 
-        ElseIf selectedIndex = 3 Then '#####END OF LAST MONTH
-            Dim petsa = New DateTime(Now.Year, Now.Month, 1).AddMonths(-1).AddDays(-1)
-            dtpDate.Value = petsa
+    '    ElseIf selectedIndex = 3 Then '#####END OF LAST MONTH
+    '        Dim petsa = New DateTime(Now.Year, Now.Month, 1).AddMonths(-1).AddDays(-1)
+    '        dtpDate.Value = petsa
 
-        ElseIf selectedIndex = 4 Then '#####END OF LAST YEAR
-            Dim dlastDay As DateTime = CType("12/31/" & Date.Now.Year, Date).AddYears(-1)
-            dtpDate.Value = dlastDay.ToString()
+    '    ElseIf selectedIndex = 4 Then '#####END OF LAST YEAR
+    '        Dim dlastDay As DateTime = CType("12/31/" & Date.Now.Year, Date).AddYears(-1)
+    '        dtpDate.Value = dlastDay.ToString()
+    '    End If
+    'End Sub
+
+    Private Sub btnPreview_Click(sender As Object, e As EventArgs) Handles btnPreview.Click
+        If Trim(txtTitle.Text = "") Or Trim(txtDescription.Text) = "" Then
+            MsgBox("Please Set the title and the description", vbExclamation + vbOKOnly, "No title and description")
+            Exit Sub
+        Else
+            balance_sheet_report.ShowDialog()
         End If
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class
