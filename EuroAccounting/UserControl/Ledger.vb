@@ -39,7 +39,10 @@ Public Class Ledger
 
                     End If
                     If dr1.HasRows Then
-                        lvw_ledger.Items.Add(dr.Item("name"))
+                        Item = lvw_ledger.Items.Add(dr.Item("name"))
+                        Item.SubItems.Add("")
+                        Item.SubItems.Add("")
+                        Item.SubItems.Add("")
                         cur_balance = 0
                         Do While dr1.Read
                             Item = lvw_ledger.Items.Add("     " & StrToDate(dr1.Item("journal_date")))
@@ -69,7 +72,10 @@ Public Class Ledger
                                 .SubItems.Add(FormatNumber(cur_balance, 2))
                             End With
                         Loop
-                        lvw_ledger.Items.Add("")
+                        Item = lvw_ledger.Items.Add("")
+                        Item.SubItems.Add("")
+                        Item.SubItems.Add("")
+                        Item.SubItems.Add("")
                     Else
                         '## No records FOund
                         'If dt_from <> "" And dt_to <> "" Then
@@ -100,10 +106,6 @@ Public Class Ledger
 
     End Sub
 
-    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
-
-    End Sub
-
     Private Sub Ledger_GotFocus(sender As Object, e As EventArgs) Handles Me.GotFocus
         'load_lvw()
     End Sub
@@ -120,5 +122,9 @@ Public Class Ledger
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
+    End Sub
+
+    Private Sub btnPreview_Click(sender As Object, e As EventArgs) Handles btnPreview.Click
+        column_ledger_report.ShowDialog()
     End Sub
 End Class

@@ -36,7 +36,7 @@ Partial Class Ledger
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lblDate = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnPrint = New System.Windows.Forms.Button()
+        Me.btnPreview = New System.Windows.Forms.Button()
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
@@ -57,7 +57,7 @@ Partial Class Ledger
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.lblDate)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.btnPrint)
+        Me.Panel1.Controls.Add(Me.btnPreview)
         Me.Panel1.Controls.Add(Me.btn_Cancel)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -186,20 +186,20 @@ Partial Class Ledger
         Me.Label1.TabIndex = 233
         Me.Label1.Text = "Date:"
         '
-        'btnPrint
+        'btnPreview
         '
-        Me.btnPrint.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnPrint.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnPrint.FlatAppearance.BorderSize = 0
-        Me.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPrint.ForeColor = System.Drawing.Color.Gold
-        Me.btnPrint.Location = New System.Drawing.Point(576, 58)
-        Me.btnPrint.Name = "btnPrint"
-        Me.btnPrint.Size = New System.Drawing.Size(115, 34)
-        Me.btnPrint.TabIndex = 44
-        Me.btnPrint.Text = "Print"
-        Me.btnPrint.UseVisualStyleBackColor = False
+        Me.btnPreview.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnPreview.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnPreview.FlatAppearance.BorderSize = 0
+        Me.btnPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPreview.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPreview.ForeColor = System.Drawing.Color.Gold
+        Me.btnPreview.Location = New System.Drawing.Point(576, 58)
+        Me.btnPreview.Name = "btnPreview"
+        Me.btnPreview.Size = New System.Drawing.Size(115, 34)
+        Me.btnPreview.TabIndex = 44
+        Me.btnPreview.Text = "Preview"
+        Me.btnPreview.UseVisualStyleBackColor = False
         '
         'btn_Cancel
         '
@@ -245,7 +245,7 @@ Partial Class Ledger
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents btnPrint As System.Windows.Forms.Button
+    Friend WithEvents btnPreview As System.Windows.Forms.Button
     Friend WithEvents btn_Cancel As System.Windows.Forms.Button
     Friend WithEvents btn_filter As System.Windows.Forms.Button
     Friend WithEvents dt_to As System.Windows.Forms.DateTimePicker
