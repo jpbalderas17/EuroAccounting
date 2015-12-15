@@ -44,7 +44,6 @@ Public Class LogIn
                 'Dim parameters As New Dictionary(Of String, Object)()
                 'parameters.Add("username", txtUsername.Text)
                 'parameters.Add("password", txtPassword.Text)
-
                 dr = db.ExecuteReader("SELECT * FROM users where username ='" & txtUsername.Text & "' and password = '" & Encrypt(txtPassword.Text, "Keys") & "' ")
                 If dr.HasRows Then
                     dr.Read()
@@ -56,7 +55,6 @@ Public Class LogIn
                     Dim utype = (CInt(dr.Item("user_type")))
                     Dim userfullname = dr.Item("full_name").ToString
                     lbl_utype.Text = utype
-
                     If uname = txtUsername.Text And upass = encryptPass Then
                         uscMainMenu.lblHeader.Text = ("       Welcome " & userfullname)
                         Me.Hide()
@@ -74,6 +72,7 @@ Public Class LogIn
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
+            'try natin i restore here :D lagyan ko pwede bukas
         Finally
             db.Dispose() '<--------CHECK THIS!
         End Try
@@ -87,6 +86,6 @@ Public Class LogIn
         SetCueText(txtPassword, "Password")
     End Sub
     Private Sub thisIsOnlyYourAccess()
-        ''
+
     End Sub
 End Class

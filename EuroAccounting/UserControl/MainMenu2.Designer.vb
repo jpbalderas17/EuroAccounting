@@ -36,12 +36,12 @@ Partial Class MainMenu2
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.pnl_mains = New System.Windows.Forms.Panel()
+        Me.btn3ColLedger = New System.Windows.Forms.Button()
         Me.btnDbBackUp = New System.Windows.Forms.Button()
         Me.btn_archives = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btn_Income_Statement = New System.Windows.Forms.Button()
         Me.btn_Trial_Balance = New System.Windows.Forms.Button()
-        Me.btn3ColLedger = New System.Windows.Forms.Button()
         Me.gbx_Choices.SuspendLayout()
         Me.pnl_mains.SuspendLayout()
         Me.SuspendLayout()
@@ -215,6 +215,7 @@ Partial Class MainMenu2
         Me.pnl_mains.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnl_mains.BackColor = System.Drawing.Color.Silver
         Me.pnl_mains.Controls.Add(Me.btn3ColLedger)
         Me.pnl_mains.Controls.Add(Me.btnDbBackUp)
         Me.pnl_mains.Controls.Add(Me.btn_archives)
@@ -233,6 +234,21 @@ Partial Class MainMenu2
         Me.pnl_mains.Name = "pnl_mains"
         Me.pnl_mains.Size = New System.Drawing.Size(1024, 529)
         Me.pnl_mains.TabIndex = 14
+        '
+        'btn3ColLedger
+        '
+        Me.btn3ColLedger.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btn3ColLedger.FlatAppearance.BorderSize = 0
+        Me.btn3ColLedger.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn3ColLedger.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn3ColLedger.ForeColor = System.Drawing.Color.Gold
+        Me.btn3ColLedger.Location = New System.Drawing.Point(270, 382)
+        Me.btn3ColLedger.Name = "btn3ColLedger"
+        Me.btn3ColLedger.Size = New System.Drawing.Size(231, 128)
+        Me.btn3ColLedger.TabIndex = 18
+        Me.btn3ColLedger.Text = "3 Column Ledger"
+        Me.btn3ColLedger.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn3ColLedger.UseVisualStyleBackColor = False
         '
         'btnDbBackUp
         '
@@ -309,26 +325,11 @@ Partial Class MainMenu2
         Me.btn_Trial_Balance.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_Trial_Balance.UseVisualStyleBackColor = False
         '
-        'btn3ColLedger
-        '
-        Me.btn3ColLedger.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btn3ColLedger.FlatAppearance.BorderSize = 0
-        Me.btn3ColLedger.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn3ColLedger.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn3ColLedger.ForeColor = System.Drawing.Color.Gold
-        Me.btn3ColLedger.Location = New System.Drawing.Point(270, 382)
-        Me.btn3ColLedger.Name = "btn3ColLedger"
-        Me.btn3ColLedger.Size = New System.Drawing.Size(231, 128)
-        Me.btn3ColLedger.TabIndex = 18
-        Me.btn3ColLedger.Text = "3 Column Ledger"
-        Me.btn3ColLedger.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn3ColLedger.UseVisualStyleBackColor = False
-        '
         'MainMenu2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackColor = System.Drawing.Color.Silver
         Me.Controls.Add(Me.pnl_mains)
         Me.Controls.Add(Me.gbx_Choices)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

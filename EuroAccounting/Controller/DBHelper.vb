@@ -102,6 +102,8 @@ Public Class DBHelper
         con.Close()
         Dispose(True)
         GC.SuppressFinalize(Me)
+
+
     End Sub
 #End Region
 

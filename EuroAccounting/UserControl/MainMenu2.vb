@@ -93,4 +93,8 @@
         getter = "3 Column ledger"
         select_ledger.ShowDialog()
     End Sub
+
+    Private Sub btnDbBackUp_Click(sender As Object, e As EventArgs) Handles btnDbBackUp.Click
+        DatabaseBackupRestore.ShowDialog()
+    End Sub
 End Class
