@@ -53,8 +53,9 @@ Public Class select_ledger
 
             Case "Balance sheet"
                 showUSC(uscBalanceSheet)
-                uscBalanceSheet.load_balanceSheet()
                 uscBalanceSheet.getNet()
+                uscBalanceSheet.load_balanceSheet()
+
             Case "Cash flow"
                 showUSC(uscCashFlow)
                 uscCashFlow.load_lvw()

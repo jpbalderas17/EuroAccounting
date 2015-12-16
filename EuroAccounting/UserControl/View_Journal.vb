@@ -80,6 +80,7 @@ Public Class View_Journal
 
         ElseIf cmbPost.Text = "Balance Sheet" Then
             showUSC(uscBalanceSheet)
+            uscBalanceSheet.load_balanceSheet()
             uscBalanceSheet.getNet()
         End If
 
@@ -143,7 +144,7 @@ Public Class View_Journal
             ctr = 1
             If dr.HasRows Then
                 Do While dr.Read
-                    group = New ListViewGroup(ctr & "-" & dr.Item("id"), HorizontalAlignment.Left)
+                    group = New ListViewGroup("No." & ctr & "   Journal ID:" & dr.Item("id"), HorizontalAlignment.Left)
                     lvljournal.Groups.Add(group)
 
                     Item = lvljournal.Items.Add("Date: " & dr.Item("journal_date"))
