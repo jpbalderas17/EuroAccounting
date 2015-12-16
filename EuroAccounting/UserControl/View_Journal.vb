@@ -171,9 +171,17 @@ Public Class View_Journal
                                     .SubItems.Add(" ")
                                     .SubItems.Add(j_entry_dr.Item("amount"))
                                 End If
+
                             End With
+
                             Item.Group = group
                         Loop
+                        If dr.Item("description").ToString <> "" Then
+                            Item = lvljournal.Items.Add("  Description:(" & dr.Item("description").ToString & ")")
+                            Item.Group = group
+
+                        End If
+                        
                     End If
                     ctr += 1
                 Loop
