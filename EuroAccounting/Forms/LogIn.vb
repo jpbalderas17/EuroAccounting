@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Runtime.InteropServices
-Imports System.Drawing.Imaging
+'Imports System.Drawing.Imaging
 Imports System.IO
 Imports System.Security.Cryptography
 Imports System.Text
@@ -31,7 +31,7 @@ Public Class LogIn
         Return Convert.ToBase64String(DES.CreateEncryptor().TransformFinalBlock(Buffer, 0, Buffer.Length))
     End Function
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        Dim data As New Dictionary(Of String, Object)
+
         Dim user As String = txtUsername.Text
         Dim pass As String = txtPassword.Text
         Dim Usertype As String = lbl_utype.Text
@@ -88,4 +88,12 @@ Public Class LogIn
     Private Sub thisIsOnlyYourAccess()
 
     End Sub
+
+    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnLogin_Click(sender, e)
+        End If
+    End Sub
+
+
 End Class

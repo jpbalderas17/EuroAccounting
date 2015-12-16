@@ -22,6 +22,7 @@ Partial Class Accounts
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Accounts))
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
@@ -32,6 +33,9 @@ Partial Class Accounts
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnSearchAccounts = New System.Windows.Forms.Button()
+        Me.txtSearchAccounts = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -115,9 +119,9 @@ Partial Class Accounts
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.lvw_accounts)
-        Me.Panel1.Location = New System.Drawing.Point(3, 70)
+        Me.Panel1.Location = New System.Drawing.Point(3, 129)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1018, 469)
+        Me.Panel1.Size = New System.Drawing.Size(1018, 410)
         Me.Panel1.TabIndex = 215
         '
         'lvw_accounts
@@ -131,7 +135,7 @@ Partial Class Accounts
         Me.lvw_accounts.GridLines = True
         Me.lvw_accounts.Location = New System.Drawing.Point(9, 14)
         Me.lvw_accounts.Name = "lvw_accounts"
-        Me.lvw_accounts.Size = New System.Drawing.Size(997, 440)
+        Me.lvw_accounts.Size = New System.Drawing.Size(997, 381)
         Me.lvw_accounts.TabIndex = 8
         Me.lvw_accounts.UseCompatibleStateImageBehavior = False
         Me.lvw_accounts.View = System.Windows.Forms.View.Details
@@ -151,11 +155,49 @@ Partial Class Accounts
         Me.ColumnHeader3.Text = "Type"
         Me.ColumnHeader3.Width = 350
         '
+        'btnSearchAccounts
+        '
+        Me.btnSearchAccounts.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSearchAccounts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSearchAccounts.FlatAppearance.BorderSize = 0
+        Me.btnSearchAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchAccounts.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.btnSearchAccounts.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnSearchAccounts.Image = CType(resources.GetObject("btnSearchAccounts.Image"), System.Drawing.Image)
+        Me.btnSearchAccounts.Location = New System.Drawing.Point(282, 97)
+        Me.btnSearchAccounts.Name = "btnSearchAccounts"
+        Me.btnSearchAccounts.Size = New System.Drawing.Size(26, 26)
+        Me.btnSearchAccounts.TabIndex = 242
+        Me.btnSearchAccounts.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSearchAccounts.UseVisualStyleBackColor = False
+        '
+        'txtSearchAccounts
+        '
+        Me.txtSearchAccounts.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearchAccounts.Location = New System.Drawing.Point(72, 97)
+        Me.txtSearchAccounts.Name = "txtSearchAccounts"
+        Me.txtSearchAccounts.Size = New System.Drawing.Size(210, 26)
+        Me.txtSearchAccounts.TabIndex = 240
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(15, 103)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(51, 16)
+        Me.Label9.TabIndex = 241
+        Me.Label9.Text = "Search"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
         'Accounts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
+        Me.Controls.Add(Me.btnSearchAccounts)
+        Me.Controls.Add(Me.txtSearchAccounts)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btnEdit)
@@ -166,6 +208,7 @@ Partial Class Accounts
         Me.Size = New System.Drawing.Size(1024, 542)
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnDelete As System.Windows.Forms.Button
@@ -178,5 +221,8 @@ Partial Class Accounts
     Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents btnSearchAccounts As System.Windows.Forms.Button
+    Friend WithEvents txtSearchAccounts As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 
 End Class

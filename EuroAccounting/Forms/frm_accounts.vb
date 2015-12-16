@@ -66,6 +66,7 @@ Public Class frm_accounts
                     MsgBox("Save Failed. Please try again", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Save Failed")
                 End If
             End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally

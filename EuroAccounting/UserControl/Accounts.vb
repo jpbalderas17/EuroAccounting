@@ -8,6 +8,7 @@
         showUSC(uscMainMenu)
     End Sub
     Private Sub lvw_accounts_load()
+        lvw_accounts.Items.Clear()
         dr = db.ExecuteReader("SELECT a.id,a.name,at.name as type FROM accounts a JOIN account_types at ON a.type=at.id WHERE a.is_deleted=0")
         If dr.HasRows Then
             Do While dr.Read
@@ -65,4 +66,39 @@
             MsgBox("Multiple accounts selected. You can only delete one account at a time", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Multiple Accounts Selected")
         End If
     End Sub
+
+    Private Sub btnSearchAccounts_Click(sender As Object, e As EventArgs) Handles btnSearchAccounts.Click
+        If txtSearchAccounts.Text.Contains("'") Then
+            MsgBox("Invalid text search, please remove single qoute", vbExclamation + vbOKOnly, "Invalid")
+            Exit Sub
+        End If
+        Try
+            dr = db.ExecuteReader("SELECT a.id,a.name as name,at.name as type FROM (SELECT id ,name,type from accounts where is_deleted = 0) as a JOIN account_types as at ON a.type=at.id WHERE  a.id like '%" & txtSearchAccounts.Text & "%' OR" & _
+                              " a.name like '%" & txtSearchAccounts.Text & "%' OR  at.name like '%" & txtSearchAccounts.Text & "%'")
+            lvw_accounts.Items.Clear()
+            If dr.HasRows Then
+                Do While dr.Read
+                    Dim itm As ListViewItem = lvw_accounts.Items.Add(dr.Item("id").ToString)
+                    itm.SubItems.Add(dr.Item("name").ToString)
+                    itm.SubItems.Add(dr.Item("type").ToString)
+                   
+
+
+                Loop
+            Else
+                MsgBox("No results found", vbExclamation + vbOKOnly, "No record")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString, vbCritical)
+        Finally
+            db.Dispose()
+        End Try
+    End Sub
+
+    Private Sub txtSearchAccounts_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchAccounts.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnSearchAccounts_Click(sender, e)
+        End If
+    End Sub
+
 End Class

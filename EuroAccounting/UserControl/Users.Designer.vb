@@ -24,6 +24,12 @@ Partial Class Users
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Users))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lvlUsers = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnl_user = New System.Windows.Forms.Panel()
         Me.gbxAddEdit = New System.Windows.Forms.GroupBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -41,19 +47,13 @@ Partial Class Users
         Me.txtpwd = New System.Windows.Forms.TextBox()
         Me.txtuname = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.lvlUsers = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btn_Close = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnSearchLedger = New System.Windows.Forms.Button()
-        Me.txtSearchLedger = New System.Windows.Forms.TextBox()
+        Me.btnSearchUser = New System.Windows.Forms.Button()
+        Me.txtSearchUser = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.pnl_user.SuspendLayout()
@@ -70,6 +70,47 @@ Partial Class Users
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(935, 494)
         Me.Panel1.TabIndex = 0
+        '
+        'lvlUsers
+        '
+        Me.lvlUsers.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lvlUsers.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
+        Me.lvlUsers.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvlUsers.FullRowSelect = True
+        Me.lvlUsers.GridLines = True
+        Me.lvlUsers.Location = New System.Drawing.Point(14, 7)
+        Me.lvlUsers.Name = "lvlUsers"
+        Me.lvlUsers.Size = New System.Drawing.Size(905, 474)
+        Me.lvlUsers.TabIndex = 8
+        Me.lvlUsers.UseCompatibleStateImageBehavior = False
+        Me.lvlUsers.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "User ID"
+        Me.ColumnHeader1.Width = 84
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Full name"
+        Me.ColumnHeader2.Width = 397
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Username"
+        Me.ColumnHeader3.Width = 350
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "User Type"
+        Me.ColumnHeader4.Width = 260
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "Password"
+        Me.ColumnHeader5.Width = 0
         '
         'pnl_user
         '
@@ -262,47 +303,6 @@ Partial Class Users
         Me.Label5.Text = "User Form"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'lvlUsers
-        '
-        Me.lvlUsers.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lvlUsers.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
-        Me.lvlUsers.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lvlUsers.FullRowSelect = True
-        Me.lvlUsers.GridLines = True
-        Me.lvlUsers.Location = New System.Drawing.Point(14, 7)
-        Me.lvlUsers.Name = "lvlUsers"
-        Me.lvlUsers.Size = New System.Drawing.Size(905, 474)
-        Me.lvlUsers.TabIndex = 8
-        Me.lvlUsers.UseCompatibleStateImageBehavior = False
-        Me.lvlUsers.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "User ID"
-        Me.ColumnHeader1.Width = 84
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Full name"
-        Me.ColumnHeader2.Width = 397
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Username"
-        Me.ColumnHeader3.Width = 350
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "User Type"
-        Me.ColumnHeader4.Width = 260
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "Password"
-        Me.ColumnHeader5.Width = 0
-        '
         'btnDelete
         '
         Me.btnDelete.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -377,29 +377,29 @@ Partial Class Users
         Me.Label4.Text = "    System Users"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'btnSearchLedger
+        'btnSearchUser
         '
-        Me.btnSearchLedger.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnSearchLedger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btnSearchLedger.FlatAppearance.BorderSize = 0
-        Me.btnSearchLedger.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchLedger.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchLedger.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSearchLedger.Image = CType(resources.GetObject("btnSearchLedger.Image"), System.Drawing.Image)
-        Me.btnSearchLedger.Location = New System.Drawing.Point(287, 85)
-        Me.btnSearchLedger.Name = "btnSearchLedger"
-        Me.btnSearchLedger.Size = New System.Drawing.Size(26, 22)
-        Me.btnSearchLedger.TabIndex = 239
-        Me.btnSearchLedger.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnSearchLedger.UseVisualStyleBackColor = False
+        Me.btnSearchUser.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSearchUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSearchUser.FlatAppearance.BorderSize = 0
+        Me.btnSearchUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.btnSearchUser.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnSearchUser.Image = CType(resources.GetObject("btnSearchUser.Image"), System.Drawing.Image)
+        Me.btnSearchUser.Location = New System.Drawing.Point(287, 82)
+        Me.btnSearchUser.Name = "btnSearchUser"
+        Me.btnSearchUser.Size = New System.Drawing.Size(26, 26)
+        Me.btnSearchUser.TabIndex = 239
+        Me.btnSearchUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSearchUser.UseVisualStyleBackColor = False
         '
-        'txtSearchLedger
+        'txtSearchUser
         '
-        Me.txtSearchLedger.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearchLedger.Location = New System.Drawing.Point(77, 85)
-        Me.txtSearchLedger.Name = "txtSearchLedger"
-        Me.txtSearchLedger.Size = New System.Drawing.Size(210, 22)
-        Me.txtSearchLedger.TabIndex = 237
+        Me.txtSearchUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearchUser.Location = New System.Drawing.Point(77, 82)
+        Me.txtSearchUser.Name = "txtSearchUser"
+        Me.txtSearchUser.Size = New System.Drawing.Size(210, 26)
+        Me.txtSearchUser.TabIndex = 237
         '
         'Label9
         '
@@ -418,15 +418,16 @@ Partial Class Users
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
         Me.Controls.Add(Me.pnl_user)
-        Me.Controls.Add(Me.btnSearchLedger)
-        Me.Controls.Add(Me.txtSearchLedger)
+        Me.Controls.Add(Me.btnSearchUser)
+        Me.Controls.Add(Me.txtSearchUser)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btnEdit)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btn_Close)
         Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Panel1)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Name = "Users"
         Me.Size = New System.Drawing.Size(938, 620)
         Me.Panel1.ResumeLayout(False)
@@ -466,8 +467,8 @@ Partial Class Users
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents txtUid As System.Windows.Forms.TextBox
     Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents btnSearchLedger As System.Windows.Forms.Button
-    Friend WithEvents txtSearchLedger As System.Windows.Forms.TextBox
+    Friend WithEvents btnSearchUser As System.Windows.Forms.Button
+    Friend WithEvents txtSearchUser As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
 
 End Class

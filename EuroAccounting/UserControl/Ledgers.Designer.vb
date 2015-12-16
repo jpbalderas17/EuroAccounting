@@ -24,6 +24,14 @@ Partial Class Ledgers
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ledgers))
         Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.pnl = New System.Windows.Forms.Panel()
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.txtDesc = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblAddEdit = New System.Windows.Forms.Label()
+        Me.txtNameofLedger = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.btnSearchLedger = New System.Windows.Forms.Button()
         Me.txtSearchLedger = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -39,14 +47,6 @@ Partial Class Ledgers
         Me.lblDate = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.pnl = New System.Windows.Forms.Panel()
-        Me.btnCancel = New System.Windows.Forms.Button()
-        Me.btnSave = New System.Windows.Forms.Button()
-        Me.txtDesc = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblAddEdit = New System.Windows.Forms.Label()
-        Me.txtNameofLedger = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.pnlMain.SuspendLayout()
         Me.pnl.SuspendLayout()
         Me.SuspendLayout()
@@ -57,6 +57,7 @@ Partial Class Ledgers
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnlMain.BackColor = System.Drawing.Color.Silver
+        Me.pnlMain.Controls.Add(Me.pnl)
         Me.pnlMain.Controls.Add(Me.btnSearchLedger)
         Me.pnlMain.Controls.Add(Me.txtSearchLedger)
         Me.pnlMain.Controls.Add(Me.Label4)
@@ -74,6 +75,103 @@ Partial Class Ledgers
         Me.pnlMain.Size = New System.Drawing.Size(1001, 462)
         Me.pnlMain.TabIndex = 20
         '
+        'pnl
+        '
+        Me.pnl.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.pnl.BackColor = System.Drawing.Color.Silver
+        Me.pnl.Controls.Add(Me.btnCancel)
+        Me.pnl.Controls.Add(Me.btnSave)
+        Me.pnl.Controls.Add(Me.txtDesc)
+        Me.pnl.Controls.Add(Me.Label5)
+        Me.pnl.Controls.Add(Me.lblAddEdit)
+        Me.pnl.Controls.Add(Me.txtNameofLedger)
+        Me.pnl.Controls.Add(Me.Label3)
+        Me.pnl.Location = New System.Drawing.Point(306, 109)
+        Me.pnl.Name = "pnl"
+        Me.pnl.Size = New System.Drawing.Size(437, 170)
+        Me.pnl.TabIndex = 234
+        Me.pnl.Visible = False
+        '
+        'btnCancel
+        '
+        Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancel.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnCancel.FlatAppearance.BorderSize = 0
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.ForeColor = System.Drawing.Color.Gold
+        Me.btnCancel.Location = New System.Drawing.Point(329, 123)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(93, 34)
+        Me.btnCancel.TabIndex = 233
+        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = False
+        '
+        'btnSave
+        '
+        Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSave.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSave.FlatAppearance.BorderSize = 0
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.ForeColor = System.Drawing.Color.Gold
+        Me.btnSave.Location = New System.Drawing.Point(230, 123)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(93, 34)
+        Me.btnSave.TabIndex = 232
+        Me.btnSave.Text = "Save"
+        Me.btnSave.UseVisualStyleBackColor = False
+        '
+        'txtDesc
+        '
+        Me.txtDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDesc.Location = New System.Drawing.Point(127, 95)
+        Me.txtDesc.Name = "txtDesc"
+        Me.txtDesc.Size = New System.Drawing.Size(293, 22)
+        Me.txtDesc.TabIndex = 45
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(20, 98)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(76, 16)
+        Me.Label5.TabIndex = 44
+        Me.Label5.Text = "Description"
+        '
+        'lblAddEdit
+        '
+        Me.lblAddEdit.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblAddEdit.BackColor = System.Drawing.Color.MidnightBlue
+        Me.lblAddEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAddEdit.ForeColor = System.Drawing.Color.Gold
+        Me.lblAddEdit.Location = New System.Drawing.Point(1, 4)
+        Me.lblAddEdit.Name = "lblAddEdit"
+        Me.lblAddEdit.Size = New System.Drawing.Size(436, 34)
+        Me.lblAddEdit.TabIndex = 43
+        Me.lblAddEdit.Text = "Add new ledger"
+        Me.lblAddEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'txtNameofLedger
+        '
+        Me.txtNameofLedger.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNameofLedger.Location = New System.Drawing.Point(127, 67)
+        Me.txtNameofLedger.Name = "txtNameofLedger"
+        Me.txtNameofLedger.Size = New System.Drawing.Size(194, 22)
+        Me.txtNameofLedger.TabIndex = 1
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(20, 70)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(101, 16)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Name of ledger"
+        '
         'btnSearchLedger
         '
         Me.btnSearchLedger.BackColor = System.Drawing.Color.MidnightBlue
@@ -85,17 +183,17 @@ Partial Class Ledgers
         Me.btnSearchLedger.Image = CType(resources.GetObject("btnSearchLedger.Image"), System.Drawing.Image)
         Me.btnSearchLedger.Location = New System.Drawing.Point(299, 106)
         Me.btnSearchLedger.Name = "btnSearchLedger"
-        Me.btnSearchLedger.Size = New System.Drawing.Size(26, 22)
+        Me.btnSearchLedger.Size = New System.Drawing.Size(31, 26)
         Me.btnSearchLedger.TabIndex = 236
         Me.btnSearchLedger.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSearchLedger.UseVisualStyleBackColor = False
         '
         'txtSearchLedger
         '
-        Me.txtSearchLedger.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearchLedger.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSearchLedger.Location = New System.Drawing.Point(89, 106)
         Me.txtSearchLedger.Name = "txtSearchLedger"
-        Me.txtSearchLedger.Size = New System.Drawing.Size(210, 22)
+        Me.txtSearchLedger.Size = New System.Drawing.Size(210, 26)
         Me.txtSearchLedger.TabIndex = 234
         '
         'Label4
@@ -252,109 +350,11 @@ Partial Class Ledgers
         Me.Label2.Text = "    Ledger"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'pnl
-        '
-        Me.pnl.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.pnl.BackColor = System.Drawing.Color.Silver
-        Me.pnl.Controls.Add(Me.btnCancel)
-        Me.pnl.Controls.Add(Me.btnSave)
-        Me.pnl.Controls.Add(Me.txtDesc)
-        Me.pnl.Controls.Add(Me.Label5)
-        Me.pnl.Controls.Add(Me.lblAddEdit)
-        Me.pnl.Controls.Add(Me.txtNameofLedger)
-        Me.pnl.Controls.Add(Me.Label3)
-        Me.pnl.Location = New System.Drawing.Point(286, 115)
-        Me.pnl.Name = "pnl"
-        Me.pnl.Size = New System.Drawing.Size(437, 170)
-        Me.pnl.TabIndex = 234
-        Me.pnl.Visible = False
-        '
-        'btnCancel
-        '
-        Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCancel.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnCancel.FlatAppearance.BorderSize = 0
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.ForeColor = System.Drawing.Color.Gold
-        Me.btnCancel.Location = New System.Drawing.Point(329, 123)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(93, 34)
-        Me.btnCancel.TabIndex = 233
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = False
-        '
-        'btnSave
-        '
-        Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSave.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnSave.FlatAppearance.BorderSize = 0
-        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.ForeColor = System.Drawing.Color.Gold
-        Me.btnSave.Location = New System.Drawing.Point(230, 123)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(93, 34)
-        Me.btnSave.TabIndex = 232
-        Me.btnSave.Text = "Save"
-        Me.btnSave.UseVisualStyleBackColor = False
-        '
-        'txtDesc
-        '
-        Me.txtDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDesc.Location = New System.Drawing.Point(127, 95)
-        Me.txtDesc.Name = "txtDesc"
-        Me.txtDesc.Size = New System.Drawing.Size(293, 22)
-        Me.txtDesc.TabIndex = 45
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(20, 98)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(76, 16)
-        Me.Label5.TabIndex = 44
-        Me.Label5.Text = "Description"
-        '
-        'lblAddEdit
-        '
-        Me.lblAddEdit.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblAddEdit.BackColor = System.Drawing.Color.MidnightBlue
-        Me.lblAddEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAddEdit.ForeColor = System.Drawing.Color.Gold
-        Me.lblAddEdit.Location = New System.Drawing.Point(1, 4)
-        Me.lblAddEdit.Name = "lblAddEdit"
-        Me.lblAddEdit.Size = New System.Drawing.Size(436, 34)
-        Me.lblAddEdit.TabIndex = 43
-        Me.lblAddEdit.Text = "Add new ledger"
-        Me.lblAddEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'txtNameofLedger
-        '
-        Me.txtNameofLedger.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNameofLedger.Location = New System.Drawing.Point(127, 67)
-        Me.txtNameofLedger.Name = "txtNameofLedger"
-        Me.txtNameofLedger.Size = New System.Drawing.Size(194, 22)
-        Me.txtNameofLedger.TabIndex = 1
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(20, 70)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(101, 16)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Name of ledger"
-        '
         'Ledgers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.Controls.Add(Me.pnl)
         Me.Controls.Add(Me.pnlMain)
         Me.Name = "Ledgers"
         Me.Size = New System.Drawing.Size(1001, 470)

@@ -137,4 +137,12 @@
 
         
     End Sub
+
+    Private Sub txtSearchLedger_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchLedger.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnSearchLedger_Click(sender, e)
+        End If
+    End Sub
+
+   
 End Class

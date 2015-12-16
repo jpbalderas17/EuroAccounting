@@ -40,9 +40,9 @@ Partial Class cash_flow_report
         Me.pnlPrint.Controls.Add(Me.btnCancelPrintattack)
         Me.pnlPrint.Controls.Add(Me.crvCF)
         Me.pnlPrint.Controls.Add(Me.Label5)
-        Me.pnlPrint.Location = New System.Drawing.Point(2, -11)
+        Me.pnlPrint.Location = New System.Drawing.Point(2, 1)
         Me.pnlPrint.Name = "pnlPrint"
-        Me.pnlPrint.Size = New System.Drawing.Size(853, 462)
+        Me.pnlPrint.Size = New System.Drawing.Size(853, 460)
         Me.pnlPrint.TabIndex = 251
         '
         'btnPrint
@@ -53,7 +53,7 @@ Partial Class cash_flow_report
         Me.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPrint.ForeColor = System.Drawing.Color.Gold
-        Me.btnPrint.Location = New System.Drawing.Point(617, 72)
+        Me.btnPrint.Location = New System.Drawing.Point(617, 33)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(115, 34)
         Me.btnPrint.TabIndex = 84
@@ -68,7 +68,7 @@ Partial Class cash_flow_report
         Me.btnCancelPrintattack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelPrintattack.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelPrintattack.ForeColor = System.Drawing.Color.Gold
-        Me.btnCancelPrintattack.Location = New System.Drawing.Point(738, 72)
+        Me.btnCancelPrintattack.Location = New System.Drawing.Point(738, 33)
         Me.btnCancelPrintattack.Name = "btnCancelPrintattack"
         Me.btnCancelPrintattack.Size = New System.Drawing.Size(115, 34)
         Me.btnCancelPrintattack.TabIndex = 83
@@ -83,9 +83,9 @@ Partial Class cash_flow_report
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.crvCF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.crvCF.Cursor = System.Windows.Forms.Cursors.Default
-        Me.crvCF.Location = New System.Drawing.Point(4, 116)
+        Me.crvCF.Location = New System.Drawing.Point(4, 77)
         Me.crvCF.Name = "crvCF"
-        Me.crvCF.Size = New System.Drawing.Size(847, 343)
+        Me.crvCF.Size = New System.Drawing.Size(847, 364)
         Me.crvCF.TabIndex = 82
         Me.crvCF.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
@@ -96,7 +96,7 @@ Partial Class cash_flow_report
         Me.Label5.BackColor = System.Drawing.Color.MidnightBlue
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Gold
-        Me.Label5.Location = New System.Drawing.Point(-27, 72)
+        Me.Label5.Location = New System.Drawing.Point(-27, 33)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(880, 34)
         Me.Label5.TabIndex = 85

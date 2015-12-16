@@ -83,24 +83,24 @@ Partial Class Archives
         Me.btnSearchLedger.Image = CType(resources.GetObject("btnSearchLedger.Image"), System.Drawing.Image)
         Me.btnSearchLedger.Location = New System.Drawing.Point(294, 109)
         Me.btnSearchLedger.Name = "btnSearchLedger"
-        Me.btnSearchLedger.Size = New System.Drawing.Size(26, 22)
+        Me.btnSearchLedger.Size = New System.Drawing.Size(30, 26)
         Me.btnSearchLedger.TabIndex = 239
         Me.btnSearchLedger.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSearchLedger.UseVisualStyleBackColor = False
         '
         'txtSearchLedger
         '
-        Me.txtSearchLedger.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearchLedger.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSearchLedger.Location = New System.Drawing.Point(84, 109)
         Me.txtSearchLedger.Name = "txtSearchLedger"
-        Me.txtSearchLedger.Size = New System.Drawing.Size(210, 22)
+        Me.txtSearchLedger.Size = New System.Drawing.Size(210, 26)
         Me.txtSearchLedger.TabIndex = 237
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(27, 112)
+        Me.Label4.Location = New System.Drawing.Point(27, 113)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(51, 16)
         Me.Label4.TabIndex = 238

@@ -177,8 +177,8 @@ Partial Class DatabaseBackupRestore
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(457, 32)
         Me.Label4.TabIndex = 11
-        Me.Label4.Text = "Note: Error may occured when you back up your database if you save it in system" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & _
-    "directory. We recommend to create folder and not address to system drive. "
+        Me.Label4.Text = "Note: Error may occured when you back up and your database in system" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "directory. " & _
+    "We recommend to create folder that is not address to system drive. "
         '
         'DatabaseBackupRestore
         '

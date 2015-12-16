@@ -224,4 +224,45 @@ Public Class Users
             MessageBox.Show("Please select record to edit.", "Important Note", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
         End If
     End Sub
+
+
+    Private Sub btnSearchUser_Click(sender As Object, e As EventArgs) Handles btnSearchUser.Click
+        If txtSearchUser.Text.Contains("'") Then
+            MsgBox("Invalid text search, please remove single qoute", vbExclamation + vbOKOnly, "Invalid")
+            Exit Sub
+        End If
+        Try
+            dr = db.ExecuteReader("SELECT id,full_name, username,user_type FROM  users where id like '%" & txtSearchUser.Text & "%' OR" & _
+                              " full_name like '%" & txtSearchUser.Text & "%' OR username like '%" & txtSearchUser.Text & "%'")
+            lvlUsers.Items.Clear()
+            If dr.HasRows Then
+                Do While dr.Read
+                    Dim itm As ListViewItem = lvlUsers.Items.Add(dr.Item("id").ToString)
+                    itm.SubItems.Add(dr.Item("full_name").ToString)
+                    itm.SubItems.Add(dr.Item("username").ToString)
+                    If dr.Item("user_type").ToString = 0 Then
+                        itm.SubItems.Add("Super Administrator")
+                    ElseIf dr.Item("user_type").ToString = 1 Then
+                        itm.SubItems.Add("Administrator")
+                    End If
+
+
+                Loop
+            Else
+                MsgBox("No results found", vbExclamation + vbOKOnly, "No record")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString, vbCritical)
+        Finally
+            db.Dispose()
+        End Try
+    End Sub
+
+    Private Sub txtSearchUser_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchUser.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnSearchUser_Click(sender, e)
+        End If
+    End Sub
+
+
 End Class

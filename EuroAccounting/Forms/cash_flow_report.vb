@@ -61,4 +61,8 @@
         Me.Hide()
         showUSC(uscCashFlow)
     End Sub
+
+    Private Sub crvCF_Load(sender As Object, e As EventArgs) Handles crvCF.Load
+
+    End Sub
 End Class
