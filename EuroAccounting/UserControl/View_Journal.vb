@@ -80,7 +80,7 @@ Public Class View_Journal
 
         ElseIf cmbPost.Text = "Balance Sheet" Then
             showUSC(uscBalanceSheet)
-
+            uscBalanceSheet.getNet()
         End If
 
     End Sub
@@ -139,10 +139,11 @@ Public Class View_Journal
 
         Try
             dr = db.ExecuteReader("SELECT id,  journal_date, description FROM journals where ledger_id = " & uscLedgers.lvljournal.FocusedItem.Text)
-
+            Dim ctr As Integer
+            ctr = 1
             If dr.HasRows Then
                 Do While dr.Read
-                    group = New ListViewGroup(dr.Item("id"), HorizontalAlignment.Left)
+                    group = New ListViewGroup(ctr & "-" & dr.Item("id"), HorizontalAlignment.Left)
                     lvljournal.Groups.Add(group)
 
                     Item = lvljournal.Items.Add("Date: " & dr.Item("journal_date"))
@@ -153,7 +154,8 @@ Public Class View_Journal
                         .SubItems.Add("Credit")
                     End With
                     Item.Group = group
-                    j_entry_dr = db.ExecuteReader("SELECT * FROM journal_details jd JOIN accounts a ON jd.account_id=a.id AND jd.journal_id=" & dr.Item("id").ToString & "ORDER by is_debit ASC")
+                    'Item.Group
+                    j_entry_dr = db.ExecuteReader("SELECT * FROM journal_details jd JOIN accounts a ON jd.account_id=a.id AND jd.journal_id=" & dr.Item("id").ToString & "ORDER by is_debit DESC")
                     'j_entry_dr = db.ExecuteReader("SELECT * FROM journal_details WHERE journal_id=" & dr.Item("id"))
                     If j_entry_dr.HasRows Then
                         Do While j_entry_dr.Read
@@ -161,10 +163,10 @@ Public Class View_Journal
                             With Item
                                 Dim db_cr = j_entry_dr.Item("is_debit")
                                 '.SubItems.Add(j_entry_dr.Item("amount"))
-                                If db_cr = "0" Then
+                                If db_cr = "1" Then
                                     .SubItems.Add(j_entry_dr.Item("amount"))
                                     .SubItems.Add(" ")
-                                ElseIf db_cr = "1" Then
+                                ElseIf db_cr = "0" Then
                                     .SubItems.Add(" ")
                                     .SubItems.Add(j_entry_dr.Item("amount"))
                                 End If
@@ -172,6 +174,7 @@ Public Class View_Journal
                             Item.Group = group
                         Loop
                     End If
+                    ctr += 1
                 Loop
             Else
                 MsgBox("No record of journal", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "No journal.")

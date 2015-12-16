@@ -22,6 +22,7 @@ Partial Class View_Journal
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.cmbPost = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -32,7 +33,10 @@ Partial Class View_Journal
         Me.chAccounts = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chDebit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chCredit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.tsRemove = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_Journal.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'cmbPost
@@ -124,6 +128,7 @@ Partial Class View_Journal
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lvljournal.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lvljournal.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chAccounts, Me.chDebit, Me.chCredit})
+        Me.lvljournal.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lvljournal.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvljournal.FullRowSelect = True
         Me.lvljournal.GridLines = True
@@ -149,6 +154,18 @@ Partial Class View_Journal
         Me.chCredit.Text = ""
         Me.chCredit.Width = 150
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsRemove})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(118, 26)
+        '
+        'tsRemove
+        '
+        Me.tsRemove.Name = "tsRemove"
+        Me.tsRemove.Size = New System.Drawing.Size(117, 22)
+        Me.tsRemove.Text = "Remove"
+        '
         'View_Journal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -162,6 +179,7 @@ Partial Class View_Journal
         Me.Size = New System.Drawing.Size(938, 463)
         Me.pnl_Journal.ResumeLayout(False)
         Me.pnl_Journal.PerformLayout()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -175,5 +193,7 @@ Partial Class View_Journal
     Friend WithEvents chAccounts As System.Windows.Forms.ColumnHeader
     Friend WithEvents chDebit As System.Windows.Forms.ColumnHeader
     Friend WithEvents chCredit As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents tsRemove As System.Windows.Forms.ToolStripMenuItem
 
 End Class
