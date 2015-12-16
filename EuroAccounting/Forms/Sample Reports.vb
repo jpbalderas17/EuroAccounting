@@ -1,6 +1,0 @@
-﻿Public Class Sample_Reports
-
-    Private Sub Sample_Reports_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-End Class

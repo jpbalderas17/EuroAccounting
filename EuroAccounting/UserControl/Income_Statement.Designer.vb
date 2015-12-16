@@ -47,6 +47,7 @@ Partial Class Income_Statement
         Me.pnlIncMain.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlIncMain.BackColor = System.Drawing.Color.Silver
         Me.pnlIncMain.Controls.Add(Me.txtDescription)
         Me.pnlIncMain.Controls.Add(Me.txtTitle)
         Me.pnlIncMain.Controls.Add(Me.lblNet)
@@ -62,18 +63,20 @@ Partial Class Income_Statement
         'txtDescription
         '
         Me.txtDescription.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txtDescription.Location = New System.Drawing.Point(286, 133)
+        Me.txtDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescription.Location = New System.Drawing.Point(286, 147)
         Me.txtDescription.Name = "txtDescription"
-        Me.txtDescription.Size = New System.Drawing.Size(269, 20)
+        Me.txtDescription.Size = New System.Drawing.Size(269, 26)
         Me.txtDescription.TabIndex = 248
         Me.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtTitle
         '
         Me.txtTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txtTitle.Location = New System.Drawing.Point(286, 107)
+        Me.txtTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTitle.Location = New System.Drawing.Point(286, 115)
         Me.txtTitle.Name = "txtTitle"
-        Me.txtTitle.Size = New System.Drawing.Size(269, 20)
+        Me.txtTitle.Size = New System.Drawing.Size(269, 26)
         Me.txtTitle.TabIndex = 247
         Me.txtTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -95,12 +98,12 @@ Partial Class Income_Statement
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lvIncomeStatement.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lvIncomeStatement.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chAccounts, Me.chDebit, Me.chCredit})
-        Me.lvIncomeStatement.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvIncomeStatement.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvIncomeStatement.FullRowSelect = True
         Me.lvIncomeStatement.GridLines = True
-        Me.lvIncomeStatement.Location = New System.Drawing.Point(13, 159)
+        Me.lvIncomeStatement.Location = New System.Drawing.Point(13, 179)
         Me.lvIncomeStatement.Name = "lvIncomeStatement"
-        Me.lvIncomeStatement.Size = New System.Drawing.Size(789, 362)
+        Me.lvIncomeStatement.Size = New System.Drawing.Size(789, 342)
         Me.lvIncomeStatement.TabIndex = 227
         Me.lvIncomeStatement.UseCompatibleStateImageBehavior = False
         Me.lvIncomeStatement.View = System.Windows.Forms.View.Details
@@ -169,6 +172,7 @@ Partial Class Income_Statement
         Me.pnlPrint.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlPrint.BackColor = System.Drawing.Color.Silver
         Me.pnlPrint.Controls.Add(Me.btnPrintAttack)
         Me.pnlPrint.Controls.Add(Me.btnCancelPrintattack)
         Me.pnlPrint.Controls.Add(Me.crvInc)
@@ -240,6 +244,7 @@ Partial Class Income_Statement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Silver
         Me.Controls.Add(Me.pnlIncMain)
         Me.Controls.Add(Me.pnlPrint)
         Me.Name = "Income_Statement"

@@ -46,10 +46,28 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -71,11 +89,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\DBHelper.vb" />
+    <Compile Include="Controller\GeneralMethods.vb" />
     <Compile Include="Controller\MainPanelController.vb" />
     <Compile Include="Forms\AddJournalEntry.Designer.vb">
       <DependentUpon>AddJournalEntry.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\AddJournalEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\balance_sheet_report.Designer.vb">
+      <DependentUpon>balance_sheet_report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\balance_sheet_report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\cash_flow_report.designer.vb">
+      <DependentUpon>cash_flow_report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\cash_flow_report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\column_ledger_report.designer.vb">
+      <DependentUpon>column_ledger_report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\column_ledger_report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DatabaseBackupRestore.Designer.vb">
+      <DependentUpon>DatabaseBackupRestore.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DatabaseBackupRestore.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frm_accounts.Designer.vb">
@@ -109,6 +152,18 @@
     <Compile Include="Forms\selectPeriod.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\select_ledger.Designer.vb">
+      <DependentUpon>select_ledger.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\select_ledger.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\tbalance_report.Designer.vb">
+      <DependentUpon>tbalance_report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\tbalance_report.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -124,6 +179,41 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Reports\BalanceSheet.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BalanceSheet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CashFlow.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CashFlow.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ColumnLedger.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ColumnLedger.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DSreportsAccounting.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSreportsAccounting.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IncomeStatement.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IncomeStatement.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TrialBalance.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrialBalance.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControl\Accounts.Designer.vb">
       <DependentUpon>Accounts.vb</DependentUpon>
     </Compile>
@@ -136,10 +226,22 @@
     <Compile Include="UserControl\AddEntry.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControl\Archives.Designer.vb">
+      <DependentUpon>Archives.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Archives.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControl\Balance_Sheet.Designer.vb">
       <DependentUpon>Balance_Sheet.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Balance_Sheet.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Cash_Flow.designer.vb">
+      <DependentUpon>Cash_Flow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Cash_Flow.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControl\Income_Statement.Designer.vb">
@@ -160,10 +262,10 @@
     <Compile Include="UserControl\Ledger.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\Ledger_views.Designer.vb">
-      <DependentUpon>Ledger_views.vb</DependentUpon>
+    <Compile Include="UserControl\Ledgers.Designer.vb">
+      <DependentUpon>Ledgers.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\Ledger_views.vb">
+    <Compile Include="UserControl\Ledgers.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControl\MainMenu2.Designer.vb">
@@ -201,6 +303,18 @@
     <EmbeddedResource Include="Forms\AddJournalEntry.resx">
       <DependentUpon>AddJournalEntry.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\balance_sheet_report.resx">
+      <DependentUpon>balance_sheet_report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\cash_flow_report.resx">
+      <DependentUpon>cash_flow_report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\column_ledger_report.resx">
+      <DependentUpon>column_ledger_report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DatabaseBackupRestore.resx">
+      <DependentUpon>DatabaseBackupRestore.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_accounts.resx">
       <DependentUpon>frm_accounts.vb</DependentUpon>
     </EmbeddedResource>
@@ -216,11 +330,37 @@
     <EmbeddedResource Include="Forms\selectPeriod.resx">
       <DependentUpon>selectPeriod.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\select_ledger.resx">
+      <DependentUpon>select_ledger.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\tbalance_report.resx">
+      <DependentUpon>tbalance_report.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BalanceSheet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BalanceSheet.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CashFlow.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashFlow.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ColumnLedger.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ColumnLedger.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IncomeStatement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IncomeStatement.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TrialBalance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TrialBalance.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Accounts.resx">
       <DependentUpon>Accounts.vb</DependentUpon>
@@ -228,8 +368,17 @@
     <EmbeddedResource Include="UserControl\AddEntry.resx">
       <DependentUpon>AddEntry.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Archives.resx">
+      <DependentUpon>Archives.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Balance_Sheet.resx">
       <DependentUpon>Balance_Sheet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Cash_Flow.resx">
+      <DependentUpon>Cash_Flow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Income_Statement.resx">
+      <DependentUpon>Income_Statement.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Journal_Entry.resx">
       <DependentUpon>Journal_Entry.vb</DependentUpon>
@@ -237,8 +386,8 @@
     <EmbeddedResource Include="UserControl\Ledger.resx">
       <DependentUpon>Ledger.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\Ledger_views.resx">
-      <DependentUpon>Ledger_views.vb</DependentUpon>
+    <EmbeddedResource Include="UserControl\Ledgers.resx">
+      <DependentUpon>Ledgers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\MainMenu2.resx">
       <DependentUpon>MainMenu2.vb</DependentUpon>
@@ -266,7 +415,23 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\DSreportsAccounting.xsc">
+      <DependentUpon>DSreportsAccounting.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DSreportsAccounting.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSreportsAccounting.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Reports\DSreportsAccounting.xss">
+      <DependentUpon>DSreportsAccounting.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -35,6 +35,7 @@ Partial Class cash_flow_report
         Me.pnlPrint.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlPrint.BackColor = System.Drawing.Color.Silver
         Me.pnlPrint.Controls.Add(Me.btnPrint)
         Me.pnlPrint.Controls.Add(Me.btnCancelPrintattack)
         Me.pnlPrint.Controls.Add(Me.crvCF)

@@ -37,6 +37,7 @@ Partial Class DatabaseBackupRestore
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtname = New System.Windows.Forms.TextBox()
         Me.openfileRes = New System.Windows.Forms.OpenFileDialog()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btn_initialize
@@ -46,7 +47,7 @@ Partial Class DatabaseBackupRestore
         Me.btn_initialize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_initialize.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_initialize.ForeColor = System.Drawing.Color.Gold
-        Me.btn_initialize.Location = New System.Drawing.Point(285, 206)
+        Me.btn_initialize.Location = New System.Drawing.Point(285, 233)
         Me.btn_initialize.Name = "btn_initialize"
         Me.btn_initialize.Size = New System.Drawing.Size(75, 37)
         Me.btn_initialize.TabIndex = 0
@@ -60,7 +61,7 @@ Partial Class DatabaseBackupRestore
         Me.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_cancel.ForeColor = System.Drawing.Color.Gold
-        Me.btn_cancel.Location = New System.Drawing.Point(366, 206)
+        Me.btn_cancel.Location = New System.Drawing.Point(366, 233)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(75, 37)
         Me.btn_cancel.TabIndex = 1
@@ -71,7 +72,7 @@ Partial Class DatabaseBackupRestore
         '
         Me.radBack.AutoSize = True
         Me.radBack.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.radBack.Location = New System.Drawing.Point(14, 49)
+        Me.radBack.Location = New System.Drawing.Point(14, 76)
         Me.radBack.Name = "radBack"
         Me.radBack.Size = New System.Drawing.Size(75, 20)
         Me.radBack.TabIndex = 2
@@ -83,7 +84,7 @@ Partial Class DatabaseBackupRestore
         '
         Me.radRes.AutoSize = True
         Me.radRes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.radRes.Location = New System.Drawing.Point(14, 72)
+        Me.radRes.Location = New System.Drawing.Point(14, 99)
         Me.radRes.Name = "radRes"
         Me.radRes.Size = New System.Drawing.Size(74, 20)
         Me.radRes.TabIndex = 3
@@ -94,7 +95,7 @@ Partial Class DatabaseBackupRestore
         'txtAddress
         '
         Me.txtAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAddress.Location = New System.Drawing.Point(14, 162)
+        Me.txtAddress.Location = New System.Drawing.Point(14, 189)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.ReadOnly = True
         Me.txtAddress.Size = New System.Drawing.Size(361, 22)
@@ -104,7 +105,7 @@ Partial Class DatabaseBackupRestore
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 146)
+        Me.Label1.Location = New System.Drawing.Point(12, 173)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(83, 16)
         Me.Label1.TabIndex = 5
@@ -117,7 +118,7 @@ Partial Class DatabaseBackupRestore
         Me.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBrowse.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBrowse.ForeColor = System.Drawing.Color.Gold
-        Me.btnBrowse.Location = New System.Drawing.Point(375, 162)
+        Me.btnBrowse.Location = New System.Drawing.Point(375, 189)
         Me.btnBrowse.Name = "btnBrowse"
         Me.btnBrowse.Size = New System.Drawing.Size(66, 22)
         Me.btnBrowse.TabIndex = 6
@@ -126,7 +127,7 @@ Partial Class DatabaseBackupRestore
         '
         'processTech
         '
-        Me.processTech.Location = New System.Drawing.Point(14, 221)
+        Me.processTech.Location = New System.Drawing.Point(14, 248)
         Me.processTech.MarqueeAnimationSpeed = 50
         Me.processTech.Maximum = 0
         Me.processTech.Name = "processTech"
@@ -139,7 +140,7 @@ Partial Class DatabaseBackupRestore
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(13, 202)
+        Me.Label2.Location = New System.Drawing.Point(13, 229)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(76, 16)
         Me.Label2.TabIndex = 8
@@ -149,7 +150,7 @@ Partial Class DatabaseBackupRestore
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(11, 107)
+        Me.Label3.Location = New System.Drawing.Point(11, 134)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(45, 16)
         Me.Label3.TabIndex = 10
@@ -158,7 +159,7 @@ Partial Class DatabaseBackupRestore
         'txtname
         '
         Me.txtname.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtname.Location = New System.Drawing.Point(14, 123)
+        Me.txtname.Location = New System.Drawing.Point(14, 150)
         Me.txtname.Name = "txtname"
         Me.txtname.Size = New System.Drawing.Size(196, 22)
         Me.txtname.TabIndex = 9
@@ -167,12 +168,25 @@ Partial Class DatabaseBackupRestore
         '
         Me.openfileRes.FileName = "OpenFileDialog1"
         '
+        'Label4
+        '
+        Me.Label4.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(2, 20)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(457, 32)
+        Me.Label4.TabIndex = 11
+        Me.Label4.Text = "Note: Error may occured when you back up your database if you save it in system" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & _
+    "directory. We recommend to create folder and not address to system drive. "
+        '
         'DatabaseBackupRestore
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(459, 259)
+        Me.ClientSize = New System.Drawing.Size(459, 285)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtname)
         Me.Controls.Add(Me.Label2)
@@ -208,4 +222,5 @@ Partial Class DatabaseBackupRestore
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txtname As System.Windows.Forms.TextBox
     Friend WithEvents openfileRes As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

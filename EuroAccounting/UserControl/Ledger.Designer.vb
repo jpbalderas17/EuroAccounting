@@ -76,6 +76,7 @@ Partial Class Ledger
         Me.btn_filter.TabIndex = 240
         Me.btn_filter.Text = "Filter"
         Me.btn_filter.UseVisualStyleBackColor = False
+        Me.btn_filter.Visible = False
         '
         'dt_to
         '
@@ -84,6 +85,7 @@ Partial Class Ledger
         Me.dt_to.Name = "dt_to"
         Me.dt_to.Size = New System.Drawing.Size(181, 20)
         Me.dt_to.TabIndex = 239
+        Me.dt_to.Visible = False
         '
         'Label4
         '
@@ -95,6 +97,7 @@ Partial Class Ledger
         Me.Label4.Size = New System.Drawing.Size(31, 20)
         Me.Label4.TabIndex = 238
         Me.Label4.Text = "To:"
+        Me.Label4.Visible = False
         '
         'dt_from
         '
@@ -103,6 +106,7 @@ Partial Class Ledger
         Me.dt_from.Name = "dt_from"
         Me.dt_from.Size = New System.Drawing.Size(181, 20)
         Me.dt_from.TabIndex = 237
+        Me.dt_from.Visible = False
         '
         'Label3
         '
@@ -114,6 +118,7 @@ Partial Class Ledger
         Me.Label3.Size = New System.Drawing.Size(50, 20)
         Me.Label3.TabIndex = 236
         Me.Label3.Text = "From:"
+        Me.Label3.Visible = False
         '
         'Panel2
         '
@@ -133,6 +138,7 @@ Partial Class Ledger
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lvw_ledger.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lvw_ledger.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
+        Me.lvw_ledger.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvw_ledger.FullRowSelect = True
         Me.lvw_ledger.GridLines = True
         Me.lvw_ledger.HideSelection = False
@@ -175,6 +181,7 @@ Partial Class Ledger
         Me.lblDate.Size = New System.Drawing.Size(79, 20)
         Me.lblDate.TabIndex = 234
         Me.lblDate.Text = "Date Now"
+        Me.lblDate.Visible = False
         '
         'Label1
         '
@@ -185,6 +192,7 @@ Partial Class Ledger
         Me.Label1.Size = New System.Drawing.Size(48, 20)
         Me.Label1.TabIndex = 233
         Me.Label1.Text = "Date:"
+        Me.Label1.Visible = False
         '
         'btnPreview
         '
@@ -227,7 +235,7 @@ Partial Class Ledger
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(809, 34)
         Me.Label2.TabIndex = 42
-        Me.Label2.Text = "    Ledger Report"
+        Me.Label2.Text = " 3-Column Ledger Report"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Ledger

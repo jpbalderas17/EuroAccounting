@@ -10,13 +10,14 @@ Public Class DatabaseBackupRestore
 
 
     Private Sub btn_initialize_Click(sender As Object, e As EventArgs) Handles btn_initialize.Click
-
+        Cursor = Cursors.WaitCursor
         If Trim(txtAddress.Text) = "" Then
             MsgBox("Please select a location ", vbExclamation + vbOKOnly, "Select location")
             Exit Sub
         End If
         
         goInitialize()
+        Cursor = Cursors.Arrow
     End Sub
 
 

@@ -79,47 +79,47 @@ Partial Class frm_accounts
         'cbo_account_type
         '
         Me.cbo_account_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbo_account_type.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbo_account_type.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbo_account_type.FormattingEnabled = True
         Me.cbo_account_type.Items.AddRange(New Object() {"Super Administrator", "Administrator"})
-        Me.cbo_account_type.Location = New System.Drawing.Point(152, 117)
+        Me.cbo_account_type.Location = New System.Drawing.Point(171, 117)
         Me.cbo_account_type.Name = "cbo_account_type"
-        Me.cbo_account_type.Size = New System.Drawing.Size(268, 29)
+        Me.cbo_account_type.Size = New System.Drawing.Size(268, 28)
         Me.cbo_account_type.TabIndex = 217
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(12, 122)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(31, 122)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(102, 21)
+        Me.Label6.Size = New System.Drawing.Size(106, 20)
         Me.Label6.TabIndex = 219
         Me.Label6.Text = "Account Type"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 90)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(31, 90)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(109, 21)
+        Me.Label1.Size = New System.Drawing.Size(112, 20)
         Me.Label1.TabIndex = 218
         Me.Label1.Text = "Account name"
         '
         'txt_account_name
         '
-        Me.txt_account_name.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_account_name.Location = New System.Drawing.Point(152, 84)
+        Me.txt_account_name.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_account_name.Location = New System.Drawing.Point(171, 84)
         Me.txt_account_name.Name = "txt_account_name"
-        Me.txt_account_name.Size = New System.Drawing.Size(268, 29)
+        Me.txt_account_name.Size = New System.Drawing.Size(268, 26)
         Me.txt_account_name.TabIndex = 216
         '
         'lbl_account_id
         '
         Me.lbl_account_id.AutoSize = True
         Me.lbl_account_id.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_account_id.Location = New System.Drawing.Point(104, 69)
+        Me.lbl_account_id.Location = New System.Drawing.Point(123, 69)
         Me.lbl_account_id.Name = "lbl_account_id"
         Me.lbl_account_id.Size = New System.Drawing.Size(0, 21)
         Me.lbl_account_id.TabIndex = 220

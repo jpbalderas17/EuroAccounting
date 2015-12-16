@@ -55,6 +55,7 @@ Partial Class Cash_Flow
         Me.btn_filter.TabIndex = 237
         Me.btn_filter.Text = "Filter"
         Me.btn_filter.UseVisualStyleBackColor = False
+        Me.btn_filter.Visible = False
         '
         'dt_to
         '
@@ -63,6 +64,7 @@ Partial Class Cash_Flow
         Me.dt_to.Name = "dt_to"
         Me.dt_to.Size = New System.Drawing.Size(181, 20)
         Me.dt_to.TabIndex = 236
+        Me.dt_to.Visible = False
         '
         'Label4
         '
@@ -74,6 +76,7 @@ Partial Class Cash_Flow
         Me.Label4.Size = New System.Drawing.Size(31, 20)
         Me.Label4.TabIndex = 235
         Me.Label4.Text = "To:"
+        Me.Label4.Visible = False
         '
         'dt_from
         '
@@ -82,6 +85,7 @@ Partial Class Cash_Flow
         Me.dt_from.Name = "dt_from"
         Me.dt_from.Size = New System.Drawing.Size(181, 20)
         Me.dt_from.TabIndex = 234
+        Me.dt_from.Visible = False
         '
         'Label3
         '
@@ -93,6 +97,7 @@ Partial Class Cash_Flow
         Me.Label3.Size = New System.Drawing.Size(50, 20)
         Me.Label3.TabIndex = 233
         Me.Label3.Text = "From:"
+        Me.Label3.Visible = False
         '
         'lblDate
         '
@@ -103,6 +108,7 @@ Partial Class Cash_Flow
         Me.lblDate.Size = New System.Drawing.Size(79, 20)
         Me.lblDate.TabIndex = 215
         Me.lblDate.Text = "Date Now"
+        Me.lblDate.Visible = False
         '
         'lvw_cashflow
         '
@@ -111,7 +117,7 @@ Partial Class Cash_Flow
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lvw_cashflow.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lvw_cashflow.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chAccounts, Me.chDebit, Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
-        Me.lvw_cashflow.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvw_cashflow.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvw_cashflow.GridLines = True
         Me.lvw_cashflow.Location = New System.Drawing.Point(4, 201)
         Me.lvw_cashflow.Name = "lvw_cashflow"
@@ -202,6 +208,7 @@ Partial Class Cash_Flow
         Me.Label1.Size = New System.Drawing.Size(48, 20)
         Me.Label1.TabIndex = 30
         Me.Label1.Text = "Date:"
+        Me.Label1.Visible = False
         '
         'Panel1
         '
@@ -229,7 +236,7 @@ Partial Class Cash_Flow
         'txtDescription
         '
         Me.txtDescription.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txtDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescription.Location = New System.Drawing.Point(287, 169)
         Me.txtDescription.Name = "txtDescription"
         Me.txtDescription.Size = New System.Drawing.Size(326, 26)
@@ -239,7 +246,7 @@ Partial Class Cash_Flow
         'txtTitle
         '
         Me.txtTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txtTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTitle.Location = New System.Drawing.Point(287, 138)
         Me.txtTitle.Name = "txtTitle"
         Me.txtTitle.Size = New System.Drawing.Size(326, 26)

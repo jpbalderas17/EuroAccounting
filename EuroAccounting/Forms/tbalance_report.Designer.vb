@@ -35,6 +35,7 @@ Partial Class tbalance_report
         Me.pnlPrint.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlPrint.BackColor = System.Drawing.Color.Silver
         Me.pnlPrint.Controls.Add(Me.btnPrint)
         Me.pnlPrint.Controls.Add(Me.btnCancelPrintattack)
         Me.pnlPrint.Controls.Add(Me.crvTB)
@@ -105,6 +106,7 @@ Partial Class tbalance_report
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(855, 430)
         Me.Controls.Add(Me.pnlPrint)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

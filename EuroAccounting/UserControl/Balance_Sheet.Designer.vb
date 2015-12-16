@@ -42,6 +42,7 @@ Partial Class Balance_Sheet
         Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.Silver
         Me.Panel1.Controls.Add(Me.txtDescription)
         Me.Panel1.Controls.Add(Me.txtTitle)
         Me.Panel1.Controls.Add(Me.lblDate)
@@ -58,7 +59,7 @@ Partial Class Balance_Sheet
         'txtDescription
         '
         Me.txtDescription.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txtDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescription.Location = New System.Drawing.Point(283, 168)
         Me.txtDescription.Name = "txtDescription"
         Me.txtDescription.Size = New System.Drawing.Size(326, 26)
@@ -68,7 +69,7 @@ Partial Class Balance_Sheet
         'txtTitle
         '
         Me.txtTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txtTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTitle.Location = New System.Drawing.Point(283, 137)
         Me.txtTitle.Name = "txtTitle"
         Me.txtTitle.Size = New System.Drawing.Size(326, 26)
@@ -84,6 +85,7 @@ Partial Class Balance_Sheet
         Me.lblDate.Size = New System.Drawing.Size(79, 20)
         Me.lblDate.TabIndex = 223
         Me.lblDate.Text = "Date Now"
+        Me.lblDate.Visible = False
         '
         'Label1
         '
@@ -94,6 +96,7 @@ Partial Class Balance_Sheet
         Me.Label1.Size = New System.Drawing.Size(48, 20)
         Me.Label1.TabIndex = 219
         Me.Label1.Text = "Date:"
+        Me.Label1.Visible = False
         '
         'lvbalance_sheet
         '
@@ -102,7 +105,7 @@ Partial Class Balance_Sheet
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lvbalance_sheet.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lvbalance_sheet.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chAcct, Me.chAmount, Me.chTotal})
-        Me.lvbalance_sheet.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvbalance_sheet.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvbalance_sheet.GridLines = True
         Me.lvbalance_sheet.Location = New System.Drawing.Point(5, 200)
         Me.lvbalance_sheet.Name = "lvbalance_sheet"
