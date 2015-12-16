@@ -135,6 +135,8 @@ Public Class Ledgers
             Exit Sub
         End If
         lblAddEdit.Text = "Edit ledger"
+        txtNameofLedger.Text = lvljournal.FocusedItem.SubItems(1).Text
+        txtDesc.Text = lvljournal.FocusedItem.SubItems(2).Text
         showAddEditLedger(True)
     End Sub
 

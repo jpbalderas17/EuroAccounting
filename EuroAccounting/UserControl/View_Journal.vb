@@ -239,13 +239,28 @@ Public Class View_Journal
 
    
     Private Sub tsRemove_Click(sender As Object, e As EventArgs) Handles tsRemove.Click
-        Dim journal_id As String
-        Dim splitter() As String
-        journal_id = lvljournal.FocusedItem.Group.Header.ToString
-        journal_id = journal_id.Replace("No.", "")
-        splitter = Split(journal_id, " Journal ID:")
-        MsgBox(splitter(1))
-        
+        Try
+            Dim journal_id As String
+            Dim splitter() As String
+            journal_id = lvljournal.FocusedItem.Group.Header.ToString
+            journal_id = journal_id.Replace("No.", "")
+            splitter = Split(journal_id, " Journal ID:")
+            Select Case MsgBox("Do you want to remove this journal entry ?", vbQuestion + vbYesNo, "Remove")
+                Case vbYes
+                    'deletion not fake 
+                    Dim rec = db.ExecuteNonQuery("BEGIN TRANSACTION" & vbCrLf & _
+                                           " DELETE FROM journals WHERE id =" & splitter(1) & vbCrLf _
+                                           & "DELETE FROM journal_details where journal_id=" & splitter(1) & vbCrLf &
+                                           "COMMIT")
+                    MsgBox("Journal entry was removed!", vbInformation + vbOKOnly, "Removed")
+                    loadJournal()
+            End Select
+
+        Catch ex As Exception
+            MsgBox(ex.ToString, vbCritical + vbOKOnly, "Error")
+        Finally
+            db.Dispose()
+        End Try
 
     End Sub
 

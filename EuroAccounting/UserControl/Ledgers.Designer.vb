@@ -69,9 +69,9 @@ Partial Class Ledgers
         Me.pnlMain.Controls.Add(Me.lblDate)
         Me.pnlMain.Controls.Add(Me.Label1)
         Me.pnlMain.Controls.Add(Me.Label2)
-        Me.pnlMain.Location = New System.Drawing.Point(0, 6)
+        Me.pnlMain.Location = New System.Drawing.Point(0, 0)
         Me.pnlMain.Name = "pnlMain"
-        Me.pnlMain.Size = New System.Drawing.Size(1001, 456)
+        Me.pnlMain.Size = New System.Drawing.Size(1001, 462)
         Me.pnlMain.TabIndex = 20
         '
         'btnSearchLedger
@@ -121,7 +121,7 @@ Partial Class Ledgers
         Me.lvljournal.GridLines = True
         Me.lvljournal.Location = New System.Drawing.Point(15, 148)
         Me.lvljournal.Name = "lvljournal"
-        Me.lvljournal.Size = New System.Drawing.Size(972, 285)
+        Me.lvljournal.Size = New System.Drawing.Size(972, 291)
         Me.lvljournal.TabIndex = 233
         Me.lvljournal.UseCompatibleStateImageBehavior = False
         Me.lvljournal.View = System.Windows.Forms.View.Details
