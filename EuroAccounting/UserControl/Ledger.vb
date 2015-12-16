@@ -38,7 +38,11 @@
 
                     End If
                     If dr1.HasRows Then
-                        lvw_ledger.Items.Add(dr.Item("name"))
+                        Item = lvw_ledger.Items.Add(dr.Item("name"))
+
+                        Item.SubItems.Add("")
+                        Item.SubItems.Add("")
+                        Item.SubItems.Add("")
                         cur_balance = 0
                         Do While dr1.Read
                             Item = lvw_ledger.Items.Add("     " & StrToDate(dr1.Item("journal_date")))
@@ -68,7 +72,10 @@
                                 .SubItems.Add(FormatNumber(cur_balance, 2))
                             End With
                         Loop
-                        lvw_ledger.Items.Add("")
+                        Item = lvw_ledger.Items.Add("")
+                        Item.SubItems.Add("")
+                        Item.SubItems.Add("")
+                        Item.SubItems.Add("")
                     Else
                         '## No records FOund
                         'If dt_from <> "" And dt_to <> "" Then
