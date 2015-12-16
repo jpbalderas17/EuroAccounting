@@ -66,7 +66,7 @@ Public Class View_Journal
     End Sub
 
     Private Sub cmbPost_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPost.SelectedIndexChanged
-        uscMainMenu.ledger_id = lvljournal.FocusedItem.Text
+        uscMainMenu.ledger_id = uscLedgers.lvljournal.FocusedItem.Text
         If cmbPost.Text = "Trial Balance" Then
             showUSC(uscTrialBalance)
             uscTrialBalance.load_tbalance()
