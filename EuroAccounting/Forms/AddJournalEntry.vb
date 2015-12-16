@@ -168,7 +168,12 @@
         Else
             saveEntries()
             MsgBox("Entries saved!", vbInformation + vbOKOnly, "New entry saved!")
+            txtDescription.Clear()
+            lvDebit.Items.Clear()
+            lvCredit.Items.Clear()
+
             uscViewJournal.loadJournal()
+            Me.Close()
         End If
 
     End Sub
