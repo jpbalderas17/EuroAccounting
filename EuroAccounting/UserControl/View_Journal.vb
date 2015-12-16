@@ -236,4 +236,7 @@ Public Class View_Journal
     End Sub
 
 
+    Private Sub lvljournal_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lvljournal.SelectedIndexChanged
+
+    End Sub
 End Class
