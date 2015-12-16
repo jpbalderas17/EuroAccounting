@@ -3,19 +3,21 @@ Public Class frm_accounts
     Dim db As New DBHelper(My.Settings.connectionString)
     Dim dr As SqlClient.SqlDataReader
     Dim cmd As SqlClient.SqlCommand
-    Private Sub reset_form()
+
+    Public Sub reset_form()
         lbl_account_id.Text = ""
         txt_account_name.Text = ""
+
     End Sub
     Private Sub frm_accounts_Load(sender As Object, e As EventArgs) Handles Me.Load
-        cbo_account_type_load()
+        ' cbo_account_type_load()
 
 
-        If (uscAccounts.lvw_accounts.SelectedItems.Count = 1) Then
-            With uscAccounts.lvw_accounts.SelectedItems.Item(0)
-                Edit_this(CInt(.Text), CStr(.SubItems(1).Text), CStr(.SubItems(2).Text))
-            End With
-        End If
+        'If (uscAccounts.lvw_accounts.SelectedItems.Count = 1) Then
+        '    With uscAccounts.lvw_accounts.SelectedItems.Item(0)
+        '        Edit_this(CInt(.Text), CStr(.SubItems(1).Text), CStr(.SubItems(2).Text))
+        '    End With
+        'End If
     End Sub
 
 
@@ -25,7 +27,7 @@ Public Class frm_accounts
         MsgBox(Me.Owner)
     End Sub
 
-    Private Sub cbo_account_type_load()
+    Public Sub cbo_account_type_load()
         Dim account_types As New ArrayList
 
         dr = db.ExecuteReader("SELECT id,name FROM account_types")
@@ -76,6 +78,7 @@ Public Class frm_accounts
 
     Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
         Me.Close()
+        reset_form()
     End Sub
     Private Function validate_account()
         Dim is_valid As Boolean = True
@@ -104,6 +107,7 @@ Public Class frm_accounts
         If validate_account() = True Then
             save_account_type()
             reset_form()
+            AddJournalEntry.loadDcombo()
         End If
     End Sub
 

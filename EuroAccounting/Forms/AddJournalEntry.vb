@@ -12,18 +12,20 @@
 
 
     End Sub
-
+    Public Sub loadDcombo()
+        dr = db.ExecuteReader("SELECT name, type from accounts")
+        Do While dr.Read
+            dAccount.Items.Add(dr.Item("name").ToString)
+            crAccount.Items.Add(dr.Item("name").ToString)
+        Loop
+    End Sub
     Private Sub AddJournalEntry_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtAddJourn.Value = Date.Now
         dAccount.Items.Clear()
         crAccount.Items.Clear()
         'get all accounts
         Try
-            dr = db.ExecuteReader("SELECT name, type from accounts")
-            Do While dr.Read
-                dAccount.Items.Add(dr.Item("name").ToString)
-                crAccount.Items.Add(dr.Item("name").ToString)
-            Loop
+            loadDcombo()
         Catch ex As Exception
             MsgBox(ex.ToString, MsgBoxStyle.Critical)
         Finally
@@ -31,9 +33,6 @@
         End Try
     End Sub
 
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
 
     Private Sub dAdd_Click(sender As Object, e As EventArgs) Handles dAdd.Click
         If Trim(dAccount.Text) = "" Then
@@ -49,12 +48,13 @@
                 Select Case MsgBox("The account doesn't exist do you want to add the account?", MsgBoxStyle.Information + vbYesNo, "Add account?")
                     Case vbYes
                         frm_accounts.txt_account_name.Text = dAccount.Text
+                        frm_accounts.cbo_account_type_load()
                         frm_accounts.ShowDialog()
                         Exit Sub
                     Case vbNo
                         Exit Sub
                 End Select
-
+                
             End If
 
             'lagay sa listview
@@ -87,6 +87,7 @@
 
 
                         frm_accounts.txt_account_name.Text = crAccount.Text
+                        frm_accounts.cbo_account_type_load()
                         frm_accounts.ShowDialog()
                         Exit Sub
                     Case vbNo
@@ -213,4 +214,5 @@
         data.Clear()
 
     End Sub
+
 End Class

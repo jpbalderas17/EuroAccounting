@@ -25,6 +25,8 @@
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        frm_accounts.reset_form()
+        frm_accounts.cbo_account_type_load()
         lvw_accounts.SelectedItems.Clear()
         Me.Enabled = False
         frm_accounts.ShowDialog()
@@ -33,15 +35,21 @@
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        frm_accounts.cbo_account_type_load()
         If lvw_accounts.SelectedItems.Count = 1 Then
             '## EDIT
-            With lvw_accounts.SelectedItems.Item(0)
-                Me.Enabled = False
-                frm_accounts.ShowDialog()
-                Me.Enabled = True
-                lvw_accounts_load()
-
+            ' With lvw_accounts.SelectedItems.Item(0)
+            Me.Enabled = False
+            frm_accounts.txt_account_name.Text = lvw_accounts.FocusedItem.SubItems(1).Text
+            frm_accounts.lbl_account_id.Text = lvw_accounts.FocusedItem.Text
+            With frm_accounts.cbo_account_type
+                .SelectedIndex = .FindStringExact(lvw_accounts.FocusedItem.SubItems(2).Text)
             End With
+            frm_accounts.ShowDialog()
+            Me.Enabled = True
+            lvw_accounts_load()
+
+            ' End With
         ElseIf lvw_accounts.SelectedItems.Count < 1 Then
             MsgBox("Please select an account to edit.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "No Account Selected")
         ElseIf lvw_accounts.SelectedItems.Count > 1 Then
