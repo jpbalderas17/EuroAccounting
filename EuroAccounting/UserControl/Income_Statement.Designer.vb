@@ -55,9 +55,9 @@ Partial Class Income_Statement
         Me.pnlIncMain.Controls.Add(Me.btnPrint)
         Me.pnlIncMain.Controls.Add(Me.btn_Cancel)
         Me.pnlIncMain.Controls.Add(Me.Label2)
-        Me.pnlIncMain.Location = New System.Drawing.Point(0, 17)
+        Me.pnlIncMain.Location = New System.Drawing.Point(0, 0)
         Me.pnlIncMain.Name = "pnlIncMain"
-        Me.pnlIncMain.Size = New System.Drawing.Size(812, 536)
+        Me.pnlIncMain.Size = New System.Drawing.Size(812, 553)
         Me.pnlIncMain.TabIndex = 20
         '
         'txtDescription
@@ -101,9 +101,9 @@ Partial Class Income_Statement
         Me.lvIncomeStatement.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvIncomeStatement.FullRowSelect = True
         Me.lvIncomeStatement.GridLines = True
-        Me.lvIncomeStatement.Location = New System.Drawing.Point(13, 179)
+        Me.lvIncomeStatement.Location = New System.Drawing.Point(13, 176)
         Me.lvIncomeStatement.Name = "lvIncomeStatement"
-        Me.lvIncomeStatement.Size = New System.Drawing.Size(789, 342)
+        Me.lvIncomeStatement.Size = New System.Drawing.Size(789, 359)
         Me.lvIncomeStatement.TabIndex = 227
         Me.lvIncomeStatement.UseCompatibleStateImageBehavior = False
         Me.lvIncomeStatement.View = System.Windows.Forms.View.Details
@@ -131,7 +131,7 @@ Partial Class Income_Statement
         Me.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPrint.ForeColor = System.Drawing.Color.Gold
-        Me.btnPrint.Location = New System.Drawing.Point(576, 58)
+        Me.btnPrint.Location = New System.Drawing.Point(576, 30)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(115, 34)
         Me.btnPrint.TabIndex = 44
@@ -146,7 +146,7 @@ Partial Class Income_Statement
         Me.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Cancel.ForeColor = System.Drawing.Color.Gold
-        Me.btn_Cancel.Location = New System.Drawing.Point(697, 58)
+        Me.btn_Cancel.Location = New System.Drawing.Point(697, 30)
         Me.btn_Cancel.Name = "btn_Cancel"
         Me.btn_Cancel.Size = New System.Drawing.Size(115, 34)
         Me.btn_Cancel.TabIndex = 43
@@ -160,9 +160,9 @@ Partial Class Income_Statement
         Me.Label2.BackColor = System.Drawing.Color.MidnightBlue
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Gold
-        Me.Label2.Location = New System.Drawing.Point(0, 58)
+        Me.Label2.Location = New System.Drawing.Point(0, 30)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(809, 34)
+        Me.Label2.Size = New System.Drawing.Size(812, 34)
         Me.Label2.TabIndex = 42
         Me.Label2.Text = "    Income Statement Report"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -177,9 +177,9 @@ Partial Class Income_Statement
         Me.pnlPrint.Controls.Add(Me.btnCancelPrintattack)
         Me.pnlPrint.Controls.Add(Me.crvInc)
         Me.pnlPrint.Controls.Add(Me.Label3)
-        Me.pnlPrint.Location = New System.Drawing.Point(13, 9)
+        Me.pnlPrint.Location = New System.Drawing.Point(13, 3)
         Me.pnlPrint.Name = "pnlPrint"
-        Me.pnlPrint.Size = New System.Drawing.Size(782, 500)
+        Me.pnlPrint.Size = New System.Drawing.Size(782, 506)
         Me.pnlPrint.TabIndex = 21
         Me.pnlPrint.Visible = False
         '
@@ -223,7 +223,7 @@ Partial Class Income_Statement
         Me.crvInc.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvInc.Location = New System.Drawing.Point(3, 66)
         Me.crvInc.Name = "crvInc"
-        Me.crvInc.Size = New System.Drawing.Size(776, 431)
+        Me.crvInc.Size = New System.Drawing.Size(776, 437)
         Me.crvInc.TabIndex = 82
         Me.crvInc.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
@@ -245,8 +245,8 @@ Partial Class Income_Statement
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.Controls.Add(Me.pnlIncMain)
         Me.Controls.Add(Me.pnlPrint)
+        Me.Controls.Add(Me.pnlIncMain)
         Me.Name = "Income_Statement"
         Me.Size = New System.Drawing.Size(812, 555)
         Me.pnlIncMain.ResumeLayout(False)

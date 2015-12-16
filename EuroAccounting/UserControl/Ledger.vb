@@ -39,7 +39,7 @@
                     End If
                     If dr1.HasRows Then
                         Item = lvw_ledger.Items.Add(dr.Item("name"))
-
+                        'Item.Font = New Font(Item.Font, FontStyle.Bold)
                         Item.SubItems.Add("")
                         Item.SubItems.Add("")
                         Item.SubItems.Add("")
@@ -80,7 +80,6 @@
                         '## No records FOund
                         'If dt_from <> "" And dt_to <> "" Then
                         '    MsgBox("No Journal Entry found." & vbCrLf & "From: " & StrToDate(dt_from) & vbCrLf & "To: " & StrToDate(dt_to), MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "No Journal Entry")
-
                         'Else
                         '    MsgBox("No Journal Entry found.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "No Journal Entry")
 

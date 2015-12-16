@@ -234,7 +234,7 @@ Public Class Cash_Flow
         SetCueText(txtDescription, "Enter Description")
         lblDate.Text = Date.Now.ToString("MM/dd/yyyy")
         'Me.ledger_id = select_ledger.cbo_ledger.SelectedValue
-        load_lvw()
+        'load_lvw()
     End Sub
 
     Private Sub btn_filter_Click(sender As Object, e As EventArgs) Handles btn_filter.Click

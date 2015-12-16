@@ -46,7 +46,7 @@ Partial Class tbalance
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(32, 84)
+        Me.Label1.Location = New System.Drawing.Point(32, 74)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(48, 20)
         Me.Label1.TabIndex = 30
@@ -60,7 +60,7 @@ Partial Class tbalance
         Me.Label2.BackColor = System.Drawing.Color.MidnightBlue
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Gold
-        Me.Label2.Location = New System.Drawing.Point(0, 35)
+        Me.Label2.Location = New System.Drawing.Point(0, 30)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(809, 34)
         Me.Label2.TabIndex = 42
@@ -75,7 +75,7 @@ Partial Class tbalance
         Me.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Cancel.ForeColor = System.Drawing.Color.Gold
-        Me.btn_Cancel.Location = New System.Drawing.Point(697, 35)
+        Me.btn_Cancel.Location = New System.Drawing.Point(697, 30)
         Me.btn_Cancel.Name = "btn_Cancel"
         Me.btn_Cancel.Size = New System.Drawing.Size(115, 34)
         Me.btn_Cancel.TabIndex = 43
@@ -90,7 +90,7 @@ Partial Class tbalance
         Me.btnPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPreview.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPreview.ForeColor = System.Drawing.Color.Gold
-        Me.btnPreview.Location = New System.Drawing.Point(576, 35)
+        Me.btnPreview.Location = New System.Drawing.Point(576, 30)
         Me.btnPreview.Name = "btnPreview"
         Me.btnPreview.Size = New System.Drawing.Size(115, 34)
         Me.btnPreview.TabIndex = 44
@@ -106,9 +106,9 @@ Partial Class tbalance
         Me.lvtbalance.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chAccounts, Me.chDebit, Me.chCredit})
         Me.lvtbalance.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvtbalance.GridLines = True
-        Me.lvtbalance.Location = New System.Drawing.Point(5, 189)
+        Me.lvtbalance.Location = New System.Drawing.Point(5, 176)
         Me.lvtbalance.Name = "lvtbalance"
-        Me.lvtbalance.Size = New System.Drawing.Size(804, 351)
+        Me.lvtbalance.Size = New System.Drawing.Size(804, 364)
         Me.lvtbalance.TabIndex = 211
         Me.lvtbalance.UseCompatibleStateImageBehavior = False
         Me.lvtbalance.View = System.Windows.Forms.View.Details
@@ -132,7 +132,7 @@ Partial Class tbalance
         '
         Me.lblDate.AutoSize = True
         Me.lblDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDate.Location = New System.Drawing.Point(81, 83)
+        Me.lblDate.Location = New System.Drawing.Point(81, 73)
         Me.lblDate.Name = "lblDate"
         Me.lblDate.Size = New System.Drawing.Size(79, 20)
         Me.lblDate.TabIndex = 215
@@ -167,7 +167,7 @@ Partial Class tbalance
         '
         Me.txtDescription.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescription.Location = New System.Drawing.Point(274, 154)
+        Me.txtDescription.Location = New System.Drawing.Point(274, 144)
         Me.txtDescription.Name = "txtDescription"
         Me.txtDescription.Size = New System.Drawing.Size(326, 26)
         Me.txtDescription.TabIndex = 246
@@ -177,7 +177,7 @@ Partial Class tbalance
         '
         Me.txtTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTitle.Location = New System.Drawing.Point(274, 118)
+        Me.txtTitle.Location = New System.Drawing.Point(274, 112)
         Me.txtTitle.Name = "txtTitle"
         Me.txtTitle.Size = New System.Drawing.Size(326, 26)
         Me.txtTitle.TabIndex = 245
@@ -188,7 +188,7 @@ Partial Class tbalance
         Me.btn_filter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_filter.BackColor = System.Drawing.Color.MidnightBlue
         Me.btn_filter.ForeColor = System.Drawing.Color.Gold
-        Me.btn_filter.Location = New System.Drawing.Point(741, 78)
+        Me.btn_filter.Location = New System.Drawing.Point(741, 68)
         Me.btn_filter.Name = "btn_filter"
         Me.btn_filter.Size = New System.Drawing.Size(69, 33)
         Me.btn_filter.TabIndex = 244
@@ -199,7 +199,7 @@ Partial Class tbalance
         'dt_to
         '
         Me.dt_to.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dt_to.Location = New System.Drawing.Point(554, 84)
+        Me.dt_to.Location = New System.Drawing.Point(554, 74)
         Me.dt_to.Name = "dt_to"
         Me.dt_to.Size = New System.Drawing.Size(181, 20)
         Me.dt_to.TabIndex = 243
@@ -210,7 +210,7 @@ Partial Class tbalance
         Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(527, 84)
+        Me.Label4.Location = New System.Drawing.Point(527, 74)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(31, 20)
         Me.Label4.TabIndex = 242
@@ -220,7 +220,7 @@ Partial Class tbalance
         'dt_from
         '
         Me.dt_from.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dt_from.Location = New System.Drawing.Point(327, 84)
+        Me.dt_from.Location = New System.Drawing.Point(327, 74)
         Me.dt_from.Name = "dt_from"
         Me.dt_from.Size = New System.Drawing.Size(181, 20)
         Me.dt_from.TabIndex = 241
@@ -231,7 +231,7 @@ Partial Class tbalance
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(271, 84)
+        Me.Label3.Location = New System.Drawing.Point(271, 74)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(50, 20)
         Me.Label3.TabIndex = 240

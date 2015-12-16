@@ -69,9 +69,9 @@ Partial Class Ledgers
         Me.pnlMain.Controls.Add(Me.lblDate)
         Me.pnlMain.Controls.Add(Me.Label1)
         Me.pnlMain.Controls.Add(Me.Label2)
-        Me.pnlMain.Location = New System.Drawing.Point(9, 6)
+        Me.pnlMain.Location = New System.Drawing.Point(0, 6)
         Me.pnlMain.Name = "pnlMain"
-        Me.pnlMain.Size = New System.Drawing.Size(982, 456)
+        Me.pnlMain.Size = New System.Drawing.Size(1001, 456)
         Me.pnlMain.TabIndex = 20
         '
         'btnSearchLedger
@@ -121,7 +121,7 @@ Partial Class Ledgers
         Me.lvljournal.GridLines = True
         Me.lvljournal.Location = New System.Drawing.Point(15, 148)
         Me.lvljournal.Name = "lvljournal"
-        Me.lvljournal.Size = New System.Drawing.Size(953, 285)
+        Me.lvljournal.Size = New System.Drawing.Size(972, 285)
         Me.lvljournal.TabIndex = 233
         Me.lvljournal.UseCompatibleStateImageBehavior = False
         Me.lvljournal.View = System.Windows.Forms.View.Details
@@ -149,7 +149,7 @@ Partial Class Ledgers
         Me.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnView.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnView.ForeColor = System.Drawing.Color.Gold
-        Me.btnView.Location = New System.Drawing.Point(490, 58)
+        Me.btnView.Location = New System.Drawing.Point(509, 30)
         Me.btnView.Name = "btnView"
         Me.btnView.Size = New System.Drawing.Size(93, 34)
         Me.btnView.TabIndex = 232
@@ -164,7 +164,7 @@ Partial Class Ledgers
         Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.ForeColor = System.Drawing.Color.Gold
-        Me.btnDelete.Location = New System.Drawing.Point(787, 58)
+        Me.btnDelete.Location = New System.Drawing.Point(806, 30)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(93, 34)
         Me.btnDelete.TabIndex = 230
@@ -179,7 +179,7 @@ Partial Class Ledgers
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.Gold
-        Me.btnAdd.Location = New System.Drawing.Point(589, 58)
+        Me.btnAdd.Location = New System.Drawing.Point(608, 30)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(93, 34)
         Me.btnAdd.TabIndex = 231
@@ -194,7 +194,7 @@ Partial Class Ledgers
         Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEdit.ForeColor = System.Drawing.Color.Gold
-        Me.btnEdit.Location = New System.Drawing.Point(688, 58)
+        Me.btnEdit.Location = New System.Drawing.Point(707, 30)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(93, 34)
         Me.btnEdit.TabIndex = 229
@@ -209,7 +209,7 @@ Partial Class Ledgers
         Me.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_Close.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Close.ForeColor = System.Drawing.Color.Gold
-        Me.btn_Close.Location = New System.Drawing.Point(886, 58)
+        Me.btn_Close.Location = New System.Drawing.Point(905, 30)
         Me.btn_Close.Name = "btn_Close"
         Me.btn_Close.Size = New System.Drawing.Size(93, 34)
         Me.btn_Close.TabIndex = 228
@@ -245,9 +245,9 @@ Partial Class Ledgers
         Me.Label2.BackColor = System.Drawing.Color.MidnightBlue
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Gold
-        Me.Label2.Location = New System.Drawing.Point(0, 58)
+        Me.Label2.Location = New System.Drawing.Point(0, 30)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(979, 34)
+        Me.Label2.Size = New System.Drawing.Size(1001, 34)
         Me.Label2.TabIndex = 42
         Me.Label2.Text = "    Ledger"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -263,7 +263,7 @@ Partial Class Ledgers
         Me.pnl.Controls.Add(Me.lblAddEdit)
         Me.pnl.Controls.Add(Me.txtNameofLedger)
         Me.pnl.Controls.Add(Me.Label3)
-        Me.pnl.Location = New System.Drawing.Point(286, 112)
+        Me.pnl.Location = New System.Drawing.Point(286, 115)
         Me.pnl.Name = "pnl"
         Me.pnl.Size = New System.Drawing.Size(437, 170)
         Me.pnl.TabIndex = 234
@@ -324,7 +324,7 @@ Partial Class Ledgers
         Me.lblAddEdit.BackColor = System.Drawing.Color.MidnightBlue
         Me.lblAddEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAddEdit.ForeColor = System.Drawing.Color.Gold
-        Me.lblAddEdit.Location = New System.Drawing.Point(1, 5)
+        Me.lblAddEdit.Location = New System.Drawing.Point(1, 4)
         Me.lblAddEdit.Name = "lblAddEdit"
         Me.lblAddEdit.Size = New System.Drawing.Size(436, 34)
         Me.lblAddEdit.TabIndex = 43

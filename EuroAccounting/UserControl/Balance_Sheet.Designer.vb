@@ -60,7 +60,7 @@ Partial Class Balance_Sheet
         '
         Me.txtDescription.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescription.Location = New System.Drawing.Point(283, 168)
+        Me.txtDescription.Location = New System.Drawing.Point(283, 140)
         Me.txtDescription.Name = "txtDescription"
         Me.txtDescription.Size = New System.Drawing.Size(326, 26)
         Me.txtDescription.TabIndex = 248
@@ -70,7 +70,7 @@ Partial Class Balance_Sheet
         '
         Me.txtTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTitle.Location = New System.Drawing.Point(283, 137)
+        Me.txtTitle.Location = New System.Drawing.Point(283, 109)
         Me.txtTitle.Name = "txtTitle"
         Me.txtTitle.Size = New System.Drawing.Size(326, 26)
         Me.txtTitle.TabIndex = 247
@@ -80,7 +80,7 @@ Partial Class Balance_Sheet
         '
         Me.lblDate.AutoSize = True
         Me.lblDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDate.Location = New System.Drawing.Point(75, 101)
+        Me.lblDate.Location = New System.Drawing.Point(75, 73)
         Me.lblDate.Name = "lblDate"
         Me.lblDate.Size = New System.Drawing.Size(79, 20)
         Me.lblDate.TabIndex = 223
@@ -91,7 +91,7 @@ Partial Class Balance_Sheet
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(26, 102)
+        Me.Label1.Location = New System.Drawing.Point(26, 74)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(48, 20)
         Me.Label1.TabIndex = 219
@@ -107,9 +107,9 @@ Partial Class Balance_Sheet
         Me.lvbalance_sheet.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chAcct, Me.chAmount, Me.chTotal})
         Me.lvbalance_sheet.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvbalance_sheet.GridLines = True
-        Me.lvbalance_sheet.Location = New System.Drawing.Point(5, 200)
+        Me.lvbalance_sheet.Location = New System.Drawing.Point(5, 172)
         Me.lvbalance_sheet.Name = "lvbalance_sheet"
-        Me.lvbalance_sheet.Size = New System.Drawing.Size(804, 282)
+        Me.lvbalance_sheet.Size = New System.Drawing.Size(804, 310)
         Me.lvbalance_sheet.TabIndex = 211
         Me.lvbalance_sheet.UseCompatibleStateImageBehavior = False
         Me.lvbalance_sheet.View = System.Windows.Forms.View.Details
@@ -137,7 +137,7 @@ Partial Class Balance_Sheet
         Me.btnPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPreview.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPreview.ForeColor = System.Drawing.Color.Gold
-        Me.btnPreview.Location = New System.Drawing.Point(576, 58)
+        Me.btnPreview.Location = New System.Drawing.Point(576, 30)
         Me.btnPreview.Name = "btnPreview"
         Me.btnPreview.Size = New System.Drawing.Size(115, 34)
         Me.btnPreview.TabIndex = 44
@@ -152,7 +152,7 @@ Partial Class Balance_Sheet
         Me.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Cancel.ForeColor = System.Drawing.Color.Gold
-        Me.btn_Cancel.Location = New System.Drawing.Point(697, 58)
+        Me.btn_Cancel.Location = New System.Drawing.Point(697, 30)
         Me.btn_Cancel.Name = "btn_Cancel"
         Me.btn_Cancel.Size = New System.Drawing.Size(115, 34)
         Me.btn_Cancel.TabIndex = 43
@@ -166,9 +166,9 @@ Partial Class Balance_Sheet
         Me.Label2.BackColor = System.Drawing.Color.MidnightBlue
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Gold
-        Me.Label2.Location = New System.Drawing.Point(0, 58)
+        Me.Label2.Location = New System.Drawing.Point(0, 30)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(809, 34)
+        Me.Label2.Size = New System.Drawing.Size(812, 34)
         Me.Label2.TabIndex = 42
         Me.Label2.Text = "    Balance Sheet Report"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft

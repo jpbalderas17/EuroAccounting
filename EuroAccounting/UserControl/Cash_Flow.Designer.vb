@@ -49,7 +49,7 @@ Partial Class Cash_Flow
         Me.btn_filter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_filter.BackColor = System.Drawing.Color.MidnightBlue
         Me.btn_filter.ForeColor = System.Drawing.Color.Gold
-        Me.btn_filter.Location = New System.Drawing.Point(753, 100)
+        Me.btn_filter.Location = New System.Drawing.Point(759, 75)
         Me.btn_filter.Name = "btn_filter"
         Me.btn_filter.Size = New System.Drawing.Size(69, 33)
         Me.btn_filter.TabIndex = 237
@@ -60,7 +60,7 @@ Partial Class Cash_Flow
         'dt_to
         '
         Me.dt_to.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dt_to.Location = New System.Drawing.Point(566, 106)
+        Me.dt_to.Location = New System.Drawing.Point(572, 81)
         Me.dt_to.Name = "dt_to"
         Me.dt_to.Size = New System.Drawing.Size(181, 20)
         Me.dt_to.TabIndex = 236
@@ -71,7 +71,7 @@ Partial Class Cash_Flow
         Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(539, 106)
+        Me.Label4.Location = New System.Drawing.Point(545, 81)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(31, 20)
         Me.Label4.TabIndex = 235
@@ -81,7 +81,7 @@ Partial Class Cash_Flow
         'dt_from
         '
         Me.dt_from.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dt_from.Location = New System.Drawing.Point(339, 106)
+        Me.dt_from.Location = New System.Drawing.Point(345, 81)
         Me.dt_from.Name = "dt_from"
         Me.dt_from.Size = New System.Drawing.Size(181, 20)
         Me.dt_from.TabIndex = 234
@@ -92,7 +92,7 @@ Partial Class Cash_Flow
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(283, 106)
+        Me.Label3.Location = New System.Drawing.Point(289, 81)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(50, 20)
         Me.Label3.TabIndex = 233
@@ -103,7 +103,7 @@ Partial Class Cash_Flow
         '
         Me.lblDate.AutoSize = True
         Me.lblDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDate.Location = New System.Drawing.Point(81, 106)
+        Me.lblDate.Location = New System.Drawing.Point(81, 81)
         Me.lblDate.Name = "lblDate"
         Me.lblDate.Size = New System.Drawing.Size(79, 20)
         Me.lblDate.TabIndex = 215
@@ -119,9 +119,9 @@ Partial Class Cash_Flow
         Me.lvw_cashflow.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chAccounts, Me.chDebit, Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
         Me.lvw_cashflow.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvw_cashflow.GridLines = True
-        Me.lvw_cashflow.Location = New System.Drawing.Point(4, 201)
+        Me.lvw_cashflow.Location = New System.Drawing.Point(4, 176)
         Me.lvw_cashflow.Name = "lvw_cashflow"
-        Me.lvw_cashflow.Size = New System.Drawing.Size(840, 302)
+        Me.lvw_cashflow.Size = New System.Drawing.Size(846, 327)
         Me.lvw_cashflow.TabIndex = 211
         Me.lvw_cashflow.UseCompatibleStateImageBehavior = False
         Me.lvw_cashflow.View = System.Windows.Forms.View.Details
@@ -163,7 +163,7 @@ Partial Class Cash_Flow
         Me.btnPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPreview.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPreview.ForeColor = System.Drawing.Color.Gold
-        Me.btnPreview.Location = New System.Drawing.Point(612, 58)
+        Me.btnPreview.Location = New System.Drawing.Point(614, 30)
         Me.btnPreview.Name = "btnPreview"
         Me.btnPreview.Size = New System.Drawing.Size(115, 34)
         Me.btnPreview.TabIndex = 44
@@ -178,7 +178,7 @@ Partial Class Cash_Flow
         Me.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Cancel.ForeColor = System.Drawing.Color.Gold
-        Me.btn_Cancel.Location = New System.Drawing.Point(733, 58)
+        Me.btn_Cancel.Location = New System.Drawing.Point(735, 30)
         Me.btn_Cancel.Name = "btn_Cancel"
         Me.btn_Cancel.Size = New System.Drawing.Size(115, 34)
         Me.btn_Cancel.TabIndex = 43
@@ -192,9 +192,9 @@ Partial Class Cash_Flow
         Me.Label2.BackColor = System.Drawing.Color.MidnightBlue
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Gold
-        Me.Label2.Location = New System.Drawing.Point(0, 58)
+        Me.Label2.Location = New System.Drawing.Point(0, 30)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(845, 34)
+        Me.Label2.Size = New System.Drawing.Size(854, 34)
         Me.Label2.TabIndex = 42
         Me.Label2.Text = "    Cash Flow Report"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -203,7 +203,7 @@ Partial Class Cash_Flow
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(32, 107)
+        Me.Label1.Location = New System.Drawing.Point(32, 82)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(48, 20)
         Me.Label1.TabIndex = 30
@@ -215,6 +215,7 @@ Partial Class Cash_Flow
         Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.Silver
         Me.Panel1.Controls.Add(Me.txtDescription)
         Me.Panel1.Controls.Add(Me.txtTitle)
         Me.Panel1.Controls.Add(Me.btn_filter)
@@ -228,16 +229,16 @@ Partial Class Cash_Flow
         Me.Panel1.Controls.Add(Me.btn_Cancel)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(3, 3)
+        Me.Panel1.Location = New System.Drawing.Point(0, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(848, 541)
+        Me.Panel1.Size = New System.Drawing.Size(854, 541)
         Me.Panel1.TabIndex = 21
         '
         'txtDescription
         '
         Me.txtDescription.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescription.Location = New System.Drawing.Point(287, 169)
+        Me.txtDescription.Location = New System.Drawing.Point(290, 144)
         Me.txtDescription.Name = "txtDescription"
         Me.txtDescription.Size = New System.Drawing.Size(326, 26)
         Me.txtDescription.TabIndex = 250
@@ -247,7 +248,7 @@ Partial Class Cash_Flow
         '
         Me.txtTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTitle.Location = New System.Drawing.Point(287, 138)
+        Me.txtTitle.Location = New System.Drawing.Point(290, 113)
         Me.txtTitle.Name = "txtTitle"
         Me.txtTitle.Size = New System.Drawing.Size(326, 26)
         Me.txtTitle.TabIndex = 249

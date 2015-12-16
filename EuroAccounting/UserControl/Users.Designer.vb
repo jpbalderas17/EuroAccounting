@@ -22,6 +22,7 @@ Partial Class Users
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Users))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnl_user = New System.Windows.Forms.Panel()
         Me.gbxAddEdit = New System.Windows.Forms.GroupBox()
@@ -51,7 +52,9 @@ Partial Class Users
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btn_Close = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.btnSearchLedger = New System.Windows.Forms.Button()
+        Me.txtSearchLedger = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.pnl_user.SuspendLayout()
         Me.gbxAddEdit.SuspendLayout()
@@ -62,7 +65,6 @@ Partial Class Users
         Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.Controls.Add(Me.pnl_user)
         Me.Panel1.Controls.Add(Me.lvlUsers)
         Me.Panel1.Location = New System.Drawing.Point(0, 113)
         Me.Panel1.Name = "Panel1"
@@ -73,7 +75,7 @@ Partial Class Users
         '
         Me.pnl_user.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.pnl_user.Controls.Add(Me.gbxAddEdit)
-        Me.pnl_user.Location = New System.Drawing.Point(281, 67)
+        Me.pnl_user.Location = New System.Drawing.Point(274, 88)
         Me.pnl_user.Name = "pnl_user"
         Me.pnl_user.Size = New System.Drawing.Size(478, 304)
         Me.pnl_user.TabIndex = 9
@@ -96,9 +98,9 @@ Partial Class Users
         Me.gbxAddEdit.Controls.Add(Me.txtpwd)
         Me.gbxAddEdit.Controls.Add(Me.txtuname)
         Me.gbxAddEdit.Controls.Add(Me.Label5)
-        Me.gbxAddEdit.Location = New System.Drawing.Point(3, 6)
+        Me.gbxAddEdit.Location = New System.Drawing.Point(6, 3)
         Me.gbxAddEdit.Name = "gbxAddEdit"
-        Me.gbxAddEdit.Size = New System.Drawing.Size(472, 286)
+        Me.gbxAddEdit.Size = New System.Drawing.Size(472, 301)
         Me.gbxAddEdit.TabIndex = 0
         Me.gbxAddEdit.TabStop = False
         '
@@ -309,7 +311,7 @@ Partial Class Users
         Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.ForeColor = System.Drawing.Color.Gold
-        Me.btnDelete.Location = New System.Drawing.Point(730, 57)
+        Me.btnDelete.Location = New System.Drawing.Point(730, 30)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(93, 34)
         Me.btnDelete.TabIndex = 14
@@ -324,7 +326,7 @@ Partial Class Users
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.Gold
-        Me.btnAdd.Location = New System.Drawing.Point(532, 57)
+        Me.btnAdd.Location = New System.Drawing.Point(532, 30)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(93, 34)
         Me.btnAdd.TabIndex = 15
@@ -339,7 +341,7 @@ Partial Class Users
         Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEdit.ForeColor = System.Drawing.Color.Gold
-        Me.btnEdit.Location = New System.Drawing.Point(631, 57)
+        Me.btnEdit.Location = New System.Drawing.Point(631, 30)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(93, 34)
         Me.btnEdit.TabIndex = 13
@@ -354,7 +356,7 @@ Partial Class Users
         Me.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_Close.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Close.ForeColor = System.Drawing.Color.Gold
-        Me.btn_Close.Location = New System.Drawing.Point(829, 57)
+        Me.btn_Close.Location = New System.Drawing.Point(829, 30)
         Me.btn_Close.Name = "btn_Close"
         Me.btn_Close.Size = New System.Drawing.Size(93, 34)
         Me.btn_Close.TabIndex = 12
@@ -368,35 +370,63 @@ Partial Class Users
         Me.Label4.BackColor = System.Drawing.Color.MidnightBlue
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Gold
-        Me.Label4.Location = New System.Drawing.Point(-5, 57)
+        Me.Label4.Location = New System.Drawing.Point(0, 30)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(943, 34)
         Me.Label4.TabIndex = 43
         Me.Label4.Text = "    System Users"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'txtSearch
+        'btnSearchLedger
         '
-        Me.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtSearch.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(327, 59)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(222, 26)
-        Me.txtSearch.TabIndex = 209
+        Me.btnSearchLedger.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSearchLedger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSearchLedger.FlatAppearance.BorderSize = 0
+        Me.btnSearchLedger.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchLedger.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchLedger.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnSearchLedger.Image = CType(resources.GetObject("btnSearchLedger.Image"), System.Drawing.Image)
+        Me.btnSearchLedger.Location = New System.Drawing.Point(287, 85)
+        Me.btnSearchLedger.Name = "btnSearchLedger"
+        Me.btnSearchLedger.Size = New System.Drawing.Size(26, 22)
+        Me.btnSearchLedger.TabIndex = 239
+        Me.btnSearchLedger.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSearchLedger.UseVisualStyleBackColor = False
+        '
+        'txtSearchLedger
+        '
+        Me.txtSearchLedger.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearchLedger.Location = New System.Drawing.Point(77, 85)
+        Me.txtSearchLedger.Name = "txtSearchLedger"
+        Me.txtSearchLedger.Size = New System.Drawing.Size(210, 22)
+        Me.txtSearchLedger.TabIndex = 237
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(20, 88)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(51, 16)
+        Me.Label9.TabIndex = 238
+        Me.Label9.Text = "Search"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Users
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
+        Me.Controls.Add(Me.pnl_user)
+        Me.Controls.Add(Me.btnSearchLedger)
+        Me.Controls.Add(Me.txtSearchLedger)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btn_Close)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.txtSearch)
         Me.Name = "Users"
         Me.Size = New System.Drawing.Size(938, 620)
         Me.Panel1.ResumeLayout(False)
@@ -418,7 +448,6 @@ Partial Class Users
     Friend WithEvents btn_Close As System.Windows.Forms.Button
     Friend WithEvents pnl_user As System.Windows.Forms.Panel
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents txtSearch As System.Windows.Forms.TextBox
     Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
     Friend WithEvents gbxAddEdit As System.Windows.Forms.GroupBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
@@ -437,5 +466,8 @@ Partial Class Users
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents txtUid As System.Windows.Forms.TextBox
     Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents btnSearchLedger As System.Windows.Forms.Button
+    Friend WithEvents txtSearchLedger As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 
 End Class

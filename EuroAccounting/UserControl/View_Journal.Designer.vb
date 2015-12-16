@@ -42,12 +42,13 @@ Partial Class View_Journal
         'cmbPost
         '
         Me.cmbPost.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmbPost.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbPost.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbPost.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbPost.FormattingEnabled = True
         Me.cmbPost.Items.AddRange(New Object() {"Ledger (3 Column Ledger)", "Trial Balance", "Income Statement", "Balance Sheet"})
-        Me.cmbPost.Location = New System.Drawing.Point(524, 64)
+        Me.cmbPost.Location = New System.Drawing.Point(520, 35)
         Me.cmbPost.Name = "cmbPost"
-        Me.cmbPost.Size = New System.Drawing.Size(170, 25)
+        Me.cmbPost.Size = New System.Drawing.Size(170, 24)
         Me.cmbPost.TabIndex = 10
         '
         'Label5
@@ -57,7 +58,7 @@ Partial Class View_Journal
         Me.Label5.BackColor = System.Drawing.Color.MidnightBlue
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Gold
-        Me.Label5.Location = New System.Drawing.Point(466, 113)
+        Me.Label5.Location = New System.Drawing.Point(462, 40)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(52, 16)
         Me.Label5.TabIndex = 9
@@ -70,7 +71,7 @@ Partial Class View_Journal
         Me.Label2.BackColor = System.Drawing.Color.MidnightBlue
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Gold
-        Me.Label2.Location = New System.Drawing.Point(0, 103)
+        Me.Label2.Location = New System.Drawing.Point(0, 30)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(938, 34)
         Me.Label2.TabIndex = 11
@@ -85,7 +86,7 @@ Partial Class View_Journal
         Me.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_Close.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Close.ForeColor = System.Drawing.Color.Gold
-        Me.btn_Close.Location = New System.Drawing.Point(823, 59)
+        Me.btn_Close.Location = New System.Drawing.Point(823, 30)
         Me.btn_Close.Name = "btn_Close"
         Me.btn_Close.Size = New System.Drawing.Size(115, 34)
         Me.btn_Close.TabIndex = 12
@@ -100,7 +101,7 @@ Partial Class View_Journal
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdd.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.Gold
-        Me.btnAdd.Location = New System.Drawing.Point(721, 59)
+        Me.btnAdd.Location = New System.Drawing.Point(700, 30)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(115, 34)
         Me.btnAdd.TabIndex = 14
@@ -114,11 +115,13 @@ Partial Class View_Journal
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnl_Journal.BackColor = System.Drawing.Color.Silver
         Me.pnl_Journal.Controls.Add(Me.lvljournal)
+        Me.pnl_Journal.Controls.Add(Me.btnAdd)
+        Me.pnl_Journal.Controls.Add(Me.cmbPost)
         Me.pnl_Journal.Controls.Add(Me.Label5)
         Me.pnl_Journal.Controls.Add(Me.Label2)
-        Me.pnl_Journal.Location = New System.Drawing.Point(0, -44)
+        Me.pnl_Journal.Location = New System.Drawing.Point(0, 0)
         Me.pnl_Journal.Name = "pnl_Journal"
-        Me.pnl_Journal.Size = New System.Drawing.Size(938, 555)
+        Me.pnl_Journal.Size = New System.Drawing.Size(938, 463)
         Me.pnl_Journal.TabIndex = 21
         '
         'lvljournal
@@ -129,12 +132,12 @@ Partial Class View_Journal
         Me.lvljournal.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lvljournal.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chAccounts, Me.chDebit, Me.chCredit})
         Me.lvljournal.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.lvljournal.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvljournal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvljournal.FullRowSelect = True
         Me.lvljournal.GridLines = True
-        Me.lvljournal.Location = New System.Drawing.Point(0, 168)
+        Me.lvljournal.Location = New System.Drawing.Point(22, 84)
         Me.lvljournal.Name = "lvljournal"
-        Me.lvljournal.Size = New System.Drawing.Size(932, 298)
+        Me.lvljournal.Size = New System.Drawing.Size(891, 355)
         Me.lvljournal.TabIndex = 211
         Me.lvljournal.UseCompatibleStateImageBehavior = False
         Me.lvljournal.View = System.Windows.Forms.View.Details
@@ -171,9 +174,7 @@ Partial Class View_Journal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btn_Close)
-        Me.Controls.Add(Me.cmbPost)
         Me.Controls.Add(Me.pnl_Journal)
         Me.Name = "View_Journal"
         Me.Size = New System.Drawing.Size(938, 463)

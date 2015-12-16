@@ -65,7 +65,7 @@ Public Class Income_Statement
                 'para sa revenue
                 'dr = db.ExecuteReader("SELECT DISTINCT(a.id), a.name, IIF(jd.is_debit=0,jd.amount,0) as debit FROM journal_details jd JOIN accounts a ON jd.account_id=a.id where a.type=1")
                 'dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1 AND type=1 AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id and a.type=3)as credit FROM accounts a WHERE a.type=1 AND a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
-                dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1  AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id )as credit FROM accounts a WHERE a.type=1 AND a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
+                dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1  AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id )as credit FROM accounts a WHERE a.type in (1,2) AND a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
                 Item = Me.lvIncomeStatement.Items.Add("Revenue")
                 Item.SubItems.Add("")
                 Item.SubItems.Add("")
@@ -278,4 +278,10 @@ Public Class Income_Statement
     End Sub
 
 
+    Private Sub pnlPrint_Paint(sender As Object, e As PaintEventArgs) Handles pnlPrint.Paint
+
+    End Sub
+    Private Sub pnlIncMain_Paint(sender As Object, e As PaintEventArgs) Handles pnlIncMain.Paint
+
+    End Sub
 End Class

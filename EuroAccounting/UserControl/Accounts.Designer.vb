@@ -43,7 +43,7 @@ Partial Class Accounts
         Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.ForeColor = System.Drawing.Color.Gold
-        Me.btnDelete.Location = New System.Drawing.Point(817, 56)
+        Me.btnDelete.Location = New System.Drawing.Point(817, 30)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(93, 34)
         Me.btnDelete.TabIndex = 212
@@ -58,7 +58,7 @@ Partial Class Accounts
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.Gold
-        Me.btnAdd.Location = New System.Drawing.Point(619, 56)
+        Me.btnAdd.Location = New System.Drawing.Point(619, 30)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(93, 34)
         Me.btnAdd.TabIndex = 213
@@ -73,7 +73,7 @@ Partial Class Accounts
         Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEdit.ForeColor = System.Drawing.Color.Gold
-        Me.btnEdit.Location = New System.Drawing.Point(718, 56)
+        Me.btnEdit.Location = New System.Drawing.Point(718, 30)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(93, 34)
         Me.btnEdit.TabIndex = 211
@@ -88,7 +88,7 @@ Partial Class Accounts
         Me.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_Close.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Close.ForeColor = System.Drawing.Color.Gold
-        Me.btn_Close.Location = New System.Drawing.Point(916, 56)
+        Me.btn_Close.Location = New System.Drawing.Point(916, 30)
         Me.btn_Close.Name = "btn_Close"
         Me.btn_Close.Size = New System.Drawing.Size(93, 34)
         Me.btn_Close.TabIndex = 210
@@ -102,7 +102,7 @@ Partial Class Accounts
         Me.Label4.BackColor = System.Drawing.Color.MidnightBlue
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Gold
-        Me.Label4.Location = New System.Drawing.Point(-5, 56)
+        Me.Label4.Location = New System.Drawing.Point(0, 30)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(1029, 34)
         Me.Label4.TabIndex = 214
@@ -115,9 +115,9 @@ Partial Class Accounts
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.lvw_accounts)
-        Me.Panel1.Location = New System.Drawing.Point(3, 96)
+        Me.Panel1.Location = New System.Drawing.Point(3, 70)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1018, 443)
+        Me.Panel1.Size = New System.Drawing.Size(1018, 469)
         Me.Panel1.TabIndex = 215
         '
         'lvw_accounts
@@ -131,7 +131,7 @@ Partial Class Accounts
         Me.lvw_accounts.GridLines = True
         Me.lvw_accounts.Location = New System.Drawing.Point(9, 14)
         Me.lvw_accounts.Name = "lvw_accounts"
-        Me.lvw_accounts.Size = New System.Drawing.Size(997, 414)
+        Me.lvw_accounts.Size = New System.Drawing.Size(997, 440)
         Me.lvw_accounts.TabIndex = 8
         Me.lvw_accounts.UseCompatibleStateImageBehavior = False
         Me.lvw_accounts.View = System.Windows.Forms.View.Details

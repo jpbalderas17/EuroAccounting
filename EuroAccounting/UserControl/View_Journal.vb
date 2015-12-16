@@ -237,7 +237,17 @@ Public Class View_Journal
     End Sub
 
 
-    Private Sub lvljournal_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lvljournal.SelectedIndexChanged
+   
+    Private Sub tsRemove_Click(sender As Object, e As EventArgs) Handles tsRemove.Click
+        Dim journal_id As String
+        Dim splitter() As String
+        journal_id = lvljournal.FocusedItem.Group.Header.ToString
+        journal_id = journal_id.Replace("No.", "")
+        splitter = Split(journal_id, " Journal ID:")
+        MsgBox(splitter(1))
+        
 
     End Sub
+
+ 
 End Class

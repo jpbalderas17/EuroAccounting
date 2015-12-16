@@ -70,7 +70,7 @@ Partial Class Ledger
         Me.btn_filter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_filter.BackColor = System.Drawing.Color.MidnightBlue
         Me.btn_filter.ForeColor = System.Drawing.Color.Gold
-        Me.btn_filter.Location = New System.Drawing.Point(720, 111)
+        Me.btn_filter.Location = New System.Drawing.Point(720, 73)
         Me.btn_filter.Name = "btn_filter"
         Me.btn_filter.Size = New System.Drawing.Size(69, 33)
         Me.btn_filter.TabIndex = 240
@@ -81,7 +81,7 @@ Partial Class Ledger
         'dt_to
         '
         Me.dt_to.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dt_to.Location = New System.Drawing.Point(533, 117)
+        Me.dt_to.Location = New System.Drawing.Point(533, 79)
         Me.dt_to.Name = "dt_to"
         Me.dt_to.Size = New System.Drawing.Size(181, 20)
         Me.dt_to.TabIndex = 239
@@ -92,7 +92,7 @@ Partial Class Ledger
         Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(506, 117)
+        Me.Label4.Location = New System.Drawing.Point(506, 79)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(31, 20)
         Me.Label4.TabIndex = 238
@@ -102,7 +102,7 @@ Partial Class Ledger
         'dt_from
         '
         Me.dt_from.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dt_from.Location = New System.Drawing.Point(306, 117)
+        Me.dt_from.Location = New System.Drawing.Point(306, 79)
         Me.dt_from.Name = "dt_from"
         Me.dt_from.Size = New System.Drawing.Size(181, 20)
         Me.dt_from.TabIndex = 237
@@ -113,7 +113,7 @@ Partial Class Ledger
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(250, 117)
+        Me.Label3.Location = New System.Drawing.Point(250, 79)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(50, 20)
         Me.Label3.TabIndex = 236
@@ -126,9 +126,9 @@ Partial Class Ledger
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.Controls.Add(Me.lvw_ledger)
-        Me.Panel2.Location = New System.Drawing.Point(8, 150)
+        Me.Panel2.Location = New System.Drawing.Point(8, 112)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(795, 384)
+        Me.Panel2.Size = New System.Drawing.Size(795, 422)
         Me.Panel2.TabIndex = 235
         '
         'lvw_ledger
@@ -144,7 +144,7 @@ Partial Class Ledger
         Me.lvw_ledger.HideSelection = False
         Me.lvw_ledger.Location = New System.Drawing.Point(3, 4)
         Me.lvw_ledger.Name = "lvw_ledger"
-        Me.lvw_ledger.Size = New System.Drawing.Size(789, 377)
+        Me.lvw_ledger.Size = New System.Drawing.Size(789, 415)
         Me.lvw_ledger.TabIndex = 226
         Me.lvw_ledger.UseCompatibleStateImageBehavior = False
         Me.lvw_ledger.View = System.Windows.Forms.View.Details
@@ -176,7 +176,7 @@ Partial Class Ledger
         '
         Me.lblDate.AutoSize = True
         Me.lblDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDate.Location = New System.Drawing.Point(81, 117)
+        Me.lblDate.Location = New System.Drawing.Point(81, 79)
         Me.lblDate.Name = "lblDate"
         Me.lblDate.Size = New System.Drawing.Size(79, 20)
         Me.lblDate.TabIndex = 234
@@ -187,7 +187,7 @@ Partial Class Ledger
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(27, 117)
+        Me.Label1.Location = New System.Drawing.Point(27, 79)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(48, 20)
         Me.Label1.TabIndex = 233
@@ -202,7 +202,7 @@ Partial Class Ledger
         Me.btnPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPreview.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPreview.ForeColor = System.Drawing.Color.Gold
-        Me.btnPreview.Location = New System.Drawing.Point(576, 58)
+        Me.btnPreview.Location = New System.Drawing.Point(576, 30)
         Me.btnPreview.Name = "btnPreview"
         Me.btnPreview.Size = New System.Drawing.Size(115, 34)
         Me.btnPreview.TabIndex = 44
@@ -217,7 +217,7 @@ Partial Class Ledger
         Me.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Cancel.ForeColor = System.Drawing.Color.Gold
-        Me.btn_Cancel.Location = New System.Drawing.Point(697, 58)
+        Me.btn_Cancel.Location = New System.Drawing.Point(697, 30)
         Me.btn_Cancel.Name = "btn_Cancel"
         Me.btn_Cancel.Size = New System.Drawing.Size(115, 34)
         Me.btn_Cancel.TabIndex = 43
@@ -231,7 +231,7 @@ Partial Class Ledger
         Me.Label2.BackColor = System.Drawing.Color.MidnightBlue
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Gold
-        Me.Label2.Location = New System.Drawing.Point(0, 58)
+        Me.Label2.Location = New System.Drawing.Point(0, 30)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(809, 34)
         Me.Label2.TabIndex = 42

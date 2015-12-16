@@ -65,7 +65,7 @@ Partial Class Archives
         Me.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnView.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnView.ForeColor = System.Drawing.Color.Gold
-        Me.btnView.Location = New System.Drawing.Point(739, 58)
+        Me.btnView.Location = New System.Drawing.Point(739, 30)
         Me.btnView.Name = "btnView"
         Me.btnView.Size = New System.Drawing.Size(93, 34)
         Me.btnView.TabIndex = 240
@@ -147,7 +147,7 @@ Partial Class Archives
         Me.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRestore.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRestore.ForeColor = System.Drawing.Color.Gold
-        Me.btnRestore.Location = New System.Drawing.Point(838, 58)
+        Me.btnRestore.Location = New System.Drawing.Point(838, 30)
         Me.btnRestore.Name = "btnRestore"
         Me.btnRestore.Size = New System.Drawing.Size(93, 34)
         Me.btnRestore.TabIndex = 229
@@ -162,7 +162,7 @@ Partial Class Archives
         Me.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_Close.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Close.ForeColor = System.Drawing.Color.Gold
-        Me.btn_Close.Location = New System.Drawing.Point(934, 58)
+        Me.btn_Close.Location = New System.Drawing.Point(934, 30)
         Me.btn_Close.Name = "btn_Close"
         Me.btn_Close.Size = New System.Drawing.Size(93, 34)
         Me.btn_Close.TabIndex = 228
@@ -176,9 +176,9 @@ Partial Class Archives
         Me.Label2.BackColor = System.Drawing.Color.MidnightBlue
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Gold
-        Me.Label2.Location = New System.Drawing.Point(0, 58)
+        Me.Label2.Location = New System.Drawing.Point(0, 30)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1027, 34)
+        Me.Label2.Size = New System.Drawing.Size(1030, 34)
         Me.Label2.TabIndex = 42
         Me.Label2.Text = "    Archives of Ledgers"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
