@@ -26,14 +26,15 @@ Public Class Balance_Sheet
         SetCueText(txtTitle, "Enter Title")
         SetCueText(txtDescription, "Enter Description")
 
-        lblDate.Text = Date.Now.ToString("MM/dd/yyyy")
-        Me.ledger_id = select_ledger.cbo_ledger.SelectedValue
-        getNet()
-        load_balanceSheet()
+        'lblDate.Text = Date.Now.ToString("MM/dd/yyyy")
+        'Me.ledger_id = select_ledger.cbo_ledger.SelectedValue
+        'getNet()
+        'load_balanceSheet()
 
 
     End Sub
-    Private Sub load_balanceSheet()
+
+    Public Sub load_balanceSheet()
         '#get journals
         Dim parameters As New Dictionary(Of String, Object)
         Dim dbl_total_liabilities As Double = 0
@@ -47,7 +48,7 @@ Public Class Balance_Sheet
         Dim counter As Integer
 
 
-        dr = db.ExecuteReader("SELECT id FROM journals WHERE ledger_id=" & Me.ledger_id)
+        dr = db.ExecuteReader("SELECT id FROM journals WHERE ledger_id=" & uscMainMenu.ledger_id)
         counter = 0
         If dr.HasRows Then
             Try
@@ -212,7 +213,7 @@ Public Class Balance_Sheet
         End If
     End Sub
 
-    Private Sub getNet()
+    Public Sub getNet()
         Dim parameters As New Dictionary(Of String, Object)
         Dim dbl_total_expense As Double = 0
         Dim dbl_total_revenue As Double = 0
@@ -221,7 +222,7 @@ Public Class Balance_Sheet
         Dim journal_id_sql As String
         Dim counter As Integer
 
-        dr = db.ExecuteReader("SELECT id FROM journals WHERE ledger_id=" & Me.ledger_id)
+        dr = db.ExecuteReader("SELECT id FROM journals WHERE ledger_id=" & uscMainMenu.ledger_id)
         counter = 0
         If dr.HasRows Then
             Try
@@ -325,7 +326,10 @@ Public Class Balance_Sheet
         End If
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
 End Class
+
+
+
+
+
+

@@ -1,5 +1,4 @@
-﻿
-Public Class Ledger
+﻿Public Class Ledger
     Dim db As New DBHelper(My.Settings.connectionString)
     Dim dr As SqlClient.SqlDataReader
     Public ledger_id As Integer
@@ -16,7 +15,7 @@ Public Class Ledger
             MsgBox("Please select Start Date.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "INVALID FILTER")
             Exit Sub
         End If
-        journal_sql = get_journals(Me.ledger_id)
+        journal_sql = get_journals(uscMainMenu.ledger_id)
         If IsNothing(journal_sql) Then
             MsgBox("No Journal Entry found.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "No Journal Entry")
             Exit Sub
@@ -39,10 +38,7 @@ Public Class Ledger
 
                     End If
                     If dr1.HasRows Then
-                        Item = lvw_ledger.Items.Add(dr.Item("name"))
-                        Item.SubItems.Add("")
-                        Item.SubItems.Add("")
-                        Item.SubItems.Add("")
+                        lvw_ledger.Items.Add(dr.Item("name"))
                         cur_balance = 0
                         Do While dr1.Read
                             Item = lvw_ledger.Items.Add("     " & StrToDate(dr1.Item("journal_date")))
@@ -72,10 +68,7 @@ Public Class Ledger
                                 .SubItems.Add(FormatNumber(cur_balance, 2))
                             End With
                         Loop
-                        Item = lvw_ledger.Items.Add("")
-                        Item.SubItems.Add("")
-                        Item.SubItems.Add("")
-                        Item.SubItems.Add("")
+                        lvw_ledger.Items.Add("")
                     Else
                         '## No records FOund
                         'If dt_from <> "" And dt_to <> "" Then
@@ -106,13 +99,14 @@ Public Class Ledger
 
     End Sub
 
+
     Private Sub Ledger_GotFocus(sender As Object, e As EventArgs) Handles Me.GotFocus
         'load_lvw()
     End Sub
 
     Private Sub Ledger_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.ledger_id = select_ledger.cbo_ledger.SelectedValue
-        lblDate.Text = Date.Now.ToString("MM/dd/yyyy")
+        'Me.ledger_id = select_ledger.cbo_ledger.SelectedValue
+        'lblDate.Text = Date.Now.ToString("MM/dd/yyyy")
         'load_lvw()
     End Sub
 
@@ -123,7 +117,6 @@ Public Class Ledger
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
-
     Private Sub btnPreview_Click(sender As Object, e As EventArgs) Handles btnPreview.Click
         column_ledger_report.ShowDialog()
     End Sub

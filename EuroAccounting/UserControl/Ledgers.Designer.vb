@@ -56,6 +56,7 @@ Partial Class Ledgers
         Me.pnlMain.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlMain.BackColor = System.Drawing.Color.Silver
         Me.pnlMain.Controls.Add(Me.btnSearchLedger)
         Me.pnlMain.Controls.Add(Me.txtSearchLedger)
         Me.pnlMain.Controls.Add(Me.Label4)
@@ -301,7 +302,7 @@ Partial Class Ledgers
         'txtDesc
         '
         Me.txtDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDesc.Location = New System.Drawing.Point(129, 95)
+        Me.txtDesc.Location = New System.Drawing.Point(127, 95)
         Me.txtDesc.Name = "txtDesc"
         Me.txtDesc.Size = New System.Drawing.Size(293, 22)
         Me.txtDesc.TabIndex = 45
@@ -352,8 +353,9 @@ Partial Class Ledgers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.pnlMain)
+        Me.BackColor = System.Drawing.Color.Silver
         Me.Controls.Add(Me.pnl)
+        Me.Controls.Add(Me.pnlMain)
         Me.Name = "Ledgers"
         Me.Size = New System.Drawing.Size(1001, 470)
         Me.pnlMain.ResumeLayout(False)

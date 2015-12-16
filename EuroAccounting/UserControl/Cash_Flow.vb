@@ -31,7 +31,7 @@ Public Class Cash_Flow
         End Sub
     End Class
 
-    Private Sub load_lvw(Optional dt_from As String = "", Optional dt_to As String = "")
+    Public Sub load_lvw(Optional dt_from As String = "", Optional dt_to As String = "")
         Dim dr1 As SqlClient.SqlDataReader
         Dim journal_sql As String = ""
         Dim Item As ListViewItem
@@ -51,7 +51,7 @@ Public Class Cash_Flow
             MsgBox("Please select Start Date.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "INVALID FILTER")
             Exit Sub
         End If
-        journal_sql = get_journals(Me.ledger_id)
+        journal_sql = get_journals(uscMainMenu.ledger_id)
         If IsNothing(journal_sql) Then
             MsgBox("No Journal Entry found.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "No Journal Entry")
             Exit Sub
@@ -233,7 +233,7 @@ Public Class Cash_Flow
         SetCueText(txtTitle, "Enter Title")
         SetCueText(txtDescription, "Enter Description")
         lblDate.Text = Date.Now.ToString("MM/dd/yyyy")
-        Me.ledger_id = select_ledger.cbo_ledger.SelectedValue
+        'Me.ledger_id = select_ledger.cbo_ledger.SelectedValue
         load_lvw()
     End Sub
 

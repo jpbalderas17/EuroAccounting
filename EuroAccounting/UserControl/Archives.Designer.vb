@@ -24,6 +24,7 @@ Partial Class Archives
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Archives))
         Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.btnView = New System.Windows.Forms.Button()
         Me.btnSearchLedger = New System.Windows.Forms.Button()
         Me.txtSearchLedger = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -34,7 +35,6 @@ Partial Class Archives
         Me.btnRestore = New System.Windows.Forms.Button()
         Me.btn_Close = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnView = New System.Windows.Forms.Button()
         Me.pnlMain.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -43,6 +43,7 @@ Partial Class Archives
         Me.pnlMain.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlMain.BackColor = System.Drawing.Color.Silver
         Me.pnlMain.Controls.Add(Me.btnView)
         Me.pnlMain.Controls.Add(Me.btnSearchLedger)
         Me.pnlMain.Controls.Add(Me.txtSearchLedger)
@@ -55,6 +56,21 @@ Partial Class Archives
         Me.pnlMain.Name = "pnlMain"
         Me.pnlMain.Size = New System.Drawing.Size(1030, 482)
         Me.pnlMain.TabIndex = 21
+        '
+        'btnView
+        '
+        Me.btnView.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnView.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnView.FlatAppearance.BorderSize = 0
+        Me.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnView.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnView.ForeColor = System.Drawing.Color.Gold
+        Me.btnView.Location = New System.Drawing.Point(739, 58)
+        Me.btnView.Name = "btnView"
+        Me.btnView.Size = New System.Drawing.Size(93, 34)
+        Me.btnView.TabIndex = 240
+        Me.btnView.Text = "View Journal"
+        Me.btnView.UseVisualStyleBackColor = False
         '
         'btnSearchLedger
         '
@@ -166,21 +182,6 @@ Partial Class Archives
         Me.Label2.TabIndex = 42
         Me.Label2.Text = "    Archives of Ledgers"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'btnView
-        '
-        Me.btnView.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnView.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnView.FlatAppearance.BorderSize = 0
-        Me.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnView.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnView.ForeColor = System.Drawing.Color.Gold
-        Me.btnView.Location = New System.Drawing.Point(739, 58)
-        Me.btnView.Name = "btnView"
-        Me.btnView.Size = New System.Drawing.Size(93, 34)
-        Me.btnView.TabIndex = 240
-        Me.btnView.Text = "View Journal"
-        Me.btnView.UseVisualStyleBackColor = False
         '
         'Archives
         '

@@ -13,7 +13,7 @@
     Public uscLedgers As New Ledgers
     Public uscJournalEntry As New Journal_Entry
     Public uscArchives As New Archives
-
+    Public uscCashFlow As New Cash_Flow
     Public currentUSC As Control
     Sub clearMainPanel()
         MainMenu.panelMain.Controls.Clear()

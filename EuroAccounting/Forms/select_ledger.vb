@@ -27,11 +27,11 @@ Public Class select_ledger
 
     'End Sub
 
-   
+
     Private Sub btn_select_Click(sender As Object, e As EventArgs) Handles btn_select.Click
 
         getReport()
-        
+
         Me.Close()
 
     End Sub
@@ -42,31 +42,39 @@ Public Class select_ledger
 
     ''METHODS
     Private Sub getReport()
+        uscMainMenu.ledger_id = Me.cbo_ledger.SelectedValue
         Select Case uscMainMenu.getter
 
             Case "Income statement"
-                uscIncomeStatement.ledger_id = Me.cbo_ledger.SelectedValue
+
+                'uscIncomeStatement.ledger_id = Me.cbo_ledger.SelectedValue
                 showUSC(uscIncomeStatement)
-                Dim y As Integer
-                y = 0
-                If uscIncomeStatement.postTO(y) = True Then
-                    uscIncomeStatement.lvwIncome_statementinList()
-                Else
-                    uscIncomeStatement.lvwIncome_statementInCBO()
-                End If
+                uscIncomeStatement.lvwIncome_statement()
+
             Case "Balance sheet"
                 showUSC(uscBalanceSheet)
+                uscBalanceSheet.load_balanceSheet()
+                uscBalanceSheet.getNet()
             Case "Cash flow"
-                'MsgBox("Wala pa!")
                 showUSC(uscCashFlow)
+                uscCashFlow.load_lvw()
             Case "Trial balance"
                 showUSC(uscTrialBalance)
+                uscTrialBalance.load_tbalance()
+                uscTrialBalance.get_ledger_details()
             Case "3 Column ledger"
-                uscLedger.ledger_id = Me.cbo_ledger.SelectedValue
                 showUSC(uscLedger)
                 uscLedger.load_lvw()
+
         End Select
 
     End Sub
 
+    Public Function postTO(x As Integer)
+        If x = 1 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
 End Class

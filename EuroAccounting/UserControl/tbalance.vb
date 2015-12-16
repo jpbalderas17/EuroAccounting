@@ -3,7 +3,7 @@ Imports System.Text
 Imports System.Runtime.InteropServices
 
 Public Class tbalance
-    Dim ledger_id As Integer
+    Public ledger_id As Integer
     Dim ledger_name, ledger_description As String
     Dim dr As SqlClient.SqlDataReader
     Dim cmd As SqlClient.SqlCommand
@@ -17,7 +17,7 @@ Public Class tbalance
     Private Sub SetCueText(ByVal control As Control, ByVal text As String)
         SendMessage(control.Handle, EM_SETCUEBANNER, 0, text)
     End Sub
-    Private Sub load_tbalance(Optional dt_from = "", Optional dt_to = "")
+    Public Sub load_tbalance(Optional dt_from = "", Optional dt_to = "")
         '#get journals
         Dim journals(0) As String
         Dim journal_id_sql As String
@@ -35,9 +35,9 @@ Public Class tbalance
 
         If dt_from <> "" And dt_to <> "" Then
 
-            dr = db.ExecuteReader("SELECT id FROM journals WHERE ledger_id=" & Me.ledger_id & "AND journal_date BETWEEN " & dt_from & " AND " & dt_to)
+            dr = db.ExecuteReader("SELECT id FROM journals WHERE ledger_id=" & uscMainMenu.ledger_id & "AND journal_date BETWEEN " & dt_from & " AND " & dt_to)
         Else
-            dr = db.ExecuteReader("SELECT id FROM journals WHERE ledger_id=" & Me.ledger_id)
+            dr = db.ExecuteReader("SELECT id FROM journals WHERE ledger_id=" & uscMainMenu.ledger_id)
         End If
         counter = 0
         If dr.HasRows Then
@@ -109,15 +109,16 @@ Public Class tbalance
         End If
 
     End Sub
+    
     Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
         'showUSC(uscViewJournal)
         'uscViewJournal.cmbPost.Text = ""
         showUSC(uscMainMenu)
         uscTrialBalance = New tbalance
     End Sub
-    Private Sub get_ledger_details()
+    Public Sub get_ledger_details()
 
-        dr = db.ExecuteReader("SELECT id,name,description FROM ledgers WHERE id=" & Me.ledger_id)
+        dr = db.ExecuteReader("SELECT id,name,description FROM ledgers WHERE id=" & uscMainMenu.ledger_id)
         If dr.HasRows Then
             dr.Read()
             If IsDBNull(dr.Item("description")) = True Then
@@ -132,11 +133,14 @@ Public Class tbalance
             End If
         End If
     End Sub
+   
+
+
     Private Sub tbalance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblDate.Text = Date.Now.ToString("MM/dd/yyyy")
-        Me.ledger_id = select_ledger.cbo_ledger.SelectedValue
-        load_tbalance()
-        'get_ledger_details()
+        'Me.ledger_id = select_ledger.cbo_ledger.SelectedValue
+        'load_tbalance()
+
         SetCueText(txtTitle, "Enter Title")
         SetCueText(txtDescription, "Enter Description")
 

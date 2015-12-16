@@ -128,5 +128,13 @@
             MsgBox("Please select ledger ", vbExclamation + vbOKOnly, "No ledger")
             Exit Sub
         End If
+        uscMainMenu.ledger_id = lvljournal.FocusedItem.Text
+        uscViewJournal.loadJournal()
+        'disabling add entry
+        uscViewJournal.btnAdd.Visible = False
+        showUSC(uscViewJournal)
+
+
+        
     End Sub
 End Class

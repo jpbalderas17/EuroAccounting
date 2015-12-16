@@ -1,5 +1,6 @@
 ﻿Public Class MainMenu2
     Public getter As String
+    Public ledger_id As String
     Private Sub showChoices(mode As Boolean)
 
     End Sub
@@ -97,4 +98,6 @@
     Private Sub btnDbBackUp_Click(sender As Object, e As EventArgs) Handles btnDbBackUp.Click
         DatabaseBackupRestore.ShowDialog()
     End Sub
+
+
 End Class

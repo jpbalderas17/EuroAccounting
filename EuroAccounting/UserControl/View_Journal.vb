@@ -66,24 +66,21 @@ Public Class View_Journal
     End Sub
 
     Private Sub cmbPost_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPost.SelectedIndexChanged
-       
-
+        uscMainMenu.ledger_id = lvljournal.FocusedItem.Text
         If cmbPost.Text = "Trial Balance" Then
             showUSC(uscTrialBalance)
+            uscTrialBalance.load_tbalance()
         ElseIf cmbPost.Text = "Ledger (3 Column Ledger)" Then
             showUSC(uscLedger)
+            uscLedger.load_lvw()
         ElseIf cmbPost.Text = "Income Statement" Then
-            showUSC(uscIncomeStatement)
-            Dim y As Integer
-            y = 1
 
-            If uscIncomeStatement.postTO(y) = True Then
-                uscIncomeStatement.lvwIncome_statementinList()
-            Else
-                uscIncomeStatement.lvwIncome_statementInCBO()
-            End If
+            showUSC(uscIncomeStatement)
+            uscIncomeStatement.lvwIncome_statement()
+
         ElseIf cmbPost.Text = "Balance Sheet" Then
-            'showUSC(uscBalanceSheet)
+            showUSC(uscBalanceSheet)
+
         End If
 
     End Sub

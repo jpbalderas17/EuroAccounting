@@ -108,6 +108,7 @@ Partial Class View_Journal
         Me.pnl_Journal.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnl_Journal.BackColor = System.Drawing.Color.Silver
         Me.pnl_Journal.Controls.Add(Me.lvljournal)
         Me.pnl_Journal.Controls.Add(Me.Label5)
         Me.pnl_Journal.Controls.Add(Me.Label2)

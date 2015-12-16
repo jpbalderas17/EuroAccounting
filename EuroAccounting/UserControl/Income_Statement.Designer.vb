@@ -62,18 +62,18 @@ Partial Class Income_Statement
         'txtDescription
         '
         Me.txtDescription.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txtDescription.Location = New System.Drawing.Point(320, 133)
+        Me.txtDescription.Location = New System.Drawing.Point(286, 133)
         Me.txtDescription.Name = "txtDescription"
-        Me.txtDescription.Size = New System.Drawing.Size(203, 20)
+        Me.txtDescription.Size = New System.Drawing.Size(269, 20)
         Me.txtDescription.TabIndex = 248
         Me.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtTitle
         '
         Me.txtTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txtTitle.Location = New System.Drawing.Point(320, 107)
+        Me.txtTitle.Location = New System.Drawing.Point(286, 107)
         Me.txtTitle.Name = "txtTitle"
-        Me.txtTitle.Size = New System.Drawing.Size(203, 20)
+        Me.txtTitle.Size = New System.Drawing.Size(269, 20)
         Me.txtTitle.TabIndex = 247
         Me.txtTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -132,7 +132,7 @@ Partial Class Income_Statement
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(115, 34)
         Me.btnPrint.TabIndex = 44
-        Me.btnPrint.Text = "Print..."
+        Me.btnPrint.Text = "Preview"
         Me.btnPrint.UseVisualStyleBackColor = False
         '
         'btn_Cancel

@@ -18,7 +18,7 @@ Public Class Ledgers
     End Sub
 
     Private Sub Ledger_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lblDate.Text = Date.Now.ToString("MM/dd/yyyy")
+        'lblDate.Text = Date.Now.ToString("MM/dd/yyyy")
     End Sub
 
     Private Sub cmbjournal_SelectedIndexChanged(sender As Object, e As EventArgs)
@@ -57,42 +57,47 @@ Public Class Ledgers
     Private Sub btn_Close_Click(sender As Object, e As EventArgs) Handles btn_Close.Click
         showUSC(uscMainMenu)
     End Sub
-    Private Sub viewJournal()
-        If lvljournal.SelectedItems.Count > 0 Then
-            Dim id As Integer = lvljournal.FocusedItem.Text
-            Try
-                dr = db.ExecuteReader("select * from ledgers WHERE id=" & lvljournal.FocusedItem.Text)
-                If dr.HasRows Then
-                    showUSC(uscViewJournal)
+    'Private Sub viewJournal()
+    '    If lvljournal.SelectedItems.Count > 0 Then
+    '        Dim id As Integer = lvljournal.FocusedItem.Text
+    '        Try
+    '            dr = db.ExecuteReader("select * from ledgers WHERE id=" & lvljournal.FocusedItem.Text)
+    '            If dr.HasRows Then
+    '                showUSC(uscViewJournal)
 
-                    'Dim pass = lvlUsers.SelectedItems(0).SubItems(4).Text
-                    'Dim decryptPass = Decrypt(pass, "Keys")
-                    'txtpwd.Text = decryptPass
-                    'txtconfirmpwd.Text = decryptPass
+    '                'Dim pass = lvlUsers.SelectedItems(0).SubItems(4).Text
+    '                'Dim decryptPass = Decrypt(pass, "Keys")
+    '                'txtpwd.Text = decryptPass
+    '                'txtconfirmpwd.Text = decryptPass
 
-                    'txtfullname.Text = lvlUsers.SelectedItems(0).SubItems(1).Text
-                    'txtuname.Text = lvlUsers.SelectedItems(0).SubItems(2).Text
-                    'cmbUtype.Text = lvlUsers.SelectedItems(0).SubItems(3).Text
-                    'txtpwd.Text = lvlUsers.SelectedItems(0).SubItems(4).Text
-                    'txtconfirmpwd.Text = lvlUsers.SelectedItems(0).SubItems(4).Text
-                End If
+    '                'txtfullname.Text = lvlUsers.SelectedItems(0).SubItems(1).Text
+    '                'txtuname.Text = lvlUsers.SelectedItems(0).SubItems(2).Text
+    '                'cmbUtype.Text = lvlUsers.SelectedItems(0).SubItems(3).Text
+    '                'txtpwd.Text = lvlUsers.SelectedItems(0).SubItems(4).Text
+    '                'txtconfirmpwd.Text = lvlUsers.SelectedItems(0).SubItems(4).Text
+    '            End If
 
-            Catch ex As Exception
-                MsgBox(ex.ToString)
-            Finally
-                db.Dispose() '<--------CHECK THIS!
-            End Try
-        Else
-            MessageBox.Show("Please select ledger to view journals.", "Important Note", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
-        End If
-    End Sub
+    '        Catch ex As Exception
+    '            MsgBox(ex.ToString)
+    '        Finally
+    '            db.Dispose() '<--------CHECK THIS!
+    '        End Try
+    '    Else
+    '        MessageBox.Show("Please select ledger to view journals.", "Important Note", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
+    '    End If
+    'End Sub
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
         If lvljournal.SelectedItems.Count = 0 Then
             MsgBox("Please select ledger ", vbExclamation + vbOKOnly, "No ledger")
             Exit Sub
         End If
-        showUSC(uscViewJournal)
+        uscMainMenu.ledger_id = lvljournal.FocusedItem.Text
         uscViewJournal.loadJournal()
+        'enabling entry
+        uscViewJournal.btnAdd.Visible = True
+        showUSC(uscViewJournal)
+
+        
     End Sub
 
     Private Sub pnlMain_Paint(sender As Object, e As PaintEventArgs) Handles pnlMain.Paint
