@@ -61,7 +61,7 @@ Public Class Cash_Flow
 
         '## LOOP cash
         Try
-            dr = db.ExecuteReader("SELECT id FROM accounts WHERE name='CASH'")
+            dr = db.ExecuteReader("SELECT id FROM accounts WHERE name='CASH' and is_deleted =0")
             If dr.HasRows Then
                 dr.Read()
                 cash_id = CInt(dr.Item("id"))
