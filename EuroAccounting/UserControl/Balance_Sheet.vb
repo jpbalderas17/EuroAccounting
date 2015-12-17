@@ -60,12 +60,21 @@ Public Class Balance_Sheet
                 journal_id_sql = String.Join(",", journals)
 
                 'para sa asset
-                dr = db.ExecuteReader("SELECT a.id,a.name,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1  AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id )as credit FROM accounts a WHERE a.type in (4,5) AND a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
+                dr = db.ExecuteReader("SELECT a.id,a.name,a.type,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=1  AND account_id=a.id) as debit,(SELECT SUM(amount) FROM journal_details WHERE journal_id IN (" & journal_id_sql & ") AND is_debit=0 and account_id=a.id )as credit FROM accounts a WHERE a.type in (4,5,10,11) AND a.id IN (SELECT account_id FROM journal_details jd WHERE jd.journal_id IN(" & journal_id_sql & ") )")
                 If dr.HasRows Then
+                    Dim contra_amt, total_receivables As Double
+                    Dim ar_id As Double
+
                     Item = Me.lvbalance_sheet.Items.Add("ASSET")
                     Item.SubItems.Add("")
                     Item.SubItems.Add("")
                     Do While dr.Read
+                        Dim acct_name = dr.Item("name").ToString
+                        Dim acct_type = Val(dr.Item("type"))
+                        Dim amt = credit
+                        Dim dc, cd As Double
+                        dc = 0
+                        cd = 0
 
                         If IsDBNull(dr.Item("debit")) Then
                             debit = 0
@@ -78,25 +87,45 @@ Public Class Balance_Sheet
                             credit = CDbl(dr.Item("credit"))
                         End If
 
-
                         Item = Me.lvbalance_sheet.Items.Add(dr.Item("name").ToString)
 
                         With Item
+                            dc = debit - credit
+                            cd = credit - debit
                             If debit > credit Then
                                 .SubItems.Add(FormatNumber(debit - credit, 2))
                                 .SubItems.Add("")
                                 dbl_total_asset += debit - credit
-                            Else
-                                .SubItems.Add("")
-                                .SubItems.Add(FormatNumber(credit - debit, 2))
-                                dbl_total_asset += credit - debit
-                            End If
 
+                                If acct_name = "Account Receivables" Then
+                                    ar_id = dc
+                                End If
+                            Else
+                                '.SubItems.Add("")
+                                If acct_type = 10 Or acct_type = 11 Then
+                                    contra_amt = cd
+                                    .SubItems.Add("(" & FormatNumber(credit - debit, 2) & ")")
+                                    .SubItems.Add("")
+                                    dbl_total_asset += credit - debit
+                                Else
+                                    .SubItems.Add(FormatNumber(credit - debit, 2))
+                                    .SubItems.Add("")
+                                    dbl_total_asset += credit - debit
+                                End If
+                                
+
+                                
+                            End If
                         End With
+
                     Loop
+                    Dim total_contra_rec = ar_id + contra_amt
+                    total_receivables = total_contra_rec - (ar_id - contra_amt)
+                    'MsgBox(total_receivables)
                     Item = Me.lvbalance_sheet.Items.Add("          " & "Total Current Assets")
                     Item.SubItems.Add("")
-                    Item.SubItems.Add(FormatNumber(dbl_total_asset, 2))
+                    Item.SubItems.Add(FormatNumber(dbl_total_asset - total_receivables, 2))
+                    'Exit Sub
                 End If
 
 
