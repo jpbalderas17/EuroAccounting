@@ -105,7 +105,7 @@ Partial Class MainMenu2
         Me.btn_Tools.Name = "btn_Tools"
         Me.btn_Tools.Size = New System.Drawing.Size(231, 128)
         Me.btn_Tools.TabIndex = 4
-        Me.btn_Tools.Text = "Tools"
+        Me.btn_Tools.Text = "Multi Function Calculator"
         Me.btn_Tools.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_Tools.UseVisualStyleBackColor = False
         '

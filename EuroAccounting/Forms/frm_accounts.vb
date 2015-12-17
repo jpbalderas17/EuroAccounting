@@ -7,7 +7,6 @@ Public Class frm_accounts
     Public Sub reset_form()
         lbl_account_id.Text = ""
         txt_account_name.Text = ""
-
     End Sub
     Private Sub frm_accounts_Load(sender As Object, e As EventArgs) Handles Me.Load
         ' cbo_account_type_load()

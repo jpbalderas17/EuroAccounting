@@ -100,4 +100,7 @@
     End Sub
 
 
+    Private Sub btn_Tools_Click(sender As Object, e As EventArgs) Handles btn_Tools.Click
+        MultiFunctionCalculator.ShowDialog()
+    End Sub
 End Class
