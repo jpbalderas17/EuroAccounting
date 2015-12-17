@@ -125,7 +125,6 @@ Public Class Cash_Flow
                 'lvw_cashflow.Items.Add("")
             Else
                 MsgBox("No account found", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "No Records Found")
-
             End If
 
 

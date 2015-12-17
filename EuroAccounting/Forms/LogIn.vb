@@ -32,9 +32,7 @@ Public Class LogIn
     End Function
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
 
-        Dim user As String = txtUsername.Text
-        Dim pass As String = txtPassword.Text
-        Dim Usertype As String = lbl_utype.Text
+      
         
         Try
 
@@ -56,6 +54,7 @@ Public Class LogIn
                     Dim userfullname = dr.Item("full_name").ToString
                     lbl_utype.Text = utype
                     If uname = txtUsername.Text And upass = encryptPass Then
+                        thisIsOnlyYourAccess(lbl_utype.Text)
                         uscMainMenu.lblHeader.Text = ("       Welcome " & userfullname)
                         Me.Hide()
                         MainMenu.Show()
@@ -85,8 +84,14 @@ Public Class LogIn
         SetCueText(txtUsername, "Username")
         SetCueText(txtPassword, "Password")
     End Sub
-    Private Sub thisIsOnlyYourAccess()
-
+    Private Sub thisIsOnlyYourAccess(user_type As String)
+        If user_type = "1" Then
+            uscMainMenu.btn_Users.Visible = False
+            uscMainMenu.btnDbBackUp.Visible = False
+        Else
+            uscMainMenu.btn_Users.Visible = True
+            uscMainMenu.btnDbBackUp.Visible = True
+        End If
     End Sub
 
     Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
