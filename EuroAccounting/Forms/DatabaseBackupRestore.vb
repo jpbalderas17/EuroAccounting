@@ -1,47 +1,69 @@
 ﻿Imports System.IO
+Imports System.Runtime.InteropServices
+Imports System.Text
 Public Class DatabaseBackupRestore
+    Dim rec As Integer
+    Dim sourcePath As String
+    Private Const EM_SETCUEBANNER As Integer = &H1501
 
-    Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
+    <DllImport("user32.dll", CharSet:=CharSet.Auto)> _
+    Private Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal msg As Integer, ByVal wParam As Integer, <MarshalAs(UnmanagedType.LPWStr)> ByVal lParam As String) As Int32
+    End Function
+
+    Private Sub SetCueText(ByVal control As Control, ByVal text As String)
+        SendMessage(control.Handle, EM_SETCUEBANNER, 0, text)
+    End Sub
+    Private Sub btnBrowse_Click(sender As Object, e As EventArgs)
 
         whatBrowser()
+    End Sub
+    Public Sub showVerifyAcc(mode As Boolean)
+        pnl1.Enabled = False
+        Panel1.Visible = True
     End Sub
 
 
 
 
-    Private Sub btn_initialize_Click(sender As Object, e As EventArgs) Handles btn_initialize.Click
+
+
+    Private Sub btn_initialize_Click(sender As Object, e As EventArgs)
         Cursor = Cursors.WaitCursor
         If Trim(txtAddress.Text) = "" Then
             MsgBox("Please select a location ", vbExclamation + vbOKOnly, "Select location")
             Exit Sub
         End If
-        
+
         goInitialize()
         Cursor = Cursors.Arrow
     End Sub
 
 
-    Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
+    Private Sub btn_cancel_Click(sender As Object, e As EventArgs)
         'clearing of objects
+        txtname.Clear()
+        txtAddress.Clear()
+        radBack.Checked = False
+        radRes.Checked = False
         Me.Close()
     End Sub
-    Private Sub radBack_Click(sender As Object, e As EventArgs) Handles radBack.Click
+    Private Sub radBack_Click(sender As Object, e As EventArgs)
         Label3.Enabled = True
-        txtname.Enabled = True
+        txtname.Text = "DbAcctng_BackupFile_" & Format(Date.Now, "yyyyMMdd_hh_mm_ss")
+
         clearFileAddress()
     End Sub
 
 
-    Private Sub radRes_Click(sender As Object, e As EventArgs) Handles radRes.Click
+    Private Sub radRes_Click(sender As Object, e As EventArgs)
         Label3.Enabled = False
-        txtname.Enabled = False
+        txtname.Clear()
         clearFileAddress()
     End Sub
     'METHODS
 
     Private Sub goInitialize()
-        Dim rec As Integer
-        Dim sourcePath As String
+
         Try
             processTech.Maximum = 100
             If radBack.Checked = True Then
@@ -75,25 +97,15 @@ Public Class DatabaseBackupRestore
                 End If
                 processTech.Maximum = 0
                 MsgBox("Database back up successfully")
-            ElseIf radRes.Checked = True Then
-                'database restore
-
-                sourcePath = txtAddress.Text
-                sourcePath = sourcePath.Replace("'", "''")
-
-                Using db1 As New DBHelper(My.Settings.connectionString)
-
-                    rec = db1.ExecuteNonQuery("use master; RESTORE DATABASE accounting FROM DISK='" & sourcePath & "'")
-                End Using
-                processTech.Maximum = 0
-                MsgBox("Database restored successfully")
+            Else
+                showVerifyAcc(True)
             End If
 
         Catch ex As Exception
             MsgBox("Error occured for backup or restore database." & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
             processTech.Maximum = 0
 
-    
+
         End Try
     End Sub
     Private Sub whatBrowser()
@@ -124,5 +136,50 @@ Public Class DatabaseBackupRestore
 
 
 
-   
+
+
+    Private Sub DatabaseBackupRestore_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub btn_initialize_Click_1(sender As Object, e As EventArgs) Handles btn_initialize.Click
+
+    End Sub
+
+    Private Sub btnCancelVeri_Click(sender As Object, e As EventArgs) Handles btnCancelVeri.Click
+        showVerifyAcc(False)
+    End Sub
+
+    Private Sub btn_ok_Click(sender As Object, e As EventArgs) Handles btn_ok.Click
+        Try
+            processTech.Maximum = 100
+            If radRes.Checked = True Then
+                'database restore
+
+                sourcePath = txtAddress.Text
+                sourcePath = sourcePath.Replace("'", "''")
+
+                Using db As New DBHelper(My.Settings.connectionString)
+                    '                    use master
+                    'ALTER DATABASE YourDatabase SET SINGLE_USER WITH ROLLBACK IMMEDIATE 
+
+                    '--do you stuff here 
+
+                    'ALTER DATABASE YourDatabase SET MULTI_USER
+                    rec = db.ExecuteNonQuery("use master;" & vbCrLf & _
+                                              "BEGIN TRANSACTION" & vbCrLf & _
+                                              "ALTER DATABASE accounting SET SINGLE_USER WITH ROLLBACK IMMEDIATE" & vbCrLf & _
+                                              "RESTORE DATABASE accounting FROM DISK='" & sourcePath & "'" & vbCrLf & _
+                                              "ALTER DATABASE accounting SET MULTI_USER" & vbCrLf & _
+                                              "COMMIT")
+                End Using
+                processTech.Maximum = 0
+                MsgBox("Database restored successfully")
+            End If
+            processTech.Maximum = 0
+        Catch ex As Exception
+            MsgBox("Error occured for backup or restore database." & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
+            processTech.Maximum = 0
+        End Try
+    End Sub
 End Class

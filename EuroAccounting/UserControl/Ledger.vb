@@ -100,6 +100,7 @@
 
     End Sub
     Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
+        'cancel
         'showUSC(uscViewJournal)
         'uscViewJournal.cmbPost.Text = ""
         showUSC(uscMainMenu)

@@ -8,6 +8,9 @@ Public Class LogIn
     Dim db As New DBHelper(My.Settings.connectionString)
     Dim dr As SqlClient.SqlDataReader
     Dim cmd As SqlClient.SqlCommand
+    Public username As String
+    Public password As String
+
     Private Const EM_SETCUEBANNER As Integer = &H1501
 
     <DllImport("user32.dll", CharSet:=CharSet.Auto)> _
@@ -30,6 +33,7 @@ Public Class LogIn
         Dim Buffer As Byte() = ASCIIEncoding.ASCII.GetBytes(stringToEncrypt)
         Return Convert.ToBase64String(DES.CreateEncryptor().TransformFinalBlock(Buffer, 0, Buffer.Length))
     End Function
+
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
 
       
@@ -52,6 +56,8 @@ Public Class LogIn
                     Dim upass = (dr.Item("password").ToString)
                     Dim utype = (CInt(dr.Item("user_type")))
                     Dim userfullname = dr.Item("full_name").ToString
+                    username = uname
+                    password = encryptPass
                     lbl_utype.Text = utype
                     If uname = txtUsername.Text And upass = encryptPass Then
                         thisIsOnlyYourAccess(lbl_utype.Text)

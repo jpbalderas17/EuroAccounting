@@ -147,7 +147,7 @@ Public Class View_Journal
                     group = New ListViewGroup("No." & ctr & "   Journal ID:" & dr.Item("id"), HorizontalAlignment.Left)
                     lvljournal.Groups.Add(group)
 
-                    Item = lvljournal.Items.Add("Date: " & dr.Item("journal_date"))
+                    Item = lvljournal.Items.Add("Date: " & strToDate(dr.Item("journal_date")))
                     Item.Group = group
                     Item = lvljournal.Items.Add("Account Titles")
                     With Item
