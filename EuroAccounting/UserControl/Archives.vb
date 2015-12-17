@@ -37,7 +37,7 @@
             Exit Sub
         End If
         Select Case MsgBox("Are you sure you want to restore this ledger?" & vbCrLf & "- " & lvljournal.FocusedItem.SubItems(1).Text, _
-                       vbQuestion + vbYesNo, "Delete?")
+                       vbQuestion + vbYesNo, "Restore?")
 
             Case vbYes
                 restore_Ledger()
@@ -54,7 +54,7 @@
             Dim rec = db.ExecuteNonQuery("UPDATE ledgers SET is_archive = @is_archive WHERE id =  " & lvljournal.FocusedItem.Text, data)
             data.Clear()
 
-            MsgBox("Ledger was deleted.", vbInformation + vbOKOnly, "Deleted")
+            MsgBox("Ledger was restored.", vbInformation + vbOKOnly, "Restored")
             lvLoadListview()
         Catch ex As Exception
             MsgBox(ex.ToString, vbCritical)

@@ -93,7 +93,9 @@
                 Exit Sub
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.ToString, vbCritical + vbOKOnly, "Error")
+        Finally
+            db.Dispose()
         End Try
 
     End Sub

@@ -49,12 +49,12 @@ Public Class Income_Statement
         Dim journals(0) As String
         Dim journal_id_sql As String
         Dim counter As Integer
+        Try
 
+            dr = db.ExecuteReader("SELECT id FROM journals WHERE ledger_id=" & uscMainMenu.ledger_id)
+            counter = 0
+            If dr.HasRows Then
 
-        dr = db.ExecuteReader("SELECT id FROM journals WHERE ledger_id=" & uscMainMenu.ledger_id)
-        counter = 0
-        If dr.HasRows Then
-            Try
                 Do While dr.Read
                     ReDim Preserve journals(counter)
                     journals(counter) = (dr.Item(0))
@@ -153,16 +153,18 @@ Public Class Income_Statement
                 Item.SubItems.Add(net_income)
                 'lblNet.Text = net_income
                 'uscBalanceSheet.lblNet.Text = net_income
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-
+         
 
         Else
-            MsgBox("No journal entry found in the selected ledger", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "NO JOURNAL ENTRY FOUND")
-            'select_ledger.Show()
-            'select_ledger.cbo_ledger.SelectedValue = Nothing
-        End If
+        MsgBox("No journal entry found in the selected ledger", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "NO JOURNAL ENTRY FOUND")
+        'select_ledger.Show()
+        'select_ledger.cbo_ledger.SelectedValue = Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString, vbCritical + vbOKOnly, "Error")
+        Finally
+            db.Dispose()
+        End Try
     End Sub
    
 

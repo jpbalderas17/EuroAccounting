@@ -13,11 +13,17 @@
 
     End Sub
     Public Sub loadDcombo()
-        dr = db.ExecuteReader("SELECT name, type from accounts")
-        Do While dr.Read
-            dAccount.Items.Add(dr.Item("name").ToString)
-            crAccount.Items.Add(dr.Item("name").ToString)
-        Loop
+        Try
+            dr = db.ExecuteReader("SELECT name, type from accounts")
+            Do While dr.Read
+                dAccount.Items.Add(dr.Item("name").ToString)
+                crAccount.Items.Add(dr.Item("name").ToString)
+            Loop
+        Catch ex As Exception
+            MsgBox(ex.ToString, vbCritical + vbOKOnly, "Error")
+        Finally
+            db.Dispose()
+        End Try
     End Sub
     Private Sub AddJournalEntry_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtAddJourn.Value = Date.Now
@@ -179,39 +185,45 @@
 
     End Sub
     Private Sub saveEntries()
-        'una sa journal kuhain ang ledger_id
-        Dim query, firstState, lastState As String
-        firstState = "BEGIN TRANSACTION "
-        lastState = "COMMIT "
-        Dim data As New Dictionary(Of String, Object)
-        data.Add("journal_date", DateToStr(dtAddJourn.Value))
-        data.Add("description", "'" & txtDescription.Text & "'")
-        data.Add("ledger_id", uscLedgers.lvljournal.FocusedItem.Text)
-        query = "INSERT INTO journals (journal_date, description, ledger_id) VALUES (@journal_date, @description, @ledger_id)" & vbCrLf &
-        " DECLARE @j_id INT " & vbCrLf &
-        " SET @j_id = SCOPE_IDENTITY()" & vbCrLf
+        Try
+            'una sa journal kuhain ang ledger_id
+            Dim query, firstState, lastState As String
+            firstState = "BEGIN TRANSACTION "
+            lastState = "COMMIT "
+            Dim data As New Dictionary(Of String, Object)
+            data.Add("journal_date", DateToStr(dtAddJourn.Value))
+            data.Add("description", "'" & txtDescription.Text & "'")
+            data.Add("ledger_id", uscLedgers.lvljournal.FocusedItem.Text)
+            query = "INSERT INTO journals (journal_date, description, ledger_id) VALUES (@journal_date, @description, @ledger_id)" & vbCrLf &
+            " DECLARE @j_id INT " & vbCrLf &
+            " SET @j_id = SCOPE_IDENTITY()" & vbCrLf
 
-        'Dim rec = db.ExecuteScalar("INSERT INTO journals (journal_date, description, ledger_id) VALUES (@journal_date, @description, @ledger_id)" & _
-        '                           "; SET @j_id = SELECT SCOPE_IDENTITY()", data)
-        'Dim j_ID As Integer
-        'j_ID = rec
+            'Dim rec = db.ExecuteScalar("INSERT INTO journals (journal_date, description, ledger_id) VALUES (@journal_date, @description, @ledger_id)" & _
+            '                           "; SET @j_id = SELECT SCOPE_IDENTITY()", data)
+            'Dim j_ID As Integer
+            'j_ID = rec
 
 
-        'loop of entries
-        
-        For x = 1 To lvDebit.Items.Count Step 1
+            'loop of entries
 
-            query += "INSERT INTO journal_details (journal_id, amount, is_debit, account_id) " & _
-                "VALUES (@j_id , " & lvDebit.Items(x - 1).SubItems(1).Text & ",1 , '" & lvDebit.Items(x - 1).SubItems(2).Text & "')" & vbCrLf ' number na ito!
+            For x = 1 To lvDebit.Items.Count Step 1
 
-        Next
-        For x = 1 To lvCredit.Items.Count Step 1
-            query += "INSERT INTO journal_details (journal_id, amount, is_debit, account_id) " & _
-                "VALUES (@j_id, " & lvCredit.Items(x - 1).SubItems(1).Text & ",0 , '" & lvCredit.Items(x - 1).SubItems(2).Text & "')" & vbCrLf ' number na ito!
-        Next
-        'MsgBox(firstState & vbCrLf & query & vbCrLf & lastState)
-        Dim rec = db.ExecuteNonQuery(firstState & vbCrLf & query & vbCrLf & lastState, data)
-        data.Clear()
+                query += "INSERT INTO journal_details (journal_id, amount, is_debit, account_id) " & _
+                    "VALUES (@j_id , " & lvDebit.Items(x - 1).SubItems(1).Text & ",1 , '" & lvDebit.Items(x - 1).SubItems(2).Text & "')" & vbCrLf ' number na ito!
+
+            Next
+            For x = 1 To lvCredit.Items.Count Step 1
+                query += "INSERT INTO journal_details (journal_id, amount, is_debit, account_id) " & _
+                    "VALUES (@j_id, " & lvCredit.Items(x - 1).SubItems(1).Text & ",0 , '" & lvCredit.Items(x - 1).SubItems(2).Text & "')" & vbCrLf ' number na ito!
+            Next
+            'MsgBox(firstState & vbCrLf & query & vbCrLf & lastState)
+            Dim rec = db.ExecuteNonQuery(firstState & vbCrLf & query & vbCrLf & lastState, data)
+            data.Clear()
+        Catch ex As Exception
+            MsgBox(ex.ToString, vbCritical + vbOK, "Error")
+        Finally
+            db.Dispose()
+        End Try
 
     End Sub
 

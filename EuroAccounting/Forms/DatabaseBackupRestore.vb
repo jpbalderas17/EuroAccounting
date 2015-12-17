@@ -51,7 +51,7 @@ Public Class DatabaseBackupRestore
                 End If
                 sourcePath = txtAddress.Text & "\" & Trim(txtname.Text)
                 sourcePath = sourcePath.Replace("'", "''")
-                MsgBox(sourcePath)
+                ' MsgBox(sourcePath)
                 If File.Exists(sourcePath) Then
                     Select Case MsgBox("The database back up exist in the selected folder." & vbCrLf & _
                            "Do you want to overwrite it?", vbQuestion + vbYesNo, "File exist")
@@ -77,10 +77,13 @@ Public Class DatabaseBackupRestore
                 MsgBox("Database back up successfully")
             ElseIf radRes.Checked = True Then
                 'database restore
+
                 sourcePath = txtAddress.Text
                 sourcePath = sourcePath.Replace("'", "''")
-                Using db As New DBHelper(My.Settings.connectionString)
-                    rec = db.ExecuteNonQuery("use master; RESTORE DATABASE accounting FROM DISK='" & sourcePath & "'")
+
+                Using db1 As New DBHelper(My.Settings.connectionString)
+
+                    rec = db1.ExecuteNonQuery("use master; RESTORE DATABASE accounting FROM DISK='" & sourcePath & "'")
                 End Using
                 processTech.Maximum = 0
                 MsgBox("Database restored successfully")
@@ -89,6 +92,8 @@ Public Class DatabaseBackupRestore
         Catch ex As Exception
             MsgBox("Error occured for backup or restore database." & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
             processTech.Maximum = 0
+
+    
         End Try
     End Sub
     Private Sub whatBrowser()
@@ -110,10 +115,14 @@ Public Class DatabaseBackupRestore
 
     End Sub
 
-
-
-
-    Private Sub DatabaseBackupRestore_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub DatabaseBackupRestore_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Label3.Enabled = True
+        txtname.Enabled = True
+        clearFileAddress()
     End Sub
+
+
+
+
+   
 End Class

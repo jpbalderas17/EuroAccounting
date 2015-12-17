@@ -19,6 +19,7 @@ Public Class tbalance
     End Sub
     Public Sub load_tbalance(Optional dt_from = "", Optional dt_to = "")
         '#get journals
+
         Dim journals(0) As String
         Dim journal_id_sql As String
         Dim counter As Integer
@@ -40,8 +41,9 @@ Public Class tbalance
             dr = db.ExecuteReader("SELECT id FROM journals WHERE ledger_id=" & uscMainMenu.ledger_id)
         End If
         counter = 0
-        If dr.HasRows Then
-            Try
+        Try
+            If dr.HasRows Then
+
                 Do While dr.Read
                     ReDim Preserve journals(counter)
                     journals(counter) = (dr.Item(0))
@@ -93,21 +95,23 @@ Public Class tbalance
                     Item.SubItems.Add(FormatNumber(dbl_total_debit, 2))
                     Item.SubItems.Add(FormatNumber(dbl_total_credit, 2))
                 End If
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
+           
         Else
-            If dt_from <> "" And dt_to = "" Then
-                MsgBox("No journal entry found within the selected dates", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "NO JOURNAL ENTRY FOUND")
+                If dt_from <> "" And dt_to = "" Then
+                    MsgBox("No journal entry found within the selected dates", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "NO JOURNAL ENTRY FOUND")
 
-                Exit Sub
-            ElseIf dt_to <> "" And dt_from = "" Then
-                MsgBox("No journal entry found in the selected ledger", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "NO JOURNAL ENTRY FOUND")
+                    Exit Sub
+                ElseIf dt_to <> "" And dt_from = "" Then
+                    MsgBox("No journal entry found in the selected ledger", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "NO JOURNAL ENTRY FOUND")
 
-                Exit Sub
-            End If
+                    Exit Sub
+                End If
         End If
-
+        Catch ex As Exception
+            MsgBox(ex.ToString, vbCritical + vbOKOnly, "Error")
+        Finally
+            db.Dispose()
+        End Try
     End Sub
     
     Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
@@ -117,7 +121,7 @@ Public Class tbalance
         uscTrialBalance = New tbalance
     End Sub
     Public Sub get_ledger_details()
-
+        'Try
         dr = db.ExecuteReader("SELECT id,name,description FROM ledgers WHERE id=" & uscMainMenu.ledger_id)
         If dr.HasRows Then
             dr.Read()
@@ -132,6 +136,11 @@ Public Class tbalance
                 Me.ledger_name = dr.Item("name")
             End If
         End If
+        'Catch ex As Exception
+        '    MsgBox(ex.ToString, vbCritical + vbOKOnly, "Error")
+        'Finally
+        '    db.Dispose()
+        'End Try
     End Sub
    
 

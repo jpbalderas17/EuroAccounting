@@ -61,7 +61,7 @@ Public Class Cash_Flow
 
         '## LOOP cash
         Try
-            dr = db.ExecuteReader("SELECT id FROM accounts WHERE name='CASH' and is_deleted =0")
+            dr = db.ExecuteReader("SELECT id FROM accounts WHERE name='CASH' and is_deleted = 0")
             If dr.HasRows Then
                 dr.Read()
                 cash_id = CInt(dr.Item("id"))
@@ -168,7 +168,10 @@ Public Class Cash_Flow
             'Exit Sub
             'End If
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            MsgBox(ex.ToString, vbCritical + vbOKOnly, "Error")
+
+        Finally
+            db.Dispose()
         End Try
 
     End Sub

@@ -79,6 +79,9 @@
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        LogIn.txtUsername.Clear()
+        LogIn.txtPassword.Clear()
+
         LogIn.Show()
         MainMenu.Hide()
     End Sub

@@ -8,16 +8,23 @@
         showUSC(uscMainMenu)
     End Sub
     Private Sub lvw_accounts_load()
-        lvw_accounts.Items.Clear()
-        dr = db.ExecuteReader("SELECT a.id,a.name,at.name as type FROM accounts a JOIN account_types at ON a.type=at.id WHERE a.is_deleted=0")
-        If dr.HasRows Then
-            Do While dr.Read
-                With lvw_accounts.Items.Add(dr.Item("id").ToString)
-                    .SubItems.Add(dr.Item("name"))
-                    .SubItems.Add(dr.Item("type"))
-                End With
-            Loop
-        End If
+        Try
+            lvw_accounts.Items.Clear()
+            dr = db.ExecuteReader("SELECT a.id,a.name,at.name as type FROM accounts a JOIN account_types at ON a.type=at.id WHERE a.is_deleted=0")
+            If dr.HasRows Then
+                Do While dr.Read
+                    With lvw_accounts.Items.Add(dr.Item("id").ToString)
+                        .SubItems.Add(dr.Item("name"))
+                        .SubItems.Add(dr.Item("type"))
+                    End With
+                Loop
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString, vbCritical + vbOKOnly, "Error")
+
+        Finally
+            db.Dispose()
+        End Try
     End Sub
 
     Private Sub Accounts_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -58,21 +65,28 @@
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        Dim account_id As Integer
+        Try
+            Dim account_id As Integer
 
-        If lvw_accounts.SelectedItems.Count = 1 Then
-            '## Delete
-            account_id = lvw_accounts.SelectedItems.Item(0).Text
-            If MsgBox("Delete this account?", MsgBoxStyle.Information + MsgBoxStyle.OkCancel, "Delete Account") = MsgBoxResult.Ok Then
-                db.ExecuteNonQuery("UPDATE accounts SET is_deleted=1 WHERE id=" & account_id)
-                lvw_accounts_load()
+            If lvw_accounts.SelectedItems.Count = 1 Then
+                '## Delete
+                account_id = lvw_accounts.SelectedItems.Item(0).Text
+                If MsgBox("Delete this account?", MsgBoxStyle.Information + MsgBoxStyle.OkCancel, "Delete Account") = MsgBoxResult.Ok Then
+                    db.ExecuteNonQuery("UPDATE accounts SET is_deleted=1 WHERE id=" & account_id)
+                    lvw_accounts_load()
+                End If
+
+            ElseIf lvw_accounts.SelectedItems.Count < 1 Then
+                MsgBox("Please select an account to Delete.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "No Account Selected")
+            ElseIf lvw_accounts.SelectedItems.Count > 1 Then
+                MsgBox("Multiple accounts selected. You can only delete one account at a time", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Multiple Accounts Selected")
             End If
+        Catch ex As Exception
+            MsgBox(ex.ToString, vbCritical + vbOKOnly, "Error")
 
-        ElseIf lvw_accounts.SelectedItems.Count < 1 Then
-            MsgBox("Please select an account to Delete.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "No Account Selected")
-        ElseIf lvw_accounts.SelectedItems.Count > 1 Then
-            MsgBox("Multiple accounts selected. You can only delete one account at a time", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Multiple Accounts Selected")
-        End If
+        Finally
+            db.Dispose()
+        End Try
     End Sub
 
     Private Sub btnSearchAccounts_Click(sender As Object, e As EventArgs) Handles btnSearchAccounts.Click

@@ -5,18 +5,25 @@ Public Class select_ledger
     Dim cmd As SqlClient.SqlCommand
     Dim next_control As UserControl
     Private Sub load_cbo()
-        Dim ledgers As New ArrayList
-        dr = db.ExecuteReader("SELECT id,name FROM ledgers WHERE is_archive= 0 ORDER by ID DESC")
-        If dr.HasRows Then
-            Do While dr.Read
-                ledgers.Add(New MyCombo(dr.Item("id"), dr.Item("name")))
-            Loop
-            With cbo_ledger
-                .DataSource = ledgers
-                .DisplayMember = "Description"
-                .ValueMember = "ID"
-            End With
-        End If
+        Try
+            Dim ledgers As New ArrayList
+            dr = db.ExecuteReader("SELECT id,name FROM ledgers WHERE is_archive= 0 ORDER by ID DESC")
+            If dr.HasRows Then
+                Do While dr.Read
+                    ledgers.Add(New MyCombo(dr.Item("id"), dr.Item("name")))
+                Loop
+                With cbo_ledger
+                    .DataSource = ledgers
+                    .DisplayMember = "Description"
+                    .ValueMember = "ID"
+                End With
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString, vbCritical + vbOKOnly, "Error")
+
+        Finally
+            db.Dispose()
+        End Try
     End Sub
     Private Sub select_ledger_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_cbo()

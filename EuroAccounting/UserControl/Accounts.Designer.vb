@@ -134,6 +134,7 @@ Partial Class Accounts
         Me.lvw_accounts.FullRowSelect = True
         Me.lvw_accounts.GridLines = True
         Me.lvw_accounts.Location = New System.Drawing.Point(9, 14)
+        Me.lvw_accounts.MultiSelect = False
         Me.lvw_accounts.Name = "lvw_accounts"
         Me.lvw_accounts.Size = New System.Drawing.Size(997, 381)
         Me.lvw_accounts.TabIndex = 8

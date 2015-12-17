@@ -106,6 +106,8 @@ Public Class Ledgers
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         lblAddEdit.Text = "Add new ledger"
+        txtNameofLedger.Clear()
+        txtDesc.Clear()
         showAddEditLedger(True)
     End Sub
 

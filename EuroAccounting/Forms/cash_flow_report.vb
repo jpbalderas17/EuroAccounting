@@ -49,7 +49,7 @@
             crvCF.ReportSource = rptCF
             'showINC(True)
         Catch ex As Exception
-
+            MsgBox(ex.ToString, vbCritical + vbOKOnly, "Error")
         End Try
     End Sub
 

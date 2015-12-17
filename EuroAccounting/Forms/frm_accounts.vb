@@ -27,18 +27,24 @@ Public Class frm_accounts
     End Sub
 
     Public Sub cbo_account_type_load()
-        Dim account_types As New ArrayList
+        Try
+            Dim account_types As New ArrayList
 
-        dr = db.ExecuteReader("SELECT id,name FROM account_types")
-        Do While dr.Read
-            account_types.Add(New MyCombo(dr.Item("id"), dr.Item("name")))
-        Loop
+            dr = db.ExecuteReader("SELECT id,name FROM account_types")
+            Do While dr.Read
+                account_types.Add(New MyCombo(dr.Item("id"), dr.Item("name")))
+            Loop
 
-        With cbo_account_type
-            .DataSource = account_types 'Set arraylist as data source of combobox
-            .DisplayMember = "Description" 'as per class property
-            .ValueMember = "ID" 'as per class property
-        End With
+            With cbo_account_type
+                .DataSource = account_types 'Set arraylist as data source of combobox
+                .DisplayMember = "Description" 'as per class property
+                .ValueMember = "ID" 'as per class property
+            End With
+        Catch ex As Exception
+            MsgBox(ex.ToString, vbCritical + vbOKOnly, "Error")
+        Finally
+            db.Dispose()
+        End Try
     End Sub
     Private Sub save_account_type()
         Dim input As New Dictionary(Of String, Object)
