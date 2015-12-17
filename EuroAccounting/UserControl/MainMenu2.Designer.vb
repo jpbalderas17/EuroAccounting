@@ -69,7 +69,7 @@ Partial Class MainMenu2
         Me.btn_Manage_Acct.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_Manage_Acct.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Manage_Acct.ForeColor = System.Drawing.Color.Gold
-        Me.btn_Manage_Acct.Location = New System.Drawing.Point(507, 381)
+        Me.btn_Manage_Acct.Location = New System.Drawing.Point(507, 382)
         Me.btn_Manage_Acct.Name = "btn_Manage_Acct"
         Me.btn_Manage_Acct.Size = New System.Drawing.Size(231, 129)
         Me.btn_Manage_Acct.TabIndex = 2
@@ -85,9 +85,9 @@ Partial Class MainMenu2
         Me.btn_Users.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Users.ForeColor = System.Drawing.Color.Gold
         Me.btn_Users.Image = CType(resources.GetObject("btn_Users.Image"), System.Drawing.Image)
-        Me.btn_Users.Location = New System.Drawing.Point(270, 112)
+        Me.btn_Users.Location = New System.Drawing.Point(744, 112)
         Me.btn_Users.Name = "btn_Users"
-        Me.btn_Users.Size = New System.Drawing.Size(231, 128)
+        Me.btn_Users.Size = New System.Drawing.Size(231, 130)
         Me.btn_Users.TabIndex = 3
         Me.btn_Users.Text = "Users"
         Me.btn_Users.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -101,9 +101,9 @@ Partial Class MainMenu2
         Me.btn_Tools.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Tools.ForeColor = System.Drawing.Color.Gold
         Me.btn_Tools.Image = CType(resources.GetObject("btn_Tools.Image"), System.Drawing.Image)
-        Me.btn_Tools.Location = New System.Drawing.Point(507, 112)
+        Me.btn_Tools.Location = New System.Drawing.Point(270, 112)
         Me.btn_Tools.Name = "btn_Tools"
-        Me.btn_Tools.Size = New System.Drawing.Size(231, 128)
+        Me.btn_Tools.Size = New System.Drawing.Size(231, 130)
         Me.btn_Tools.TabIndex = 4
         Me.btn_Tools.Text = "Multi Function Calculator"
         Me.btn_Tools.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -257,7 +257,7 @@ Partial Class MainMenu2
         Me.btnDbBackUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDbBackUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDbBackUp.ForeColor = System.Drawing.Color.Gold
-        Me.btnDbBackUp.Location = New System.Drawing.Point(744, 246)
+        Me.btnDbBackUp.Location = New System.Drawing.Point(744, 248)
         Me.btnDbBackUp.Name = "btnDbBackUp"
         Me.btnDbBackUp.Size = New System.Drawing.Size(231, 129)
         Me.btnDbBackUp.TabIndex = 17
@@ -272,7 +272,7 @@ Partial Class MainMenu2
         Me.btn_archives.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_archives.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_archives.ForeColor = System.Drawing.Color.Gold
-        Me.btn_archives.Location = New System.Drawing.Point(744, 381)
+        Me.btn_archives.Location = New System.Drawing.Point(744, 382)
         Me.btn_archives.Name = "btn_archives"
         Me.btn_archives.Size = New System.Drawing.Size(231, 129)
         Me.btn_archives.TabIndex = 16
@@ -317,7 +317,7 @@ Partial Class MainMenu2
         Me.btn_Trial_Balance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_Trial_Balance.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Trial_Balance.ForeColor = System.Drawing.Color.Gold
-        Me.btn_Trial_Balance.Location = New System.Drawing.Point(507, 246)
+        Me.btn_Trial_Balance.Location = New System.Drawing.Point(507, 248)
         Me.btn_Trial_Balance.Name = "btn_Trial_Balance"
         Me.btn_Trial_Balance.Size = New System.Drawing.Size(231, 128)
         Me.btn_Trial_Balance.TabIndex = 13
