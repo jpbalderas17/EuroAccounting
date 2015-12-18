@@ -40,11 +40,12 @@ Partial Class DatabaseBackupRestore
         Me.btn_cancel = New System.Windows.Forms.Button()
         Me.btn_initialize = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.btnCancelVeri = New System.Windows.Forms.Button()
         Me.btn_ok = New System.Windows.Forms.Button()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.pnl1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -135,7 +136,7 @@ Partial Class DatabaseBackupRestore
         Me.btnBrowse.Name = "btnBrowse"
         Me.btnBrowse.Size = New System.Drawing.Size(66, 22)
         Me.btnBrowse.TabIndex = 18
-        Me.btnBrowse.Text = "Browse"
+        Me.btnBrowse.Text = "&Browse"
         Me.btnBrowse.UseVisualStyleBackColor = False
         '
         'Label1
@@ -192,7 +193,7 @@ Partial Class DatabaseBackupRestore
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(75, 37)
         Me.btn_cancel.TabIndex = 13
-        Me.btn_cancel.Text = "Cancel"
+        Me.btn_cancel.Text = "&Cancel"
         Me.btn_cancel.UseVisualStyleBackColor = False
         '
         'btn_initialize
@@ -206,11 +207,12 @@ Partial Class DatabaseBackupRestore
         Me.btn_initialize.Name = "btn_initialize"
         Me.btn_initialize.Size = New System.Drawing.Size(75, 37)
         Me.btn_initialize.TabIndex = 12
-        Me.btn_initialize.Text = "Start"
+        Me.btn_initialize.Text = "&Start"
         Me.btn_initialize.UseVisualStyleBackColor = False
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.btnCancelVeri)
         Me.Panel1.Controls.Add(Me.btn_ok)
         Me.Panel1.Controls.Add(Me.txtPassword)
@@ -218,9 +220,65 @@ Partial Class DatabaseBackupRestore
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Location = New System.Drawing.Point(85, 23)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(298, 191)
+        Me.Panel1.Size = New System.Drawing.Size(298, 206)
         Me.Panel1.TabIndex = 13
         Me.Panel1.Visible = False
+        '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label6.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(3, 50)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(295, 18)
+        Me.Label6.TabIndex = 192
+        Me.Label6.Text = "Note: Create back up first before restoring the data."
+        '
+        'btnCancelVeri
+        '
+        Me.btnCancelVeri.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnCancelVeri.FlatAppearance.BorderSize = 0
+        Me.btnCancelVeri.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelVeri.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelVeri.ForeColor = System.Drawing.Color.Gold
+        Me.btnCancelVeri.Location = New System.Drawing.Point(212, 155)
+        Me.btnCancelVeri.Name = "btnCancelVeri"
+        Me.btnCancelVeri.Size = New System.Drawing.Size(75, 37)
+        Me.btnCancelVeri.TabIndex = 191
+        Me.btnCancelVeri.Text = "C&ancel"
+        Me.btnCancelVeri.UseVisualStyleBackColor = False
+        '
+        'btn_ok
+        '
+        Me.btn_ok.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btn_ok.FlatAppearance.BorderSize = 0
+        Me.btn_ok.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_ok.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_ok.ForeColor = System.Drawing.Color.Gold
+        Me.btn_ok.Location = New System.Drawing.Point(131, 155)
+        Me.btn_ok.Name = "btn_ok"
+        Me.btn_ok.Size = New System.Drawing.Size(75, 37)
+        Me.btn_ok.TabIndex = 190
+        Me.btn_ok.Text = "&Ok"
+        Me.btn_ok.UseVisualStyleBackColor = False
+        '
+        'txtPassword
+        '
+        Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.Location = New System.Drawing.Point(29, 123)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.txtPassword.Size = New System.Drawing.Size(258, 26)
+        Me.txtPassword.TabIndex = 189
+        '
+        'txtUsername
+        '
+        Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsername.Location = New System.Drawing.Point(29, 91)
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(258, 26)
+        Me.txtUsername.TabIndex = 188
         '
         'Label5
         '
@@ -233,51 +291,6 @@ Partial Class DatabaseBackupRestore
         Me.Label5.TabIndex = 187
         Me.Label5.Text = "Verify Account"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'txtPassword
-        '
-        Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(29, 102)
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.txtPassword.Size = New System.Drawing.Size(258, 26)
-        Me.txtPassword.TabIndex = 189
-        '
-        'txtUsername
-        '
-        Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsername.Location = New System.Drawing.Point(29, 70)
-        Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(258, 26)
-        Me.txtUsername.TabIndex = 188
-        '
-        'btnCancelVeri
-        '
-        Me.btnCancelVeri.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnCancelVeri.FlatAppearance.BorderSize = 0
-        Me.btnCancelVeri.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelVeri.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelVeri.ForeColor = System.Drawing.Color.Gold
-        Me.btnCancelVeri.Location = New System.Drawing.Point(212, 134)
-        Me.btnCancelVeri.Name = "btnCancelVeri"
-        Me.btnCancelVeri.Size = New System.Drawing.Size(75, 37)
-        Me.btnCancelVeri.TabIndex = 191
-        Me.btnCancelVeri.Text = "Cancel"
-        Me.btnCancelVeri.UseVisualStyleBackColor = False
-        '
-        'btn_ok
-        '
-        Me.btn_ok.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btn_ok.FlatAppearance.BorderSize = 0
-        Me.btn_ok.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_ok.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_ok.ForeColor = System.Drawing.Color.Gold
-        Me.btn_ok.Location = New System.Drawing.Point(131, 134)
-        Me.btn_ok.Name = "btn_ok"
-        Me.btn_ok.Size = New System.Drawing.Size(75, 37)
-        Me.btn_ok.TabIndex = 190
-        Me.btn_ok.Text = "Ok"
-        Me.btn_ok.UseVisualStyleBackColor = False
         '
         'DatabaseBackupRestore
         '
@@ -322,4 +335,5 @@ Partial Class DatabaseBackupRestore
     Friend WithEvents txtUsername As System.Windows.Forms.TextBox
     Friend WithEvents btnCancelVeri As System.Windows.Forms.Button
     Friend WithEvents btn_ok As System.Windows.Forms.Button
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 End Class

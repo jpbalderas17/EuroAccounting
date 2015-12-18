@@ -61,7 +61,7 @@ Partial Class select_ledger
         Me.btn_close.Name = "btn_close"
         Me.btn_close.Size = New System.Drawing.Size(93, 34)
         Me.btn_close.TabIndex = 218
-        Me.btn_close.Text = "Close"
+        Me.btn_close.Text = "&Close"
         Me.btn_close.UseVisualStyleBackColor = False
         '
         'btn_select
@@ -76,7 +76,7 @@ Partial Class select_ledger
         Me.btn_select.Name = "btn_select"
         Me.btn_select.Size = New System.Drawing.Size(93, 34)
         Me.btn_select.TabIndex = 216
-        Me.btn_select.Text = "Select"
+        Me.btn_select.Text = "&Select"
         Me.btn_select.UseVisualStyleBackColor = False
         '
         'Label4

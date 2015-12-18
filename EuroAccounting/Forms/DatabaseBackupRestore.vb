@@ -13,13 +13,11 @@ Public Class DatabaseBackupRestore
     Private Sub SetCueText(ByVal control As Control, ByVal text As String)
         SendMessage(control.Handle, EM_SETCUEBANNER, 0, text)
     End Sub
-    Private Sub btnBrowse_Click(sender As Object, e As EventArgs)
-
-        whatBrowser()
-    End Sub
+ 
     Public Sub showVerifyAcc(mode As Boolean)
-        pnl1.Enabled = False
-        Panel1.Visible = True
+
+        Panel1.Visible = mode
+        pnl1.Enabled = Not mode
     End Sub
 
 
@@ -27,7 +25,7 @@ Public Class DatabaseBackupRestore
 
 
 
-    Private Sub btn_initialize_Click(sender As Object, e As EventArgs)
+    Private Sub btn_initialize_Click(sender As Object, e As EventArgs) Handles btn_initialize.Click
         Cursor = Cursors.WaitCursor
         If Trim(txtAddress.Text) = "" Then
             MsgBox("Please select a location ", vbExclamation + vbOKOnly, "Select location")
@@ -39,7 +37,7 @@ Public Class DatabaseBackupRestore
     End Sub
 
 
-    Private Sub btn_cancel_Click(sender As Object, e As EventArgs)
+    Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         'clearing of objects
         txtname.Clear()
         txtAddress.Clear()
@@ -47,7 +45,7 @@ Public Class DatabaseBackupRestore
         radRes.Checked = False
         Me.Close()
     End Sub
-    Private Sub radBack_Click(sender As Object, e As EventArgs)
+    Private Sub radBack_Click(sender As Object, e As EventArgs) Handles radBack.Click
         Label3.Enabled = True
         txtname.Text = "DbAcctng_BackupFile_" & Format(Date.Now, "yyyyMMdd_hh_mm_ss")
 
@@ -55,7 +53,7 @@ Public Class DatabaseBackupRestore
     End Sub
 
 
-    Private Sub radRes_Click(sender As Object, e As EventArgs)
+    Private Sub radRes_Click(sender As Object, e As EventArgs) Handles radRes.Click
         Label3.Enabled = False
         txtname.Clear()
         clearFileAddress()
@@ -65,12 +63,14 @@ Public Class DatabaseBackupRestore
     Private Sub goInitialize()
 
         Try
-            processTech.Maximum = 100
+
             If radBack.Checked = True Then
+
                 If Trim(txtname.Text) = "" Then
                     MsgBox("Please input the name of back up file ", vbExclamation + vbOKOnly, "Input name")
                     Exit Sub
                 End If
+                processTech.Maximum = 100
                 sourcePath = txtAddress.Text & "\" & Trim(txtname.Text)
                 sourcePath = sourcePath.Replace("'", "''")
                 ' MsgBox(sourcePath)
@@ -142,9 +142,6 @@ Public Class DatabaseBackupRestore
 
     End Sub
 
-    Private Sub btn_initialize_Click_1(sender As Object, e As EventArgs) Handles btn_initialize.Click
-
-    End Sub
 
     Private Sub btnCancelVeri_Click(sender As Object, e As EventArgs) Handles btnCancelVeri.Click
         showVerifyAcc(False)
@@ -152,10 +149,10 @@ Public Class DatabaseBackupRestore
 
     Private Sub btn_ok_Click(sender As Object, e As EventArgs) Handles btn_ok.Click
         Try
-            processTech.Maximum = 100
-            If radRes.Checked = True Then
-                'database restore
 
+            If txtUsername.Text = LogIn.txtUsername.Text And txtPassword.Text = LogIn.txtPassword.Text Then
+                'database restore
+                processTech.Maximum = 100
                 sourcePath = txtAddress.Text
                 sourcePath = sourcePath.Replace("'", "''")
 
@@ -167,14 +164,16 @@ Public Class DatabaseBackupRestore
 
                     'ALTER DATABASE YourDatabase SET MULTI_USER
                     rec = db.ExecuteNonQuery("use master;" & vbCrLf & _
-                                              "BEGIN TRANSACTION" & vbCrLf & _
                                               "ALTER DATABASE accounting SET SINGLE_USER WITH ROLLBACK IMMEDIATE" & vbCrLf & _
                                               "RESTORE DATABASE accounting FROM DISK='" & sourcePath & "'" & vbCrLf & _
-                                              "ALTER DATABASE accounting SET MULTI_USER" & vbCrLf & _
-                                              "COMMIT")
+                                              "ALTER DATABASE accounting SET MULTI_USER" )
                 End Using
                 processTech.Maximum = 0
                 MsgBox("Database restored successfully")
+                showVerifyAcc(False)
+            Else
+                MsgBox("Incorrect username and password!", vbExclamation + vbOKOnly, "Can't restore")
+                Exit Sub
             End If
             processTech.Maximum = 0
         Catch ex As Exception
@@ -182,4 +181,16 @@ Public Class DatabaseBackupRestore
             processTech.Maximum = 0
         End Try
     End Sub
+
+    Private Sub btnBrowse_Click_1(sender As Object, e As EventArgs) Handles btnBrowse.Click
+        whatBrowser()
+    End Sub
+
+    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btn_initialize_Click(sender, e)
+        End If
+    End Sub
+
+
 End Class

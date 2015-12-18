@@ -84,13 +84,13 @@ Partial Class View_Journal
         Me.btn_Close.BackColor = System.Drawing.Color.MidnightBlue
         Me.btn_Close.FlatAppearance.BorderSize = 0
         Me.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_Close.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Close.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Close.ForeColor = System.Drawing.Color.Gold
         Me.btn_Close.Location = New System.Drawing.Point(823, 30)
         Me.btn_Close.Name = "btn_Close"
         Me.btn_Close.Size = New System.Drawing.Size(115, 34)
         Me.btn_Close.TabIndex = 12
-        Me.btn_Close.Text = "Close"
+        Me.btn_Close.Text = "&Close"
         Me.btn_Close.UseVisualStyleBackColor = False
         '
         'btnAdd
@@ -99,13 +99,13 @@ Partial Class View_Journal
         Me.btnAdd.BackColor = System.Drawing.Color.MidnightBlue
         Me.btnAdd.FlatAppearance.BorderSize = 0
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAdd.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.Gold
         Me.btnAdd.Location = New System.Drawing.Point(700, 30)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(115, 34)
         Me.btnAdd.TabIndex = 14
-        Me.btnAdd.Text = "Add New Entry"
+        Me.btnAdd.Text = "&Add New Entry"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
         'pnl_Journal

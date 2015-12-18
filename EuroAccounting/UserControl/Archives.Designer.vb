@@ -69,7 +69,7 @@ Partial Class Archives
         Me.btnView.Name = "btnView"
         Me.btnView.Size = New System.Drawing.Size(93, 34)
         Me.btnView.TabIndex = 240
-        Me.btnView.Text = "View Journal"
+        Me.btnView.Text = "&View Journal"
         Me.btnView.UseVisualStyleBackColor = False
         '
         'btnSearchLedger
@@ -151,7 +151,7 @@ Partial Class Archives
         Me.btnRestore.Name = "btnRestore"
         Me.btnRestore.Size = New System.Drawing.Size(93, 34)
         Me.btnRestore.TabIndex = 229
-        Me.btnRestore.Text = "Restore"
+        Me.btnRestore.Text = "&Restore"
         Me.btnRestore.UseVisualStyleBackColor = False
         '
         'btn_Close
@@ -166,7 +166,7 @@ Partial Class Archives
         Me.btn_Close.Name = "btn_Close"
         Me.btn_Close.Size = New System.Drawing.Size(93, 34)
         Me.btn_Close.TabIndex = 228
-        Me.btn_Close.Text = "Close"
+        Me.btn_Close.Text = "&Close"
         Me.btn_Close.UseVisualStyleBackColor = False
         '
         'Label2

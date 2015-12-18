@@ -51,7 +51,7 @@ Partial Class Accounts
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(93, 34)
         Me.btnDelete.TabIndex = 212
-        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Text = "&Delete"
         Me.btnDelete.UseVisualStyleBackColor = False
         '
         'btnAdd
@@ -66,7 +66,7 @@ Partial Class Accounts
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(93, 34)
         Me.btnAdd.TabIndex = 213
-        Me.btnAdd.Text = "Add"
+        Me.btnAdd.Text = "&Add"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
         'btnEdit
@@ -81,7 +81,7 @@ Partial Class Accounts
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(93, 34)
         Me.btnEdit.TabIndex = 211
-        Me.btnEdit.Text = "Edit"
+        Me.btnEdit.Text = "&Edit"
         Me.btnEdit.UseVisualStyleBackColor = False
         '
         'btn_Close
@@ -96,7 +96,7 @@ Partial Class Accounts
         Me.btn_Close.Name = "btn_Close"
         Me.btn_Close.Size = New System.Drawing.Size(93, 34)
         Me.btn_Close.TabIndex = 210
-        Me.btn_Close.Text = "Close"
+        Me.btn_Close.Text = "&Close"
         Me.btn_Close.UseVisualStyleBackColor = False
         '
         'Label4

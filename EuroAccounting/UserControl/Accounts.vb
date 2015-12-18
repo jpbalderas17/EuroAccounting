@@ -71,6 +71,10 @@
             If lvw_accounts.SelectedItems.Count = 1 Then
                 '## Delete
                 account_id = lvw_accounts.SelectedItems.Item(0).Text
+                If LCase(lvw_accounts.FocusedItem.SubItems(1).Text) = "cash" Or LCase(lvw_accounts.FocusedItem.SubItems(1).Text) = "accounts receivable" Then
+                    MsgBox("Can't delete this account because it is the reference for reports")
+                    Exit Sub
+                End If
                 If MsgBox("Delete this account?", MsgBoxStyle.Information + MsgBoxStyle.OkCancel, "Delete Account") = MsgBoxResult.Ok Then
                     db.ExecuteNonQuery("UPDATE accounts SET is_deleted=1 WHERE id=" & account_id)
                     lvw_accounts_load()
@@ -123,4 +127,12 @@
         End If
     End Sub
 
+    Private Sub lvw_accounts_DoubleClick(sender As Object, e As EventArgs) Handles lvw_accounts.DoubleClick
+        btnEdit_Click(sender, e)
+    End Sub
+
+    
+    Private Sub lvw_accounts_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lvw_accounts.SelectedIndexChanged
+
+    End Sub
 End Class

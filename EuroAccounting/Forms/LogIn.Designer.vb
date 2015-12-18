@@ -35,12 +35,13 @@ Partial Class LogIn
         Me.btnLogin.BackColor = System.Drawing.Color.MidnightBlue
         Me.btnLogin.FlatAppearance.BorderSize = 0
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.Gold
         Me.btnLogin.Location = New System.Drawing.Point(139, 138)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(111, 35)
         Me.btnLogin.TabIndex = 0
-        Me.btnLogin.Text = "Log in"
+        Me.btnLogin.Text = "&Log in"
         Me.btnLogin.UseVisualStyleBackColor = False
         '
         'Label1

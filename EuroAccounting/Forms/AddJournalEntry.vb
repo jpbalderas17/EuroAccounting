@@ -113,6 +113,12 @@
             db.Dispose()
         End Try
     End Sub
+
+    Private Sub dAmount_KeyDown(sender As Object, e As KeyEventArgs) Handles dAmount.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            dAdd_Click(sender, e)
+        End If
+    End Sub
    
 
     Private Sub dAmount_KeyPress(sender As Object, e As KeyPressEventArgs) Handles dAmount.KeyPress
@@ -120,6 +126,12 @@
             If e.Handled = (Char.IsDigit(e.KeyChar) Or e.KeyChar = ".") Then
                 e.Handled = True
             End If
+        End If
+    End Sub
+
+    Private Sub crAmount_KeyDown(sender As Object, e As KeyEventArgs) Handles crAmount.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            crAdd_Click(sender, e)
         End If
     End Sub
 

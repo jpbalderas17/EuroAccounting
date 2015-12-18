@@ -97,7 +97,7 @@ Public Class Balance_Sheet
                                 .SubItems.Add("")
                                 dbl_total_asset += debit - credit
 
-                                If acct_name = "Account Receivables" Then
+                                If acct_name = "Accounts Receivable" Then
                                     ar_id = dc
                                 End If
                             Else
@@ -355,6 +355,9 @@ Public Class Balance_Sheet
         End If
     End Sub
 
+    Private Sub lvbalance_sheet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lvbalance_sheet.SelectedIndexChanged
+
+    End Sub
 End Class
 
 

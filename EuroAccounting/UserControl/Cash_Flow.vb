@@ -252,4 +252,8 @@ Public Class Cash_Flow
         End If
 
     End Sub
+
+    Private Sub lvw_cashflow_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lvw_cashflow.SelectedIndexChanged
+
+    End Sub
 End Class

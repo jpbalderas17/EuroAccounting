@@ -56,7 +56,7 @@ Partial Class column_ledger_report
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(115, 34)
         Me.btnPrint.TabIndex = 84
-        Me.btnPrint.Text = "Print"
+        Me.btnPrint.Text = "&Print"
         Me.btnPrint.UseVisualStyleBackColor = False
         '
         'btnCancelPrintattack
@@ -71,7 +71,7 @@ Partial Class column_ledger_report
         Me.btnCancelPrintattack.Name = "btnCancelPrintattack"
         Me.btnCancelPrintattack.Size = New System.Drawing.Size(115, 34)
         Me.btnCancelPrintattack.TabIndex = 83
-        Me.btnCancelPrintattack.Text = "Cancel"
+        Me.btnCancelPrintattack.Text = "&Cancel"
         Me.btnCancelPrintattack.UseVisualStyleBackColor = False
         '
         'crvCL

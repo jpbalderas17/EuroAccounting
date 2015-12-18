@@ -195,7 +195,7 @@ Partial Class Income_Statement
         Me.btnPrintAttack.Name = "btnPrintAttack"
         Me.btnPrintAttack.Size = New System.Drawing.Size(115, 34)
         Me.btnPrintAttack.TabIndex = 84
-        Me.btnPrintAttack.Text = "Print"
+        Me.btnPrintAttack.Text = "&Print"
         Me.btnPrintAttack.UseVisualStyleBackColor = False
         '
         'btnCancelPrintattack
@@ -210,7 +210,7 @@ Partial Class Income_Statement
         Me.btnCancelPrintattack.Name = "btnCancelPrintattack"
         Me.btnCancelPrintattack.Size = New System.Drawing.Size(115, 34)
         Me.btnCancelPrintattack.TabIndex = 83
-        Me.btnCancelPrintattack.Text = "Cancel"
+        Me.btnCancelPrintattack.Text = "&Cancel"
         Me.btnCancelPrintattack.UseVisualStyleBackColor = False
         '
         'crvInc

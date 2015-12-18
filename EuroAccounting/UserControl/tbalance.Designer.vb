@@ -79,7 +79,7 @@ Partial Class tbalance
         Me.btn_Cancel.Name = "btn_Cancel"
         Me.btn_Cancel.Size = New System.Drawing.Size(115, 34)
         Me.btn_Cancel.TabIndex = 43
-        Me.btn_Cancel.Text = "Cancel"
+        Me.btn_Cancel.Text = "&Cancel"
         Me.btn_Cancel.UseVisualStyleBackColor = False
         '
         'btnPreview
@@ -94,7 +94,7 @@ Partial Class tbalance
         Me.btnPreview.Name = "btnPreview"
         Me.btnPreview.Size = New System.Drawing.Size(115, 34)
         Me.btnPreview.TabIndex = 44
-        Me.btnPreview.Text = "Preview"
+        Me.btnPreview.Text = "&Preview"
         Me.btnPreview.UseVisualStyleBackColor = False
         '
         'lvtbalance

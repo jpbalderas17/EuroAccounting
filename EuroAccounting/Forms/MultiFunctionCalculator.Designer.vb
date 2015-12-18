@@ -113,12 +113,16 @@ Partial Class MultiFunctionCalculator
         '
         'btnSolveCoGS
         '
+        Me.btnSolveCoGS.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSolveCoGS.FlatAppearance.BorderSize = 0
+        Me.btnSolveCoGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSolveCoGS.ForeColor = System.Drawing.Color.Gold
         Me.btnSolveCoGS.Location = New System.Drawing.Point(519, 108)
         Me.btnSolveCoGS.Name = "btnSolveCoGS"
         Me.btnSolveCoGS.Size = New System.Drawing.Size(75, 23)
         Me.btnSolveCoGS.TabIndex = 11
         Me.btnSolveCoGS.Text = "Solve"
-        Me.btnSolveCoGS.UseVisualStyleBackColor = True
+        Me.btnSolveCoGS.UseVisualStyleBackColor = False
         '
         'Label7
         '
@@ -236,12 +240,16 @@ Partial Class MultiFunctionCalculator
         '
         'btnSolveSLD
         '
+        Me.btnSolveSLD.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSolveSLD.FlatAppearance.BorderSize = 0
+        Me.btnSolveSLD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSolveSLD.ForeColor = System.Drawing.Color.Gold
         Me.btnSolveSLD.Location = New System.Drawing.Point(538, 110)
         Me.btnSolveSLD.Name = "btnSolveSLD"
         Me.btnSolveSLD.Size = New System.Drawing.Size(75, 23)
         Me.btnSolveSLD.TabIndex = 51
         Me.btnSolveSLD.Text = "Solve"
-        Me.btnSolveSLD.UseVisualStyleBackColor = True
+        Me.btnSolveSLD.UseVisualStyleBackColor = False
         '
         'txtAnnualDepExSLD
         '
@@ -500,12 +508,16 @@ Partial Class MultiFunctionCalculator
         '
         'btnSolveBalRed
         '
+        Me.btnSolveBalRed.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSolveBalRed.FlatAppearance.BorderSize = 0
+        Me.btnSolveBalRed.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSolveBalRed.ForeColor = System.Drawing.Color.Gold
         Me.btnSolveBalRed.Location = New System.Drawing.Point(539, 105)
         Me.btnSolveBalRed.Name = "btnSolveBalRed"
         Me.btnSolveBalRed.Size = New System.Drawing.Size(75, 23)
         Me.btnSolveBalRed.TabIndex = 29
         Me.btnSolveBalRed.Text = "Solve"
-        Me.btnSolveBalRed.UseVisualStyleBackColor = True
+        Me.btnSolveBalRed.UseVisualStyleBackColor = False
         '
         'Button1
         '

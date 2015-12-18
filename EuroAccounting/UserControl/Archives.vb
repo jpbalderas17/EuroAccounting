@@ -144,5 +144,12 @@
         End If
     End Sub
 
+    Private Sub lvljournal_DoubleClick(sender As Object, e As EventArgs) Handles lvljournal.DoubleClick
+        btnView_Click(sender, e)
+    End Sub
+
    
+    Private Sub lvljournal_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lvljournal.SelectedIndexChanged
+
+    End Sub
 End Class

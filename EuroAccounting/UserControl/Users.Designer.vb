@@ -215,7 +215,7 @@ Partial Class Users
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(93, 38)
         Me.btnSave.TabIndex = 29
-        Me.btnSave.Text = "Save"
+        Me.btnSave.Text = "&Save"
         Me.btnSave.UseVisualStyleBackColor = False
         '
         'btnCancel
@@ -230,7 +230,7 @@ Partial Class Users
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(93, 38)
         Me.btnCancel.TabIndex = 30
-        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.Text = "Ca&ncel"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
         'Label3
@@ -315,7 +315,7 @@ Partial Class Users
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(93, 34)
         Me.btnDelete.TabIndex = 14
-        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Text = "&Delete"
         Me.btnDelete.UseVisualStyleBackColor = False
         '
         'btnAdd
@@ -330,7 +330,7 @@ Partial Class Users
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(93, 34)
         Me.btnAdd.TabIndex = 15
-        Me.btnAdd.Text = "Add"
+        Me.btnAdd.Text = "&Add"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
         'btnEdit
@@ -345,7 +345,7 @@ Partial Class Users
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(93, 34)
         Me.btnEdit.TabIndex = 13
-        Me.btnEdit.Text = "Edit"
+        Me.btnEdit.Text = "&Edit"
         Me.btnEdit.UseVisualStyleBackColor = False
         '
         'btn_Close
@@ -360,7 +360,7 @@ Partial Class Users
         Me.btn_Close.Name = "btn_Close"
         Me.btn_Close.Size = New System.Drawing.Size(93, 34)
         Me.btn_Close.TabIndex = 12
-        Me.btn_Close.Text = "Close"
+        Me.btn_Close.Text = "&Close"
         Me.btn_Close.UseVisualStyleBackColor = False
         '
         'Label4

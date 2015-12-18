@@ -44,7 +44,7 @@ Partial Class frm_accounts
         Me.btn_save.Name = "btn_save"
         Me.btn_save.Size = New System.Drawing.Size(93, 34)
         Me.btn_save.TabIndex = 212
-        Me.btn_save.Text = "Save"
+        Me.btn_save.Text = "&Save"
         Me.btn_save.UseVisualStyleBackColor = False
         '
         'Label4
@@ -73,7 +73,7 @@ Partial Class frm_accounts
         Me.btn_close.Name = "btn_close"
         Me.btn_close.Size = New System.Drawing.Size(93, 34)
         Me.btn_close.TabIndex = 215
-        Me.btn_close.Text = "Close"
+        Me.btn_close.Text = "&Close"
         Me.btn_close.UseVisualStyleBackColor = False
         '
         'cbo_account_type

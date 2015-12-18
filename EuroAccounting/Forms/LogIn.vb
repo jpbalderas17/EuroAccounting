@@ -107,4 +107,7 @@ Public Class LogIn
     End Sub
 
 
+    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
+
+    End Sub
 End Class
